@@ -1,0 +1,11 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index.md
+parts:
+  - caption: Understanding FoldX
+    numbered: true
+    chapters:
+    - file: understanding_foldx/00-installing-foldx.md
+    - file: understanding_foldx/01-single-mutation-using-foldx/index.ipynb
