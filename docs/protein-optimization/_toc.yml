@@ -4,6 +4,16 @@
 format: jb-book
 root: index.md
 parts:
+  - caption: Using poli - The basics
+    numbered: true
+    chapters:
+      - file: using_poli/desired_design_patterns/registering_an_objective_function.md
+      - file: using_poli/desired_design_patterns/defining_a_problem_solver.md
+      - file: using_poli/desired_design_patterns/optimizing_an_objective_function.md
+  - caption: Using poli - Examples
+    numbered: true
+    chapters:
+      - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
   - caption: Understanding FoldX
     numbered: true
     chapters:
