@@ -4,3 +4,4 @@ In this chapter, we discuss how an objective function should be optimized in POL
 
 ## Getting a list of registered objective functions
 
+[TODO: finish this]
