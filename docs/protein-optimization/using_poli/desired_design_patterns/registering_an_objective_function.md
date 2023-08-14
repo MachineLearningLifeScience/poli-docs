@@ -138,6 +138,12 @@ For an example, [check the chapter on registering *Super Mario Bros* as a proble
 
 :::
 
+Remember that you can create this environment by running
+
+```bash
+conda env create --file environment.yml
+```
+
 ### Registering the problem factory in poli's registry
 
 The problem factory can be registered using `register_problem`, from `poli.core.registry`:
