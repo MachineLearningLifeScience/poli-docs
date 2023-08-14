@@ -7,10 +7,11 @@ parts:
   - caption: Using poli - the basics
     numbered: true
     chapters:
-      - file: using_poli/desired_design_patterns/intro_to_poli.md
-      - file: using_poli/desired_design_patterns/registering_an_objective_function.md
-      - file: using_poli/desired_design_patterns/defining_a_problem_solver.md
-      - file: using_poli/desired_design_patterns/optimizing_an_objective_function.md
+      - file: using_poli/the_basics/intro_to_poli.md
+      - file: using_poli/the_basics/registering_an_objective_function.md
+      - file: using_poli/the_basics/defining_a_problem_solver.md
+      - file: using_poli/the_basics/optimizing_an_objective_function.md
+      - file: using_poli/the_basics/diving_deeper.md
   - caption: Using poli - examples
     numbered: true
     chapters:

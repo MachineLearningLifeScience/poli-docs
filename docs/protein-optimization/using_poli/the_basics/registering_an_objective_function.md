@@ -37,7 +37,7 @@ class AlohaBlackBox(AbstractBlackBox):
         super().__init__(L=L)
     
     # The only method you have to define
-    def _black_box(self, x: np.ndarray) -> np.ndarray:
+    def _black_box(self, x: np.ndarray, context: dict = None) -> np.ndarray:
         """
         A function that takes 5-letter words
         in numpy arrays (as letters, not as
@@ -48,7 +48,7 @@ class AlohaBlackBox(AbstractBlackBox):
         return np.sum(matches, axis=1, keepdims=True)
 ```
 
-As the code says, the only method you need to define is `_black_box`, returning a numpy array of size `[1, 1]`. `AbstractBlackBox` takes it from there, making sure that the length of the inputs is correct and matches `L`. You can opt-out of length-checking by saying `L=np.inf` in the `__init__`.[^details-on-black-box]
+As the code says, the only method you need to define is `_black_box(x: np.ndarray, context: dict = None)`, returning a numpy array of size `[1, 1]`. `AbstractBlackBox` takes it from there, making sure that the length of the inputs is correct and matches `L`. You can opt-out of length-checking by saying `L=np.inf` in the `__init__`.[^details-on-black-box]
 
 [^details-on-black-box]: You can check the exact implementation in [TODOADD]().
 
@@ -65,6 +65,7 @@ Let's build a problem factory for the `AlohaBlackBox`:
 ```python
 # registering_aloha.py
 from typing import Tuple
+from string import ascii_uppercase
 
 import numpy as np
 
@@ -113,7 +114,7 @@ class AlohaProblemFactory(AbstractProblemFactory):
 
 First step is always **creating a conda environment for your problem**. In this case, we could do with just the base enviroment. However, for completion in the presentation, we will create a conda enviroment called `poli_aloha`. This is the enviroment description (which can be found under `environment.yml` in the examples folder for `aloha`):
 
-TODO: remove the dependency on click, and move the dependency to our github after merging.
+TODO: move the dependency to our github after merging.
 
 ```yml
 # environment.yml
@@ -125,7 +126,6 @@ dependencies:
   - pip
   - pip:
     - numpy
-    - click
     - "git+https://github.com/miguelgondu/poli.git"
 ```
 
@@ -176,6 +176,14 @@ if __name__ == "__main__":
 
 :::
 
+:::{admonition} Where is this problem registered?
+
+`poli` registers this objective as a shell file `.sh` inside `~/.poli_objectives`.
+
+As you can check, this script runs `poli/objective.py` inside the conda environment you specified on registration. `objective.py` is the main workhorse of `poli`: it starts a process in which the objective function waits for next inputs.
+
+:::
+
 ## Calling the registered problem
 
 To check that we can indeed call the problem from somewhere else, let's write a second file called `querying_aloha.py` where we instantiate the objective function and query it. We emphasize that this second file can run on **any other conda environment** (as long as you have `poli` installed, and the problem registered).
@@ -197,7 +205,7 @@ If you are running this script from an environment that has `poli`, and that has
 True
 ```
 
-Amazing. Let's remove this print. Now we can create an instance of the problem, making absolutely sure the problem is registered:
+Amazing. Let's remove this print. Now we can create an instance of the problem:
 
 ```python
 # querying_aloha.py
@@ -236,4 +244,4 @@ In this tutorial you
 
 This is a trivial example, since the only dependency is numpy. In other examples you will see problems with more subtle dependencies (e.g. Java runtimes, torch, cheminformatics tools like `FoldX`, `RDKit`, or the therapeutics data commons...).
 
-A good next step: checking how to define problem solvers (i.e. black box optimization algorithms).
+In the next chapter, we will define a simple "Problem Solver" (i.e. a black box optimization algorithm), and in the one after that we will apply it to solve this `aloha` problem.

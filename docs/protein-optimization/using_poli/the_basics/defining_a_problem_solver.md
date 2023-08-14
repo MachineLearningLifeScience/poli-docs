@@ -114,4 +114,6 @@ class RandomMutation(AbstractSolver):
         return next_x
 ```
 
-Pretty lean! Notice how **the `next_candidate` method could perform all sorts of complicated logic** like latent space Bayesian Optimization, evolutionary algorithms...
+Pretty lean! Notice how **the `next_candidate` method could perform all sorts of complicated logic** like latent space Bayesian Optimization, evolutionary algorithms... Moreover, the conda environment where you do the optimization has nothing to do with the enviroment where the objective function was defined: `poli` is set up in such a way that you can query the objective functions without having to worry!
+
+In the next chapter, we apply this solver to the `aloha` problem we defined in [the first chapter](./registering_an_objective_function.md).
