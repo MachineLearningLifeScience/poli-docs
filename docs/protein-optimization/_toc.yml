@@ -9,6 +9,7 @@ parts:
       - file: getting_started/getting_started.md
   - caption: Using poli - the basics
     chapters:
+      - file: using_poli/the_basics/intro_to_poli.ipynb
       - file: using_poli/the_basics/registering_an_objective_function.md
       - file: using_poli/the_basics/defining_a_problem_solver.md
       - file: using_poli/the_basics/optimizing_an_objective_function.md

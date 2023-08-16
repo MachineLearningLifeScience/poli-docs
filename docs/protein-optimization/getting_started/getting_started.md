@@ -99,4 +99,8 @@ for _ in range(5):
 
 If we run this script, `poli` will ask us to confirm that we want to register/install `"white_noise"` as an objective function (you can deactivate this confirmation step by passing the flag `force_register=True` to `.create`). Afterwards, it will print 5 evaluations of the objective function on the same input.
 
+## Conclusion
 
+This tutorial showed you how to install `poli`, and register `white_noise`, which is available inside `poli` itself.
+
+The next chapters explain the basics of `poli`, such as registering your own objective functions, defining problem solvers in `poli-baselines`, and optimizing.

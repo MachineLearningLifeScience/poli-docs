@@ -1,4 +1,6 @@
 .DS_Store
+.vscode/
+.ipynb_checkpoints/
 
 # Example's working directory
 examples/understanding_foldx/tmp
