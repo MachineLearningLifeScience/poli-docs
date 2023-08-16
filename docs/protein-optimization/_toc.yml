@@ -4,20 +4,19 @@
 format: jb-book
 root: index.md
 parts:
-  - caption: Using poli - the basics
-    numbered: true
+  - caption: Getting started
     chapters:
-      - file: using_poli/the_basics/intro_to_poli.md
+      - file: getting_started/getting_started.md
+  - caption: Using poli - the basics
+    chapters:
       - file: using_poli/the_basics/registering_an_objective_function.md
       - file: using_poli/the_basics/defining_a_problem_solver.md
       - file: using_poli/the_basics/optimizing_an_objective_function.md
       - file: using_poli/the_basics/diving_deeper.md
   - caption: Using poli - examples
-    numbered: true
     chapters:
       - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
   - caption: Understanding FoldX
-    numbered: true
     chapters:
     - file: understanding_foldx/00-installing-foldx.md
     - file: understanding_foldx/01-single-mutation-using-foldx/index.ipynb
