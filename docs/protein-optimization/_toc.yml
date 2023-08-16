@@ -7,17 +7,23 @@ parts:
   - caption: Getting started
     chapters:
       - file: getting_started/getting_started.md
-  - caption: Using poli - the basics
+  - caption: The basics
     chapters:
       - file: using_poli/the_basics/intro_to_poli.ipynb
       - file: using_poli/the_basics/registering_an_objective_function.md
       - file: using_poli/the_basics/defining_a_problem_solver.md
       - file: using_poli/the_basics/optimizing_an_objective_function.md
       - file: using_poli/the_basics/diving_deeper.md
-  - caption: Using poli - examples
+  - caption: Examples
     chapters:
       - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
-  - caption: Understanding FoldX
+  - caption: Some objective functions available
+    chapters:
+      - file: using_poli/objective_repository/white_noise.md
+      - file: using_poli/objective_repository/foldx_stability.md
+      - file: using_poli/objective_repository/super_mario_bros.md
+      - file: using_poli/objective_repository/small_molecule.md
+  - caption: "Appendix: Understanding FoldX"
     chapters:
     - file: understanding_foldx/00-installing-foldx.md
     - file: understanding_foldx/01-single-mutation-using-foldx/index.ipynb

@@ -87,12 +87,13 @@ $ python -c "from poli.objective_repository import AVAILABLE_OBJECTIVES ; print(
 Let's write a small script that installs `white_noise` from the repository:
 
 ```python
-# see examples/minimal_working_example.py
+# see poli/examples/minimal_working_example.py
+import numpy as np
 from poli import objective_factory
 
 problem_info, f, x0, y0, run_info = objective_factory.create(name="white_noise")
 
-x = np.array([[1]])  # must be of shape [b, d], in this case [1, 1].
+x = np.array([["1", "2", "3"]])  # must be of shape [b, L], in this case [1, 3].
 for _ in range(5):
     print(f"f(x) = {f(x)}")
 ```

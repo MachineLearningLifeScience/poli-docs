@@ -1,4 +1,4 @@
-# Registering an objective function in POLi
+# Registering an objective function in poli
 
 ```{contents}
 ```
