@@ -23,6 +23,10 @@ parts:
       - file: using_poli/objective_repository/foldx_stability.md
       - file: using_poli/objective_repository/super_mario_bros.md
       - file: using_poli/objective_repository/small_molecule.md
+  - caption: "Contributing"
+    chapters:
+    - file: contributing/a_new_problem.md
+    - file: contributing/a_new_solver.md
   - caption: "Appendix: Understanding FoldX"
     chapters:
     - file: understanding_foldx/00-installing-foldx.md

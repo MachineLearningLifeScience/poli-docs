@@ -104,3 +104,25 @@ A good place to start is the next chapter! [Go to Getting Started](./getting_sta
 
 ```{tableofcontents}
 ``` -->
+
+## Contribute problems or solvers
+
+These are a couple of guides about how to contribute a new problem factory (i.e. black-box objective function), or a new optimization algorithm.
+
+::::{grid}
+:gutter: 3
+
+:::{grid-item-card} Contribute a new problem
+:link: ./contributing/a_new_problem.html
+:columns: 6
+A guide to contributing a new problem to the repository.
+:::
+
+:::{grid-item-card} Contribute a new solver
+:link: ./contributing/a_new_solver.html
+:columns: 6
+How to contribute a new black-box optimization algorithm.
+:::
+
+
+::::
