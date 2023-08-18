@@ -8,7 +8,7 @@ This repository contains documentation on how protein optimization is currently 
 The folder `./docs/protein-optimization` is a [Jupyter Book](https://jupyterbook.org/en/stable/intro.html). To build it, create a new environment (`python>=3.9`) and install the requirements:
 
 ```bash
-pip install jupyter-book biopython pandas git+https://github.com/miguelgondu/poli.git 
+pip install jupyter-book biopython pandas git+https://github.com/MachineLearningLifeScience/poli.git 
 ```
 
 ## Installing poli baselines

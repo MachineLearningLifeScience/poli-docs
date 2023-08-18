@@ -1,4 +1,4 @@
-# Contributing a new problem to the repository
+# Adding a new problem to the repository
 
 This tutorial covers how problems are structured in the repository, and what it takes to add a new one.
 
@@ -9,16 +9,18 @@ If you take a look at the source code of `poli`, you will find a folder called `
 ```bash
 poli/objective_repository
 ├── problem_name              # Has the name of the registered problem (exactly)
+│   ├── __init__.py           # Necessary, else it doesn't get included in the pip install.
 │   ├── environment.yml       # The env. where ./register.py and the problem will run
 │   └── register.py           # Definition and registration of the problem
 ```
 
 You can also have as many other files as you want. Think of the folder `.../problem_name` as a small project as of itself: you can have Python dependencies that will get appended to the path at runtime.
 
-**For example:**, let's take a look at the problem folder of `super_mario_bros`
+**For example:** let's take a look at the problem folder of `super_mario_bros`
 
 ```bash
 ├── super_mario_bros
+│   ├── __init__.py         
 │   ├── environment.yml
 │   ├── register.py
 │   ├── example.pt           # < --
@@ -46,6 +48,11 @@ import numpy as np
 from poli.core.abstract_black_box import AbstractBlackBox
 from poli.core.abstract_problem_factory import AbstractProblemFactory
 from poli.core.problem_setup_information import ProblemSetupInformation
+
+# Files that are in the same folder as
+# register will get added to the
+# PYTHONPATH at runtime.
+from your_local_dependency import ...
 
 
 class YourBlackBox(AbstractBlackBox):
@@ -75,7 +82,12 @@ class YourProblemFactory(AbstractProblemFactory):
             alphabet=alphabet,
         )
 
-    def create(self, seed: int = 0, keyword_1 = ..., keyword_2 = ...) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
+    def create(
+        self,
+        seed: int = 0,
+        your_keyword_1: str = ...,
+        your_keyword_2: str = ...,
+    ) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
         # Manipulate keywords you might need at creation time...
         ...
         
@@ -110,7 +122,7 @@ if __name__ == "__main__":
 That is, **the script creates and registers** your problem factory.
 
 :::{warning}
-It is important that name of your problem should be the name of the folder it's contained, exactly. (We advice using `camel_case`).
+It is important that name of your problem should be the name of the folder it's contained, **exactly**. (We advice using `camel_case`).
 :::
 
 ## A generic `environment.yml`
@@ -126,7 +138,7 @@ dependencies:
   - pip
   - pip:
     - numpy
-    - "git+https://github.com/miguelgondu/poli.git"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git"
     - YOUR OTHER DEPENDENCIES
 ```
 
@@ -150,7 +162,7 @@ dependencies:
   - pip:
     - numpy
     - click
-    - "git+https://github.com/miguelgondu/poli.git"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git"
 
 ```
 
@@ -189,8 +201,10 @@ from poli import objective_factory
 problem_info, f, x0, y0, _ = objective_factory.create(
     name="your_problem",
     ...,
-    keyword_1=...,      # <-- Keywords you (maybe) needed
-    keyword_2=...       # <-- at your_factory.create(...)
+    your_keyword_1=...,      # <-- Keywords you (maybe) needed
+    your_keyword_2=...       # <-- at your_factory.create(...)
+                        # For now, only string kwargs are
+                        # supported. 
 )
 ```
 

@@ -126,7 +126,7 @@ dependencies:
   - pip
   - pip:
     - numpy
-    - "git+https://github.com/miguelgondu/poli.git"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git"
 ```
 
 :::{admonition} Why conda? Why an entire environment?

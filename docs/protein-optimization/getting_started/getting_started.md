@@ -39,7 +39,7 @@ If you are not interested in debugging, you can simply run
 
 ```bash
 # in the poli-base env
-pip install git+https://github.com/miguelgondu/poli.git
+pip install git+https://github.com/MachineLearningLifeScience/poli.git
 ```
 
 :::
@@ -50,7 +50,7 @@ If you are interested in debugging locally, clone and install as follows:
 
 ```bash
 # in the `poli-base` env.
-$ git clone git@github.com:miguelgondu/poli.git
+$ git clone git@github.com:MachineLearningLifeScience/poli.git
 $ cd ./poli
 $ pip install -e .
 ```
@@ -58,6 +58,12 @@ $ pip install -e .
 :::
 
 ::::
+
+:::{warning}
+
+`poli` works by creating shell scripts inside your home folder, under `./.poli_objectives`. Make sure you're okay with this.
+
+:::
 
 ### Testing your installation
 
@@ -70,9 +76,9 @@ $ python -c "from poli.core.registry import get_problems ; print(get_problems())
 
 If the installation isn't fresh/the only one in your system, you might actually get some registered problems.
 
-## Running `poli` in Colab
+## Running `poli` on Colab
 
-With a little effort, you can run `poli` in Colab. [Check this example](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls).
+With a little effort, you can run `poli` on Colab. [Check this example](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls).
 
 
 ## Your first `poli` script
@@ -99,6 +105,12 @@ for _ in range(5):
 ```
 
 If we run this script, `poli` will ask us to confirm that we want to register/install `"white_noise"` as an objective function (you can deactivate this confirmation step by passing the flag `force_register=True` to `.create`). Afterwards, it will print 5 evaluations of the objective function on the same input.
+
+:::{warning}
+
+In the registration process, `poli` creates a `conda` environment, and **executes a shell script**. Be wary of objective functions you find in the wild.
+
+:::
 
 ## Conclusion
 
