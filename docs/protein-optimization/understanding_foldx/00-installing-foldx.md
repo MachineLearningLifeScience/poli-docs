@@ -1,3 +1,3 @@
-# Installing FoldX
+# Installing `foldx`
 
 [TODO: write]

@@ -1,11 +1,11 @@
-# Protein stability (using `foldx`)
+# Protein solvent accessibility (using `foldx`)
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
 ![Environment to run this objective function: poli protein](https://img.shields.io/badge/Environment-poli____protein-teal
 )
 
 ## About
 
-This objective function returns the stability (i.e. negative energy) using `foldx`.
+This objective function returns the solvent accesible surface area (SASA) of a wildtype and its mutations using `foldx` and `biopython`.
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ wildtype_pdb_file = Path("path/to/wildtype.pdb")
 
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
-    name="foldx_stability",
+    name="foldx_sasa",
     wildtype_pdb_file=wildtype_pdb_file
 )
 
@@ -73,7 +73,7 @@ wildtype_pdb_file = Path("path/to/wildtype.pdb")
 
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
-    name="foldx_stability",
+    name="foldx_sasa",
     wildtype_pdb_file=wildtype_pdb_file,
     force_register=True,
 )

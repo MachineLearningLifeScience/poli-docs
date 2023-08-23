@@ -20,14 +20,17 @@ parts:
   - caption: Some objective functions available
     chapters:
       - file: using_poli/objective_repository/white_noise.md
+      - file: using_poli/objective_repository/aloha.md
+      - file: using_poli/objective_repository/rdkit_qed.md
+      - file: using_poli/objective_repository/rdkit_logp.md
       - file: using_poli/objective_repository/foldx_stability.md
+      - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/super_mario_bros.md
-      - file: using_poli/objective_repository/small_molecule.md
   - caption: "Contributing"
     chapters:
     - file: contributing/a_new_problem.md
     - file: contributing/a_new_solver.md
-  - caption: "Appendix: Understanding FoldX"
+  - caption: "Appendix: Understanding foldx"
     chapters:
     - file: understanding_foldx/00-installing-foldx.md
     - file: understanding_foldx/01-single-mutation-using-foldx/index.ipynb
