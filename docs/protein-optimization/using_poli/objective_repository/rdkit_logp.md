@@ -56,7 +56,7 @@ problem_info, f, x0, y0, run_info = objective_factory.create(
 x = np.array([[1]])
 
 # Querying:
-print(f(x))  # Should be close to 0.35978
+print(f(x))  # Should be close to 0.6361
 ```
 
 :::

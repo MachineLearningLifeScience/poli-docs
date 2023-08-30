@@ -39,7 +39,7 @@ If you are not interested in debugging, you can simply run
 
 ```bash
 # in the poli-base env
-pip install git+https://github.com/MachineLearningLifeScience/poli.git
+pip install git+https://github.com/MachineLearningLifeScience/poli.git@master
 ```
 
 :::
@@ -54,6 +54,8 @@ $ git clone git@github.com:MachineLearningLifeScience/poli.git
 $ cd ./poli
 $ pip install -e .
 ```
+
+A stable version can be found on the `master` branch, the bleeding-edge is on `dev`.
 
 :::
 
@@ -71,10 +73,9 @@ To make sure everything went well, you can test your `poli` installation by runn
 
 ```bash
 $ python -c "from poli.core.registry import get_problems ; print(get_problems())"
-[]
+['aloha', 'white_noise']
 ```
-
-If the installation isn't fresh/the only one in your system, you might actually get some registered problems.
+In general: **all problems available will appear**. These two (`aloha` and `white_noise`) are available by default since their only requirements are `numpy` and `poli`. If the installation isn't fresh/the only one in your system, you might actually get more problems.
 
 ## Running `poli` on Colab
 
@@ -83,12 +84,7 @@ With a little effort, you can run `poli` on Colab. [Check this example](https://
 
 ## Your first `poli` script
 
-As you might have noticed, you can get a list of the registered problems using the `get_problems` method inside `poli.core.registry`. You can also get a list of objective functions available for installing/registration using `from poli.objective_repository import AVAILABLE_OBJECTIVES`:
-
-```bash
-$ python -c "from poli.objective_repository import AVAILABLE_OBJECTIVES ; print(AVAILABLE_OBJECTIVES)"
-[..., 'white_noise']
-```
+As you might have noticed, you can get a list of the registered problems using the `get_problems` method inside `poli.core.registry`.
 
 Let's write a small script that installs `white_noise` from the repository:
 
@@ -104,13 +100,9 @@ for _ in range(5):
     print(f"f(x) = {f(x)}")
 ```
 
-If we run this script, `poli` will ask us to confirm that we want to register/install `"white_noise"` as an objective function (you can deactivate this confirmation step by passing the flag `force_register=True` to `.create`). Afterwards, it will print 5 evaluations of the objective function on the same input.
+If we run this script, it will print 5 evaluations of the objective function on the same input.
 
-:::{warning}
-
-In the registration process, `poli` creates a `conda` environment, and **executes a shell script**. Be wary of objective functions you find in the wild.
-
-:::
+`white_noise` is a trivial example. We include plenty of examples on how to register objective functions that are more complex, including e.g. [computing the Quantitative Estimate of Druglikeness of a small molecule](../using_poli/objective_repository/rdkit_qed.md) or, if you have the `foldx` simulator installed, [how to compute the stability of a protein given a `.pdb` file](../using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb).
 
 ## Conclusion
 

@@ -138,7 +138,7 @@ dependencies:
   - pip
   - pip:
     - numpy
-    - "git+https://github.com/MachineLearningLifeScience/poli.git"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git@master"
     - YOUR OTHER DEPENDENCIES
 ```
 
@@ -162,7 +162,7 @@ dependencies:
   - pip:
     - numpy
     - click
-    - "git+https://github.com/MachineLearningLifeScience/poli.git"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git@master"
 
 ```
 

@@ -3,7 +3,7 @@
 ```{contents}
 ```
 
-With `poli`, you can define and register black box objective functions. This page shows you how. For the entire script, check [`registering_aloha.py` TODO:ADD]() in the examples.
+With `poli`, you can define and register black box objective functions. This page shows you how. For the entire script, check [`registering_aloha.py`](https://github.com/MachineLearningLifeScience/poli/blob/master/examples/a_simple_objective_function_registration/registering_aloha.py) in the examples of `poli`.
 
 ## An example of a discrete black box function
 
@@ -48,9 +48,7 @@ class AlohaBlackBox(AbstractBlackBox):
         return np.sum(matches, axis=1, keepdims=True)
 ```
 
-As the code says, the only method you need to define is `_black_box(x: np.ndarray, context: dict = None)`, returning a numpy array of size `[1, 1]`. `AbstractBlackBox` takes it from there, making sure that the length of the inputs is correct and matches `L`. You can opt-out of length-checking by saying `L=np.inf` in the `__init__`.[^details-on-black-box]
-
-[^details-on-black-box]: You can check the exact implementation in [TODOADD]().
+As the code says, the only method you need to define is `_black_box(x: np.ndarray, context: dict = None)`, returning a numpy array of size `[1, 1]`. `AbstractBlackBox` takes it from there, making sure that the length of the inputs is correct and matches `L`. You can opt-out of length-checking by saying `L=np.inf` in the `__init__`.
 
 Black-box functions are wrapped around **problems**. A problem contains not only a black-box objective function, but also the relevant information for the discrete problem: the alphabet, maximum sequence length, whether the sequences are aligned... This next section discusses how to define problem factories, which create instances of the problem.
 
@@ -86,7 +84,7 @@ class AlohaProblemFactory(AbstractProblemFactory):
         alphabet = {symbol: i for i, symbol in enumerate(alphabet_symbols)}
 
         return ProblemSetupInformation(
-            name="aloha",
+            name="our_aloha",  # To separate it from the "aloha" problem
             max_sequence_length=5,
             aligned=True,
             alphabet=alphabet,
@@ -108,6 +106,12 @@ class AlohaProblemFactory(AbstractProblemFactory):
 
 **and that's it!** Once you have defined your problem factory, you need to register it to be able to call it on-the-go.
 
+:::{note}
+The exact implementation of the `aloha` problem is slightly different: we allow users to e.g. query both integers or strings. Integers are interpreted as the token ids according to the alphabet.
+
+Check the exact implementation on [`poli/objective_repository/aloha/register.py`](https://github.com/MachineLearningLifeScience/poli/blob/master/src/poli/objective_repository/aloha/register.py).
+:::
+
 ## Registering the problem factory
 
 ### Creating a conda environment for your problem
@@ -126,7 +130,7 @@ dependencies:
   - pip
   - pip:
     - numpy
-    - "git+https://github.com/MachineLearningLifeScience/poli.git"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git@master"
 ```
 
 :::{admonition} Why conda? Why an entire environment?
@@ -134,7 +138,7 @@ dependencies:
 
 Using `conda` allows us to package more than Python dependencies. In some examples you might see yourself needing to using e.g. a Java runtime. With `conda`, we can create environments that *include* these dependencies.
 
-For an example, [check the chapter on registering *Super Mario Bros* as a problem factory TODO:ADD]().
+For an example, [check the script that registers *Super Mario Bros* as a problem factory](https://github.com/MachineLearningLifeScience/poli/blob/master/src/poli/objective_repository/super_mario_bros/register.py).
 
 :::
 
@@ -195,7 +199,7 @@ Let's make sure that the problem is registered. The list of registered problems 
 from poli.core.registry import get_problems
 
 if __name__ == "__main__":
-    print("aloha" in get_problems())
+    print("our_aloha" in get_problems())
 
 ```
 
@@ -216,7 +220,7 @@ from poli import objective_factory
 if __name__ == "__main__":
     # Creating an instance of the problem
     problem_info, f, x0, y0, run_info = objective_factory.create(
-        name="aloha", caller_info=None, observer=None
+        name="our_aloha", caller_info=None, observer=None
     )
     print(x0, y0)
 

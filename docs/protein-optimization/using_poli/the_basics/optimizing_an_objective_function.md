@@ -19,7 +19,7 @@ By the end, you should have registered the `aloha` problem.
 
 ## Is aloha registered?
 
-We can start by checking that the `aloha` problem is indeed among the registered objectives:
+We can start by checking that the `aloha` problem is indeed among the available objectives:
 
 ```python
 # optimizing_aloha.py
@@ -34,7 +34,7 @@ This script should run without raising any problems.
 :::{admonition} Is aloha not registered?
 :class: dropdown
 
-If the past snippet fails and raises an `AssertionError`, then it's likely you haven't registered `aloha` as a problem. Check [the first chapter for the process of registering this problem](./registering_an_objective_function.md).
+If the past snippet fails and raises an `AssertionError`, then it's likely you haven't registered `aloha` as a problem, or that you don't have `numpy` installed. Check [the first chapter for the process of registering this problem](./registering_an_objective_function.md).
 
 :::
 
@@ -74,9 +74,10 @@ Once instantiated, the solver can optimize our `aloha` problem easily:
 ```python
 # optimizing_aloha.py
 
+# What we discuss above
 ...
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     ...
     
     # Running the optimization for 1000 steps,
