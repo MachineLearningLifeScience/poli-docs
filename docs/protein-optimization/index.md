@@ -9,7 +9,7 @@ Our promise is: if you can run your objective function reliably in a `conda` env
 
 ## Black-box objective functions
 
-These are some objective functions available on `poli`. **For a full list**, check [getting started](./getting_started/getting_started.md).
+These are some objective functions available on `poli`. **For a full list**, [check here](./using_poli/objective_repository/all_objectives.md).
 
 
 ### Toy problems
@@ -81,18 +81,7 @@ Rapid Stability Predictions of single mutations from a wildtype. [WIP]
 
 ::::
 
-### Other
 
-::::{grid}
-:gutter: 3
-
-:::{grid-item-card} Mario jumps
-:link: ./using_poli/objective_repository/super_mario_bros.html
-:columns: 6
-Optimizing the number of jumps on a Super Mario Bros level
-:::
-
-::::
 ## Black-box optimization algorithms
 
 On top of `poli`, we provide `poli-baselines`, a collection of **black-box optimization algorithms** (focusing especially on *discrete* sequences). Examples include
@@ -136,10 +125,6 @@ Graph Genetic Algorithms for small molecules. [WIP]
 
 A good place to start is the next chapter! [Go to Getting Started](./getting_started/getting_started.md).
 
-<!-- ## Contents of the book
-
-```{tableofcontents}
-``` -->
 
 ## Contribute problems or solvers
 
