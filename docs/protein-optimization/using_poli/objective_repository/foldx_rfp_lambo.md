@@ -27,8 +27,7 @@ You can either run this objective function in your current environment (assuming
 You will have to install the following two dependencies:
 
 ```bash
-cd `~/lambo/`
-pip install -r requirements.txt
+pip install -r ~/lambo/requirements.txt
 ```
 
 This contains: `pytorch botorch python-levenshtein wandb biopython hydra-core pymoo pandas deepchem transformers selfies jupyter seaborn pyscreener` and other packages.
