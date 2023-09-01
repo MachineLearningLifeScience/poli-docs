@@ -83,6 +83,9 @@ print(x0)
 
 # Querying:
 print(y0)  # The stability of your wildtype
+
+# Terminate the process.
+f.terminate()
 ```
 
 ```{warning}

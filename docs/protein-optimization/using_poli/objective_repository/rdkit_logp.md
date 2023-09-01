@@ -89,6 +89,9 @@ x = np.array([[1]])
 
 # Querying:
 print(f(x))  # Should be close to 0.6361
+
+# Terminate the process.
+f.terminate()
 ```
 
 ```{warning}
