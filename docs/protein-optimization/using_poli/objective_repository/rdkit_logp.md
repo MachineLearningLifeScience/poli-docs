@@ -5,19 +5,11 @@
 
 ## About
 
-This objective function returns the Quantitative Estimate of Druglikeness (QED) using `RDKit`. During creation, you can specify whether you are measuring the QED of a SMILES string, or a SELFIES.
+This objective function returns the partition coefficient of a solute between octanol and water (known as logP) using `RDKit`. You can specify whether you are measuring the logP of a SMILES string, or a SELFIES.
 
 ## Prerequisites
 
-- An alphabet of tokens `{str: int}` as a json file. For example, in the case of SELFIES, this file would be
-```json
-# alphabet_selfies.json
-{
-    "": 0,       # an empty padding
-    "[C]": 1,
-    ...
-}
-```
+- You will need to specify an alphabet `List[str]`.
 
 ## How to run
 
@@ -36,24 +28,23 @@ pip install rdkit selfies
 Then run
 
 ```python
-from pathlib import Path
-
 import numpy as np
 
 from poli import objective_factory
 
-# The path to your alphabet
-path_to_alphabet = Path("path/to/alphabet_selfies.json")
+# Your alphabet
+alphabet = ["", "[C]", ...]
 
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
     name="rdkit_logp",
-    path_to_alphabet=path_to_alphabet,
-    string_representation="SELFIES"  # it is "SMILES" by default.
-    )
+    alphabet=alphabet,
+    string_representation="SELFIES",  # it is "SMILES" by default.
+    force_register=True, 
+)
 
 # Example input: a single carbon
-x = np.array([[1]])
+x = np.array(["[C]"]).reshape(1, -1)
 
 # Querying:
 print(f(x))  # Should be close to 0.6361
@@ -73,19 +64,19 @@ import numpy as np
 from poli import objective_factory
 
 
-# The path to your alphabet
-path_to_alphabet = Path("path/to/alphabet_selfies.json")
+# Your alphabet
+alphabet = ["", "[C]", ...]
 
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
     name="rdkit_logp",
-    path_to_alphabet=path_to_alphabet,
-    string_representation="SELFIES"  # it is "SMILES" by default.
+    alphabet=alphabet,
+    string_representation="SELFIES",  # it is "SMILES" by default.
     force_register=True, 
 )
 
 # Example input: a single carbon
-x = np.array([[1]])
+x = np.array(["[C]"]).reshape(1, -1)
 
 # Querying:
 print(f(x))  # Should be close to 0.6361

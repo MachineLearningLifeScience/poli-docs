@@ -1,8 +1,5 @@
 # Registering an objective function in poli
 
-```{contents}
-```
-
 With `poli`, you can define and register black box objective functions. This page shows you how. For the entire script, check [`registering_aloha.py`](https://github.com/MachineLearningLifeScience/poli/blob/master/examples/a_simple_objective_function_registration/registering_aloha.py) in the examples of `poli`.
 
 ## An example of a discrete black box function
@@ -30,27 +27,23 @@ We can define and register this function into `poli` as follows:
 import numpy as np
 
 from poli.core.abstract_black_box import AbstractBlackBox
+from poli.core.problem_setup_information import ProblemSetupInformation
 
 # L stands for sequence length.
-class AlohaBlackBox(AbstractBlackBox):
-    def __init__(self, L: int = 5):
-        super().__init__(L=L)
-    
+class OurAlohaBlackBox(AbstractBlackBox):
+    def __init__(self, info: ProblemSetupInformation, batch_size: int = None):
+        super().__init__(info, batch_size)
+
     # The only method you have to define
     def _black_box(self, x: np.ndarray, context: dict = None) -> np.ndarray:
-        """
-        A function that takes 5-letter words
-        in numpy arrays (as letters, not as
-        integers), and returns the number of matches
-        with the word "ALOHA".
-        """
         matches = x == np.array(["A", "L", "O", "H", "A"])
         return np.sum(matches, axis=1, keepdims=True)
+
 ```
 
-As the code says, the only method you need to define is `_black_box(x: np.ndarray, context: dict = None)`, returning a numpy array of size `[1, 1]`. `AbstractBlackBox` takes it from there, making sure that the length of the inputs is correct and matches `L`. You can opt-out of length-checking by saying `L=np.inf` in the `__init__`.
+As the code says, the only method you need to define is `_black_box(x: np.ndarray, context: dict = None)`, returning a numpy array of size `[b, 1]`. `AbstractBlackBox` takes it from there, making sure that the length of the inputs is correct and matches the maximum length specified in `info.get_max_sequence_length()`.
 
-Black-box functions are wrapped around **problems**. A problem contains not only a black-box objective function, but also the relevant information for the discrete problem: the alphabet, maximum sequence length, whether the sequences are aligned... This next section discusses how to define problem factories, which create instances of the problem.
+Black-box functions are inside **problems**. A problem contains not only a black-box objective function, but also the relevant information for the discrete problem: the alphabet, maximum sequence length, whether the sequences are aligned... This next section discusses how to define problem factories, which create instances of the problem.
 
 ## Defining problem factories
 
@@ -71,34 +64,25 @@ from poli.core.abstract_black_box import AbstractBlackBox
 from poli.core.abstract_problem_factory import AbstractProblemFactory
 from poli.core.problem_setup_information import ProblemSetupInformation
 
-class AlohaBlackBox(AbstractBlackBox):
+class OurAlohaBlackBox(AbstractBlackBox):
     # the implementation discussed above
     ...
 
-class AlohaProblemFactory(AbstractProblemFactory):
+class OurAlohaProblemFactory(AbstractProblemFactory):
     def get_setup_information(self) -> ProblemSetupInformation:
         # The alphabet: ["A", "B", "C", ...]
-        alphabet_symbols = list(ascii_uppercase)
-
-        # By convention, we expect alphabet to be a Dict[str, int].
-        alphabet = {symbol: i for i, symbol in enumerate(alphabet_symbols)}
+        alphabet = list(ascii_uppercase)
 
         return ProblemSetupInformation(
-            name="our_aloha",  # To separate it from the "aloha" problem
+            name="our_aloha",
             max_sequence_length=5,
             aligned=True,
             alphabet=alphabet,
         )
 
     def create(self, seed: int = 0) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
-        # Getting the maximum sequence length out of
-        # the setup information.
-        L = self.get_setup_information().get_max_sequence_length()
-        
-        # Creating the black box objective function
-        f = AlohaBlackBox(L=L)
-
-        # Setting up a first design
+        problem_info = self.get_setup_information()
+        f = OurAlohaBlackBox(info=problem_info)
         x0 = np.array([["A", "L", "O", "O", "F"]])
 
         return f, x0, f(x0)
@@ -122,7 +106,7 @@ TODO: move the dependency to our github after merging.
 
 ```yml
 # environment.yml
-name: poli_aloha
+name: poli_aloha_problem
 channels:
   - defaults
 dependencies:
@@ -164,14 +148,14 @@ if __name__ == "__main__":
     # (see the environment.yml file in this folder),
     # we can register our problem s.t. it uses
     # said conda environment.
-    aloha_problem_factory = AlohaProblemFactory()
+    aloha_problem_factory = OurAlohaProblemFactory()
     register_problem(
         aloha_problem_factory,
-        conda_environment_name="poli_aloha",
+        conda_environment_name="poli_aloha_problem",
     )
 ```
 
-**And you're good!** After this, you should be able to call the aloha problem somewhere else, and even using a *different* conda environment from `poli_aloha` if you so want.
+**And you're good!** After this, you should be able to call the aloha problem somewhere else, and even using a *different* conda environment from `poli_aloha_problem` if you so want.
 
 :::{admonition} Need to add more python dependencies/paths?
 :class: dropdown
@@ -231,6 +215,7 @@ if __name__ == "__main__":
     y1 = f(x1)
     print(x1, y1)
 
+    f.terminate()
 ```
 
 Running this script should give you
@@ -246,6 +231,6 @@ In this tutorial you
 1. Registered a black box objective function as a problem in `poli`, and
 2. queried it somewhere else, without having to worry about the objective function's dependencies.
 
-This is a trivial example, since the only dependency is numpy. In other examples you will see problems with more subtle dependencies (e.g. Java runtimes, torch, cheminformatics tools like `FoldX`, `RDKit`, or the therapeutics data commons...).
+This is a trivial example, since the only dependency is numpy. In other examples you will see problems with more subtle dependencies (e.g. Java runtimes, torch, cheminformatics tools like `FoldX`, `RDKit`, or the therapeutics data commons...). [Take a look at all the available objective functions here](../objective_repository/all_objectives.md).
 
 In the next chapter, we will define a simple "Problem Solver" (i.e. a black box optimization algorithm), and in the one after that we will apply it to solve this `aloha` problem.

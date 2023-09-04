@@ -1,11 +1,8 @@
 # Optimizing an objective function
 
-```{contents}
-```
-
 In this chapter, we combine what we have discussed in the previous two chapters to optimize a black box objective function using `poli` and its baselines. In particular, we'll solve the `aloha` problem using discrete random mutations.
 
-> This tutorial follows `optimizing_aloha.py` in `poli-baselines/examples`.
+> This tutorial follows `optimizing_aloha.py` in `poli-baselines/examples/01_a_simple_example_of_optimization`.
 
 ## Prerequisites
 
@@ -15,18 +12,18 @@ Before running this, you need to make sure you have
 - run [the first chapter on registering black box functions](./registering_an_objective_function.md).
 - read [the second chapter on implementing solvers](./defining_a_problem_solver.md)
 
-By the end, you should have registered the `aloha` problem.
+By the end, you should have registered the `our_aloha` problem.
 
 ## Is aloha registered?
 
-We can start by checking that the `aloha` problem is indeed among the available objectives:
+We can start by checking that the `our_aloha` problem is indeed among the available objectives:
 
 ```python
 # optimizing_aloha.py
 from poli.core.registry import get_problems
 
 if __name__ == "__main__":
-    assert "aloha" in get_problems()
+    assert "our_aloha" in get_problems()
 ```
 
 This script should run without raising any problems.
@@ -34,7 +31,7 @@ This script should run without raising any problems.
 :::{admonition} Is aloha not registered?
 :class: dropdown
 
-If the past snippet fails and raises an `AssertionError`, then it's likely you haven't registered `aloha` as a problem, or that you don't have `numpy` installed. Check [the first chapter for the process of registering this problem](./registering_an_objective_function.md).
+If the past snippet fails and raises an `AssertionError`, then it's likely you haven't registered `our_aloha` as a problem. Check [the first chapter for the process of registering this problem](./registering_an_objective_function.md).
 
 :::
 
@@ -49,11 +46,11 @@ from poli.core.registry import get_problems
 from poli_baselines.solvers.simple.random_mutation import RandomMutation
 
 if __name__ == "__main__":
-    assert "aloha" in get_problems()
+    assert "our_aloha" in get_problems()
 
     # Creating an instance of the problem
     problem_info, f, x0, y0, run_info = objective_factory.create(
-        name="aloha", caller_info=None, observer=None
+        name="our_aloha", caller_info=None, observer=None
     )
 
     # Creating an instance of the solver
@@ -61,7 +58,6 @@ if __name__ == "__main__":
         black_box=f,
         x0=x0,
         y0=y0,
-        alphabet=problem_info.get_alphabet(),
     )
 ```
 
@@ -81,8 +77,9 @@ if __name__ == "__main__":
     ...
     
     # Running the optimization for 1000 steps,
-    # breaking if we find a performance above 5.0, 
-    # and printing a small summary at each step.
+    # breaking if we find a performance above or
+    # equal to 5.0, and printing a small summary
+    # at each step.
     solver.solve(max_iter=1000, break_at_performance=5.0, verbose=True)
     print(solver.get_best_solution())
 ```
@@ -99,4 +96,4 @@ This concludes the "Getting Started" section of this tutorial. The key takeaways
 2. `poli_baselines` allows you to define black box optimization algorithms that operate well with `poli`'s registered problems.
 3. `poli_baselines` also comes with several solvers, including `RandomMutations`.
 
-The next chapter discusses a more advanced set-up: registering a black-box objective function with Java dependencies, as well as `torch`, and loading up certain autoencoders.
+The next chapter dives deeper into how `poli` works, including the registration process, and how/why certain objective functions are available from the start.

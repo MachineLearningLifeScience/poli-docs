@@ -1,8 +1,5 @@
 # Defining a problem solver in `poli_baselines`
 
-```{contents}
-```
-
 The main use-case for `poli_baselines` is **defining solvers for objective functions**.
 
 The main design objective of `poli` is for it to be almost trivial to **query** complicated black box objective functions; likewise, the design objective of `poli_baselines` is to allow developers of black-box optimization algorithms to test them on said objective functions.  
@@ -70,7 +67,7 @@ class AbstractSolver:
 :::{admonition} What about batched candidates?
 :class: dropdown
 
-Batched inputs are not supported yet in `poli`. It's work in progress!
+Batched inputs are not supported yet in `poli_baselines`. It's a work in progress!
 
 :::
 
@@ -88,10 +85,10 @@ class RandomMutation(AbstractSolver):
         black_box: AbstractBlackBox,
         x0: np.ndarray,
         y0: np.ndarray,
-        alphabet_size: int,
     ):
         super().__init__(black_box, x0, y0)
-        self.alphabet_size = alphabet_size
+        self.alphabet = black_box.info.alphabet
+        self.alphabet_size = len(self.alphabet)
 
     def next_candidate(self) -> np.ndarray:
         """
@@ -109,11 +106,18 @@ class RandomMutation(AbstractSolver):
         # (Assuming that x is always [1, L] in shape)
         next_x = best_x.copy()
         pos = np.random.randint(0, len(next_x.flatten()))
-        next_x[0][pos] = np.random.randint(0, self.alphabet_size)
+        mutant = np.random.choice(self.alphabet)
+        next_x[0][pos] = mutant
 
         return next_x
 ```
 
 Pretty lean! Notice how **the `next_candidate` method could perform all sorts of complicated logic** like latent space Bayesian Optimization, evolutionary algorithms... Moreover, the conda environment where you do the optimization has nothing to do with the enviroment where the objective function was defined: `poli` is set up in such a way that you can query the objective functions without having to worry!
+
+:::{admonition}
+Our implementation of `RandomMutation` is slightly different, since we allow users to query e.g. integer indices instead of strings.
+
+[Take a look at the exact implementation on `poli_baselines/solvers/simple/random_mutation.py`](https://github.com/MachineLearningLifeScience/poli-baselines/blob/main/src/poli_baselines/solvers/simple/random_mutation.py).
+:::
 
 In the next chapter, we apply this solver to the `aloha` problem we defined in [the first chapter](./registering_an_objective_function.md).

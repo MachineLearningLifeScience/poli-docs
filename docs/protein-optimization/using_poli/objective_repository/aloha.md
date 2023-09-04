@@ -22,7 +22,7 @@ from poli import objective_factory
 problem_info, f, x0, y0, run_info = objective_factory.create(name="aloha")
 
 # Example input:
-x = np.array([["A", "L", "O", "O", "F"]])  # must be of shape [b, L], in this case [1, 3].
+x = np.array([["A", "L", "O", "O", "F"]])  # must be of shape [b, L], in this case [1, 5].
 
 # Querying:
 print(f(x))  # Should be 3 (A, L, and the first O).

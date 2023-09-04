@@ -46,14 +46,12 @@ problem_info, f, x0, y0, run_info = objective_factory.create(
     wildtype_pdb_file=wildtype_pdb_file
 )
 
-# Example input:
+# Example input: (an array of strings)
 print(x0)
 
 # Querying:
 print(y0)  # The stability of your wildtype
 ```
-
-You could also pass an `alphabet: Dict[str, int]` to the create method. By default, [we use this encoding](https://github.com/MachineLearningLifeScience/poli/blob/44cad2a5c95f209aeb24d4893d162b3359ca91a3/src/poli/core/util/proteins/defaults.py#L1).
 
 :::
 
@@ -95,3 +93,6 @@ Registering the objective function in this way will create a `conda` environment
 :::
 
 ::::
+
+You could also pass an `alphabet: List[str]` to the create method. By default, [we use this encoding](https://github.com/MachineLearningLifeScience/poli/blob/44cad2a5c95f209aeb24d4893d162b3359ca91a3/src/poli/core/util/proteins/defaults.py#L1).
+

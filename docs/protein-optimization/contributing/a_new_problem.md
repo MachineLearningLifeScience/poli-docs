@@ -56,8 +56,8 @@ from your_local_dependency import ...
 
 
 class YourBlackBox(AbstractBlackBox):
-    def __init__(self, L: int = np.inf):
-        super().__init__(L=L)
+    def __init__(self, info: ProblemSetupInformation, batch_size: int = None):
+        super().__init__(info=info, batch_size=batch_size)
 
     # The only method you have to define
     def _black_box(self, x: np.ndarray, context: dict = None) -> np.ndarray:
@@ -66,11 +66,8 @@ class YourBlackBox(AbstractBlackBox):
 
 class YourProblemFactory(AbstractProblemFactory):
     def get_setup_information(self) -> ProblemSetupInformation:
-        # The tokens of your alphabet
-        alphabet_symbols = [...]
-        
-        # The encoding
-        alphabet = {symbol: i for i, symbol in enumerate(alphabet_symbols)}
+        # Your alphabet
+        alphabet = [...]
 
         # A description of the problem
         # See more in the chapter about defining
@@ -92,12 +89,12 @@ class YourProblemFactory(AbstractProblemFactory):
         ...
         
         # The maximum length you defined above
-        L = self.get_setup_information().get_max_sequence_length()
+        problem_info = self.get_setup_information()
         
         # Creating your black box function
-        f = YourBlackBox(L=L)
+        f = YourBlackBox(info=problem_info)
         
-        # Your first input (an np.array)
+        # Your first input (an np.array[str])
         x0 = ...
 
         return f, x0, f(x0)
@@ -145,6 +142,8 @@ dependencies:
 This environment will be created (if it doesn't exist yet), and will be used to run `register.py`.
 
 :::{admonition} Why `conda`?
+:class: dropdown
+
 Conda environments can be quite good! For example, the `super_mario_bros` environment contains a Java runtime. This is the `environment.yml` for said problem:
 
 ```yml
@@ -189,7 +188,7 @@ $ python -c "from poli.core.registry import get_problems; print(get_problems())"
 Your problem is not registered yet, so don't fret. You can check _if_ you can register it by running
 
 ```bash
-$ python -c "from poli.objective_repository import AVAILABLE_OBJECTIVES; print(AVAILABLE_OBJECTIVES)"
+$ python -c "from poli.core.registry import get_problems; print(get_problems(include_repository=True))"
 [..., "your_problem", ...]   # If all goes well, you should see "your_problem" here.
 ```
 
