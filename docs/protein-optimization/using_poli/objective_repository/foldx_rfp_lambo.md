@@ -1,7 +1,6 @@
 # Protein (RFP) stability and SASA (using `foldx`,`lambo`)
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
-![Environment to run this objective function: poli protein](https://img.shields.io/badge/Environment-poli____lambo
-)
+![Environment to run this objective function: poli protein](https://img.shields.io/badge/Environment-poli____lambo-teal)
 
 ## About
 
@@ -9,30 +8,51 @@ This objective function returns stability using `foldx` and SASA, _exactly_ as d
 
 ## Prerequisites
 
-- Have `foldx` installed, and available in your home directory. We expect the following files to be there:
+### `foldx`
+
+We need you to have `foldx` installed, and available in your home directory. We expect the following files to be there:
   - `~/foldx/foldx`: the binary. You might need to rename it.
   - `~/foldx/rotabase.txt`: a text file necessary for `foldx` to run.
-- Have `lambo` checked out, preferrably in the home directory, specifically containing: 
-  - `lambo.tasks.proxy_rfp.proxy_rfp.ProxyRFPTask`
-  - the rfp data: see `~/lambo/assets/fpbase`
+
+### Python environment
+
+We expect you to have [cloned and installed the `lambo` repository](https://github.com/samuelstanton/lambo). Since there are some files we can't install automatically using `pip install git+...`, we ask you to create a `conda` environment for the lambo tasks:
+
+```
+# From the root of the poli repository
+conda env create --file src/poli/objective_repository/foldx_rfp_lambo/environment.yml
+```
+
+Activate the environment you just created using
+```
+conda activate poli__lambo
+```
+### `lambo`
+
+We also need `lambo`'s tasks to be available in Python's path for `poli__lambo`:
+
+```bash
+# In the poli__lambo environment
+git clone https://github.com/samuelstanton/lambo    # For reference, we use 431b052
+cd lambo
+pip install -e .  
+```
+
+In particular, we need
+- `lambo.tasks.proxy_rfp.proxy_rfp.ProxyRFPTask`
+- the rfp data: see `~/lambo/assets/fpbase`
+
+Make sure the data is avaliable.
 
 ## How to run
 
-You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.
+You can only run this objective function either in the `poli__lambo` environment, or as an isolated process (which runs this environment underneath).
 
 ::::{tab-set}
 
-:::{tab-item} In current environment
+:::{tab-item} (Isolated) in the `poli__lambo` environment
 
-You will have to install the following two dependencies:
-
-```bash
-pip install -r ~/lambo/requirements.txt
-```
-
-This contains: `pytorch botorch python-levenshtein wandb biopython hydra-core pymoo pandas deepchem transformers selfies jupyter seaborn pyscreener` and other packages.
-
-Then run
+After the setup described above, you can simply run the following code from 
 
 ```python
 from pathlib import Path
@@ -50,7 +70,7 @@ problem_info, f, x0, y0, run_info = objective_factory.create(
 print(x0)
 
 # Querying:
-print(y0)  # The stability of your wildtype
+print(y0)  # [[-11189.00587946    -39.8155    ], ...]
 ```
 
 You could also pass an `problem: ProblemSetupInformation` to the create method. For the alphabet reference by default, [we use this encoding](https://github.com/MachineLearningLifeScience/poli/blob/44cad2a5c95f209aeb24d4893d162b3359ca91a3/src/poli/core/util/proteins/defaults.py#L1).
