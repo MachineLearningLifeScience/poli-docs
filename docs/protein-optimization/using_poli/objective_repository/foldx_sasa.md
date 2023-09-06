@@ -7,6 +7,12 @@
 
 This objective function returns the solvent accesible surface area (SASA) of a wildtype and its mutations using `foldx` and `biopython`.
 
+:::{note}
+
+If you are interested in computing both a protein's stability and it's SASA score, try `foldx_stability_and_sasa` instead! Just change the `name` in the `create` method below.
+
+:::
+
 ## Prerequisites
 
 - Have `foldx` installed, and available in your home directory. We expect the following files to be there:

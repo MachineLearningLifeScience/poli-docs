@@ -1,11 +1,16 @@
 # Protein stability (using `foldx`)
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
-![Environment to run this objective function: poli protein](https://img.shields.io/badge/Environment-poli____protein-teal
-)
+![Environment to run this objective function: poli protein](https://img.shields.io/badge/Environment-poli____protein-teal)
 
 ## About
 
 This objective function returns the stability (i.e. negative energy) using `foldx`.
+
+:::{note}
+
+If you are interested in computing both a protein's stability and it's SASA score, try `foldx_stability_and_sasa` instead! Just change the `name` in the `create` method below.
+
+:::
 
 ## Prerequisites
 
