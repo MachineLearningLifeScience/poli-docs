@@ -54,10 +54,16 @@ Computing the log-quotient of solubilities using `RDKit`.
 Computing the penalized log-quotient of solubilities using `lambo`'s implementation.
 :::
 
-:::{grid-item-card} DDR3 (or 3pbl) docking (using `tdc`)
-:link: ./using_poli/objective_repository/ddr3_docking.html
+:::{grid-item-card} DRD3 (or 3pbl) docking (using `tdc`)
+:link: ./using_poli/objective_repository/drd3_docking.html
 :columns: 6
 A wrapper around the Therapeutics Data Commons implmenetation of `3pbl` docking.
+:::
+
+:::{grid-item-card} Synthetic Accessibility (SA, using `tdc`)
+:link: ./using_poli/objective_repository/sa_tdc.html
+:columns: 6
+A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.
 :::
 
 ::::
@@ -160,10 +166,3 @@ How to contribute a new black-box optimization algorithm.
 
 ::::
 
-
-<!-- ## References
-
-:::{bibliography}
-:style: alpha
-
-::: -->

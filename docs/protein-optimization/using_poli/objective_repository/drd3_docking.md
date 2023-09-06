@@ -1,4 +1,4 @@
-# DDR3 docking (using TDC)
+# DRD3 docking (using TDC)
 
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
 ![Environment to run this objective function: poli lambo](https://img.shields.io/badge/Environment-poli____lambo-teal
@@ -54,7 +54,7 @@ This can easily be done by running
 
 ```bash
 # From the base of the poli repo
-conda env create --file src/poli/objective_repository/ddr3_docking/environment.yml
+conda env create --file src/poli/objective_repository/drd3_docking/environment.yml
 ```
 
 This particular example _doesn't_ need to have the `lambo` package installed.
@@ -98,7 +98,7 @@ from poli import objective_factory
 
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
-    name="ddr3_docking",
+    name="drd3_docking",
     force_register=True
 )
 

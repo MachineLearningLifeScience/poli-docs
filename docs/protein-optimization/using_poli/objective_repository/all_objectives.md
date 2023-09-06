@@ -53,6 +53,12 @@ Computing the penalized log-quotient of solubilities using `lambo`'s implementat
 A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.
 :::
 
+:::{grid-item-card} Synthetic Accessibility (SA, using `tdc`)
+:link: ./using_poli/objective_repository/sa_tdc.html
+:columns: 6
+A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.
+:::
+
 :::{grid-item-card} TDC oracles [WIP]
 :link: ./using_poli/objective_repository/tdc_oracles.html
 :columns: 6
