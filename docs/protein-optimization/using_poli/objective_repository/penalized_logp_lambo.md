@@ -1,4 +1,4 @@
-# Objective function name
+# Penalized logP (using `lambo`)
 
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
 ![Environment to run this objective function: poli lambo](https://img.shields.io/badge/Environment-poli____lambo-teal
@@ -6,7 +6,7 @@
 
 ## About
 
-This objective function computes the penalized logP _exactly_ as is done in the `lambo` implementation.[^1]
+This objective function computes the penalized logP _exactly_ as is done in the `lambo` implementation[^1] {cite:p}`stanton2022accelerating`.
 
 [^1]: If you check carefully, you might have noticed that they add to their implementation the empirical means and standard deviations of the ZINC dataset for the values they compute.
 
@@ -77,3 +77,10 @@ f.terminate()
 
 - `penalized: bool = True`. Whether we are evaluating penalized logP or not.
 - `string_representation: str = "SMILES"`. Can be either `"SMILES"` or `"SELFIES"`.
+
+<!-- ## References
+
+:::{bibliography}
+:style: alpha
+
+::: -->

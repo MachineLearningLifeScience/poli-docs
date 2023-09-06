@@ -41,6 +41,18 @@ Computing the QED using `RDKit`.
 Computing the log-quotient of solubilities using `RDKit`.
 :::
 
+:::{grid-item-card} Penalized Log-solubility (LogP, using `lambo`)
+:link: ./using_poli/objective_repository/penalized_logp_lambo.html
+:columns: 6
+Computing the penalized log-quotient of solubilities using `lambo`'s implementation.
+:::
+
+:::{grid-item-card} DDR3 (or 3pbl) docking (using `tdc`)
+:link: ./using_poli/objective_repository/ddr3_docking.html
+:columns: 6
+A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.
+:::
+
 :::{grid-item-card} TDC oracles [WIP]
 :link: ./using_poli/objective_repository/tdc_oracles.html
 :columns: 6

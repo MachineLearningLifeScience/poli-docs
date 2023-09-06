@@ -19,10 +19,13 @@ parts:
       - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
   - caption: Some objective functions available
     chapters:
+      - file: using_poli/objective_repository/all_objectives.md
       - file: using_poli/objective_repository/white_noise.md
       - file: using_poli/objective_repository/aloha.md
       - file: using_poli/objective_repository/rdkit_qed.md
       - file: using_poli/objective_repository/rdkit_logp.md
+      - file: using_poli/objective_repository/ddr3_docking.md
+      - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/foldx_stability.md
       - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/super_mario_bros.md
@@ -30,6 +33,9 @@ parts:
     chapters:
     - file: contributing/a_new_problem.md
     - file: contributing/a_new_solver.md
+  - caption: "Bibliography"
+    chapters:
+    - file: bibliography.md
   - caption: "Appendix: Understanding foldx"
     chapters:
     - file: understanding_foldx/00-installing-foldx.md
