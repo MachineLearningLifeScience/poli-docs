@@ -161,9 +161,9 @@ How to contribute a new black-box optimization algorithm.
 ::::
 
 
-## References
+<!-- ## References
 
 :::{bibliography}
 :style: alpha
 
-:::
+::: -->
