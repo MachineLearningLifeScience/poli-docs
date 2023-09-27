@@ -81,7 +81,7 @@ class YourProblemFactory(AbstractProblemFactory):
 
     def create(
         self,
-        seed: int = 0,
+        seed: int = None,
         your_keyword_1: str = ...,
         your_keyword_2: str = ...,
     ) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:

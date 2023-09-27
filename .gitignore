@@ -9,6 +9,7 @@ docs/protein-optimization/understanding_foldx/01-single-mutation-using-foldx/tmp
 !docs/protein-optimization/understanding_foldx/01-single-mutation-using-foldx/tmp/101m.pdb
 !docs/protein-optimization/understanding_foldx/01-single-mutation-using-foldx/tmp/Raw_101m_Repair.fxout
 !docs/protein-optimization/understanding_foldx/01-single-mutation-using-foldx/tmp/individual_list.txt
+docs/protein-optimization/using_poli/the_basics/results
 
 # Build directory
 docs/protein-optimization/_build

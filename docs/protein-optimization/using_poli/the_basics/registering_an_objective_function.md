@@ -80,7 +80,7 @@ class OurAlohaProblemFactory(AbstractProblemFactory):
             alphabet=alphabet,
         )
 
-    def create(self, seed: int = 0) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
+    def create(self, seed: int = None) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
         problem_info = self.get_setup_information()
         f = OurAlohaBlackBox(info=problem_info)
         x0 = np.array([["A", "L", "O", "O", "F"]])
@@ -233,4 +233,4 @@ In this tutorial you
 
 This is a trivial example, since the only dependency is numpy. In other examples you will see problems with more subtle dependencies (e.g. Java runtimes, torch, cheminformatics tools like `FoldX`, `RDKit`, or the therapeutics data commons...). [Take a look at all the available objective functions here](../objective_repository/all_objectives.md).
 
-In the next chapter, we will define a simple "Problem Solver" (i.e. a black box optimization algorithm), and in the one after that we will apply it to solve this `aloha` problem.
+In the next chapters, we will define observers (i.e. a logging mechanism) and a simple "Problem Solver" (i.e. a black box optimization algorithm), we will wrap up by solving the `aloha` problem using the problem solver we define.
