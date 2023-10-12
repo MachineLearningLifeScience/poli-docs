@@ -14,7 +14,7 @@ poli/objective_repository
 │   └── register.py           # Definition and registration of the problem
 ```
 
-You can also have as many other files as you want. Think of the folder `.../problem_name` as a small project as of itself: you can have Python dependencies that will get appended to the path at runtime.
+You can also have as many other files as you want. Think of the folder `.../problem_name` as a small project as of itself: you can use any internal code you write here, since it'll be carried with `poli` at installation time.
 
 **For example:** let's take a look at the problem folder of `super_mario_bros`
 
@@ -26,7 +26,7 @@ You can also have as many other files as you want. Think of the folder `.../prob
 │   ├── example.pt           # < --
 │   ├── level_utils.py       # < --
 │   ├── model.py             # < --  extra files needed
-│   ├── readme.md            # < --  for the simulation
+│   ├── readme.md            # < --  for the black box
 │   ├── simulator.jar        # < --  to run.
 │   └── simulator.py         # < --
 ```
@@ -41,7 +41,7 @@ The average `register.py` has the following structure
 
 ```python
 # An average register.py
-from typing import Tuple
+from typing import Tuple, List
 
 import numpy as np
 
@@ -52,12 +52,25 @@ from poli.core.problem_setup_information import ProblemSetupInformation
 # Files that are in the same folder as
 # register will get added to the
 # PYTHONPATH at runtime.
+# Imagining you have your_local_dependency.py
+# in the same folder as register.py...
 from your_local_dependency import ...
 
 
 class YourBlackBox(AbstractBlackBox):
-    def __init__(self, info: ProblemSetupInformation, batch_size: int = None):
-        super().__init__(info=info, batch_size=batch_size)
+    def __init__(
+        self,
+        info: ProblemSetupInformation,
+        batch_size: int = None,
+        parallelize: bool = False,
+        num_workers: int = None
+    ):
+        super().__init__(
+            info=info,
+            batch_size=batch_size,
+            parallelize=parallelize,
+            num_workers=num_workers,
+        )
 
     # The only method you have to define
     def _black_box(self, x: np.ndarray, context: dict = None) -> np.ndarray:
@@ -82,17 +95,26 @@ class YourProblemFactory(AbstractProblemFactory):
     def create(
         self,
         seed: int = None,
+        batch_size: int = None,
+        parallelize: bool = False,
+        num_workers: int = None,
         your_keyword_1: str = ...,
-        your_keyword_2: str = ...,
+        your_keyword_2: int = ...,
+        your_keyword_3: List[float] = ...,
     ) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
         # Manipulate keywords you might need at creation time...
         ...
         
-        # The maximum length you defined above
+        # Getting the problem information
         problem_info = self.get_setup_information()
         
         # Creating your black box function
-        f = YourBlackBox(info=problem_info)
+        f = YourBlackBox(
+            info=problem_info,
+            batch_size=batch_size,
+            parallelize=parallelize,
+            num_workers=num_workers,
+        )
         
         # Your first input (an np.array[str])
         x0 = ...
@@ -120,6 +142,14 @@ That is, **the script creates and registers** your problem factory.
 
 :::{warning}
 It is important that name of your problem should be the name of the folder it's contained, **exactly**. (We advice using `camel_case`).
+:::
+
+:::{warning}
+
+`poli` is experimental. The input kwargs to the abstract black box
+and to the create method are under active development. Your IDE should
+tell you automatically, though!
+
 :::
 
 ## A generic `environment.yml`
@@ -208,6 +238,28 @@ problem_info, f, x0, y0, _ = objective_factory.create(
 ```
 
 `poli` will ask you to confirm that you want to register your problem (you can force the registration by passing `force_register=True` to `objective_factory.create`).
+
+## (Optional) Making your problem be available if dependencies are met
+
+At this point, you can run your objective function in an isolated process (which will literally import the factory and the black box function from the `register.py` you wrote). A better alternative is to get direct access to the object itself. Having access to the actual class makes your life easy, especially when it comes to using debugging tools like the ones in VSCode.
+
+If you want to make your problem available if it can be imported, take a look at `src/poli/objective_repository/__init__.py`. Add a block like this one at the end of it:
+
+```python
+#... the rest of poli/objective_repository/__init__.py
+
+# A block you could add:
+try:
+    from .your_problem.register import YourProblemFactory
+
+    AVAILABLE_PROBLEM_FACTORIES["your_problem"] = YourProblemFactory
+except ImportError:  # Maybe you'll need to check for other errors.
+    pass
+
+```
+
+`AVAILABLE_PROBLEM_FACTORIES` is keeping track of all the problem factories we can import without needing to isolate the process. If a problem is in this dict, it will appear when querying `get_problems()`, and it will be passed at `objective_factory.create` time.
+
 
 ## Submitting a pull request
 

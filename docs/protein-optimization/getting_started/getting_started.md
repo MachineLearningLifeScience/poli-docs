@@ -29,7 +29,7 @@ $ conda activate poli-base
 $ pip install numpy
 ```
 
-Right now, we only support two ways of installing `poli`: by cloning the repo and installing, or using `pip` and `git+`. [TODO: change from my fork to MLLS repo after merging]
+Right now, we only support two ways of installing `poli`: by cloning the repo and installing, or using `pip` and `git+`.
 
 ::::{tab-set}
 

@@ -80,7 +80,11 @@ class OurAlohaProblemFactory(AbstractProblemFactory):
             alphabet=alphabet,
         )
 
-    def create(self, seed: int = None) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
+    # Adding **kwargs is necessary, since several things usually
+    # get passed to the create method at initialization.
+    def create(
+        self, seed: int = None, **kwargs
+    ) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
         problem_info = self.get_setup_information()
         f = OurAlohaBlackBox(info=problem_info)
         x0 = np.array([["A", "L", "O", "O", "F"]])
@@ -101,8 +105,6 @@ Check the exact implementation on [`poli/objective_repository/aloha/register.py`
 ### Creating a conda environment for your problem
 
 First step is always **creating a conda environment for your problem**. In this case, we could do with just the base enviroment. However, for completion in the presentation, we will create a conda enviroment called `poli_aloha`. This is the enviroment description (which can be found under `environment.yml` in the examples folder for `aloha`):
-
-TODO: move the dependency to our github after merging.
 
 ```yml
 # environment.yml
