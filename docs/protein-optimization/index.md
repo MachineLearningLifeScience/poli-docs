@@ -85,10 +85,10 @@ Stability of mutations of a wildtype using `foldx`
 Solvent accessibility of mutations of a wildtype using `foldx`
 :::
 
-:::{grid-item-card} Protein Stability (using `RaSP`) [WIP]
+:::{grid-item-card} Protein Stability (using `RaSP`)
 :link: ./using_poli/objective_repository/RaSP.html
 :columns: 6
-Rapid Stability Predictions of single mutations from a wildtype. [WIP]
+Rapid Stability Predictions of single mutations from a wildtype.
 :::
 
 :::{grid-item-card} RFP Fluorescence Protein Stability (using `lambo`)
