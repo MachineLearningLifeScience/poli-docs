@@ -19,6 +19,21 @@ If you are interested in computing both a protein's stability and it's SASA scor
   - `~/foldx/rotabase.txt`: a text file necessary for `foldx` to run.
 - A `wildtype_pdb_file`: a (repaired) pdb file of the wildtype.
 
+:::{admonition} We can repair the file for you
+:class: dropdown
+
+By default, we will assume you are passing a repaired `pdb` file to us (indeed, we check if the filename contains `_Repair`). If you want us to repair the file for you and keep it in a cache, you can add the `eager_repair=True` keyword argument to the `create` method.
+
+Otherwise, pre-repair your files using e.g.
+
+```bash
+~/foldx/foldx --command=RepairPDB --pdb your_file.pdb --water -CRYSTAL --pH 7.0
+```
+
+In our repairing process, we also remove heteroatoms using [`pdbtools`](https://www.bonvinlab.org/pdb-tools/).
+
+:::
+
 ## How to run
 
 You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.
