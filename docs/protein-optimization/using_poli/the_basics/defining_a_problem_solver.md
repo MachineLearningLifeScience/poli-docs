@@ -114,7 +114,7 @@ class RandomMutation(AbstractSolver):
 
 Pretty lean! Notice how **the `next_candidate` method could perform all sorts of complicated logic** like latent space Bayesian Optimization, evolutionary algorithms... Moreover, the conda environment where you do the optimization has nothing to do with the enviroment where the objective function was defined: `poli` is set up in such a way that you can query the objective functions without having to worry!
 
-:::{admonition}
+:::{note}
 Our implementation of `RandomMutation` is slightly different, since we allow users to query e.g. integer indices instead of strings.
 
 [Take a look at the exact implementation on `poli_baselines/solvers/simple/random_mutation.py`](https://github.com/MachineLearningLifeScience/poli-baselines/blob/main/src/poli_baselines/solvers/simple/random_mutation.py).

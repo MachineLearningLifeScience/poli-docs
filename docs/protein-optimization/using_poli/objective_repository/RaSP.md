@@ -3,7 +3,7 @@
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
 ![Environment to run this objective function: poli rasp](https://img.shields.io/badge/Environment-poli____rasp-teal)
 
-*Rapid Stability Predictions* (RaSP) {cite:p}`Blaabjerg:RaSP:2023` predicts the stability of a protein using a supervised learning approach. Starting from features learned using self supervision {cite:p}`Boomsma:spherical_conv:2017`, RaSP learns to predict Rosetta scores using neural networks. The drawback being that only additive mutations could be computed simultaneously. We limit the edit distance to 1 (i.e. we only consider mutations that are one-away from the wildtype).
+[*Rapid Stability Predictions* (RaSP)](https://github.com/KULL-Centre/_2022_ML-ddG-Blaabjerg) {cite:p}`Blaabjerg:RaSP:2023` predicts the stability of a protein using a supervised learning approach. Starting from features learned using self supervision {cite:p}`Boomsma:spherical_conv:2017`, RaSP learns to predict Rosetta scores using neural networks. The drawback being that only additive mutations could be computed simultaneously. We limit the edit distance to 1 (i.e. we only consider mutations that are one-away from the wildtype).
 
 This objective function is quite similar to [`foldx_stability`](./foldx_stability.md), and can be considered a drop-in replacement for single mutations. Be aware that the scales are different, though. 
 

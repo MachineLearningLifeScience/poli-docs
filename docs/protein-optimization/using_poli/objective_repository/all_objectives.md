@@ -3,7 +3,7 @@
 These are all the objective functions available on `poli`. Click on one of them to get a minimal working example of how to use it.
 
 
-### Toy problems
+## Toy problems
 
 ::::{grid}
 :gutter: 3
@@ -22,7 +22,7 @@ A toy example about optimizing 5-letter words to spell "ALOHA"
 
 ::::
 
-### Small molecules
+## Small molecules
 
 Most of our problems are based on the [PMO]() benchmark, by Gao et al [TODO: add cite].
 
@@ -47,8 +47,14 @@ Computing the log-quotient of solubilities using `RDKit`.
 Computing the penalized log-quotient of solubilities using `lambo`'s implementation.
 :::
 
-:::{grid-item-card} DDR3 (or 3pbl) docking (using `tdc`)
-:link: ./ddr3_docking.html
+:::{grid-item-card} `dockstring` for ligand design
+:link: ./dockstring.html
+:columns: 6
+Using `dockstring` to assess the docking score of a small molecule.
+:::
+
+:::{grid-item-card} DRD3 (or 3pbl) docking (using `tdc`)
+:link: ./drd3_docking.html
 :columns: 6
 A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.
 :::
@@ -73,7 +79,7 @@ Some of the oracles provided by GuacaMol. [WIP]
 
 ::::
 
-### Proteins
+## Proteins
 
 ::::{grid}
 :gutter: 3
@@ -104,7 +110,7 @@ LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.
 
 ::::
 
-### Other
+## Other
 
 ::::{grid}
 :gutter: 3
