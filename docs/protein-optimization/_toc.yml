@@ -23,6 +23,7 @@ parts:
       - file: using_poli/objective_repository/all_objectives.md
       - file: using_poli/objective_repository/white_noise.md
       - file: using_poli/objective_repository/aloha.md
+      - file: using_poli/objective_repository/toy_continuous_problems.md
       - file: using_poli/objective_repository/rdkit_qed.md
       - file: using_poli/objective_repository/rdkit_logp.md
       - file: using_poli/objective_repository/dockstring.md

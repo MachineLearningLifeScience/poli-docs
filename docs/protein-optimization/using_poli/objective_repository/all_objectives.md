@@ -20,6 +20,12 @@ White noise drawn from a unit Gaussian
 A toy example about optimizing 5-letter words to spell "ALOHA"
 :::
 
+:::{grid-item-card} Toy continuous problems
+:link: ./toy_continuous_problems.html
+:columns: 6
+The usual benchmark functions for continuous optimization (e.g. `easom`, or `ackley_function_01`)
+:::
+
 ::::
 
 ## Small molecules
