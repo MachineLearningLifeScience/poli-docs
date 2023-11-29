@@ -114,6 +114,12 @@ Rapid Stability Predictions of single mutations from a wildtype.
 LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.
 :::
 
+:::{grid-item-card} GFP Fluorescence Protein Surrogate (using `CBas`)
+:link: ./using_poli/objective_repository/gfp_cbas.html
+:columns: 6
+CBas Fluorescence (GFP) median brightness by latent encoding surrogate under the assumption that the encoder mean correlates sufficiently with target brightness.
+:::
+
 ::::
 
 ## Other
