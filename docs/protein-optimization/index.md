@@ -79,6 +79,18 @@ Solvent accessibility of mutations of a wildtype using `foldx`
 Rapid Stability Predictions of single mutations from a wildtype. [WIP]
 :::
 
+:::{grid-item-card} RFP Fluorescence Protein Stability (using `lambo`)
+:link: ./using_poli/objective_repository/foldx_rfp_lambo.html
+:columns: 6
+LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.
+:::
+
+:::{grid-item-card} Protein Fluorescence (using `CBas`) [WIP]
+:link: ./using_poli/objective_repository/gfp_cbas.html
+:columns: 6
+Surrogate fluorescence prediction of mutations from a GFP sequence. [WIP]
+:::
+
 ::::
 
 
