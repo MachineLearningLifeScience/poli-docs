@@ -59,3 +59,17 @@ x = np.array([[0.0, 0.0]])  # must be of shape [b, n_dimensions], in this case [
 # Querying:
 print(f(x))  # Should be [[0.0]] in this example
 ```
+
+## Creating problems with low intrinsic dimensionality
+
+Some optimization algorithms (like [LineBO]() or [SAASBO]()) rely on the assumption that there is a _low intrinsic dimensionality_ to the problem. Roughly speaking, this means that only a subset of the variables are actually relevant to the problem in question. This `poli` objective allows you to create such problems. For example, consider `camelback_2d` (which is usually only defined in two dimensions). You can embed this function into, say, 30 dimensions by creating the objective as follows:
+
+```python
+problem_info, f, x0, y0, run_info = objective_factory.create(
+    name="toy_continuous_problem",
+    function_name="camelback_2d",
+    embed_in=30,  #  This will create a function that takes 30d input values
+)
+```
+
+During the creation process, the two relevant dimensions of `camelback_2d` will be randomly embedded into two of the 30 dimensions. These are accessible under `f.function.dimensions_to_embed_in` (which is an array of integers).

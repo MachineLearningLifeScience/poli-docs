@@ -1,15 +1,15 @@
-# Protein optimization using `poli`
+# Discrete sequence optimization using `poli`
 
 This book contains documentation on how to use `poli` and `poli-baselines`, our tools for creating and optimizing black box objective functions.
 
 At its core, `poli` allows you to isolate calls to complicated objective functions which might, for example, depend on simulators, binaries, or a weird version of the Java runtime.
 Our promise is: if you can run your objective function reliably in a `conda` environment, then you can register it and call it from other projects without having to worry about re-installing all the dependencies.
 
-`poli` comes batteries-included. By this, we mean that there are already a collection of black box objective functions you could register and use out-of-the-box.
+`poli` comes batteries-included. By this, we mean that there are already a collection of black box objective functions and `conda` environments you could register and use out-of-the-box.
 
 ## Black-box objective functions
 
-These are some objective functions available on `poli`. **For a full list**, [check here](./using_poli/objective_repository/all_objectives.md).
+These are some objective functions available on `poli`. [For a full list, check here](./using_poli/objective_repository/all_objectives.md).
 
 
 ### Toy problems
