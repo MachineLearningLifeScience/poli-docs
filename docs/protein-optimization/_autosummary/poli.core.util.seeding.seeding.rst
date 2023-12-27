@@ -1,4 +1,4 @@
-poli.core.util.seeding.seeding
+﻿poli.core.util.seeding.seeding
 ==============================
 
 .. automodule:: poli.core.util.seeding.seeding
@@ -15,6 +15,8 @@ poli.core.util.seeding.seeding
    
       seed_numpy
       seed_python
+      seed_python_numpy_and_torch
+      seed_torch
    
    
 
