@@ -30,7 +30,7 @@ The usual benchmark functions for continuous optimization (e.g. `easom`, or `ack
 
 ## Small molecules
 
-Most of our problems are based on the [PMO]() benchmark, by Gao et al [TODO: add cite].
+Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`gao:PMO:2022`.
 
 ::::{grid}
 :gutter: 3
@@ -69,18 +69,6 @@ A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.
 :link: ./sa_tdc.html
 :columns: 6
 A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.
-:::
-
-:::{grid-item-card} TDC oracles [WIP]
-:link: ./tdc_oracles.html
-:columns: 6
-Some of the oracles provided by the Therapeutics Data Commons. [WIP]
-:::
-
-:::{grid-item-card} GuacaMol [WIP]
-:link: ./tdc_oracles.html
-:columns: 6
-Some of the oracles provided by GuacaMol. [WIP]
 :::
 
 ::::

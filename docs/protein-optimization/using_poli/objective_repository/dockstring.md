@@ -42,15 +42,17 @@ conda activate poli__dockstring
 Once you are in this environment (or in an environment that satisfies all its requirements), you can run the canonical example of risperidone and DRD3 docking:
 
 ```python
+# from the poli__dockstring environment
 import numpy as np
 
-from poli import objective_factory
+from poli.objective_repository import DockstringProblemFactory
 
 if __name__ == "__main__":
-    problem_info, f, x0, y0, _ = objective_factory.create(
-        name="dockstring",
+    problem_factory = DockstringProblemFactory()
+
+    f, x0, y0 = problem_factory.create(
         target_name="DRD2",
-        string_representation="SMILES",
+        string_representation="SMILES",  # Can be either SMILES or SELFIES
     )
 
     # The smiles for Risperidone
@@ -92,7 +94,7 @@ if __name__ == "__main__":
 ```
 
 ```{warning}
-Registering the objective function in this way will create a `conda` environment called `poli__dockstring` with the relevant dependencies. You can find the exact environment description in the following file: `src/poli/objective_repository/dockstring/environment.yml`
+Registering the objective function in this way will create a `conda` environment called `poli__dockstring` with the relevant dependencies. You can find the exact environment description in the following file in the `poli` repository: `src/poli/objective_repository/dockstring/environment.yml`
 
 ```
 
