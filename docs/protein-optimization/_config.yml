@@ -25,6 +25,27 @@ sphinx:
     autodoc_mock_imports:
       - Bio
       - tensorflow
+      - tdc
+      - pdbtools
+      - torch
+      - pandas
+      - rdkit
+      - lambo
+      - selfies
+      - github
+      - yaml
+      - pytz
+      - matplotlib
+      - scipy
+      - sklearn
+      - tensorflow
+      - hydra
+      - ptitprince
+      - seaborn
+      - pdbfixer
+      - openmm
+      - simtk
+      - dockstring
   extra_extensions:
     - sphinx.ext.autodoc
     - sphinx.ext.autosummary

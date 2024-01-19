@@ -1,16 +1,13 @@
-# Discrete sequence optimization using `poli`
+# poli 🧪: a library of discrete objective functions
 
-This book contains documentation on how to use `poli` and `poli-baselines`, our tools for creating and optimizing black box objective functions.
+This page contains documentation on how to use `poli`, a library of discrete objective functions in biology, cheminformatics, and more. This page also presents `poli-baselines`, a collection of optimizers of these discrete black box functions.
 
-At its core, `poli` allows you to isolate calls to complicated objective functions which might, for example, depend on simulators, binaries, or a weird version of the Java runtime.
-Our promise is: if you can run your objective function reliably in a `conda` environment, then you can register it and call it from other projects without having to worry about re-installing all the dependencies.
-
-`poli` comes batteries-included. By this, we mean that there are already a collection of black box objective functions and `conda` environments you could register and use out-of-the-box.
+A core feature of `poli` is isolating calls to complicated objective functions which might, for example, depend on simulators, binaries, and highly specific package requirements.
+Our promise is: if you can run your objective function reliably in a `conda` environment, then you can register it and call it from other projects and environments without having to worry about re-installing all the dependencies.
 
 ## Black-box objective functions
 
-These are some objective functions available on `poli`. [For a full list, check here](./using_poli/objective_repository/all_objectives.md).
-
+[For a full list, click here](./using_poli/objective_repository/all_objectives.md).
 
 ### Toy problems
 

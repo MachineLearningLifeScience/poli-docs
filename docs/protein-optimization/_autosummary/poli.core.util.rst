@@ -1,4 +1,4 @@
-poli.core.util
+﻿poli.core.util
 ==============
 
 .. automodule:: poli.core.util
@@ -28,6 +28,7 @@ poli.core.util
    :recursive:
 
    poli.core.util.abstract_observer
+   poli.core.util.alignment
    poli.core.util.batch
    poli.core.util.chemistry
    poli.core.util.external_observer

@@ -1,4 +1,4 @@
-poli.tests.registry
+﻿poli.tests.registry
 ===================
 
 .. automodule:: poli.tests.registry
@@ -30,5 +30,8 @@ poli.tests.registry
    poli.tests.registry.basic_objectives
    poli.tests.registry.chemistry
    poli.tests.registry.proteins
+   poli.tests.registry.test_basic_loop_without_create
+   poli.tests.registry.test_force_isolation
+   poli.tests.registry.test_passing_array_of_strings
    poli.tests.registry.toy_continuous_problems
 

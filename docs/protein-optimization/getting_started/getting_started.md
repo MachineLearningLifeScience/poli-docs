@@ -1,8 +1,8 @@
 # Getting started
 
-In this chapter, we share with you how to install `poli`, and get started with registering objective functions.
+In this chapter, we share with you how to install `poli`, and get started with calling and registering objective functions.
 
-## Installing locally
+## Installation
 
 Unfortunately, we only support **Linux** and **MacOS** for now.
 
@@ -14,33 +14,34 @@ Test that your installation went through by writing
 
 ```bash
 $ conda --version
-conda 23.7.2
+conda 23.11.0  # Yours might be different, and that's fine.
 ```
 
-It's okay if you have another version. Read more about [supported versions of `conda` (TODO:ADD)]().
+It's okay if you have another version. We have tested this documentation on the version showed.
 
 ### Installing `poli`
 
-We recommend creating an environment called `poli-base`. **The only dependency `poli` has is `numpy`**:
+We recommend creating an environment called `poli-base`.
 
 ```bash
 $ conda create -n poli-base python=3.9
 $ conda activate poli-base
-$ pip install numpy
 ```
 
 Right now, we only support two ways of installing `poli`: by cloning the repo and installing, or using `pip` and `git+`.
 
 ::::{tab-set}
 
-:::{tab-item} Installing using `pip +git`
+:::{tab-item} Installing using `pip git+`
 
 If you are not interested in debugging, you can simply run
 
 ```bash
 # in the poli-base env
-pip install git+https://github.com/MachineLearningLifeScience/poli.git@master
+pip install git+https://github.com/MachineLearningLifeScience/poli.git@dev
 ```
+
+`dev` contains the bleeding-edge version, while `master` contains a stable release.
 
 :::
 
@@ -50,7 +51,7 @@ If you are interested in debugging locally, clone and install as follows:
 
 ```bash
 # in the `poli-base` env.
-$ git clone git@github.com:MachineLearningLifeScience/poli.git
+$ git clone git@github.com:MachineLearningLifeScience/poli.git@dev
 $ cd ./poli
 $ pip install -e .
 ```
@@ -67,26 +68,60 @@ A stable version can be found on the `master` branch, the bleeding-edge is on `d
 
 :::
 
+### Installing `poli-baselines`
+
+:::{warning}
+
+`poli-baselines` is on alpha phase, and the API might change in the short future.
+
+:::
+
+::::{tab-set}
+
+:::{tab-item} Installing using `pip git+`
+
+If you are not interested in debugging, you can simply run
+
+```bash
+# in the poli-base env
+pip install git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
+```
+
+:::
+
+:::{tab-item} Installing for debugging
+
+If you are interested in debugging locally, clone and install as follows: 
+
+```bash
+# in the `poli-base` env.
+$ git clone git@github.com:MachineLearningLifeScience/poli-baselines.git@main
+$ cd ./poli-baselines
+$ pip install -e .
+```
+
+:::
+
+::::
+
 ### Testing your installation
 
 To make sure everything went well, you can test your `poli` installation by running
 
 ```bash
-$ python -c "from poli.core.registry import get_problems ; print(get_problems())"
-['aloha', 'white_noise']
+$ python -c "from poli import get_problems ; print(get_problems())"
+['aloha', 'dockstring', ...]
 ```
-In general: **all problems available will appear**. These two (`aloha` and `white_noise`) are available by default since their only requirements are `numpy` and `poli`. If the installation isn't fresh/the only one in your system, you might actually get more problems.
+All problems available will appear, but some of them will have more pre-requisites (e.g. installing `foldx` or having OpenBabel).
 
-## Running `poli` on Colab
+You should also be able to run
+```bash
+$ python -c "import poli_baselines ; print('All good!')"
+```
 
-With a little effort, you can run `poli` on Colab. [Check this example](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls).
+## Your first script using `poli`
 
-
-## Your first `poli` script
-
-As you might have noticed, you can get a list of the registered problems using the `get_problems` method inside `poli.core.registry`.
-
-Let's write a small script that installs `white_noise` from the repository:
+Let's write a small script that creates an instance of `white_noise` from the repository:
 
 ```python
 # see poli/examples/minimal_working_example.py
@@ -103,9 +138,3 @@ for _ in range(5):
 If we run this script, it will print 5 evaluations of the objective function on the same input.
 
 `white_noise` is a trivial example. We include plenty of examples on how to register objective functions that are more complex, including e.g. [computing the Quantitative Estimate of Druglikeness of a small molecule](../using_poli/objective_repository/rdkit_qed.md) or, if you have the `foldx` simulator installed, [how to compute the stability of a protein given a `.pdb` file](../using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb).
-
-## Conclusion
-
-This tutorial showed you how to install `poli`, and register `white_noise`, which is available inside `poli` itself.
-
-The next chapters explain the basics of `poli`, such as registering your own objective functions, defining problem solvers in `poli-baselines`, and optimizing.
