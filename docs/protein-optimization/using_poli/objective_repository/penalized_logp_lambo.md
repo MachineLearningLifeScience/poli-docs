@@ -57,7 +57,7 @@ import numpy as np
 from poli import objective_factory
 
 # Using create
-_, f, x0, y0, _ = objective_factory.create(name="penalized_logp_lambo")
+problem_info, f, x0, y0, _ = objective_factory.create(name="penalized_logp_lambo")
 
 # An example input
 print(x0)

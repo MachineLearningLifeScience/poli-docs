@@ -9,7 +9,7 @@ This objective function returns the solvent accesible surface area (SASA) of a w
 
 :::{note}
 
-If you are interested in computing both a protein's stability and it's SASA score, try `foldx_stability_and_sasa` instead! Just change the `name` in the `create` method below.
+If you are interested in computing **both** a protein's stability and it's SASA score, try `foldx_stability_and_sasa` instead! Just change the `name` in the `create` method below.
 
 :::
 
@@ -17,7 +17,7 @@ If you are interested in computing both a protein's stability and it's SASA scor
 
 - Have `foldx` installed, and available in your home directory. We expect the following files to be there:
   - `~/foldx/foldx`: the binary. You might need to rename it.
-  - `~/foldx/rotabase.txt`: a text file necessary for `foldx` to run.
+  - `~/foldx/rotabase.txt`: a text file necessary for `foldx` to run (if you are using `v4` of `foldx`).
 - A `wildtype_pdb_file`: a (repaired) pdb file of the wildtype.
 
 :::{admonition} We can repair the file for you
@@ -46,7 +46,7 @@ You can either run this objective function in your current environment (assuming
 You will have to install the following two dependencies:
 
 ```bash
-pip install biopython python-levenshtein
+pip install biopython python-levenshtein pdb-tools
 ```
 
 Then run

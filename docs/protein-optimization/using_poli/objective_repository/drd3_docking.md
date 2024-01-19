@@ -90,10 +90,6 @@ Running this objective function will create an `./oracle` folder on your working
 After the setup described above, you can simply run the following code from 
 
 ```python
-from pathlib import Path
-
-import numpy as np
-
 from poli import objective_factory
 
 # How to create
@@ -112,10 +108,3 @@ print(y0)  # [[-4.1]]
 :::
 
 ::::
-
-<!-- ## References
-
-:::{bibliography}
-:style: alpha
-
-::: -->
