@@ -21,8 +21,6 @@ This can easily be done by running
 conda env create --file src/poli/objective_repository/sa_tdc/environment.yml
 ```
 
-This particular example _doesn't_ need to have the `lambo` package installed.
-
 ## How to run
 
 You can only run this objective function either in the `poli__lambo` environment, or as an isolated process (which runs this environment underneath).

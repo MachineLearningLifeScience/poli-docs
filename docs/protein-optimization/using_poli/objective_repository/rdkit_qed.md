@@ -9,7 +9,7 @@ This objective function returns the Quantitative Estimate of Druglikeness (QED) 
 
 ## Prerequisites
 
-- You will need to specify an alphabet `List[str]`.
+None. This black box should work out-of-the-box.
 
 ## How to run
 
@@ -31,14 +31,10 @@ Then run
 import numpy as np
 from poli import objective_factory
 
-# Your alphabet
-alphabet = ["", "[C]", ...]
-
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
     name="rdkit_qed",
-    alphabet=alphabet,
-    string_representation="SELFIES",  # it is "SMILES" by default.
+    string_representation="SELFIES",  # Can be either SMILES or SELFIES
     force_register=True,
 )
 
@@ -48,7 +44,6 @@ x = np.array(["[C]"]).reshape(1, -1)
 # Querying:
 y = f(x)
 print(y)  # Should be close to 0.35978494
-assert np.isclose(y, 0.35978494).all()
 ```
 
 :::
@@ -61,14 +56,11 @@ If you want us to handle dependencies, run
 import numpy as np
 from poli import objective_factory
 
-# Your alphabet
-alphabet = ["", "[C]", ...]
-
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
     name="rdkit_qed",
     alphabet=alphabet,
-    string_representation="SELFIES",  # it is "SMILES" by default.
+    string_representation="SELFIES",  # Can be either SMILES or SELFIES
     force_register=True,
 )
 

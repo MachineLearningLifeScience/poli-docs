@@ -9,7 +9,7 @@ This objective function returns the partition coefficient of a solute between oc
 
 ## Prerequisites
 
-- You will need to specify an alphabet `List[str]`.
+None. This black box should work out-of-the-box.
 
 ## How to run
 
@@ -32,14 +32,10 @@ import numpy as np
 
 from poli import objective_factory
 
-# Your alphabet
-alphabet = ["", "[C]", ...]
-
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
     name="rdkit_logp",
-    alphabet=alphabet,
-    string_representation="SELFIES",  # it is "SMILES" by default.
+    string_representation="SELFIES",  # Can be either SMILES or SELFIES
     force_register=True, 
 )
 
@@ -57,21 +53,14 @@ print(f(x))  # Should be close to 0.6361
 If you want us to handle dependencies, run
 
 ```python
-from pathlib import Path
-
 import numpy as np
 
 from poli import objective_factory
 
-
-# Your alphabet
-alphabet = ["", "[C]", ...]
-
 # How to create
 problem_info, f, x0, y0, run_info = objective_factory.create(
     name="rdkit_logp",
-    alphabet=alphabet,
-    string_representation="SELFIES",  # it is "SMILES" by default.
+    string_representation="SELFIES",  # Can be either SMILES or SELFIES
     force_register=True, 
 )
 

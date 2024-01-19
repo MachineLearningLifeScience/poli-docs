@@ -62,7 +62,7 @@ print(f(x))  # Should be [[0.0]] in this example
 
 ## Creating problems with low intrinsic dimensionality
 
-Some optimization algorithms (like [LineBO]() or [SAASBO]()) rely on the assumption that there is a _low intrinsic dimensionality_ to the problem. Roughly speaking, this means that only a subset of the variables are actually relevant to the problem in question. This `poli` objective allows you to create such problems. For example, consider `camelback_2d` (which is usually only defined in two dimensions). You can embed this function into, say, 30 dimensions by creating the objective as follows:
+Some optimization algorithms (like [LineBO](https://arxiv.org/abs/1902.03229) or [SAASBO](https://proceedings.mlr.press/v161/eriksson21a.html)) rely on the assumption that there is a _low intrinsic dimensionality_ to the problem. Roughly speaking, this means that only a subset of the variables are actually relevant to the problem in question. This `poli` objective allows you to create such problems. For example, consider `camelback_2d` (which is usually only defined in two dimensions). You can embed this function into, say, 30 dimensions by creating the objective as follows:
 
 ```python
 problem_info, f, x0, y0, run_info = objective_factory.create(
