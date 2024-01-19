@@ -11,6 +11,7 @@ parts:
     chapters:
       - file: using_poli/the_basics/intro_to_poli.ipynb
       - file: using_poli/the_basics/defining_an_observer.ipynb
+      - file: using_poli/the_basics/isolation.ipynb
   - caption: Examples
     chapters:
       - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
@@ -30,13 +31,6 @@ parts:
       - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/RaSP.md
       - file: using_poli/objective_repository/super_mario_bros.md
-  - caption: "Optimizers"
-    chapters:
-    - file: using_poli_baselines/cma_es.md
-    - file: using_poli_baselines/graph_ga.md
-    - file: using_poli_baselines/latent_space_bo.md
-    - file: using_poli_baselines/nsga_2.md
-    - file: using_poli_baselines/random_mutations.md
   - caption: "Observers"
     chapters:
     - file: observers/registering_an_observer.md
