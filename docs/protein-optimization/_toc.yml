@@ -31,6 +31,13 @@ parts:
       - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/RaSP.md
       - file: using_poli/objective_repository/super_mario_bros.md
+  - caption: "Optimizers"
+    chapters:
+      - file: using_poli_baselines/random_mutations.md
+      - file: using_poli_baselines/cma_es.md
+      - file: using_poli_baselines/nsga_2.md
+      - file: using_poli_baselines/bayesian_optimization.md
+      - file: using_poli_baselines/line_bayesian_optimization.md
   - caption: "Observers"
     chapters:
     - file: observers/registering_an_observer.md

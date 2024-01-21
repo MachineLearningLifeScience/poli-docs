@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.gfp\_cbas
+poli.objective\_repository.gfp\_cbas
 ====================================
 
 .. automodule:: poli.objective_repository.gfp_cbas

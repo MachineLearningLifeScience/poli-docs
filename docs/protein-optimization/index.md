@@ -116,28 +116,28 @@ On top of `poli`, we provide `poli-baselines`, a collection of **black-box optim
 Optimizing a discrete sequence by performing random mutations
 :::
 
-:::{grid-item-card} NSGA-2
+:::{grid-item-card} Discrete NSGA-2
 :link: ./using_poli_baselines/nsga_2.html
 :columns: 6
-A Genetic algorithm for optimizing more than one metric [WIP]
+A Genetic algorithm for multi-objective optimization of discrete sequences
 :::
 
 :::{grid-item-card} CMA-ES
 :link: ./using_poli_baselines/cma_es.html
 :columns: 6
-An evolutionary strategy for continuous problems [WIP]
+An evolutionary strategy for continuous problems
 :::
 
-:::{grid-item-card} Latent Space Bayesian Optimization
+:::{grid-item-card} Bayesian Optimization
 :link: ./using_poli_baselines/latent_space_bo.html
 :columns: 6
 Learning continuous representations and optimizing in latent space. [WIP]
 :::
 
-:::{grid-item-card} Graph GA
-:link: ./using_poli_baselines/graph_ga.html
+:::{grid-item-card} Line Bayesian Optimization
+:link: ./using_poli_baselines/latent_space_bo.html
 :columns: 6
-Graph Genetic Algorithms for small molecules. [WIP]
+Learning continuous representations and optimizing in latent space. [WIP]
 :::
 
 ::::

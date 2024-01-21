@@ -1,4 +1,4 @@
-poli.objective\_repository
+﻿poli.objective\_repository
 ==========================
 
 .. automodule:: poli.objective_repository
@@ -40,6 +40,7 @@ poli.objective\_repository
    poli.objective_repository.rasp
    poli.objective_repository.rdkit_logp
    poli.objective_repository.rdkit_qed
+   poli.objective_repository.rfp_foldx_stability_and_sasa
    poli.objective_repository.sa_tdc
    poli.objective_repository.super_mario_bros
    poli.objective_repository.toy_continuous_problem

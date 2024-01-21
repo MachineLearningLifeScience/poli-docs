@@ -1,10 +1,10 @@
-# Random mutations
+# Template: optimization algorithm
 
 ![Type of optimizer algorithm: discrete inputs](https://img.shields.io/badge/Type-discrete_inputs-blue)
 
 ## About
 
-This optimizer samples a random location of a string in the history, and replaces it with a randomly sampled token from the alphabet.
+This optimizer samples a random location of a string in the history, and replaces it with a randomly sampled token from the alphabet
 
 ## How to run
 
@@ -30,3 +30,6 @@ solver.solve(max_iter=100)
 print(solver.get_best_solution())
 
 ```
+
+## Reference
+
