@@ -6,7 +6,7 @@
 
 Line Bayesian Optimization (LineBO) is a version of [Bayesian Optimization](./bayesian_optimization.md) that restricts the optimization of the acquisition function to a single line in input space {cite:p}`Kirschner:LineBO:2019`. This line can either be selected at random, or can follow one of the coordinate directions.
 
-By default, we use `botorch`'s `SingleTaskGP` {cite+p}`Balandat:botorch:2020`. 
+By default, we use `botorch`'s `SingleTaskGP` {cite:p}`Balandat:botorch:2020`. 
 
 ## How to run
 

@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Protein optimization
+title: Documentation for poli and poli-baselines
 author: Center for Basic Machine Learning Research in Life Science
 logo: MLLS_concept_color.png
 
@@ -21,6 +21,8 @@ bibtex_bibfiles:
 
 sphinx:
   config:
+    latex_elements:
+      preamble: "\\usepackage{bm}"
     bibtex_reference_style: author_year
     autodoc_mock_imports:
       - Bio
@@ -62,3 +64,4 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  favicon: "favicon.png"

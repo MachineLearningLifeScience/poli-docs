@@ -4,9 +4,9 @@
 
 ## About
 
-Bayesian Optimization is a sample-efficient black box optimization algorithm which uses an uncertainty-aware approximation $\tilde{f}(\bm{x})$ of the objective function $f$. This surrogate model $\tilde{f}$ is usually a Gaussian Process, whose predictions and uncertainties are used to build an _acquisition function_ $\alpha(\bm{x})$. Optimizing $\alpha$ renders points that are _likely_ to perform well for $f$. By smartly including uncertainties in $\alpha$, Bayesian Optimization balances exploration and exploitation.
+Bayesian Optimization is a sample-efficient black box optimization algorithm which uses an uncertainty-aware approximation $\tilde{f}(\boldsymbol{x})$ of the objective function $f$. This surrogate model $\tilde{f}$ is usually a Gaussian Process, whose predictions and uncertainties are used to build an _acquisition function_ $\alpha(\boldsymbol{x})$. Optimizing $\alpha$ renders points that are _likely_ to perform well for $f$. By smartly including uncertainties in $\alpha$, Bayesian Optimization balances exploration and exploitation.
 
-Our implementation uses `gpytorch` and `botorch` as the engines for Bayesian Optimization {cite+p}`Balandat:botorch:2020,gardner:gpytorch:2018`. We use the default `botorch` single-task Gaussian Process, and we optimize the acquisition function using grid-search for 1 and 2 dimensions, and using `botorch`'s utilities from 3 onwards.
+Our implementation uses `gpytorch` and `botorch` as the engines for Bayesian Optimization {cite:p}`Balandat:botorch:2020,gardner:gpytorch:2018`. We use the default `botorch` single-task Gaussian Process, and we optimize the acquisition function using grid-search for 1 and 2 dimensions, and using `botorch`'s utilities from 3 onwards.
 
 ## How to run
 

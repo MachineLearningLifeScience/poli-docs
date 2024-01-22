@@ -5,6 +5,11 @@ This page contains documentation on how to use `poli`, a library of discrete obj
 A core feature of `poli` is isolating calls to complicated objective functions which might, for example, depend on simulators, binaries, and highly specific package requirements.
 Our promise is: if you can run your objective function reliably in a `conda` environment, then you can register it and call it from other projects and environments without having to worry about re-installing all the dependencies.
 
+## Get started!
+
+A good place to start is the next chapter! [Go to Getting Started](./getting_started/getting_started.md).
+
+
 ## Black-box objective functions
 
 [For a full list, click here](./using_poli/objective_repository/all_objectives.md).
@@ -141,10 +146,6 @@ Learning continuous representations and optimizing in latent space. [WIP]
 :::
 
 ::::
-
-## Get started!
-
-A good place to start is the next chapter! [Go to Getting Started](./getting_started/getting_started.md).
 
 
 ## Contribute problems or solvers
