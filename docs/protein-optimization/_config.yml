@@ -3,7 +3,7 @@
 
 title: Protein optimization
 author: Center for Basic Machine Learning Research in Life Science
-logo: logo_protein_opt.png
+logo: MLLS_concept_color.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -52,13 +52,13 @@ sphinx:
     - sphinx.ext.napoleon
 
 # Information about where the book exists on the web
-# repository:
-#   url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+repository:
+  url: https://github.com/MachineLearningLifeScience/protein-optimization-docs  # Online location of your book
 #   path_to_book: docs  # Optional path to your book, relative to the repository root
 #   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # # Add GitHub buttons to your book
 # # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-# html:
-#   use_issues_button: true
-#   use_repository_button: true
+html:
+  use_issues_button: true
+  use_repository_button: true
