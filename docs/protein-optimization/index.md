@@ -136,13 +136,13 @@ An evolutionary strategy for continuous problems
 :::{grid-item-card} Bayesian Optimization
 :link: ./using_poli_baselines/latent_space_bo.html
 :columns: 6
-Learning continuous representations and optimizing in latent space. [WIP]
+A vanilla implementation of Bayesian Optimization using `botorch`.
 :::
 
 :::{grid-item-card} Line Bayesian Optimization
 :link: ./using_poli_baselines/latent_space_bo.html
 :columns: 6
-Learning continuous representations and optimizing in latent space. [WIP]
+A version of Bayesian Optimization where the acquisition is optimized over a line.
 :::
 
 ::::
