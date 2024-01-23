@@ -1,7 +1,5 @@
 # poli 🧪: a library of discrete objective functions
 
-[![Testing (conda, python 3.9)](https://github.com/MachineLearningLifeScience/poli/actions/workflows/python-tox-testing-including-conda.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli/actions/workflows/python-tox-testing-including-conda.yml) [![Test (conda, python 3.9)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing.yml)
-
 [poli](https://github.com/MachineLearningLifeScience/poli) is a library of discrete objective functions for benchmarking optimization algorithms. Examples include:
 - 🔬 **stability** of mutations from a wildtype protein (using [foldx](https://foldxsuite.crg.eu/) or [rasp](https://github.com/KULL-Centre/_2022_ML-ddG-Blaabjerg)).
 - 🧪 **docking scores** of ligands to proteins (using [dockstring](https://github.com/dockstring/dockstring), [pyscreener](https://github.com/coleygroup/pyscreener) and [pytdc](https://tdcommons.ai/functions/oracles/)).
@@ -13,7 +11,7 @@ Some of `poli`'s features:
 -  A numpy interface. Inputs are `np.array`s of strings, outputs are `np.array`s of floats.
 - `SMILES` and `SELFIES` support for small molecule manipulation.
 
-This documentation also discusses [`poli-baselines`](https://github.com/MachineLearningLifeScience/poli-baselines), a collection of optimizers of these discrete black box functions which is currently in alpha stage.
+This documentation also discusses [`poli-baselines`](https://github.com/MachineLearningLifeScience/poli-baselines), a collection of optimizers of these discrete black box functions.
 
 ## Getting started
 
