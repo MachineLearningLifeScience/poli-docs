@@ -1,9 +1,19 @@
 # poli 🧪: a library of discrete objective functions
 
-This page contains documentation on how to use `poli`, a library of discrete objective functions in biology, cheminformatics, and more. This page also presents `poli-baselines`, a collection of optimizers of these discrete black box functions.
+[![Testing (conda, python 3.9)](https://github.com/MachineLearningLifeScience/poli/actions/workflows/python-tox-testing-including-conda.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli/actions/workflows/python-tox-testing-including-conda.yml) [![Test (conda, python 3.9)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing.yml)
 
-A core feature of `poli` is isolating calls to complicated objective functions which might, for example, depend on simulators, binaries, and highly specific package requirements.
-Our promise is: if you can run your objective function reliably in a `conda` environment, then you can register it and call it from other projects and environments without having to worry about re-installing all the dependencies.
+[poli](https://github.com/MachineLearningLifeScience/poli) is a library of discrete objective functions for benchmarking optimization algorithms. Examples include:
+- 🔬 **stability** of mutations from a wildtype protein (using [foldx](https://foldxsuite.crg.eu/) or [rasp](https://github.com/KULL-Centre/_2022_ML-ddG-Blaabjerg)).
+- 🧪 **docking scores** of ligands to proteins (using [dockstring](https://github.com/dockstring/dockstring), [pyscreener](https://github.com/coleygroup/pyscreener) and [pytdc](https://tdcommons.ai/functions/oracles/)).
+- 💊 **druglikeness** or **synthetic acccesibility** of small molecules (using [rdkit](https://github.com/rdkit/rdkit) and [pytdc](https://tdcommons.ai/functions/oracles/)).
+
+Some of `poli`'s features:
+- 🔲 **isolation** of black box function calls inside conda environments. Don't worry about clashes w. black box requirements, poli will create the relevant conda environments for you.
+- 🗒️ **logging** logic at the black box `__call__` level using observers.
+-  A numpy interface. Inputs are `np.array`s of strings, outputs are `np.array`s of floats.
+- `SMILES` and `SELFIES` support for small molecule manipulation.
+
+This documentation also discusses [`poli-baselines`](https://github.com/MachineLearningLifeScience/poli-baselines), a collection of optimizers of these discrete black box functions which is currently in alpha stage.
 
 ## Getting started
 
@@ -18,7 +28,7 @@ pip install git+https://github.com/MachineLearningLifeScience/poli.git@dev
 pip install git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
 ```
 
-`poli` also [runs on colab](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls?usp=sharing).
+`poli` also runs on Google Colab. [Here is a small example of how to run one of the objective functions.](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls?usp=sharing).
 
 ## Black-box objective functions
 
