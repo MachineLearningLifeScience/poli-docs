@@ -1,29 +1,6 @@
-poli.core.util.proteins.rasp.load\_models
+﻿poli.core.util.proteins.rasp.load\_models
 =========================================
 
-.. automodule:: poli.core.util.proteins.rasp.load_models
+.. currentmodule:: poli.core.util.proteins.rasp
 
-   
-   
-   
-
-   
-   
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      load_cavity_and_downstream_models
-   
-   
-
-   
-   
-   
-
-   
-   
-   
-
-
-
+.. autodata:: load_models

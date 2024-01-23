@@ -21,13 +21,3 @@
 
 
 
-.. rubric:: Modules
-
-.. autosummary::
-   :toctree:
-   :recursive:
-
-   poli.core.util.proteins.rasp.inner_rasp
-   poli.core.util.proteins.rasp.load_models
-   poli.core.util.proteins.rasp.rasp_interface
-

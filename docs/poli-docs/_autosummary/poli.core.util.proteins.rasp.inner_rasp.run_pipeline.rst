@@ -1,6 +1,6 @@
-﻿poli.core.util.proteins.rasp.inner\_rasp.cavity\_model
+﻿poli.core.util.proteins.rasp.inner\_rasp.run\_pipeline
 ======================================================
 
 .. currentmodule:: poli.core.util.proteins.rasp.inner_rasp
 
-.. autodata:: cavity_model
+.. autodata:: run_pipeline

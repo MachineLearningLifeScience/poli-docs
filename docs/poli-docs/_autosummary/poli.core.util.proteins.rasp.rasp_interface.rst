@@ -1,29 +1,6 @@
-poli.core.util.proteins.rasp.rasp\_interface
+﻿poli.core.util.proteins.rasp.rasp\_interface
 ============================================
 
-.. automodule:: poli.core.util.proteins.rasp.rasp_interface
+.. currentmodule:: poli.core.util.proteins.rasp
 
-   
-   
-   
-
-   
-   
-   
-
-   
-   
-   .. rubric:: Classes
-
-   .. autosummary::
-   
-      RaspInterface
-   
-   
-
-   
-   
-   
-
-
-
+.. autodata:: rasp_interface

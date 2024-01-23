@@ -48,6 +48,7 @@ sphinx:
       - openmm
       - simtk
       - dockstring
+      - poli.core.util.proteins.rasp
   extra_extensions:
     - sphinx.ext.autodoc
     - sphinx.ext.autosummary
