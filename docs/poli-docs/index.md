@@ -18,7 +18,7 @@ pip install git+https://github.com/MachineLearningLifeScience/poli.git@dev
 pip install git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
 ```
 
-`poli` also [runs on colab](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls?usp=sharing).
+`poli` also runs on Google Colab. [Here is a small example of how to run one of the objective functions.](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls?usp=sharing).
 
 ## Black-box objective functions
 
