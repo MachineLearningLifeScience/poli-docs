@@ -1,0 +1,1 @@
+{"name": "aloha", "max_sequence_length": 5, "aligned": true, "alphabet": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"], "log_transform_recommended": false, "caller_info": null, "x0": [["A", "L", "O", "O", "F"]], "y0": [[3]], "seed": null}
