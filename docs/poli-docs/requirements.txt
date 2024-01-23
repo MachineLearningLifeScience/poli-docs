@@ -1,6 +1,0 @@
-docutils==0.17.1
-jupyter-book
-matplotlib
-numpy
-biopython
-pandas

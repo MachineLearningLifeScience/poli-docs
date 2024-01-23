@@ -19,4 +19,3 @@ After this, you can build the documentation using
 ```bash
 jupyter-book build --all docs/poli-docs
 ```
-
