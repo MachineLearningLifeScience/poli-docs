@@ -5,10 +5,20 @@ This page contains documentation on how to use `poli`, a library of discrete obj
 A core feature of `poli` is isolating calls to complicated objective functions which might, for example, depend on simulators, binaries, and highly specific package requirements.
 Our promise is: if you can run your objective function reliably in a `conda` environment, then you can register it and call it from other projects and environments without having to worry about re-installing all the dependencies.
 
-## Get started!
+## Getting started
 
 A good place to start is the next chapter! [Go to Getting Started](./getting_started/getting_started.md).
 
+To install `poli` and `poli-baselines`, we recommend creating a fresh conda environment
+
+```bash
+conda create -n poli-base python=3.9
+conda activate poli-base
+pip install git+https://github.com/MachineLearningLifeScience/poli.git@dev
+pip install git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
+```
+
+`poli` also [runs on colab](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls?usp=sharing).
 
 ## Black-box objective functions
 
@@ -119,12 +129,6 @@ On top of `poli`, we provide `poli-baselines`, a collection of **black-box optim
 :link: ./using_poli_baselines/random_mutations.html
 :columns: 6
 Optimizing a discrete sequence by performing random mutations
-:::
-
-:::{grid-item-card} Discrete NSGA-2
-:link: ./using_poli_baselines/nsga_2.html
-:columns: 6
-A Genetic algorithm for multi-objective optimization of discrete sequences
 :::
 
 :::{grid-item-card} CMA-ES

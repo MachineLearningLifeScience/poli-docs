@@ -21,6 +21,7 @@
       test_registering_foldx_sasa
       test_registering_foldx_stability
       test_registering_foldx_stability_and_sasa
+      test_registering_foldx_stability_and_sasa_with_verbose_output
    
    
 

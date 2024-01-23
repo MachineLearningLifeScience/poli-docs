@@ -61,16 +61,23 @@ class YourBlackBox(AbstractBlackBox):
     def __init__(
         self,
         info: ProblemSetupInformation,
+        your_arg: str,
+        your_second_arg: List[float],
+        your_kwarg: str=...,
         batch_size: int = None,
         parallelize: bool = False,
-        num_workers: int = None
+        num_workers: int = None,
+        evaluation_budget: int = float("inf")
     ):
         super().__init__(
             info=info,
             batch_size=batch_size,
             parallelize=parallelize,
             num_workers=num_workers,
+            evaluation_budget=evaluation_budget,
         )
+
+        #... your manipulation of args and kwargs.
 
     # The only method you have to define
     def _black_box(self, x: np.ndarray, context: dict = None) -> np.ndarray:
@@ -95,14 +102,16 @@ class YourProblemFactory(AbstractProblemFactory):
     def create(
         self,
         seed: int = None,
+        your_arg: str = ...,
+        your_second_arg: List[float] = ...,
+        your_kwarg: str = ...,
         batch_size: int = None,
         parallelize: bool = False,
         num_workers: int = None,
-        your_keyword_1: str = ...,
-        your_keyword_2: int = ...,
-        your_keyword_3: List[float] = ...,
+        evaluation_budget: int = float("inf"),
+        your_second_arg: List[float] = ...,
     ) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
-        # Manipulate keywords you might need at creation time...
+        # Manipulate args and kwargs you might need at creation time...
         ...
         
         # Getting the problem information
@@ -111,12 +120,16 @@ class YourProblemFactory(AbstractProblemFactory):
         # Creating your black box function
         f = YourBlackBox(
             info=problem_info,
+            your_arg=your_arg,
+            your_second_arg=your_second_arg,
+            your_kwarg=your_kwarg,
             batch_size=batch_size,
             parallelize=parallelize,
             num_workers=num_workers,
+            evaluation_budget=evaluation_budget,
         )
         
-        # Your first input (an np.array[str])
+        # Your first input (an np.array[str] of shape [b, L] or [b,])
         x0 = ...
 
         return f, x0, f(x0)
@@ -146,7 +159,7 @@ It is important that name of your problem should be the name of the folder it's 
 
 :::{warning}
 
-`poli` is experimental. The input kwargs to the abstract black box
+`poli` is under active development. The input kwargs to the abstract black box
 and to the create method are under active development. Your IDE should
 tell you automatically, though!
 
@@ -165,7 +178,7 @@ dependencies:
   - pip
   - pip:
     - numpy
-    - "git+https://github.com/MachineLearningLifeScience/poli.git@master"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git@dev"
     - YOUR OTHER DEPENDENCIES
 ```
 
@@ -191,11 +204,11 @@ dependencies:
   - pip:
     - numpy
     - click
-    - "git+https://github.com/MachineLearningLifeScience/poli.git@master"
+    - "git+https://github.com/MachineLearningLifeScience/poli.git@dev"
 
 ```
 
-It installs an `openjdk` that will be added to the path when the environment is active. Moreover, you can also hack your way around installing conda and creating conda environments inside Colab.
+It installs an `openjdk` that will be added to the path when the environment is active. Moreover, [`conda` is also installable in Google Colab, allowing you to use `poli` there](https://colab.research.google.com/drive/1-IISCebWYfu0QhuCJ11wOag8aKOiPtls?usp=sharing).
 
 :::
 
@@ -208,18 +221,11 @@ If you
 
 then you should be set!
 
-You can test that your problem is registerable by creating a fresh environment that includes poli, and running
+You can test that your problem is registerable by running
 
 ```bash
 $ python -c "from poli.core.registry import get_problems; print(get_problems())"
-[...]  # A list, without your problem in it.
-```
-
-Your problem is not registered yet, so don't fret. You can check _if_ you can register it by running
-
-```bash
-$ python -c "from poli.core.registry import get_problems; print(get_problems(include_repository=True))"
-[..., "your_problem", ...]   # If all goes well, you should see "your_problem" here.
+[..., "your_problem", ...]  # A list with your problem in it
 ```
 
 If you can find your problem in this list, then you're set! You should be able to run
@@ -230,18 +236,20 @@ from poli import objective_factory
 problem_info, f, x0, y0, _ = objective_factory.create(
     name="your_problem",
     ...,
-    your_keyword_1=...,      # <-- Keywords you (maybe) needed
-    your_keyword_2=...       # <-- at your_factory.create(...)
-                        # For now, only string kwargs are
-                        # supported. 
+    your_arg_1=...,      # <-- Keywords you (maybe) needed
+    your_arg_2=...,       # <-- at your_factory.create(...)
+    your_kwarg=...,       # <--
+                            # For now, only certain types are
+                            # supported: str, int, bool, float,
+                            # None, and lists thereof.
 )
 ```
 
-`poli` will ask you to confirm that you want to register your problem (you can force the registration by passing `force_register=True` to `objective_factory.create`).
-
 ## (Optional) Making your problem be available if dependencies are met
 
-At this point, you can run your objective function in an isolated process (which will literally import the factory and the black box function from the `register.py` you wrote). A better alternative is to get direct access to the object itself. Having access to the actual class makes your life easy, especially when it comes to using debugging tools like the ones in VSCode.
+At this point, you can run your objective function in an isolated process (which will literally import the factory and the black box function from the `register.py` you wrote).
+
+A better alternative is to get direct access to the object itself. Having access to the actual class makes your life easy, especially when it comes to using debugging tools like the ones in VSCode.
 
 If you want to make your problem available if it can be imported, take a look at `src/poli/objective_repository/__init__.py`. Add a block like this one at the end of it:
 
@@ -263,4 +271,4 @@ except ImportError:  # Maybe you'll need to check for other errors.
 
 ## Submitting a pull request
 
-If you want to share your problem with us, feel free to create a pull request in our repository: https://github.com/MachineLearningLifeScience/poli
+If you want to share your problem with us, feel free to create a pull request in our repository following the instructions in our `CONTRIBUTING.md`: https://github.com/MachineLearningLifeScience/poli
