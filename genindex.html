@@ -1,0 +1,2232 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Documentation for poli and poli-baselines</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/MLLS_concept_color.png" class="logo__image only-light" alt="Documentation for poli and poli-baselines - Home"/>
+    <script>document.write(`<img src="_static/MLLS_concept_color.png" class="logo__image only-dark" alt="Documentation for poli and poli-baselines - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    poli 🧪: a library of discrete objective functions
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting_started/getting_started.html">Getting started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="using_poli/the_basics/intro_to_poli.html">What is poli?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/the_basics/defining_an_observer.html">Defining an observer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/the_basics/isolation.html">Isolating black box objective functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Objective functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/all_objectives.html">All objective functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/white_noise.html">White Noise objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/aloha.html">Aloha objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/toy_continuous_problems.html">Toy continuous objective functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/rdkit_qed.html">Quantitative Estimate of Druglikeness (QED)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/rdkit_logp.html">Log-solubility (logP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/dockstring.html">dockstring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/drd3_docking.html">DRD3 docking (using TDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/penalized_logp_lambo.html">Penalized logP (using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/sa_tdc.html">Synthetic Accessibility (using TDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/foldx_stability.html">Protein stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/foldx_sasa.html">Protein solvent accessibility (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/RaSP.html">Rapid Stability Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/super_mario_bros.html">Optimizing jumps in Super Mario Bros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimizers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/random_mutations.html">Random mutations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/cma_es.html">CMA-ES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/bayesian_optimization.html">Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="contributing/a_new_problem.html">Adding a new problem to the repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing/a_new_solver.html">Adding a new optimizer to <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API documentation for poli</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.core.html">poli.core</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_black_box.html">poli.core.abstract_black_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_problem_factory.html">poli.core.abstract_problem_factory</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_black_box.html">poli.core.chemistry.tdc_black_box</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.exceptions.html">poli.core.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.multi_objective_black_box.html">poli.core.multi_objective_black_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.problem_setup_information.html">poli.core.problem_setup_information</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.proteins.html">poli.core.proteins</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.foldx_black_box.html">poli.core.proteins.foldx_black_box</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.registry.html">poli.core.registry</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.alignment.html">poli.core.util.alignment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.batch.html">poli.core.util.batch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.seeding.html">poli.core.util.seeding</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/poli.objective_factory.html">poli.objective_factory</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.html">poli.objective_repository</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.html">poli.objective_repository.aloha</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.register.html">poli.objective_repository.aloha.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.register.html">poli.objective_repository.dockstring.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.register.html">poli.objective_repository.drd3_docking.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html">poli.objective_repository.foldx_rfp_lambo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.register.html">poli.objective_repository.foldx_sasa.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.register.html">poli.objective_repository.foldx_stability.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html">poli.objective_repository.foldx_stability_and_sasa.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.html">poli.objective_repository.gfp_cbas</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.html">poli.objective_repository.gfp_cbas.abstract_vae_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html">poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html">poli.objective_repository.gfp_cbas.cbas_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.gfp_gp.html">poli.objective_repository.gfp_cbas.gfp_gp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.html">poli.objective_repository.gfp_cbas.make_vae</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.register.html">poli.objective_repository.gfp_cbas.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.register.html">poli.objective_repository.gfp_select.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.html">poli.objective_repository.penalized_logp_lambo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.register.html">poli.objective_repository.rasp.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.register.html">poli.objective_repository.rdkit_logp.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.register.html">poli.objective_repository.rdkit_qed.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html">poli.objective_repository.rfp_foldx_stability_and_sasa.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.register.html">poli.objective_repository.sa_tdc.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.html">poli.objective_repository.super_mario_bros.level_utils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.model.html">poli.objective_repository.super_mario_bros.model</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html">poli.objective_repository.toy_continuous_problem.definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.register.html">poli.objective_repository.toy_continuous_problem.register</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem.toy_continuous_problem</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.html">poli.objective_repository.white_noise</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.register.html">poli.objective_repository.white_noise.register</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/poli.objective.html">poli.objective</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">References</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix: Understanding foldx</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="understanding_foldx/00-installing-foldx.html">Installing <code class="docutils literal notranslate"><span class="pre">foldx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_foldx/01-single-mutation-using-foldx/index.html">Computing the energy of a protein and a single mutation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/MachineLearningLifeScience/protein-optimization-docs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/MachineLearningLifeScience/protein-optimization-docs/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.__call__">__call__() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.__del__">__del__() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.__enter__">__enter__() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.__exit__">__exit__() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.external_observer.ExternalObserver.html#poli.core.util.external_observer.ExternalObserver.__getattr__">__getattr__() (poli.core.util.external_observer.ExternalObserver method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.__init__">__init__() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.core.abstract_black_box.NegativeBlackBox.html#poli.core.abstract_black_box.NegativeBlackBox.__init__">(poli.core.abstract_black_box.NegativeBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.abstract_problem_factory.AbstractProblemFactory.html#poli.core.abstract_problem_factory.AbstractProblemFactory.__init__">(poli.core.abstract_problem_factory.AbstractProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.abstract_problem_factory.MetaProblemFactory.html#poli.core.abstract_problem_factory.MetaProblemFactory.__init__">(poli.core.abstract_problem_factory.MetaProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.chemistry.tdc_black_box.TDCBlackBox.html#poli.core.chemistry.tdc_black_box.TDCBlackBox.__init__">(poli.core.chemistry.tdc_black_box.TDCBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.multi_objective_black_box.MultiObjectiveBlackBox.html#poli.core.multi_objective_black_box.MultiObjectiveBlackBox.__init__">(poli.core.multi_objective_black_box.MultiObjectiveBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.problem_setup_information.ProblemSetupInformation.html#poli.core.problem_setup_information.ProblemSetupInformation.__init__">(poli.core.problem_setup_information.ProblemSetupInformation method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.__init__">(poli.core.proteins.foldx_black_box.FoldxBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.abstract_observer.AbstractObserver.html#poli.core.util.abstract_observer.AbstractObserver.__init__">(poli.core.util.abstract_observer.AbstractObserver method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.external_observer.ExternalObserver.html#poli.core.util.external_observer.ExternalObserver.__init__">(poli.core.util.external_observer.ExternalObserver method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.inter_process_communication.process_wrapper.ProcessWrapper.html#poli.core.util.inter_process_communication.process_wrapper.ProcessWrapper.__init__">(poli.core.util.inter_process_communication.process_wrapper.ProcessWrapper method)</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.__init__">(poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_factory.ExternalBlackBox.html#poli.objective_factory.ExternalBlackBox.__init__">(poli.objective_factory.ExternalBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaBlackBox.html#poli.objective_repository.aloha.register.AlohaBlackBox.__init__">(poli.objective_repository.aloha.register.AlohaBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaProblemFactory.html#poli.objective_repository.aloha.register.AlohaProblemFactory.__init__">(poli.objective_repository.aloha.register.AlohaProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringBlackBox.html#poli.objective_repository.dockstring.register.DockstringBlackBox.__init__">(poli.objective_repository.dockstring.register.DockstringBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringProblemFactory.html#poli.objective_repository.dockstring.register.DockstringProblemFactory.__init__">(poli.objective_repository.dockstring.register.DockstringProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.DRD3BlackBox.html#id0">(poli.objective_repository.drd3_docking.register.DRD3BlackBox method)</a>, <a href="_autosummary/poli.objective_repository.drd3_docking.register.DRD3BlackBox.html#poli.objective_repository.drd3_docking.register.DRD3BlackBox.__init__">[1]</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.DRD3ProblemFactory.html#poli.objective_repository.drd3_docking.register.DRD3ProblemFactory.__init__">(poli.objective_repository.drd3_docking.register.DRD3ProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.RFPWrapper.html#poli.objective_repository.foldx_rfp_lambo.register.RFPWrapper.__init__">(poli.objective_repository.foldx_rfp_lambo.register.RFPWrapper method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.RFPWrapperFactory.html#poli.objective_repository.foldx_rfp_lambo.register.RFPWrapperFactory.__init__">(poli.objective_repository.foldx_rfp_lambo.register.RFPWrapperFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_sasa.register.FoldXSASABlackBox.html#poli.objective_repository.foldx_sasa.register.FoldXSASABlackBox.__init__">(poli.objective_repository.foldx_sasa.register.FoldXSASABlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_sasa.register.FoldXSASAProblemFactory.html#poli.objective_repository.foldx_sasa.register.FoldXSASAProblemFactory.__init__">(poli.objective_repository.foldx_sasa.register.FoldXSASAProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox.html#poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox.__init__">(poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.FoldXStabilityProblemFactory.html#poli.objective_repository.foldx_stability.register.FoldXStabilityProblemFactory.__init__">(poli.objective_repository.foldx_stability.register.FoldXStabilityProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASABlackBox.html#poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASABlackBox.__init__">(poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASABlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASAProblemFactory.html#poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASAProblemFactory.__init__">(poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASAProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.AbstractVAEWrapper.html#poli.objective_repository.gfp_cbas.abstract_vae_wrapper.AbstractVAEWrapper.__init__">(poli.objective_repository.gfp_cbas.abstract_vae_wrapper.AbstractVAEWrapper method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.CBASVAEWrapper.html#poli.objective_repository.gfp_cbas.cbas_wrapper.CBASVAEWrapper.__init__">(poli.objective_repository.gfp_cbas.cbas_wrapper.CBASVAEWrapper method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeDecoder.html#poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeDecoder.__init__">(poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeDecoder method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeEncoder.html#poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeEncoder.__init__">(poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeEncoder method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.BaseVAE.html#poli.objective_repository.gfp_cbas.make_vae.BaseVAE.__init__">(poli.objective_repository.gfp_cbas.make_vae.BaseVAE method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.SimpleVAE.html#poli.objective_repository.gfp_cbas.make_vae.SimpleVAE.__init__">(poli.objective_repository.gfp_cbas.make_vae.SimpleVAE method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.register.GFPCBasBlackBox.html#poli.objective_repository.gfp_cbas.register.GFPCBasBlackBox.__init__">(poli.objective_repository.gfp_cbas.register.GFPCBasBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.register.GFPCBasProblemFactory.html#poli.objective_repository.gfp_cbas.register.GFPCBasProblemFactory.__init__">(poli.objective_repository.gfp_cbas.register.GFPCBasProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_select.register.GFPBlackBox.html#poli.objective_repository.gfp_select.register.GFPBlackBox.__init__">(poli.objective_repository.gfp_select.register.GFPBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_select.register.GFPSelectionProblemFactory.html#poli.objective_repository.gfp_select.register.GFPSelectionProblemFactory.__init__">(poli.objective_repository.gfp_select.register.GFPSelectionProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboBlackBox.html#poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboBlackBox.__init__">(poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboProblemFactory.html#poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboProblemFactory.__init__">(poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPBlackBox.html#poli.objective_repository.rdkit_logp.register.LogPBlackBox.__init__">(poli.objective_repository.rdkit_logp.register.LogPBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPProblemFactory.html#poli.objective_repository.rdkit_logp.register.LogPProblemFactory.__init__">(poli.objective_repository.rdkit_logp.register.LogPProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDBlackBox.html#poli.objective_repository.rdkit_qed.register.QEDBlackBox.__init__">(poli.objective_repository.rdkit_qed.register.QEDBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDProblemFactory.html#poli.objective_repository.rdkit_qed.register.QEDProblemFactory.__init__">(poli.objective_repository.rdkit_qed.register.QEDProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.SABlackBox.html#poli.objective_repository.sa_tdc.register.SABlackBox.__init__">(poli.objective_repository.sa_tdc.register.SABlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.SAProblemFactory.html#poli.objective_repository.sa_tdc.register.SAProblemFactory.__init__">(poli.objective_repository.sa_tdc.register.SAProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.model.VAEMario.html#poli.objective_repository.super_mario_bros.model.VAEMario.__init__">(poli.objective_repository.super_mario_bros.model.VAEMario method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.__init__">(poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousProblemFactory.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousProblemFactory.__init__">(poli.objective_repository.toy_continuous_problem.register.ToyContinuousProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.ToyContinuousProblem.html#poli.objective_repository.toy_continuous_problem.toy_continuous_problem.ToyContinuousProblem.__init__">(poli.objective_repository.toy_continuous_problem.toy_continuous_problem.ToyContinuousProblem method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.register.WhiteNoiseBlackBox.html#poli.objective_repository.white_noise.register.WhiteNoiseBlackBox.__init__">(poli.objective_repository.white_noise.register.WhiteNoiseBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.register.WhiteNoiseProblemFactory.html#poli.objective_repository.white_noise.register.WhiteNoiseProblemFactory.__init__">(poli.objective_repository.white_noise.register.WhiteNoiseProblemFactory method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.__neg__">__neg__() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox._black_box">_black_box() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.core.multi_objective_black_box.MultiObjectiveBlackBox.html#poli.core.multi_objective_black_box.MultiObjectiveBlackBox._black_box">(poli.core.multi_objective_black_box.MultiObjectiveBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaBlackBox.html#poli.objective_repository.aloha.register.AlohaBlackBox._black_box">(poli.objective_repository.aloha.register.AlohaBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringBlackBox.html#poli.objective_repository.dockstring.register.DockstringBlackBox._black_box">(poli.objective_repository.dockstring.register.DockstringBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox.html#poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox._black_box">(poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPBlackBox.html#poli.objective_repository.rdkit_logp.register.LogPBlackBox._black_box">(poli.objective_repository.rdkit_logp.register.LogPBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDBlackBox.html#poli.objective_repository.rdkit_qed.register.QEDBlackBox._black_box">(poli.objective_repository.rdkit_qed.register.QEDBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox._black_box">(poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.register.WhiteNoiseBlackBox.html#poli.objective_repository.white_noise.register.WhiteNoiseBlackBox._black_box">(poli.objective_repository.white_noise.register.WhiteNoiseBlackBox method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface._compute_sasa">_compute_sasa() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface._read_energy">_read_energy() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface._repair_if_necessary_and_provide_path">_repair_if_necessary_and_provide_path() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface._simulate_mutations">_simulate_mutations() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox">AbstractBlackBox (class in poli.core.abstract_black_box)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.abstract_observer.AbstractObserver.html#poli.core.util.abstract_observer.AbstractObserver">AbstractObserver (class in poli.core.util.abstract_observer)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_problem_factory.AbstractProblemFactory.html#poli.core.abstract_problem_factory.AbstractProblemFactory">AbstractProblemFactory (class in poli.core.abstract_problem_factory)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.AbstractVAEWrapper.html#poli.objective_repository.gfp_cbas.abstract_vae_wrapper.AbstractVAEWrapper">AbstractVAEWrapper (class in poli.objective_repository.gfp_cbas.abstract_vae_wrapper)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.ackley_function_01.html#poli.objective_repository.toy_continuous_problem.definitions.ackley_function_01">ackley_function_01() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.add_padding_to_level.html#poli.objective_repository.super_mario_bros.level_utils.add_padding_to_level">add_padding_to_level() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaBlackBox.html#poli.objective_repository.aloha.register.AlohaBlackBox">AlohaBlackBox (class in poli.objective_repository.aloha.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaProblemFactory.html#poli.objective_repository.aloha.register.AlohaProblemFactory">AlohaProblemFactory (class in poli.objective_repository.aloha.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaBlackBox.html#poli.objective_repository.aloha.register.AlohaBlackBox.alphabet">alphabet (poli.objective_repository.aloha.register.AlohaBlackBox attribute)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringBlackBox.html#poli.objective_repository.dockstring.register.DockstringBlackBox.alphabet">(poli.objective_repository.dockstring.register.DockstringBlackBox attribute)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.alphabet">(poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.alpine_01.html#poli.objective_repository.toy_continuous_problem.definitions.alpine_01">alpine_01() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.alpine_02.html#poli.objective_repository.toy_continuous_problem.definitions.alpine_02">alpine_02() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.BaseVAE.html#poli.objective_repository.gfp_cbas.make_vae.BaseVAE">BaseVAE (class in poli.objective_repository.gfp_cbas.make_vae)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.batch_size">batch_size (poli.core.abstract_black_box.AbstractBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.batch.batch_input.batched.html#poli.core.util.batch.batch_input.batched">batched() (in module poli.core.util.batch.batch_input)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.bent_cigar.html#poli.objective_repository.toy_continuous_problem.definitions.bent_cigar">bent_cigar() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.bounds">bounds (poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.brown.html#poli.objective_repository.toy_continuous_problem.definitions.brown">brown() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.core.exceptions.BudgetExhaustedException.html#poli.core.exceptions.BudgetExhaustedException">BudgetExhaustedException</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.build_vae.html#poli.objective_repository.gfp_cbas.make_vae.build_vae">build_vae() (in module poli.objective_repository.gfp_cbas.make_vae)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.camelback_2d.html#poli.objective_repository.toy_continuous_problem.definitions.camelback_2d">camelback_2d() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.cavity_model.html#poli.core.util.proteins.rasp.inner_rasp.cavity_model">cavity_model (in module poli.core.util.proteins.rasp.inner_rasp)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.CBASVAEWrapper.html#poli.objective_repository.gfp_cbas.cbas_wrapper.CBASVAEWrapper">CBASVAEWrapper (class in poli.objective_repository.gfp_cbas.cbas_wrapper)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.chung_reynolds.html#poli.objective_repository.toy_continuous_problem.definitions.chung_reynolds">chung_reynolds() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.clean_level.html#poli.objective_repository.super_mario_bros.level_utils.clean_level">clean_level() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.files.integrity.compute_md5_from_filepath.html#poli.core.util.files.integrity.compute_md5_from_filepath">compute_md5_from_filepath() (in module poli.core.util.files.integrity)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.compute_sasa">compute_sasa() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.compute_stability">compute_stability() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.compute_stability_and_sasa">compute_stability_and_sasa() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.Config.html#poli.objective_repository.foldx_rfp_lambo.register.Config">Config (in module poli.objective_repository.foldx_rfp_lambo.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.convert_aas_to_idx_array.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.convert_aas_to_idx_array">convert_aas_to_idx_array() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.convert_idx_array_to_aas.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.convert_idx_array_to_aas">convert_idx_array_to_aas() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.convert_mutations_to_sequence.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.convert_mutations_to_sequence">convert_mutations_to_sequence() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeDecoder.html#poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeDecoder">ConvertedTorchVaeDecoder (class in poli.objective_repository.gfp_cbas.cbas_wrapper)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeEncoder.html#poli.objective_repository.gfp_cbas.cbas_wrapper.ConvertedTorchVaeEncoder">ConvertedTorchVaeEncoder (class in poli.objective_repository.gfp_cbas.cbas_wrapper)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.copy_foldx_files">copy_foldx_files() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.cosine_mixture.html#poli.objective_repository.toy_continuous_problem.definitions.cosine_mixture">cosine_mixture() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_factory.create.html#poli.objective_factory.create">create() (in module poli.objective_factory)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaProblemFactory.html#poli.objective_repository.aloha.register.AlohaProblemFactory.create">(poli.objective_repository.aloha.register.AlohaProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringProblemFactory.html#poli.objective_repository.dockstring.register.DockstringProblemFactory.create">(poli.objective_repository.dockstring.register.DockstringProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDProblemFactory.html#poli.objective_repository.rdkit_qed.register.QEDProblemFactory.create">(poli.objective_repository.rdkit_qed.register.QEDProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.SAProblemFactory.html#poli.objective_repository.sa_tdc.register.SAProblemFactory.create">(poli.objective_repository.sa_tdc.register.SAProblemFactory method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.create_working_directory">create_working_directory() (poli.core.proteins.foldx_black_box.FoldxBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.cross_in_tray.html#poli.objective_repository.toy_continuous_problem.definitions.cross_in_tray">cross_in_tray() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.deb_01.html#poli.objective_repository.toy_continuous_problem.definitions.deb_01">deb_01() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.deb_02.html#poli.objective_repository.toy_continuous_problem.definitions.deb_02">deb_02() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.deflected_corrugated_spring.html#poli.objective_repository.toy_continuous_problem.definitions.deflected_corrugated_spring">deflected_corrugated_spring() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.delete_observer_run_script.html#poli.core.registry.delete_observer_run_script">delete_observer_run_script() (in module poli.core.registry)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.delete_problem.html#poli.core.registry.delete_problem">delete_problem() (in module poli.core.registry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringBlackBox.html#poli.objective_repository.dockstring.register.DockstringBlackBox">DockstringBlackBox (class in poli.objective_repository.dockstring.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringProblemFactory.html#poli.objective_repository.dockstring.register.DockstringProblemFactory">DockstringProblemFactory (class in poli.objective_repository.dockstring.register)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.files.download_files_from_github.download_file_from_github_repository.html#poli.core.util.files.download_files_from_github.download_file_from_github_repository">download_file_from_github_repository() (in module poli.core.util.files.download_files_from_github)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.DRD3BlackBox.html#poli.objective_repository.drd3_docking.register.DRD3BlackBox">DRD3BlackBox (class in poli.objective_repository.drd3_docking.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.DRD3ProblemFactory.html#poli.objective_repository.drd3_docking.register.DRD3ProblemFactory">DRD3ProblemFactory (class in poli.objective_repository.drd3_docking.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective.dynamically_instantiate.html#poli.objective.dynamically_instantiate">dynamically_instantiate() (in module poli.objective)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.easom.html#poli.objective_repository.toy_continuous_problem.definitions.easom">easom() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.mutations.edits_between_strings.html#poli.core.util.proteins.mutations.edits_between_strings">edits_between_strings() (in module poli.core.util.proteins.mutations)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.egg_holder.html#poli.objective_repository.toy_continuous_problem.definitions.egg_holder">egg_holder() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.embed_in">embed_in (poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.experiment_id">experiment_id (poli.core.proteins.foldx_black_box.FoldxBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_factory.ExternalBlackBox.html#poli.objective_factory.ExternalBlackBox">ExternalBlackBox (class in poli.objective_factory)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.external_observer.ExternalObserver.html#poli.core.util.external_observer.ExternalObserver">ExternalObserver (class in poli.core.util.external_observer)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.util.proteins.mutations.find_closest_wildtype_pdb_file_to_mutant.html#poli.core.util.proteins.mutations.find_closest_wildtype_pdb_file_to_mutant">find_closest_wildtype_pdb_file_to_mutant() (in module poli.core.util.proteins.mutations)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.abstract_observer.AbstractObserver.html#poli.core.util.abstract_observer.AbstractObserver.finish">finish() (poli.core.util.abstract_observer.AbstractObserver method)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.external_observer.ExternalObserver.html#poli.core.util.external_observer.ExternalObserver.finish">(poli.core.util.external_observer.ExternalObserver method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox">FoldxBlackBox (class in poli.core.proteins.foldx_black_box)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface">FoldxInterface (class in poli.core.util.proteins.foldx)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_sasa.register.FoldXSASABlackBox.html#poli.objective_repository.foldx_sasa.register.FoldXSASABlackBox">FoldXSASABlackBox (class in poli.objective_repository.foldx_sasa.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_sasa.register.FoldXSASAProblemFactory.html#poli.objective_repository.foldx_sasa.register.FoldXSASAProblemFactory">FoldXSASAProblemFactory (class in poli.objective_repository.foldx_sasa.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASABlackBox.html#poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASABlackBox">FoldXStabilityAndSASABlackBox (class in poli.objective_repository.foldx_stability_and_sasa.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASAProblemFactory.html#poli.objective_repository.foldx_stability_and_sasa.register.FoldXStabilityAndSASAProblemFactory">FoldXStabilityAndSASAProblemFactory (class in poli.objective_repository.foldx_stability_and_sasa.register)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox.html#poli.objective_repository.foldx_stability.register.FoldXStabilityBlackBox">FoldXStabilityBlackBox (class in poli.objective_repository.foldx_stability.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.FoldXStabilityProblemFactory.html#poli.objective_repository.foldx_stability.register.FoldXStabilityProblemFactory">FoldXStabilityProblemFactory (class in poli.objective_repository.foldx_stability.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPBlackBox.html#poli.objective_repository.rdkit_logp.register.LogPBlackBox.from_selfies">from_selfies (poli.objective_repository.rdkit_logp.register.LogPBlackBox attribute)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDBlackBox.html#poli.objective_repository.rdkit_qed.register.QEDBlackBox.from_selfies">(poli.objective_repository.rdkit_qed.register.QEDBlackBox attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.chemistry.tdc_black_box.TDCBlackBox.html#poli.core.chemistry.tdc_black_box.TDCBlackBox.from_smiles">from_smiles (poli.core.chemistry.tdc_black_box.TDCBlackBox attribute)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPBlackBox.html#poli.objective_repository.rdkit_logp.register.LogPBlackBox.from_smiles">(poli.objective_repository.rdkit_logp.register.LogPBlackBox attribute)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDBlackBox.html#poli.objective_repository.rdkit_qed.register.QEDBlackBox.from_smiles">(poli.objective_repository.rdkit_qed.register.QEDBlackBox attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.function">function (poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.function_name">function_name (poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_argmax.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_argmax">get_argmax() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_balaji_predictions.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_balaji_predictions">get_balaji_predictions() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.get_config.html#poli.objective_repository.foldx_rfp_lambo.register.get_config">get_config() (in module poli.objective_repository.foldx_rfp_lambo.register)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.inter_process_communication.process_wrapper.get_connection.html#poli.core.util.inter_process_communication.process_wrapper.get_connection">get_connection() (in module poli.core.util.inter_process_communication.process_wrapper)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_experimental_X_y.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_experimental_X_y">get_experimental_X_y() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_gfp_base_seq.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_gfp_base_seq">get_gfp_base_seq() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_gfp_X_y_aa.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_gfp_X_y_aa">get_gfp_X_y_aa() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.get_problem_factories.html#poli.core.registry.get_problem_factories">get_problem_factories() (in module poli.core.registry)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.get_problems.html#poli.core.registry.get_problems">get_problems() (in module poli.core.registry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_samples.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_samples">get_samples() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.aloha.register.AlohaProblemFactory.html#poli.objective_repository.aloha.register.AlohaProblemFactory.get_setup_information">get_setup_information() (poli.objective_repository.aloha.register.AlohaProblemFactory method)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.DockstringProblemFactory.html#poli.objective_repository.dockstring.register.DockstringProblemFactory.get_setup_information">(poli.objective_repository.dockstring.register.DockstringProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDProblemFactory.html#poli.objective_repository.rdkit_qed.register.QEDProblemFactory.get_setup_information">(poli.objective_repository.rdkit_qed.register.QEDProblemFactory method)</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.SAProblemFactory.html#poli.objective_repository.sa_tdc.register.SAProblemFactory.get_setup_information">(poli.objective_repository.sa_tdc.register.SAProblemFactory method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.util.files.download_files_from_github.get_sha_for_tag.html#poli.core.util.files.download_files_from_github.get_sha_for_tag">get_sha_for_tag() (in module poli.core.util.files.download_files_from_github)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_select.register.GFPBlackBox.html#poli.objective_repository.gfp_select.register.GFPBlackBox">GFPBlackBox (class in poli.objective_repository.gfp_select.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.register.GFPCBasBlackBox.html#poli.objective_repository.gfp_cbas.register.GFPCBasBlackBox">GFPCBasBlackBox (class in poli.objective_repository.gfp_cbas.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.register.GFPCBasProblemFactory.html#poli.objective_repository.gfp_cbas.register.GFPCBasProblemFactory">GFPCBasProblemFactory (class in poli.objective_repository.gfp_cbas.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_select.register.GFPSelectionProblemFactory.html#poli.objective_repository.gfp_select.register.GFPSelectionProblemFactory">GFPSelectionProblemFactory (class in poli.objective_repository.gfp_select.register)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.helpers.html#poli.core.util.proteins.rasp.inner_rasp.helpers">helpers (in module poli.core.util.proteins.rasp.inner_rasp)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.identity_loss.html#poli.objective_repository.gfp_cbas.make_vae.identity_loss">identity_loss() (in module poli.objective_repository.gfp_cbas.make_vae)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.info">info (poli.core.abstract_black_box.AbstractBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.external_observer.ExternalObserver.html#poli.core.util.external_observer.ExternalObserver.initialize_observer">initialize_observer() (poli.core.util.external_observer.ExternalObserver method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.level_to_array.html#poli.objective_repository.super_mario_bros.level_utils.level_to_array">level_to_array() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.level_to_list.html#poli.objective_repository.super_mario_bros.level_utils.level_to_list">level_to_list() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.levels_to_onehot.html#poli.objective_repository.super_mario_bros.level_utils.levels_to_onehot">levels_to_onehot() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_factory.load_config.html#poli.objective_factory.load_config">load_config() (in module poli.objective_factory)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.model.load_example_model.html#poli.objective_repository.super_mario_bros.model.load_example_model">load_example_model() (in module poli.objective_repository.super_mario_bros.model)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.load_models.html#poli.core.util.proteins.rasp.load_models">load_models (in module poli.core.util.proteins.rasp)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPBlackBox.html#poli.objective_repository.rdkit_logp.register.LogPBlackBox">LogPBlackBox (class in poli.objective_repository.rdkit_logp.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.LogPProblemFactory.html#poli.objective_repository.rdkit_logp.register.LogPProblemFactory">LogPProblemFactory (class in poli.objective_repository.rdkit_logp.register)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.util.objective_management.make_run_script.make_observer_script.html#poli.core.util.objective_management.make_run_script.make_observer_script">make_observer_script() (in module poli.core.util.objective_management.make_run_script)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.objective_management.make_run_script.make_run_script.html#poli.core.util.objective_management.make_run_script.make_run_script">make_run_script() (in module poli.core.util.objective_management.make_run_script)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_problem_factory.MetaProblemFactory.html#poli.core.abstract_problem_factory.MetaProblemFactory">MetaProblemFactory (class in poli.core.abstract_problem_factory)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="_autosummary/poli.html#module-poli">poli</a>
+</li>
+        <li><a href="_autosummary/poli.core.html#module-poli.core">poli.core</a>
+</li>
+        <li><a href="_autosummary/poli.core.abstract_black_box.html#module-poli.core.abstract_black_box">poli.core.abstract_black_box</a>
+</li>
+        <li><a href="_autosummary/poli.core.abstract_problem_factory.html#module-poli.core.abstract_problem_factory">poli.core.abstract_problem_factory</a>
+</li>
+        <li><a href="_autosummary/poli.core.chemistry.html#module-poli.core.chemistry">poli.core.chemistry</a>
+</li>
+        <li><a href="_autosummary/poli.core.chemistry.tdc_black_box.html#module-poli.core.chemistry.tdc_black_box">poli.core.chemistry.tdc_black_box</a>
+</li>
+        <li><a href="_autosummary/poli.core.exceptions.html#module-poli.core.exceptions">poli.core.exceptions</a>
+</li>
+        <li><a href="_autosummary/poli.core.multi_objective_black_box.html#module-poli.core.multi_objective_black_box">poli.core.multi_objective_black_box</a>
+</li>
+        <li><a href="_autosummary/poli.core.problem_setup_information.html#module-poli.core.problem_setup_information">poli.core.problem_setup_information</a>
+</li>
+        <li><a href="_autosummary/poli.core.proteins.html#module-poli.core.proteins">poli.core.proteins</a>
+</li>
+        <li><a href="_autosummary/poli.core.proteins.foldx_black_box.html#module-poli.core.proteins.foldx_black_box">poli.core.proteins.foldx_black_box</a>
+</li>
+        <li><a href="_autosummary/poli.core.registry.html#module-poli.core.registry">poli.core.registry</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.html#module-poli.core.util">poli.core.util</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.abstract_observer.html#module-poli.core.util.abstract_observer">poli.core.util.abstract_observer</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.alignment.html#module-poli.core.util.alignment">poli.core.util.alignment</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.alignment.is_aligned.html#module-poli.core.util.alignment.is_aligned">poli.core.util.alignment.is_aligned</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.batch.html#module-poli.core.util.batch">poli.core.util.batch</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.batch.batch_input.html#module-poli.core.util.batch.batch_input">poli.core.util.batch.batch_input</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.chemistry.html#module-poli.core.util.chemistry">poli.core.util.chemistry</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.html#module-poli.core.util.chemistry.string_to_molecule">poli.core.util.chemistry.string_to_molecule</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.external_observer.html#module-poli.core.util.external_observer">poli.core.util.external_observer</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.files.html#module-poli.core.util.files">poli.core.util.files</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.files.download_files_from_github.html#module-poli.core.util.files.download_files_from_github">poli.core.util.files.download_files_from_github</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.files.integrity.html#module-poli.core.util.files.integrity">poli.core.util.files.integrity</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.inter_process_communication.html#module-poli.core.util.inter_process_communication">poli.core.util.inter_process_communication</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.inter_process_communication.process_wrapper.html#module-poli.core.util.inter_process_communication.process_wrapper">poli.core.util.inter_process_communication.process_wrapper</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.objective_management.html#module-poli.core.util.objective_management">poli.core.util.objective_management</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.objective_management.make_run_script.html#module-poli.core.util.objective_management.make_run_script">poli.core.util.objective_management.make_run_script</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.observer_wrapper.html#module-poli.core.util.observer_wrapper">poli.core.util.observer_wrapper</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.html#module-poli.core.util.proteins">poli.core.util.proteins</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.defaults.html#module-poli.core.util.proteins.defaults">poli.core.util.proteins.defaults</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.foldx.html#module-poli.core.util.proteins.foldx">poli.core.util.proteins.foldx</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.mutations.html#module-poli.core.util.proteins.mutations">poli.core.util.proteins.mutations</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.pdb_parsing.html#module-poli.core.util.proteins.pdb_parsing">poli.core.util.proteins.pdb_parsing</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.rasp.html#module-poli.core.util.proteins.rasp">poli.core.util.proteins.rasp</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.html#module-poli.core.util.proteins.rasp.inner_rasp">poli.core.util.proteins.rasp.inner_rasp</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.seeding.html#module-poli.core.util.seeding">poli.core.util.seeding</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.seeding.seeding.html#module-poli.core.util.seeding.seeding">poli.core.util.seeding.seeding</a>
+</li>
+        <li><a href="_autosummary/poli.objective.html#module-poli.objective">poli.objective</a>
+</li>
+        <li><a href="_autosummary/poli.objective_factory.html#module-poli.objective_factory">poli.objective_factory</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.html#module-poli.objective_repository">poli.objective_repository</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.aloha.html#module-poli.objective_repository.aloha">poli.objective_repository.aloha</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.aloha.register.html#module-poli.objective_repository.aloha.register">poli.objective_repository.aloha.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.html#module-poli.objective_repository.dockstring">poli.objective_repository.dockstring</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.html#module-poli.objective_repository.dockstring.register">poli.objective_repository.dockstring.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.drd3_docking.html#module-poli.objective_repository.drd3_docking">poli.objective_repository.drd3_docking</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.html#module-poli.objective_repository.drd3_docking.register">poli.objective_repository.drd3_docking.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.html#module-poli.objective_repository.foldx_rfp_lambo">poli.objective_repository.foldx_rfp_lambo</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html#module-poli.objective_repository.foldx_rfp_lambo.register">poli.objective_repository.foldx_rfp_lambo.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_sasa.html#module-poli.objective_repository.foldx_sasa">poli.objective_repository.foldx_sasa</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_sasa.register.html#module-poli.objective_repository.foldx_sasa.register">poli.objective_repository.foldx_sasa.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.html#module-poli.objective_repository.foldx_stability">poli.objective_repository.foldx_stability</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.html#module-poli.objective_repository.foldx_stability.register">poli.objective_repository.foldx_stability.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.html#module-poli.objective_repository.foldx_stability_and_sasa">poli.objective_repository.foldx_stability_and_sasa</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html#module-poli.objective_repository.foldx_stability_and_sasa.register">poli.objective_repository.foldx_stability_and_sasa.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.html#module-poli.objective_repository.gfp_cbas">poli.objective_repository.gfp_cbas</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.html#module-poli.objective_repository.gfp_cbas.abstract_vae_wrapper">poli.objective_repository.gfp_cbas.abstract_vae_wrapper</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html#module-poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing">poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html#module-poli.objective_repository.gfp_cbas.cbas_wrapper">poli.objective_repository.gfp_cbas.cbas_wrapper</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.gfp_gp.html#module-poli.objective_repository.gfp_cbas.gfp_gp">poli.objective_repository.gfp_cbas.gfp_gp</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.html#module-poli.objective_repository.gfp_cbas.make_vae">poli.objective_repository.gfp_cbas.make_vae</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.register.html#module-poli.objective_repository.gfp_cbas.register">poli.objective_repository.gfp_cbas.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_select.html#module-poli.objective_repository.gfp_select">poli.objective_repository.gfp_select</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.gfp_select.register.html#module-poli.objective_repository.gfp_select.register">poli.objective_repository.gfp_select.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.html#module-poli.objective_repository.penalized_logp_lambo">poli.objective_repository.penalized_logp_lambo</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.html#module-poli.objective_repository.penalized_logp_lambo.register">poli.objective_repository.penalized_logp_lambo.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rasp.html#module-poli.objective_repository.rasp">poli.objective_repository.rasp</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rasp.register.html#module-poli.objective_repository.rasp.register">poli.objective_repository.rasp.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.html#module-poli.objective_repository.rdkit_logp">poli.objective_repository.rdkit_logp</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.html#module-poli.objective_repository.rdkit_logp.register">poli.objective_repository.rdkit_logp.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.html#module-poli.objective_repository.rdkit_qed">poli.objective_repository.rdkit_qed</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.html#module-poli.objective_repository.rdkit_qed.register">poli.objective_repository.rdkit_qed.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html#module-poli.objective_repository.rfp_foldx_stability_and_sasa">poli.objective_repository.rfp_foldx_stability_and_sasa</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html#module-poli.objective_repository.rfp_foldx_stability_and_sasa.register">poli.objective_repository.rfp_foldx_stability_and_sasa.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.html#module-poli.objective_repository.sa_tdc">poli.objective_repository.sa_tdc</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.html#module-poli.objective_repository.sa_tdc.register">poli.objective_repository.sa_tdc.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.html#module-poli.objective_repository.super_mario_bros">poli.objective_repository.super_mario_bros</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.html#module-poli.objective_repository.super_mario_bros.level_utils">poli.objective_repository.super_mario_bros.level_utils</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.model.html#module-poli.objective_repository.super_mario_bros.model">poli.objective_repository.super_mario_bros.model</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.html#module-poli.objective_repository.toy_continuous_problem">poli.objective_repository.toy_continuous_problem</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html#module-poli.objective_repository.toy_continuous_problem.definitions">poli.objective_repository.toy_continuous_problem.definitions</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.html#module-poli.objective_repository.toy_continuous_problem.register">poli.objective_repository.toy_continuous_problem.register</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html#module-poli.objective_repository.toy_continuous_problem.toy_continuous_problem">poli.objective_repository.toy_continuous_problem.toy_continuous_problem</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.html#module-poli.objective_repository.white_noise">poli.objective_repository.white_noise</a>
+</li>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.register.html#module-poli.objective_repository.white_noise.register">poli.objective_repository.white_noise.register</a>
+</li>
+        <li><a href="_autosummary/poli.registered_objectives.html#module-poli.registered_objectives">poli.registered_objectives</a>
+</li>
+        <li><a href="_autosummary/poli.tests.html#module-poli.tests">poli.tests</a>
+</li>
+        <li><a href="_autosummary/poli.tests.docs_examples.html#module-poli.tests.docs_examples">poli.tests.docs_examples</a>
+</li>
+        <li><a href="_autosummary/poli.tests.docs_examples.test_objective_functions.html#module-poli.tests.docs_examples.test_objective_functions">poli.tests.docs_examples.test_objective_functions</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.html#module-poli.tests.registry">poli.tests.registry</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.basic_objectives.html#module-poli.tests.registry.basic_objectives">poli.tests.registry.basic_objectives</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.basic_objectives.test_basic_objectives.html#module-poli.tests.registry.basic_objectives.test_basic_objectives">poli.tests.registry.basic_objectives.test_basic_objectives</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.chemistry.html#module-poli.tests.registry.chemistry">poli.tests.registry.chemistry</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.proteins.html#module-poli.tests.registry.proteins">poli.tests.registry.proteins</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.test_basic_loop_without_create.html#module-poli.tests.registry.test_basic_loop_without_create">poli.tests.registry.test_basic_loop_without_create</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.test_force_isolation.html#module-poli.tests.registry.test_force_isolation">poli.tests.registry.test_force_isolation</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.toy_continuous_problems.html#module-poli.tests.registry.toy_continuous_problems">poli.tests.registry.toy_continuous_problems</a>
+</li>
+        <li><a href="_autosummary/poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims.html#module-poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims">poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims</a>
+</li>
+        <li><a href="_autosummary/poli.tests.test_minimal_working_example.html#module-poli.tests.test_minimal_working_example">poli.tests.test_minimal_working_example</a>
+</li>
+        <li><a href="_autosummary/poli.tests.test_seeding.html#module-poli.tests.test_seeding">poli.tests.test_seeding</a>
+</li>
+        <li><a href="_autosummary/poli.tests.util.html#module-poli.tests.util">poli.tests.util</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.multi_objective_black_box.MultiObjectiveBlackBox.html#poli.core.multi_objective_black_box.MultiObjectiveBlackBox">MultiObjectiveBlackBox (class in poli.core.multi_objective_black_box)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.mutations.mutations_from_wildtype_residues_and_mutant.html#poli.core.util.proteins.mutations.mutations_from_wildtype_residues_and_mutant">mutations_from_wildtype_residues_and_mutant() (in module poli.core.util.proteins.mutations)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.n_dimensions">n_dimensions (poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.NegativeBlackBox.html#poli.core.abstract_black_box.NegativeBlackBox">NegativeBlackBox (class in poli.core.abstract_black_box)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.num_workers">num_workers (poli.core.abstract_black_box.AbstractBlackBox attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.multi_objective_black_box.MultiObjectiveBlackBox.html#poli.core.multi_objective_black_box.MultiObjectiveBlackBox.objective_functions">objective_functions (poli.core.multi_objective_black_box.MultiObjectiveBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.abstract_observer.AbstractObserver.html#poli.core.util.abstract_observer.AbstractObserver.observe">observe() (poli.core.util.abstract_observer.AbstractObserver method)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.external_observer.ExternalObserver.html#poli.core.util.external_observer.ExternalObserver.observe">(poli.core.util.external_observer.ExternalObserver method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.observer">observer (poli.core.abstract_black_box.AbstractBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.one_hot_encode_aa.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.one_hot_encode_aa">one_hot_encode_aa() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.one_hot_encode_aa_array.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.one_hot_encode_aa_array">one_hot_encode_aa_array() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.one_hot_encode_dna.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.one_hot_encode_dna">one_hot_encode_dna() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.onehot_to_levels.html#poli.objective_repository.super_mario_bros.level_utils.onehot_to_levels">onehot_to_levels() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+      <li><a href="_autosummary/poli.core.chemistry.tdc_black_box.TDCBlackBox.html#poli.core.chemistry.tdc_black_box.TDCBlackBox.oracle">oracle (poli.core.chemistry.tdc_black_box.TDCBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.DRD3BlackBox.html#poli.objective_repository.drd3_docking.register.DRD3BlackBox.oracle_name">oracle_name (poli.objective_repository.drd3_docking.register.DRD3BlackBox attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.parallelize">parallelize (poli.core.abstract_black_box.AbstractBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective.parse_factory_kwargs.html#poli.objective.parse_factory_kwargs">parse_factory_kwargs() (in module poli.objective)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.pdb_parsing.parse_pdb_as_residue_strings.html#poli.core.util.proteins.pdb_parsing.parse_pdb_as_residue_strings">parse_pdb_as_residue_strings() (in module poli.core.util.proteins.pdb_parsing)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.pdb_parsing.parse_pdb_as_residues.html#poli.core.util.proteins.pdb_parsing.parse_pdb_as_residues">parse_pdb_as_residues() (in module poli.core.util.proteins.pdb_parsing)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.pdb_parsing.parse_pdb_as_structure.html#poli.core.util.proteins.pdb_parsing.parse_pdb_as_structure">parse_pdb_as_structure() (in module poli.core.util.proteins.pdb_parsing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.partition_data.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.partition_data">partition_data() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboBlackBox.html#poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboBlackBox">PenalizedLogPLamboBlackBox (class in poli.objective_repository.penalized_logp_lambo.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboProblemFactory.html#poli.objective_repository.penalized_logp_lambo.register.PenalizedLogPLamboProblemFactory">PenalizedLogPLamboProblemFactory (class in poli.objective_repository.penalized_logp_lambo.register)</a>
+</li>
+      <li>
+    poli
+
+      <ul>
+        <li><a href="_autosummary/poli.html#module-poli">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core
+
+      <ul>
+        <li><a href="_autosummary/poli.core.html#module-poli.core">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.abstract_black_box
+
+      <ul>
+        <li><a href="_autosummary/poli.core.abstract_black_box.html#module-poli.core.abstract_black_box">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.abstract_problem_factory
+
+      <ul>
+        <li><a href="_autosummary/poli.core.abstract_problem_factory.html#module-poli.core.abstract_problem_factory">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.chemistry
+
+      <ul>
+        <li><a href="_autosummary/poli.core.chemistry.html#module-poli.core.chemistry">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.chemistry.tdc_black_box
+
+      <ul>
+        <li><a href="_autosummary/poli.core.chemistry.tdc_black_box.html#module-poli.core.chemistry.tdc_black_box">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.exceptions
+
+      <ul>
+        <li><a href="_autosummary/poli.core.exceptions.html#module-poli.core.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.multi_objective_black_box
+
+      <ul>
+        <li><a href="_autosummary/poli.core.multi_objective_black_box.html#module-poli.core.multi_objective_black_box">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.problem_setup_information
+
+      <ul>
+        <li><a href="_autosummary/poli.core.problem_setup_information.html#module-poli.core.problem_setup_information">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.proteins
+
+      <ul>
+        <li><a href="_autosummary/poli.core.proteins.html#module-poli.core.proteins">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.proteins.foldx_black_box
+
+      <ul>
+        <li><a href="_autosummary/poli.core.proteins.foldx_black_box.html#module-poli.core.proteins.foldx_black_box">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.registry
+
+      <ul>
+        <li><a href="_autosummary/poli.core.registry.html#module-poli.core.registry">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.html#module-poli.core.util">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.abstract_observer
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.abstract_observer.html#module-poli.core.util.abstract_observer">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.alignment
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.alignment.html#module-poli.core.util.alignment">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.alignment.is_aligned
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.alignment.is_aligned.html#module-poli.core.util.alignment.is_aligned">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.batch
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.batch.html#module-poli.core.util.batch">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.batch.batch_input
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.batch.batch_input.html#module-poli.core.util.batch.batch_input">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.chemistry
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.chemistry.html#module-poli.core.util.chemistry">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.chemistry.string_to_molecule
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.html#module-poli.core.util.chemistry.string_to_molecule">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.external_observer
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.external_observer.html#module-poli.core.util.external_observer">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.files
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.files.html#module-poli.core.util.files">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.files.download_files_from_github
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.files.download_files_from_github.html#module-poli.core.util.files.download_files_from_github">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.files.integrity
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.files.integrity.html#module-poli.core.util.files.integrity">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.inter_process_communication
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.inter_process_communication.html#module-poli.core.util.inter_process_communication">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.inter_process_communication.process_wrapper
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.inter_process_communication.process_wrapper.html#module-poli.core.util.inter_process_communication.process_wrapper">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.objective_management
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.objective_management.html#module-poli.core.util.objective_management">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.objective_management.make_run_script
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.objective_management.make_run_script.html#module-poli.core.util.objective_management.make_run_script">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.observer_wrapper
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.observer_wrapper.html#module-poli.core.util.observer_wrapper">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.html#module-poli.core.util.proteins">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins.defaults
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.defaults.html#module-poli.core.util.proteins.defaults">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins.foldx
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.foldx.html#module-poli.core.util.proteins.foldx">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins.mutations
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.mutations.html#module-poli.core.util.proteins.mutations">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins.pdb_parsing
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.pdb_parsing.html#module-poli.core.util.proteins.pdb_parsing">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins.rasp
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.rasp.html#module-poli.core.util.proteins.rasp">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.proteins.rasp.inner_rasp
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.html#module-poli.core.util.proteins.rasp.inner_rasp">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.seeding
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.seeding.html#module-poli.core.util.seeding">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.seeding.seeding
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.seeding.seeding.html#module-poli.core.util.seeding.seeding">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective
+
+      <ul>
+        <li><a href="_autosummary/poli.objective.html#module-poli.objective">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_factory
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_factory.html#module-poli.objective_factory">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.html#module-poli.objective_repository">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.aloha
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.aloha.html#module-poli.objective_repository.aloha">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.aloha.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.aloha.register.html#module-poli.objective_repository.aloha.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.dockstring
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.html#module-poli.objective_repository.dockstring">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.dockstring.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.dockstring.register.html#module-poli.objective_repository.dockstring.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.drd3_docking
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.drd3_docking.html#module-poli.objective_repository.drd3_docking">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.drd3_docking.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.drd3_docking.register.html#module-poli.objective_repository.drd3_docking.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_rfp_lambo
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.html#module-poli.objective_repository.foldx_rfp_lambo">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_rfp_lambo.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html#module-poli.objective_repository.foldx_rfp_lambo.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_sasa
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_sasa.html#module-poli.objective_repository.foldx_sasa">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    poli.objective_repository.foldx_sasa.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_sasa.register.html#module-poli.objective_repository.foldx_sasa.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_stability
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.html#module-poli.objective_repository.foldx_stability">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_stability.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability.register.html#module-poli.objective_repository.foldx_stability.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_stability_and_sasa
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.html#module-poli.objective_repository.foldx_stability_and_sasa">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.foldx_stability_and_sasa.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html#module-poli.objective_repository.foldx_stability_and_sasa.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.html#module-poli.objective_repository.gfp_cbas">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas.abstract_vae_wrapper
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.html#module-poli.objective_repository.gfp_cbas.abstract_vae_wrapper">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html#module-poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas.cbas_wrapper
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html#module-poli.objective_repository.gfp_cbas.cbas_wrapper">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas.gfp_gp
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.gfp_gp.html#module-poli.objective_repository.gfp_cbas.gfp_gp">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas.make_vae
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.html#module-poli.objective_repository.gfp_cbas.make_vae">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_cbas.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_cbas.register.html#module-poli.objective_repository.gfp_cbas.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_select
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_select.html#module-poli.objective_repository.gfp_select">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.gfp_select.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.gfp_select.register.html#module-poli.objective_repository.gfp_select.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.penalized_logp_lambo
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.html#module-poli.objective_repository.penalized_logp_lambo">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.penalized_logp_lambo.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.html#module-poli.objective_repository.penalized_logp_lambo.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rasp
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rasp.html#module-poli.objective_repository.rasp">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rasp.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rasp.register.html#module-poli.objective_repository.rasp.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rdkit_logp
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.html#module-poli.objective_repository.rdkit_logp">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rdkit_logp.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_logp.register.html#module-poli.objective_repository.rdkit_logp.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rdkit_qed
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.html#module-poli.objective_repository.rdkit_qed">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rdkit_qed.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.html#module-poli.objective_repository.rdkit_qed.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rfp_foldx_stability_and_sasa
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html#module-poli.objective_repository.rfp_foldx_stability_and_sasa">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.rfp_foldx_stability_and_sasa.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html#module-poli.objective_repository.rfp_foldx_stability_and_sasa.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.sa_tdc
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.html#module-poli.objective_repository.sa_tdc">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.sa_tdc.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.html#module-poli.objective_repository.sa_tdc.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.super_mario_bros
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.html#module-poli.objective_repository.super_mario_bros">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.super_mario_bros.level_utils
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.html#module-poli.objective_repository.super_mario_bros.level_utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.super_mario_bros.model
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.super_mario_bros.model.html#module-poli.objective_repository.super_mario_bros.model">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.toy_continuous_problem
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.html#module-poli.objective_repository.toy_continuous_problem">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.toy_continuous_problem.definitions
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html#module-poli.objective_repository.toy_continuous_problem.definitions">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.toy_continuous_problem.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.html#module-poli.objective_repository.toy_continuous_problem.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.toy_continuous_problem.toy_continuous_problem
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html#module-poli.objective_repository.toy_continuous_problem.toy_continuous_problem">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.white_noise
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.html#module-poli.objective_repository.white_noise">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.objective_repository.white_noise.register
+
+      <ul>
+        <li><a href="_autosummary/poli.objective_repository.white_noise.register.html#module-poli.objective_repository.white_noise.register">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.registered_objectives
+
+      <ul>
+        <li><a href="_autosummary/poli.registered_objectives.html#module-poli.registered_objectives">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.html#module-poli.tests">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.docs_examples
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.docs_examples.html#module-poli.tests.docs_examples">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.docs_examples.test_objective_functions
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.docs_examples.test_objective_functions.html#module-poli.tests.docs_examples.test_objective_functions">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.html#module-poli.tests.registry">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.basic_objectives
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.basic_objectives.html#module-poli.tests.registry.basic_objectives">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.basic_objectives.test_basic_objectives
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.basic_objectives.test_basic_objectives.html#module-poli.tests.registry.basic_objectives.test_basic_objectives">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.chemistry
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.chemistry.html#module-poli.tests.registry.chemistry">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.proteins
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.proteins.html#module-poli.tests.registry.proteins">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.test_basic_loop_without_create
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.test_basic_loop_without_create.html#module-poli.tests.registry.test_basic_loop_without_create">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.test_force_isolation
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.test_force_isolation.html#module-poli.tests.registry.test_force_isolation">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.toy_continuous_problems
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.toy_continuous_problems.html#module-poli.tests.registry.toy_continuous_problems">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims.html#module-poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.test_minimal_working_example
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.test_minimal_working_example.html#module-poli.tests.test_minimal_working_example">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.test_seeding
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.test_seeding.html#module-poli.tests.test_seeding">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.tests.util
+
+      <ul>
+        <li><a href="_autosummary/poli.tests.util.html#module-poli.tests.util">module</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.exceptions.PoliException.html#poli.core.exceptions.PoliException">PoliException</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.PrismData.html#poli.core.util.proteins.rasp.inner_rasp.PrismData">PrismData (in module poli.core.util.proteins.rasp.inner_rasp)</a>
+</li>
+      <li><a href="_autosummary/poli.core.problem_setup_information.ProblemSetupInformation.html#poli.core.problem_setup_information.ProblemSetupInformation">ProblemSetupInformation (class in poli.core.problem_setup_information)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.inter_process_communication.process_wrapper.ProcessWrapper.html#poli.core.util.inter_process_communication.process_wrapper.ProcessWrapper">ProcessWrapper (class in poli.core.util.inter_process_communication.process_wrapper)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDBlackBox.html#poli.objective_repository.rdkit_qed.register.QEDBlackBox">QEDBlackBox (class in poli.objective_repository.rdkit_qed.register)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.rdkit_qed.register.QEDProblemFactory.html#poli.objective_repository.rdkit_qed.register.QEDProblemFactory">QEDProblemFactory (class in poli.objective_repository.rdkit_qed.register)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.rasp_interface.html#poli.core.util.proteins.rasp.rasp_interface">rasp_interface (in module poli.core.util.proteins.rasp)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.read_gfp_data.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.read_gfp_data">read_gfp_data() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.register_problem.html#poli.core.registry.register_problem">register_problem() (in module poli.core.registry)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.register_problem_from_repository.html#poli.core.registry.register_problem_from_repository">register_problem_from_repository() (in module poli.core.registry)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.repair">repair() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.reset_evaluation_budget">reset_evaluation_budget() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.RFPWrapper.html#poli.objective_repository.foldx_rfp_lambo.register.RFPWrapper">RFPWrapper (class in poli.objective_repository.foldx_rfp_lambo.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.RFPWrapperFactory.html#poli.objective_repository.foldx_rfp_lambo.register.RFPWrapperFactory">RFPWrapperFactory (class in poli.objective_repository.foldx_rfp_lambo.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective.run.html#poli.objective.run">run() (in module poli.objective)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.run_pipeline.html#poli.core.util.proteins.rasp.inner_rasp.run_pipeline">run_pipeline (in module poli.core.util.proteins.rasp.inner_rasp)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.SABlackBox.html#poli.objective_repository.sa_tdc.register.SABlackBox">SABlackBox (class in poli.objective_repository.sa_tdc.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.sa_tdc.register.SAProblemFactory.html#poli.objective_repository.sa_tdc.register.SAProblemFactory">SAProblemFactory (class in poli.objective_repository.sa_tdc.register)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.seeding.seeding.seed_numpy.html#poli.core.util.seeding.seeding.seed_numpy">seed_numpy() (in module poli.core.util.seeding.seeding)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.seeding.seeding.seed_python.html#poli.core.util.seeding.seeding.seed_python">seed_python() (in module poli.core.util.seeding.seeding)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.selfies_to_molecules.html#poli.core.util.chemistry.string_to_molecule.selfies_to_molecules">selfies_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
+</li>
+      <li><a href="_autosummary/poli.core.registry.set_observer.html#poli.core.registry.set_observer">set_observer() (in module poli.core.registry)</a>
+
+      <ul>
+        <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.set_observer">(poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      </ul></li>
+      <li><a href="_autosummary/poli.core.registry.set_observer_run_script.html#poli.core.registry.set_observer_run_script">set_observer_run_script() (in module poli.core.registry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere.html#poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere">shifted_sphere() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.SimpleVAE.html#poli.objective_repository.gfp_cbas.make_vae.SimpleVAE">SimpleVAE (class in poli.objective_repository.gfp_cbas.make_vae)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.smiles_to_molecules.html#poli.core.util.chemistry.string_to_molecule.smiles_to_molecules">smiles_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_factory.start.html#poli.objective_factory.start">start() (in module poli.objective_factory)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.observer_wrapper.start_observer_process.html#poli.core.util.observer_wrapper.start_observer_process">start_observer_process() (in module poli.core.util.observer_wrapper)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.strings_to_molecules.html#poli.core.util.chemistry.string_to_molecule.strings_to_molecules">strings_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.styblinski_tang.html#poli.objective_repository.toy_continuous_problem.definitions.styblinski_tang">styblinski_tang() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.summed_categorical_crossentropy.html#poli.objective_repository.gfp_cbas.make_vae.summed_categorical_crossentropy">summed_categorical_crossentropy() (in module poli.objective_repository.gfp_cbas.make_vae)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.chemistry.tdc_black_box.TDCBlackBox.html#poli.core.chemistry.tdc_black_box.TDCBlackBox">TDCBlackBox (class in poli.core.chemistry.tdc_black_box)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.tensor_to_sim_level.html#poli.objective_repository.super_mario_bros.level_utils.tensor_to_sim_level">tensor_to_sim_level() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.terminate">terminate() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.docs_examples.test_objective_functions.test_aloha_example.html#poli.tests.docs_examples.test_objective_functions.test_aloha_example">test_aloha_example() (in module poli.tests.docs_examples.test_objective_functions)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims.test_embed_camelback_into_high_dimensions.html#poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims.test_embed_camelback_into_high_dimensions">test_embed_camelback_into_high_dimensions() (in module poli.tests.registry.toy_continuous_problems.test_embedding_problems_into_higher_dims)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.docs_examples.test_objective_functions.test_logp_example.html#poli.tests.docs_examples.test_objective_functions.test_logp_example">test_logp_example() (in module poli.tests.docs_examples.test_objective_functions)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.test_minimal_working_example.test_minimal_working_example.html#poli.tests.test_minimal_working_example.test_minimal_working_example">test_minimal_working_example() (in module poli.tests.test_minimal_working_example)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.docs_examples.test_objective_functions.test_qed_example.html#poli.tests.docs_examples.test_objective_functions.test_qed_example">test_qed_example() (in module poli.tests.docs_examples.test_objective_functions)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.registry.basic_objectives.test_basic_objectives.test_registering_aloha.html#poli.tests.registry.basic_objectives.test_basic_objectives.test_registering_aloha">test_registering_aloha() (in module poli.tests.registry.basic_objectives.test_basic_objectives)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.tests.registry.basic_objectives.test_basic_objectives.test_registering_white_noise.html#poli.tests.registry.basic_objectives.test_basic_objectives.test_registering_white_noise">test_registering_white_noise() (in module poli.tests.registry.basic_objectives.test_basic_objectives)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.test_seeding.test_seeding_in_white_noise.html#poli.tests.test_seeding.test_seeding_in_white_noise">test_seeding_in_white_noise() (in module poli.tests.test_seeding)</a>
+</li>
+      <li><a href="_autosummary/poli.tests.docs_examples.test_objective_functions.test_white_noise_example.html#poli.tests.docs_examples.test_objective_functions.test_white_noise_example">test_white_noise_example() (in module poli.tests.docs_examples.test_objective_functions)</a>
+</li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.tmp_folder">tmp_folder (poli.core.proteins.foldx_black_box.FoldxBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousBlackBox">ToyContinuousBlackBox (class in poli.objective_repository.toy_continuous_problem.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.ToyContinuousProblem.html#poli.objective_repository.toy_continuous_problem.toy_continuous_problem.ToyContinuousProblem">ToyContinuousProblem (class in poli.objective_repository.toy_continuous_problem.toy_continuous_problem)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.register.ToyContinuousProblemFactory.html#poli.objective_repository.toy_continuous_problem.register.ToyContinuousProblemFactory">ToyContinuousProblemFactory (class in poli.objective_repository.toy_continuous_problem.register)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.translate_selfies_to_smiles.html#poli.core.util.chemistry.string_to_molecule.translate_selfies_to_smiles">translate_selfies_to_smiles() (in module poli.core.util.chemistry.string_to_molecule)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.translate_smiles_to_selfies.html#poli.core.util.chemistry.string_to_molecule.translate_smiles_to_selfies">translate_smiles_to_selfies() (in module poli.core.util.chemistry.string_to_molecule)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.model.VAEMario.html#poli.objective_repository.super_mario_bros.model.VAEMario">VAEMario (class in poli.objective_repository.super_mario_bros.model)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.vectorized.html#poli.objective_repository.super_mario_bros.level_utils.vectorized">vectorized() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.verbose">verbose (poli.core.util.proteins.foldx.FoldxInterface attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.rasp.inner_rasp.visualization.html#poli.core.util.proteins.rasp.inner_rasp.visualization">visualization (in module poli.core.util.proteins.rasp.inner_rasp)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.objective_repository.white_noise.register.WhiteNoiseBlackBox.html#poli.objective_repository.white_noise.register.WhiteNoiseBlackBox">WhiteNoiseBlackBox (class in poli.objective_repository.white_noise.register)</a>
+</li>
+      <li><a href="_autosummary/poli.objective_repository.white_noise.register.WhiteNoiseProblemFactory.html#poli.objective_repository.white_noise.register.WhiteNoiseProblemFactory">WhiteNoiseProblemFactory (class in poli.objective_repository.white_noise.register)</a>
+</li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.wildtype_amino_acids">wildtype_amino_acids (poli.core.proteins.foldx_black_box.FoldxBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.wildtype_pdb_paths">wildtype_pdb_paths (poli.core.proteins.foldx_black_box.FoldxBlackBox attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.wildtype_residue_strings">wildtype_residue_strings (poli.core.proteins.foldx_black_box.FoldxBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.proteins.foldx_black_box.FoldxBlackBox.html#poli.core.proteins.foldx_black_box.FoldxBlackBox.wildtype_residues">wildtype_residues (poli.core.proteins.foldx_black_box.FoldxBlackBox attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.working_dir">working_dir (poli.core.util.proteins.foldx.FoldxInterface attribute)</a>
+</li>
+      <li><a href="_autosummary/poli.core.util.proteins.foldx.FoldxInterface.html#poli.core.util.proteins.foldx.FoldxInterface.write_mutations_to_file">write_mutations_to_file() (poli.core.util.proteins.foldx.FoldxInterface method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Center for Basic Machine Learning Research in Life Science
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
