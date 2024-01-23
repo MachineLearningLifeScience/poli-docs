@@ -19,3 +19,10 @@ After this, you can build the documentation using
 ```bash
 jupyter-book build --all docs/poli-docs
 ```
+
+## Deployment
+
+Since we are relying on building the website locally (because of `foldx` dependencies), you will need to
+
+1. `pip install ghp-import`
+2. run `ghp-import -n -p -f ./docs/poli-docs/_build/html`
