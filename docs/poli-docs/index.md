@@ -7,7 +7,7 @@
 
 Some of `poli`'s features:
 - 🔲 **isolation** of black box function calls inside conda environments. Don't worry about clashes w. black box requirements, poli will create the relevant conda environments for you.
-- 🗒️ **logging** logic at the black box `__call__` level using observers.
+- 🗒️ **logging** each black box call using observers.
 -  A numpy interface. Inputs are `np.array`s of strings, outputs are `np.array`s of floats.
 - `SMILES` and `SELFIES` support for small molecule manipulation.
 

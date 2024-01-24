@@ -30,7 +30,6 @@ parts:
       - file: using_poli/objective_repository/foldx_stability.md
       - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/RaSP.md
-      - file: using_poli/objective_repository/super_mario_bros.md
   - caption: "Optimizers"
     chapters:
       - file: using_poli_baselines/random_mutations.md
