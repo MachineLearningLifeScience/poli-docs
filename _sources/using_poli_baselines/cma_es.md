@@ -22,7 +22,6 @@ population_size = 10
 problem_factory = ToyContinuousProblemFactory()
 
 f, _, _ = problem_factory.create(
-    name="toy_continuous_problem",
     function_name="ackley_function_01",
     n_dimensions=n_dimensions,
 )
