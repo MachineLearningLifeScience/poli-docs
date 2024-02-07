@@ -76,7 +76,7 @@ import numpy as np
 from poli import objective_factory
 
 if __name__ == "__main__":
-    problem_info, f, x0, y0, _ = objective_factory.create(
+    f, x0, y0 = objective_factory.create(
         name="dockstring",
         target_name="DRD2",
         string_representation="SMILES",

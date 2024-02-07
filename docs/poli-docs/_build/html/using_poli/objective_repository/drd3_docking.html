@@ -651,12 +651,12 @@ conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
-(Isolated) in the <code class="docutils literal notranslate"><span class="pre">poli__lambo</span></code> environment</label><div class="sd-tab-content docutils">
+(Isolated) in the <code class="docutils literal notranslate"><span class="pre">poli__tdc</span></code> environment</label><div class="sd-tab-content docutils">
 <p>After the setup described above, you can simply run the following code from</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
 
 <span class="c1"># How to create</span>
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">run_info</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;drd3_docking&quot;</span><span class="p">,</span>
     <span class="n">force_register</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>

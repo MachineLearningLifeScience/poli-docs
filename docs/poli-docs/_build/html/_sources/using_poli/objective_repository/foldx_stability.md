@@ -61,7 +61,7 @@ from poli import objective_factory
 wildtype_pdb_file = Path("path/to/wildtype.pdb")
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="foldx_stability",
     wildtype_pdb_file=wildtype_pdb_file
 )
@@ -90,7 +90,7 @@ from poli import objective_factory
 wildtype_pdb_file = Path("path/to/wildtype.pdb")
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="foldx_stability",
     wildtype_pdb_file=wildtype_pdb_file,
     force_register=True,

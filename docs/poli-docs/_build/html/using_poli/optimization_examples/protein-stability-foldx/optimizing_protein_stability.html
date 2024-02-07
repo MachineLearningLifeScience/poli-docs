@@ -562,7 +562,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.core.registry</span> <span class="kn">import</span> <span class="n">get_problems</span>
-<span class="n">get_problems</span><span class="p">(</span><span class="n">include_repository</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">get_problems</span><span class="p">(</span><span class="n">only_available</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -580,8 +580,8 @@ document.write(`
  &#39;rasp&#39;,
  &#39;rdkit_logp&#39;,
  &#39;rdkit_qed&#39;,
+ &#39;rfp_foldx_stability_and_sasa&#39;,
  &#39;sa_tdc&#39;,
- &#39;simple__&#39;,
  &#39;super_mario_bros&#39;,
  &#39;toy_continuous_problem&#39;,
  &#39;white_noise&#39;]
@@ -643,7 +643,7 @@ document.write(`
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
 
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">run_info</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_stability&quot;</span><span class="p">,</span>
     <span class="n">caller_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">observer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -658,87 +658,63 @@ document.write(`
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Creating the objective from the repository.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating an isolated black box function.
+poli 🧪: starting the isolated objective process.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ********************************************
-   ***                                      ***
-   ***             FoldX 5 (c)            ***
-   ***                                      ***
-   ***     code by the FoldX Consortium     ***
-   ***                                      ***
-   ***     Jesper Borg, Frederic Rousseau   ***
-   ***    Joost Schymkowitz, Luis Serrano   ***
-   ***    Peter Vanhee, Erik Verschueren    ***
-   ***     Lies Baeten, Javier Delgado      ***
-   ***       and Francois Stricher          ***
-   *** and any other of the 9! permutations ***
-   ***   based on an original concept by    ***
-   ***   Raphael Guerois and Luis Serrano   ***
-   ********************************************
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 138, in run
+    f, x0, y0 = objective_factory.create(**kwargs)
+TypeError: create() got an unexpected keyword argument &#39;caller_info&#39;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 176, in &lt;module&gt;
+    run(factory_kwargs[0], args.objective_name, args.port, args.password)
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 145, in run
+    raise e
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 138, in run
+    f, x0, y0 = objective_factory.create(**kwargs)
+TypeError: create() got an unexpected keyword argument &#39;caller_info&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_stability&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">caller_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">observer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_path</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
 
-1 models read: 3ned_Repair.pdb
-1 models read: 3ned_Repair.pdb
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
+<span class="nn">File ~/Projects/poli/src/poli/objective_factory.py:439,</span> in <span class="ni">create</span><span class="nt">(name, seed, observer_init_info, observer, force_register, force_isolation, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;poli 🧪: creating an isolated black box function.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">439</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">__create_as_isolated_process</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">parallelize</span><span class="o">=</span><span class="n">parallelize</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">evaluation_budget</span><span class="o">=</span><span class="n">evaluation_budget</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="o">**</span><span class="n">kwargs_for_factory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="n">problem_information</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">info</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span> <span class="c1"># instantiate observer (if desired)</span>
 
-Starting BuildModel
-Reading EA1E;
-Residue to Mutate GLUA1 has residue index 0
-Mutating residue = GLUA1 into GLU
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Fri Jan 19 09:18:37 2024
-Total time spend: 2.67 seconds.
-validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
-Cleaning BuildModel...DONE
+<span class="nn">File ~/Projects/poli/src/poli/objective_factory.py:278,</span> in <span class="ni">__create_as_isolated_process</span><span class="nt">(name, seed, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">e</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">msg</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="nb">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">278</span>     <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="sa">f</span><span class="s2">&quot;Internal error: received </span><span class="si">{</span><span class="n">msg_type</span><span class="si">}</span><span class="s2"> when expecting SETUP or EXCEPTION&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
+
+<span class="ne">TypeError</span>: create() got an unexpected keyword argument &#39;caller_info&#39;
 </pre></div>
 </div>
 </div>
@@ -809,9 +785,8 @@ Cleaning BuildModel...DONE
 
 1 models read: 3ned_Repair.pdb
 1 models read: 3ned_Repair.pdb
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
+
+BackHbond       =               -178.70
 SideHbond       =               -76.61
 Energy_VdW      =               -267.80
 Electro         =               -13.75
@@ -821,7 +796,7 @@ Energy_vdwclash =               6.28
 energy_torsion  =               7.33
 backbone_vdwclash=              65.17
 Entropy_sidec   =               146.42
-Entropy_mainc   =               340.21
+Entropy_mainc   =               340.27
 water bonds     =               0.00
 helix dipole    =               0.00
 loop_entropy    =               0.00
@@ -832,10 +807,10 @@ partial covalent interactions = 0.00
 Energy_Ionisation =             1.77
 Entropy Complex =               0.00
 -----------------------------------------------------------
-Total          = 				  -9.46
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
+Total          = 				  -9.41
+
+
+BackHbond       =               -178.70
 SideHbond       =               -76.61
 Energy_VdW      =               -267.80
 Electro         =               -13.75
@@ -845,7 +820,7 @@ Energy_vdwclash =               6.28
 energy_torsion  =               7.33
 backbone_vdwclash=              65.17
 Entropy_sidec   =               146.42
-Entropy_mainc   =               340.21
+Entropy_mainc   =               340.27
 water bonds     =               0.00
 helix dipole    =               0.00
 loop_entropy    =               0.00
@@ -856,22 +831,18 @@ partial covalent interactions = 0.00
 Energy_Ionisation =             1.77
 Entropy Complex =               0.00
 -----------------------------------------------------------
-Total          = 				  -9.46
+Total          = 				  -9.41
 
 Starting BuildModel
-Reading IA119L;
-Residue to Mutate ILEA119 has residue index 118
-Mutating residue = ILEA119 into LEU
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Fri Jan 19 09:18:49 2024
-Total time spend: 8.69 seconds.
+Reading NA194F;
+Residue to Mutate ASNA194 has residue index 193
+Mutating residue = ASNA194 into PHE
+Your file run OK
+End time of FoldX: Fri Jan 19 09:51:22 2024
+Total time spend: 6.54 seconds.
 validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
 Cleaning BuildModel...DONE
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ********************************************
+   ********************************************
    ***                                      ***
    ***             FoldX 5 (c)            ***
    ***                                      ***
@@ -889,9 +860,8 @@ Cleaning BuildModel...DONE
 
 1 models read: 3ned_Repair.pdb
 1 models read: 3ned_Repair.pdb
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
+
+BackHbond       =               -178.70
 SideHbond       =               -76.61
 Energy_VdW      =               -267.80
 Electro         =               -13.75
@@ -913,9 +883,9 @@ Energy_Ionisation =             1.77
 Entropy Complex =               0.00
 -----------------------------------------------------------
 Total          = 				  -9.41
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
+
+
+BackHbond       =               -178.70
 SideHbond       =               -76.61
 Energy_VdW      =               -267.80
 Electro         =               -13.75
@@ -939,19 +909,17 @@ Entropy Complex =               0.00
 Total          = 				  -9.41
 
 Starting BuildModel
-Reading NA23C;
-Residue to Mutate ASNA23 has residue index 22
-Mutating residue = ASNA23 into CYS
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Fri Jan 19 09:18:51 2024
-Total time spend: 1.53 seconds.
+Reading QA114S,NA194F;
+Residue to Mutate GLNA114 has residue index 113
+Residue to Mutate ASNA194 has residue index 193
+Mutating residue = ASNA194 into PHE
+Mutating residue = GLNA114 into SER
+Your file run OK
+End time of FoldX: Fri Jan 19 09:51:32 2024
+Total time spend: 8.65 seconds.
 validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
 Cleaning BuildModel...DONE
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ********************************************
+   ********************************************
    ***                                      ***
    ***             FoldX 5 (c)            ***
    ***                                      ***
@@ -969,9 +937,8 @@ Cleaning BuildModel...DONE
 
 1 models read: 3ned_Repair.pdb
 1 models read: 3ned_Repair.pdb
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
+
+BackHbond       =               -178.70
 SideHbond       =               -76.61
 Energy_VdW      =               -267.80
 Electro         =               -13.75
@@ -993,9 +960,9 @@ Energy_Ionisation =             1.77
 Entropy Complex =               0.00
 -----------------------------------------------------------
 Total          = 				  -9.41
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -178.70
+
+
+BackHbond       =               -178.70
 SideHbond       =               -76.61
 Energy_VdW      =               -267.80
 Electro         =               -13.75
@@ -1019,14 +986,16 @@ Entropy Complex =               0.00
 Total          = 				  -9.41
 
 Starting BuildModel
-Reading GA126Q;
-Residue to Mutate GLYA126 has residue index 125
-Mutating residue = GLYA126 into GLN
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Fri Jan 19 09:18:57 2024
-Total time spend: 4.86 seconds.
+Reading DA3M,QA114S,NA194F;
+Residue to Mutate ASPA3 has residue index 2
+Residue to Mutate GLNA114 has residue index 113
+Residue to Mutate ASNA194 has residue index 193
+Mutating residue = ASPA3 into MET
+Mutating residue = ASNA194 into PHE
+Mutating residue = GLNA114 into SER
+Your file run OK
+End time of FoldX: Fri Jan 19 09:51:42 2024
+Total time spend: 9.23 seconds.
 validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
 Cleaning BuildModel...DONE
 </pre></div>
@@ -1047,9 +1016,9 @@ Cleaning BuildModel...DONE
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.41639]]), array([[8.99477]]), array([[8.42085]]), array([[3.16703]])]
-best stability: [9.41639]
-Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGEMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.41639]]), array([[13.0629]]), array([[13.5983]]), array([[13.1298]])]
+best stability: [13.5983]
+Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLSDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGEMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYFTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
 </pre></div>
 </div>
 </div>

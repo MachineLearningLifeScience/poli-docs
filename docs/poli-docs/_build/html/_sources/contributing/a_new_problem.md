@@ -233,7 +233,7 @@ If you can find your problem in this list, then you're set! You should be able t
 ```python
 from poli import objective_factory
 
-problem_info, f, x0, y0, _ = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="your_problem",
     ...,
     your_arg_1=...,      # <-- Keywords you (maybe) needed
