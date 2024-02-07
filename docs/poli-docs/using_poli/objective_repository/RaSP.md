@@ -36,7 +36,7 @@ Follow that with
 conda activate poli__rasp
 ```
 
-Supposing you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same directory as this script:
+Assuming you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same directory as this script:
 
 ```python
 from pathlib import Path
@@ -53,7 +53,7 @@ if __name__ == "__main__":
         # You could have more if you want.
     ]
 
-    problem_info, f_rasp, x0, y0, _ = objective_factory.create(
+    f_rasp, x0, y0 = objective_factory.create(
         name="rasp",
         wildtype_pdb_path=wildtype_pdb_paths_for_rasp,
     )
@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
 :::{tab-item} In isolation
 
-Supposing you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same directory as this script:
+Assuming you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same directory as this script:
 
 ```python
 from pathlib import Path
@@ -96,7 +96,7 @@ if __name__ == "__main__":
         # You could have more if you want.
     ]
 
-    problem_info, f_rasp, x0, y0, _ = objective_factory.create(
+    f_rasp, x0, y0 = objective_factory.create(
         name="rasp",
         wildtype_pdb_path=wildtype_pdb_paths_for_rasp,
     )
