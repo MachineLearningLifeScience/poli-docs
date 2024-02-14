@@ -607,7 +607,7 @@ In current environment</label><div class="sd-tab-content docutils">
 <span class="n">wildtype_pdb_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/wildtype.pdb&quot;</span><span class="p">)</span>
 
 <span class="c1"># How to create</span>
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">run_info</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_sasa&quot;</span><span class="p">,</span>
     <span class="n">wildtype_pdb_file</span><span class="o">=</span><span class="n">wildtype_pdb_file</span>
 <span class="p">)</span>
@@ -634,7 +634,7 @@ In isolation</label><div class="sd-tab-content docutils">
 <span class="n">wildtype_pdb_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/wildtype.pdb&quot;</span><span class="p">)</span>
 
 <span class="c1"># How to create</span>
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">run_info</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_sasa&quot;</span><span class="p">,</span>
     <span class="n">wildtype_pdb_file</span><span class="o">=</span><span class="n">wildtype_pdb_file</span><span class="p">,</span>
     <span class="n">force_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

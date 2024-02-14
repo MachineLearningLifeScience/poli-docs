@@ -576,7 +576,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">create</span>
 
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dockstring&quot;</span><span class="p">,</span>
     <span class="n">target_name</span><span class="o">=</span><span class="s2">&quot;drd2&quot;</span>  <span class="c1"># The target protein.</span>
 <span class="p">)</span>
@@ -588,8 +588,71 @@ document.write(`
 poli 🧪: starting the isolated objective process.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9/site-packages/dockstring/utils.py:77: DockstringWarning: Although Mac use is supported, docking scores on Mac do not always perfectly match scores from Linux. Therefore, extra care should be taken when comparing results to other platforms. In particular, the baselines in the DOCKSTRING paper were computed on Linux, so please do not directly compare your docking scores to the scores reported on the paper.
-  warnings.warn(
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 135, in run
+    objective_factory: AbstractProblemFactory = dynamically_instantiate(
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 102, in dynamically_instantiate
+    raise e
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 92, in dynamically_instantiate
+    exec(command)
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+ModuleNotFoundError: No module named &#39;register&#39;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CRITICAL:root:Path: /opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/Users/sjt972/anaconda3/envs/poli__dockstring/bin:/Users/sjt972/anaconda3/condabin:/Users/sjt972/autodock_vina_1_1_2_mac_catalina_64bit/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/usr/local/go/bin:/Users/sjt972/.cargo/bin
+CRITICAL:root:Python path: [&#39;/Users/sjt972/Projects/poli/src/poli&#39;, &#39;/Users/sjt972/Projects/poli-docs/docs/poli-docs/using_poli/the_basics&#39;, &#39;/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring&#39;, &#39;/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python39.zip&#39;, &#39;/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9&#39;, &#39;/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9/lib-dynload&#39;, &#39;/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9/site-packages&#39;, &#39;/Users/sjt972/Projects/poli/src&#39;, &#39;&#39;, &#39;/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring&#39;]
+CRITICAL:root:Path: :/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring
+CRITICAL:root:Path: :/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring
+Traceback (most recent call last):
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 176, in &lt;module&gt;
+    run(factory_kwargs[0], args.objective_name, args.port, args.password)
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 145, in run
+    raise e
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 135, in run
+    objective_factory: AbstractProblemFactory = dynamically_instantiate(
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 102, in dynamically_instantiate
+    raise e
+  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 92, in dynamically_instantiate
+    exec(command)
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+ModuleNotFoundError: No module named &#39;register&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">create</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dockstring&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">target_name</span><span class="o">=</span><span class="s2">&quot;drd2&quot;</span>  <span class="c1"># The target protein.</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="nn">File ~/Projects/poli/src/poli/objective_factory.py:439,</span> in <span class="ni">create</span><span class="nt">(name, seed, observer_init_info, observer, force_register, force_isolation, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)</span>
+<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;poli 🧪: creating an isolated black box function.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">439</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">__create_as_isolated_process</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">parallelize</span><span class="o">=</span><span class="n">parallelize</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">evaluation_budget</span><span class="o">=</span><span class="n">evaluation_budget</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="o">**</span><span class="n">kwargs_for_factory</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="n">problem_information</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">info</span>
+<span class="g g-Whitespace">    </span><span class="mi">451</span> <span class="c1"># instantiate observer (if desired)</span>
+
+<span class="nn">File ~/Projects/poli/src/poli/objective_factory.py:278,</span> in <span class="ni">__create_as_isolated_process</span><span class="nt">(name, seed, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">e</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">msg</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="nb">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">278</span>     <span class="k">raise</span> <span class="n">e</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="sa">f</span><span class="s2">&quot;Internal error: received </span><span class="si">{</span><span class="n">msg_type</span><span class="si">}</span><span class="s2"> when expecting SETUP or EXCEPTION&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;register&#39;
 </pre></div>
 </div>
 </div>
@@ -644,7 +707,7 @@ poli 🧪: starting the isolated objective process.
 <p>However, when you have the right dependencies, the <code class="docutils literal notranslate"><span class="pre">create</span></code> method returns the actual objective function. Let’s use for example <code class="docutils literal notranslate"><span class="pre">rdkit_logp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">problem_info</span><span class="p">,</span> <span class="n">f_logp</span><span class="p">,</span> <span class="n">x0_logp</span><span class="p">,</span> <span class="n">y0_logp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_logp</span><span class="p">,</span> <span class="n">x0_logp</span><span class="p">,</span> <span class="n">y0_logp</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rdkit_logp&quot;</span>
 <span class="p">)</span>
 </pre></div>

@@ -596,7 +596,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aloha&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_select&#39;, &#39;penalized_logp_lambo&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;toy_continuous_problem&#39;, &#39;white_noise&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aloha&#39;, &#39;dockstring&#39;, &#39;foldx_stability&#39;, &#39;gfp_select&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;toy_continuous_problem&#39;, &#39;white_noise&#39;]
 </pre></div>
 </div>
 </div>
@@ -609,7 +609,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aloha&#39;, &#39;dockstring&#39;, &#39;drd3_docking&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_cbas&#39;, &#39;gfp_select&#39;, &#39;penalized_logp_lambo&#39;, &#39;rasp&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;sa_tdc&#39;, &#39;super_mario_bros&#39;, &#39;toy_continuous_problem&#39;, &#39;white_noise&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aloha&#39;, &#39;dockstring&#39;, &#39;drd3_docking&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_cbas&#39;, &#39;gfp_select&#39;, &#39;penalized_logp_lambo&#39;, &#39;rasp&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;rfp_foldx_stability_and_sasa&#39;, &#39;sa_tdc&#39;, &#39;super_mario_bros&#39;, &#39;toy_continuous_problem&#39;, &#39;white_noise&#39;]
 </pre></div>
 </div>
 </div>
@@ -623,7 +623,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
 
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;white_noise&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;white_noise&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -655,8 +655,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0: [[&#39;1&#39; &#39;2&#39; &#39;3&#39;]]
-y0: [[0.57433265]]
+y0: [[-1.16173153]]
 </pre></div>
 </div>
 </div>
@@ -669,7 +673,7 @@ y0: [[0.57433265]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;1&#39;, &#39;4&#39;, &#39;3&#39;]], dtype=&#39;&lt;U1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;1&#39;, &#39;2&#39;, &#39;6&#39;]], dtype=&#39;&lt;U1&#39;)
 </pre></div>
 </div>
 </div>
@@ -706,7 +710,7 @@ y0: [[0.57433265]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;6&#39; &#39;2&#39; &#39;6&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;1&#39; &#39;3&#39; &#39;0&#39;]]
 </pre></div>
 </div>
 </div>

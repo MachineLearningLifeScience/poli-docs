@@ -32,7 +32,7 @@ import numpy as np
 from poli import objective_factory
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="rdkit_qed",
     string_representation="SELFIES",  # Can be either SMILES or SELFIES
     force_register=True,
@@ -57,7 +57,7 @@ import numpy as np
 from poli import objective_factory
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="rdkit_qed",
     alphabet=alphabet,
     string_representation="SELFIES",  # Can be either SMILES or SELFIES

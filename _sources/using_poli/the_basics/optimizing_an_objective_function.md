@@ -49,7 +49,7 @@ if __name__ == "__main__":
     assert "our_aloha" in get_problems()
 
     # Creating an instance of the problem
-    problem_info, f, x0, y0, run_info = objective_factory.create(
+    f, x0, y0 = objective_factory.create(
         name="our_aloha", caller_info=None, observer=None
     )
 
