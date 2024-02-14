@@ -645,8 +645,6 @@ document.write(`
 
 <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_stability&quot;</span><span class="p">,</span>
-    <span class="n">caller_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">observer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_path</span>
 <span class="p">)</span>
 </pre></div>
@@ -660,61 +658,6 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating an isolated black box function.
 poli 🧪: starting the isolated objective process.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 138, in run
-    f, x0, y0 = objective_factory.create(**kwargs)
-TypeError: create() got an unexpected keyword argument &#39;caller_info&#39;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 176, in &lt;module&gt;
-    run(factory_kwargs[0], args.objective_name, args.port, args.password)
-  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 145, in run
-    raise e
-  File &quot;/Users/sjt972/Projects/poli/src/poli/objective.py&quot;, line 138, in run
-    f, x0, y0 = objective_factory.create(**kwargs)
-TypeError: create() got an unexpected keyword argument &#39;caller_info&#39;
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_stability&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">caller_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">observer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_path</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
-
-<span class="nn">File ~/Projects/poli/src/poli/objective_factory.py:439,</span> in <span class="ni">create</span><span class="nt">(name, seed, observer_init_info, observer, force_register, force_isolation, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;poli 🧪: creating an isolated black box function.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">439</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">__create_as_isolated_process</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>     <span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span>     <span class="n">parallelize</span><span class="o">=</span><span class="n">parallelize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">evaluation_budget</span><span class="o">=</span><span class="n">evaluation_budget</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="o">**</span><span class="n">kwargs_for_factory</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span> <span class="n">problem_information</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">info</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span> <span class="c1"># instantiate observer (if desired)</span>
-
-<span class="nn">File ~/Projects/poli/src/poli/objective_factory.py:278,</span> in <span class="ni">__create_as_isolated_process</span><span class="nt">(name, seed, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span>     <span class="n">e</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">msg</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="nb">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">278</span>     <span class="k">raise</span> <span class="n">e</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="sa">f</span><span class="s2">&quot;Internal error: received </span><span class="si">{</span><span class="n">msg_type</span><span class="si">}</span><span class="s2"> when expecting SETUP or EXCEPTION&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-
-<span class="ne">TypeError</span>: create() got an unexpected keyword argument &#39;caller_info&#39;
 </pre></div>
 </div>
 </div>
@@ -753,255 +696,20 @@ TypeError: create() got an unexpected keyword argument &#39;caller_info&#39;
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>And that’s it!</strong> You can optimize the objective function passed as <code class="docutils literal notranslate"><span class="pre">black_box</span></code> by just calling the <code class="docutils literal notranslate"><span class="pre">.solve(n_iters)</span></code> method: (be careful, this might take a while)</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ********************************************
-   ***                                      ***
-   ***             FoldX 5 (c)            ***
-   ***                                      ***
-   ***     code by the FoldX Consortium     ***
-   ***                                      ***
-   ***     Jesper Borg, Frederic Rousseau   ***
-   ***    Joost Schymkowitz, Luis Serrano   ***
-   ***    Peter Vanhee, Erik Verschueren    ***
-   ***     Lies Baeten, Javier Delgado      ***
-   ***       and Francois Stricher          ***
-   *** and any other of the 9! permutations ***
-   ***   based on an original concept by    ***
-   ***   Raphael Guerois and Luis Serrano   ***
-   ********************************************
-
-1 models read: 3ned_Repair.pdb
-1 models read: 3ned_Repair.pdb
-
-BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-
-
-BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-
-Starting BuildModel
-Reading NA194F;
-Residue to Mutate ASNA194 has residue index 193
-Mutating residue = ASNA194 into PHE
-Your file run OK
-End time of FoldX: Fri Jan 19 09:51:22 2024
-Total time spend: 6.54 seconds.
-validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
-Cleaning BuildModel...DONE
-   ********************************************
-   ***                                      ***
-   ***             FoldX 5 (c)            ***
-   ***                                      ***
-   ***     code by the FoldX Consortium     ***
-   ***                                      ***
-   ***     Jesper Borg, Frederic Rousseau   ***
-   ***    Joost Schymkowitz, Luis Serrano   ***
-   ***    Peter Vanhee, Erik Verschueren    ***
-   ***     Lies Baeten, Javier Delgado      ***
-   ***       and Francois Stricher          ***
-   *** and any other of the 9! permutations ***
-   ***   based on an original concept by    ***
-   ***   Raphael Guerois and Luis Serrano   ***
-   ********************************************
-
-1 models read: 3ned_Repair.pdb
-1 models read: 3ned_Repair.pdb
-
-BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-
-
-BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-
-Starting BuildModel
-Reading QA114S,NA194F;
-Residue to Mutate GLNA114 has residue index 113
-Residue to Mutate ASNA194 has residue index 193
-Mutating residue = ASNA194 into PHE
-Mutating residue = GLNA114 into SER
-Your file run OK
-End time of FoldX: Fri Jan 19 09:51:32 2024
-Total time spend: 8.65 seconds.
-validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
-Cleaning BuildModel...DONE
-   ********************************************
-   ***                                      ***
-   ***             FoldX 5 (c)            ***
-   ***                                      ***
-   ***     code by the FoldX Consortium     ***
-   ***                                      ***
-   ***     Jesper Borg, Frederic Rousseau   ***
-   ***    Joost Schymkowitz, Luis Serrano   ***
-   ***    Peter Vanhee, Erik Verschueren    ***
-   ***     Lies Baeten, Javier Delgado      ***
-   ***       and Francois Stricher          ***
-   *** and any other of the 9! permutations ***
-   ***   based on an original concept by    ***
-   ***   Raphael Guerois and Luis Serrano   ***
-   ********************************************
-
-1 models read: 3ned_Repair.pdb
-1 models read: 3ned_Repair.pdb
-
-BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-
-
-BackHbond       =               -178.70
-SideHbond       =               -76.61
-Energy_VdW      =               -267.80
-Electro         =               -13.75
-Energy_SolvP    =               374.21
-Energy_SolvH    =               -351.07
-Energy_vdwclash =               6.28
-energy_torsion  =               7.33
-backbone_vdwclash=              65.17
-Entropy_sidec   =               146.42
-Entropy_mainc   =               340.27
-water bonds     =               0.00
-helix dipole    =               0.00
-loop_entropy    =               0.00
-cis_bond        =               2.25
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.77
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -9.41
-
-Starting BuildModel
-Reading DA3M,QA114S,NA194F;
-Residue to Mutate ASPA3 has residue index 2
-Residue to Mutate GLNA114 has residue index 113
-Residue to Mutate ASNA194 has residue index 193
-Mutating residue = ASPA3 into MET
-Mutating residue = ASNA194 into PHE
-Mutating residue = GLNA114 into SER
-Your file run OK
-End time of FoldX: Fri Jan 19 09:51:42 2024
-Total time spend: 9.23 seconds.
-validated file &quot;3ned_Repair_1.pdb&quot; =&gt; successfully finished
-Cleaning BuildModel...DONE
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="checking-the-results">
@@ -1016,9 +724,9 @@ Cleaning BuildModel...DONE
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.41639]]), array([[13.0629]]), array([[13.5983]]), array([[13.1298]])]
-best stability: [13.5983]
-Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLSDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGEMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYFTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.41639]]), array([[5.56267]]), array([[0.846902]]), array([[9.39441]])]
+best stability: [9.41639]
+Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGEMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
 </pre></div>
 </div>
 </div>
