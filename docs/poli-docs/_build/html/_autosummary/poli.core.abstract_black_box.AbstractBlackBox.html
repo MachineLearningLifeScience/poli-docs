@@ -584,6 +584,17 @@ Default is float(“inf”).</p></li>
 </dd></dl>
 
 <dl class="py attribute">
+<dt class="sig sig-object py" id="poli.core.abstract_black_box.AbstractBlackBox.observer_info">
+<span class="sig-name descname"><span class="pre">observer_info</span></span><a class="headerlink" href="#poli.core.abstract_black_box.AbstractBlackBox.observer_info" title="Permalink to this definition">#</a></dt>
+<dd><p>The information given by the observer after initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>object or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt class="sig sig-object py" id="poli.core.abstract_black_box.AbstractBlackBox.parallelize">
 <span class="sig-name descname"><span class="pre">parallelize</span></span><a class="headerlink" href="#poli.core.abstract_black_box.AbstractBlackBox.parallelize" title="Permalink to this definition">#</a></dt>
 <dd><p>Flag indicating whether to evaluate the black box function in parallel.</p>
@@ -682,7 +693,7 @@ of the original one.</p>
 <li><p><strong>info</strong> (<a class="reference internal" href="poli.core.problem_setup_information.ProblemSetupInformation.html#poli.core.problem_setup_information.ProblemSetupInformation" title="poli.core.problem_setup_information.ProblemSetupInformation"><em>ProblemSetupInformation</em></a>) – The problem setup information object.</p></li>
 <li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The batch size for parallel execution, by default None.</p></li>
 <li><p><strong>parallelize</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag indicating whether to parallelize the execution, by default False.</p></li>
-<li><p><strong>num_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of workers for parallel execution, by default None.</p></li>
+<li><p><strong>num_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of workers for parallel execution, by default we use half the available CPUs.</p></li>
 <li><p><strong>evaluation_budget</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of evaluations allowed for the black box function, by default float(“inf”).</p></li>
 </ul>
 </dd>

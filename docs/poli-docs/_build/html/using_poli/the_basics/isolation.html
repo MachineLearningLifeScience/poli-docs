@@ -576,7 +576,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">create</span>
 
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;dockstring&quot;</span><span class="p">,</span>
     <span class="n">target_name</span><span class="o">=</span><span class="s2">&quot;drd2&quot;</span>  <span class="c1"># The target protein.</span>
 <span class="p">)</span>
@@ -584,6 +584,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating environment poli__dockstring from dockstring/environment.yml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating environment poli__dockstring from dockstring/environment.yml
+poli 🧪: running registration of dockstring from environment poli__dockstring
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/Projects/poli/src/poli/core/registry.py:258: UserWarning: Environment poli__dockstring already exists. Will not create it.
+  warnings.warn(f&quot;Environment {env_name} already exists. Will not create it.&quot;)
+/Users/sjt972/Projects/poli/src/poli/core/registry.py:269: UserWarning: Running the following command: conda run -n poli__dockstring python /Users/sjt972/Projects/poli/src/poli/objective_repository/dockstring/register.py. 
+  warnings.warn(&quot;Running the following command: %s. &quot; % command)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating an isolated black box function.
 poli 🧪: starting the isolated objective process.
 </pre></div>
@@ -644,7 +657,7 @@ poli 🧪: starting the isolated objective process.
 <p>However, when you have the right dependencies, the <code class="docutils literal notranslate"><span class="pre">create</span></code> method returns the actual objective function. Let’s use for example <code class="docutils literal notranslate"><span class="pre">rdkit_logp</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">problem_info</span><span class="p">,</span> <span class="n">f_logp</span><span class="p">,</span> <span class="n">x0_logp</span><span class="p">,</span> <span class="n">y0_logp</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_logp</span><span class="p">,</span> <span class="n">x0_logp</span><span class="p">,</span> <span class="n">y0_logp</span> <span class="o">=</span> <span class="n">create</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rdkit_logp&quot;</span>
 <span class="p">)</span>
 </pre></div>

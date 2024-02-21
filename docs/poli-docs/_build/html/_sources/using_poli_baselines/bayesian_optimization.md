@@ -17,7 +17,7 @@ from poli import objective_factory
 
 from poli_baselines.solvers import VanillaBayesianOptimization
 
-problem_info, f_ackley, _, _, _ = objective_factory.create(
+f_ackley, _, _ = objective_factory.create(
     name="toy_continuous_problem",
     function_name="ackley_function_01",
     n_dimensions=2,

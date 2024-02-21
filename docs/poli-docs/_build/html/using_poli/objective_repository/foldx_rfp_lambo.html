@@ -577,7 +577,7 @@ document.write(`
 </section>
 <section id="python-environment">
 <h3>Python environment<a class="headerlink" href="#python-environment" title="Permalink to this heading">#</a></h3>
-<p>We expect you to have <a class="reference external" href="https://github.com/samuelstanton/lambo">cloned and installed the <code class="docutils literal notranslate"><span class="pre">lambo</span></code> repository</a>. Since there are some files we can’t install automatically using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+...</span></code>, we ask you to create a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment for the lambo tasks:</p>
+<p>We recommend that you have <a class="reference external" href="https://github.com/samuelstanton/lambo">cloned and installed the <code class="docutils literal notranslate"><span class="pre">lambo</span></code> repository</a>. Since there are some files we can’t install automatically using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+...</span></code>, we recommend that you create a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment for the lambo tasks:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># From the root of the poli repository</span>
 <span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">src</span><span class="o">/</span><span class="n">poli</span><span class="o">/</span><span class="n">objective_repository</span><span class="o">/</span><span class="n">foldx_rfp_lambo</span><span class="o">/</span><span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
 </pre></div>
@@ -602,6 +602,10 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><p>the rfp data: see <code class="docutils literal notranslate"><span class="pre">~/lambo/assets/fpbase</span></code></p></li>
 </ul>
 <p>Make sure the data is avaliable.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">We can install <code class="docutils literal notranslate"><span class="pre">lambo</span></code> automatically</p>
+<p>These steps can be skipped. If so, we will install LaMBO automatically and download the relevant files using <code class="docutils literal notranslate"><span class="pre">PyGithub</span></code>. That being said, the API of GitHub limits queries if you are doing anonymous queries. If you decide to skip installing lambo, we recommend that you add an environment variable called <code class="docutils literal notranslate"><span class="pre">GITHUB_TOKEN_FOR_POLI</span></code> whose value is a personal token. <a class="reference external" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">See how to create one here.</a></p>
+</div>
 </section>
 </section>
 <section id="how-to-run">
@@ -619,8 +623,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
 
 <span class="c1"># How to create</span>
-<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">run_info</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_rfp&quot;</span><span class="p">,</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_rfp_lambo&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Example input:</span>

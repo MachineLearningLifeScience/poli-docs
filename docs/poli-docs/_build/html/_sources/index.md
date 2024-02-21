@@ -130,6 +130,8 @@ LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.
 
 On top of `poli`, we provide `poli-baselines`, a collection of **black-box optimization algorithms** (focusing especially on *discrete* sequences). Examples include
 
+## Discrete
+
 ::::{grid}
 :gutter: 3
 
@@ -138,6 +140,13 @@ On top of `poli`, we provide `poli-baselines`, a collection of **black-box optim
 :columns: 6
 Optimizing a discrete sequence by performing random mutations
 :::
+
+::::
+
+## Continuous
+
+::::{grid}
+:gutter: 3
 
 :::{grid-item-card} CMA-ES
 :link: ./using_poli_baselines/cma_es.html

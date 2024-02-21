@@ -16,7 +16,7 @@ We need you to have `foldx` installed, and available in your home directory. We 
 
 ### Python environment
 
-We expect you to have [cloned and installed the `lambo` repository](https://github.com/samuelstanton/lambo). Since there are some files we can't install automatically using `pip install git+...`, we ask you to create a `conda` environment for the lambo tasks:
+We recommend that you have [cloned and installed the `lambo` repository](https://github.com/samuelstanton/lambo). Since there are some files we can't install automatically using `pip install git+...`, we recommend that you create a `conda` environment for the lambo tasks:
 
 ```
 # From the root of the poli repository
@@ -44,6 +44,13 @@ In particular, we need
 
 Make sure the data is avaliable.
 
+:::{admonition} We can install `lambo` automatically
+:class: dropdown
+
+These steps can be skipped. If so, we will install LaMBO automatically and download the relevant files using `PyGithub`. That being said, the API of GitHub limits queries if you are doing anonymous queries. If you decide to skip installing lambo, we recommend that you add an environment variable called `GITHUB_TOKEN_FOR_POLI` whose value is a personal token. [See how to create one here.](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)
+
+:::
+
 ## How to run
 
 You can only run this objective function either in the `poli__lambo` environment, or as an isolated process (which runs this environment underneath).
@@ -62,8 +69,8 @@ import numpy as np
 from poli import objective_factory
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
-    name="foldx_rfp",
+f, x0, y0 = objective_factory.create(
+    name="foldx_rfp_lambo",
 )
 
 # Example input:

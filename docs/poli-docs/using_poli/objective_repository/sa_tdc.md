@@ -10,20 +10,9 @@ This objective function computes the synthetic accesibility of a small molecule 
 
 ## Prerequisites
 
-### Create the `poli__lambo` environment
-
-#### Create the environment from the yml file
-
-This can easily be done by running
-
-```bash
-# From the base of the poli repo
-conda env create --file src/poli/objective_repository/sa_tdc/environment.yml
-```
-
 ## How to run
 
-You can only run this objective function either in the `poli__lambo` environment, or as an isolated process (which runs this environment underneath).
+You can only run this objective function either in the `poli__tdc` environment, or as an isolated process (which runs this environment underneath).
 
 :::{warning}
 Running this objective function will create an `./oracle` folder on your working directory, where it will download the relevant files for the oracle to work.
@@ -31,7 +20,7 @@ Running this objective function will create an `./oracle` folder on your working
 
 ::::{tab-set}
 
-:::{tab-item} (Isolated) in the `poli__lambo` environment
+:::{tab-item} (Isolated) in the `poli__tdc` environment
 
 After the setup described above, you can simply run the following code from 
 
@@ -43,7 +32,7 @@ import numpy as np
 from poli import objective_factory
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="sa_tdc",
     force_register=True
 )

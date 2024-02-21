@@ -57,7 +57,7 @@ import numpy as np
 from poli import objective_factory
 
 # Using create
-problem_info, f, x0, y0, _ = objective_factory.create(name="penalized_logp_lambo")
+f, x0, y0 = objective_factory.create(name="penalized_logp_lambo")
 
 # An example input
 print(x0)
@@ -77,10 +77,3 @@ f.terminate()
 
 - `penalized: bool = True`. Whether we are evaluating penalized logP or not.
 - `string_representation: str = "SMILES"`. Can be either `"SMILES"` or `"SELFIES"`.
-
-<!-- ## References
-
-:::{bibliography}
-:style: alpha
-
-::: -->

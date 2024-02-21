@@ -832,7 +832,7 @@ Chain id: A
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ********************************************
    ***                                      ***
-   ***             FoldX 4 (c)              ***
+   ***             FoldX 5 (c)            ***
    ***                                      ***
    ***     code by the FoldX Consortium     ***
    ***                                      ***
@@ -846,6 +846,7 @@ Chain id: A
    ***   Raphael Guerois and Luis Serrano   ***
    ********************************************
 
+1 models read: 101m_Repair.pdb
 1 models read: 101m_Repair.pdb
 </pre></div>
 </div>
@@ -873,20 +874,43 @@ Entropy Complex =               0.00
 Total          = 				  -32.28
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting BuildModel
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -142.58
+SideHbond       =               -48.61
+Energy_VdW      =               -179.63
+Electro         =               -8.33
+Energy_SolvP    =               245.28
+Energy_SolvH    =               -238.89
+Energy_vdwclash =               3.42
+energy_torsion  =               6.70
+backbone_vdwclash=              158.16
+Entropy_sidec   =               105.87
+Entropy_mainc   =               231.69
+water bonds     =               0.00
+helix dipole    =               -8.75
+loop_entropy    =               0.00
+cis_bond        =               0.00
+disulfide       =               0.00
+kn electrostatic=               0.00
+partial covalent interactions = 0.00
+Energy_Ionisation =             1.56
+Entropy Complex =               0.00
+-----------------------------------------------------------
+Total          = 				  -32.28
+
+Starting BuildModel
 Reading MA0G;
 Residue to Mutate META0 has residue index 0
 Mutating residue = META0 into GLY
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Fri Dec 22 12:10:14 2023
-Total time spend: 20.63 seconds.
+End time of FoldX: Wed Feb  7 16:44:52 2024
+Total time spend: 22.96 seconds.
 validated file &quot;101m_Repair_1.pdb&quot; =&gt; successfully finished
 Cleaning BuildModel...DONE
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CompletedProcess(args=[&#39;/Users/sjt972/foldx/foldx&#39;, &#39;--pdb&#39;, &#39;101m_Repair.pdb&#39;, &#39;--command&#39;, &#39;BuildModel&#39;, &#39;--mutant-file&#39;, &#39;/Users/sjt972/Projects/protein-optimization-docs/docs/protein-optimization/understanding_foldx/01-single-mutation-using-foldx/tmp/individual_list.txt&#39;, &#39;--water&#39;, &#39;-CRYSTAL&#39;, &#39;--pH&#39;, &#39;7.0&#39;], returncode=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CompletedProcess(args=[&#39;/Users/sjt972/foldx/foldx&#39;, &#39;--pdb&#39;, &#39;101m_Repair.pdb&#39;, &#39;--command&#39;, &#39;BuildModel&#39;, &#39;--mutant-file&#39;, &#39;/Users/sjt972/Projects/poli-docs/docs/poli-docs/understanding_foldx/01-single-mutation-using-foldx/tmp/individual_list.txt&#39;, &#39;--water&#39;, &#39;-CRYSTAL&#39;, &#39;--pH&#39;, &#39;7.0&#39;], returncode=0)
 </pre></div>
 </div>
 </div>
@@ -955,6 +979,18 @@ Cleaning BuildModel...DONE
     <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]],</span>
     <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/l3/qk9dx6g958765kmn_2wn34t00000gn/T/ipykernel_25734/1758354106.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
 </pre></div>
 </div>
 </div>

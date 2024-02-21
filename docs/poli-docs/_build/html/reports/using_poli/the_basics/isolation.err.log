@@ -1,28 +1,94 @@
 Traceback (most recent call last):
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/site-packages/nbclient/client.py", line 1305, in execute
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 172, in wrapped
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
     return future.result()
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/sjt972/anaconda3/envs/poli-docs/lib/python3.9/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-TODO: write
+from poli import create
+
+f, x0, y0 = create(
+    name="dockstring",
+    target_name="drd2"  # The target protein.
+)
 ------------------
 
+----- stdout -----
+poli 🧪: creating an isolated black box function.
+poli 🧪: starting the isolated objective process.
+----- stdout -----
+Traceback (most recent call last):
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 135, in run
+    objective_factory: AbstractProblemFactory = dynamically_instantiate(
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 102, in dynamically_instantiate
+    raise e
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 92, in dynamically_instantiate
+    exec(command)
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'register'
+----- stderr -----
+CRITICAL:root:Path: /opt/homebrew/opt/openjdk/bin:/opt/homebrew/bin:/Users/sjt972/anaconda3/envs/poli__dockstring/bin:/Users/sjt972/anaconda3/condabin:/Users/sjt972/autodock_vina_1_1_2_mac_catalina_64bit/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/usr/local/go/bin:/Users/sjt972/.cargo/bin
+CRITICAL:root:Python path: ['/Users/sjt972/Projects/poli/src/poli', '/Users/sjt972/Projects/poli-docs/docs/poli-docs/using_poli/the_basics', '/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring', '/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python39.zip', '/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9', '/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9/lib-dynload', '/Users/sjt972/anaconda3/envs/poli__dockstring/lib/python3.9/site-packages', '/Users/sjt972/Projects/poli/src', '', '/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring']
+CRITICAL:root:Path: :/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring
+CRITICAL:root:Path: :/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring
+Traceback (most recent call last):
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 176, in <module>
+    run(factory_kwargs[0], args.objective_name, args.port, args.password)
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 145, in run
+    raise e
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 135, in run
+    objective_factory: AbstractProblemFactory = dynamically_instantiate(
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 102, in dynamically_instantiate
+    raise e
+  File "/Users/sjt972/Projects/poli/src/poli/objective.py", line 92, in dynamically_instantiate
+    exec(command)
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'register'
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m TODO: [43mwrite[49m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[2], line 3[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpoli[39;00m [38;5;28;01mimport[39;00m create
+[0;32m----> 3[0m f, x0, y0 [38;5;241m=[39m [43mcreate[49m[43m([49m
+[1;32m      4[0m [43m    [49m[43mname[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mdockstring[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m      5[0m [43m    [49m[43mtarget_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mdrd2[39;49m[38;5;124;43m"[39;49m[43m  [49m[38;5;66;43;03m# The target protein.[39;49;00m
+[1;32m      6[0m [43m)[49m
 
-[0;31mNameError[0m: name 'write' is not defined
+File [0;32m~/Projects/poli/src/poli/objective_factory.py:439[0m, in [0;36mcreate[0;34m(name, seed, observer_init_info, observer, force_register, force_isolation, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)[0m
+[1;32m    437[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m quiet:
+[1;32m    438[0m     [38;5;28mprint[39m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mpoli 🧪: creating an isolated black box function.[39m[38;5;124m"[39m)
+[0;32m--> 439[0m f, x0, y0 [38;5;241m=[39m [43m__create_as_isolated_process[49m[43m([49m
+[1;32m    440[0m [43m    [49m[43mname[49m[43m,[49m
+[1;32m    441[0m [43m    [49m[43mseed[49m[38;5;241;43m=[39;49m[43mseed[49m[43m,[49m
+[1;32m    442[0m [43m    [49m[43mbatch_size[49m[38;5;241;43m=[39;49m[43mbatch_size[49m[43m,[49m
+[1;32m    443[0m [43m    [49m[43mparallelize[49m[38;5;241;43m=[39;49m[43mparallelize[49m[43m,[49m
+[1;32m    444[0m [43m    [49m[43mnum_workers[49m[38;5;241;43m=[39;49m[43mnum_workers[49m[43m,[49m
+[1;32m    445[0m [43m    [49m[43mevaluation_budget[49m[38;5;241;43m=[39;49m[43mevaluation_budget[49m[43m,[49m
+[1;32m    446[0m [43m    [49m[43mquiet[49m[38;5;241;43m=[39;49m[43mquiet[49m[43m,[49m
+[1;32m    447[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs_for_factory[49m[43m,[49m
+[1;32m    448[0m [43m[49m[43m)[49m
+[1;32m    449[0m problem_information [38;5;241m=[39m f[38;5;241m.[39minfo
+[1;32m    451[0m [38;5;66;03m# instantiate observer (if desired)[39;00m
+
+File [0;32m~/Projects/poli/src/poli/objective_factory.py:278[0m, in [0;36m__create_as_isolated_process[0;34m(name, seed, batch_size, parallelize, num_workers, evaluation_budget, quiet, **kwargs_for_factory)[0m
+[1;32m    276[0m     e, tb [38;5;241m=[39m msg
+[1;32m    277[0m     [38;5;28mprint[39m(tb)
+[0;32m--> 278[0m     [38;5;28;01mraise[39;00m e
+[1;32m    279[0m [38;5;28;01melse[39;00m:
+[1;32m    280[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    281[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mInternal error: received [39m[38;5;132;01m{[39;00mmsg_type[38;5;132;01m}[39;00m[38;5;124m when expecting SETUP or EXCEPTION[39m[38;5;124m"[39m
+[1;32m    282[0m     )
+
+[0;31mModuleNotFoundError[0m: No module named 'register'
 

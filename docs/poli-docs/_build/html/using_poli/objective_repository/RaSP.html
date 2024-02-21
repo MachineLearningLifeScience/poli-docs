@@ -583,7 +583,7 @@ conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">poli__rasp</span>
 </pre></div>
 </div>
-<p>Supposing you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
+<p>Assuming you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -598,7 +598,7 @@ conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
         <span class="c1"># You could have more if you want.</span>
     <span class="p">]</span>
 
-    <span class="n">problem_info</span><span class="p">,</span> <span class="n">f_rasp</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">f_rasp</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rasp&quot;</span><span class="p">,</span>
         <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_paths_for_rasp</span><span class="p">,</span>
     <span class="p">)</span>
@@ -624,7 +624,7 @@ conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> <
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 In isolation</label><div class="sd-tab-content docutils">
-<p>Supposing you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
+<p>Assuming you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -639,7 +639,7 @@ In isolation</label><div class="sd-tab-content docutils">
         <span class="c1"># You could have more if you want.</span>
     <span class="p">]</span>
 
-    <span class="n">problem_info</span><span class="p">,</span> <span class="n">f_rasp</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">f_rasp</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
         <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rasp&quot;</span><span class="p">,</span>
         <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_paths_for_rasp</span><span class="p">,</span>
     <span class="p">)</span>

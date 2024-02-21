@@ -85,7 +85,7 @@ Running this objective function will create an `./oracle` folder on your working
 
 ::::{tab-set}
 
-:::{tab-item} (Isolated) in the `poli__lambo` environment
+:::{tab-item} (Isolated) in the `poli__tdc` environment
 
 After the setup described above, you can simply run the following code from 
 
@@ -93,7 +93,7 @@ After the setup described above, you can simply run the following code from
 from poli import objective_factory
 
 # How to create
-problem_info, f, x0, y0, run_info = objective_factory.create(
+f, x0, y0 = objective_factory.create(
     name="drd3_docking",
     force_register=True
 )
