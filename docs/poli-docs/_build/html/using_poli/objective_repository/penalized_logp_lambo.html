@@ -571,15 +571,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment">Python environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambo"><code class="docutils literal notranslate"><span class="pre">lambo</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-keyword-arguments">Other keyword arguments:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 </ul>
             </nav>
         </div>
@@ -602,70 +595,37 @@ document.write(`
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
-<section id="python-environment">
-<h3>Python environment<a class="headerlink" href="#python-environment" title="Permalink to this heading">#</a></h3>
-<p>We expect you to have <a class="reference external" href="https://github.com/samuelstanton/lambo">cloned and installed the <code class="docutils literal notranslate"><span class="pre">lambo</span></code> repository</a>. Since there are some files we can’t install automatically using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+...</span></code>, we ask you to create a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment for the lambo tasks:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># From the root of the poli repository</span>
-<span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">--</span><span class="n">file</span> <span class="n">src</span><span class="o">/</span><span class="n">poli</span><span class="o">/</span><span class="n">objective_repository</span><span class="o">/</span><span class="n">foldx_rfp_lambo</span><span class="o">/</span><span class="n">environment</span><span class="o">.</span><span class="n">yml</span>
-</pre></div>
-</div>
-<p>Activate the environment you just created using</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">poli__lambo</span>
-</pre></div>
-</div>
-</section>
-<section id="lambo">
-<h3><code class="docutils literal notranslate"><span class="pre">lambo</span></code><a class="headerlink" href="#lambo" title="Permalink to this heading">#</a></h3>
-<p>We also need <code class="docutils literal notranslate"><span class="pre">lambo</span></code>’s tasks to be available in Python’s path for <code class="docutils literal notranslate"><span class="pre">poli__lambo</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In the poli__lambo environment</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/samuelstanton/lambo<span class="w">    </span><span class="c1"># For reference, we use 431b052</span>
-<span class="nb">cd</span><span class="w"> </span>lambo
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w">  </span>
-</pre></div>
-</div>
-</section>
+<p>None. This black box should run out-of-the-box.</p>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
-<p>You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.</p>
-<p>You can only run this objective function either in the <code class="docutils literal notranslate"><span class="pre">poli__lambo</span></code>, or as an isolated process (which runs this environment underneath).</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-(Isolated) in the <code class="docutils literal notranslate"><span class="pre">poli__lambo</span></code> environment</label><div class="sd-tab-content docutils">
-<p>After the setup described above, you can simply run the following code from</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PenalizedLogPLamboProblemFactory</span><span class="p">,</span>
+    <span class="n">PenalizedLogPLamboBlackBox</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
+<span class="c1"># Creating the black box</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">PenalizedLogPLamboBlackBox</span><span class="p">()</span>
 
-<span class="c1"># Using create</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;penalized_logp_lambo&quot;</span><span class="p">)</span>
+<span class="c1"># Creating a problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">PenalizedLogPLamboProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
 
-<span class="c1"># An example input</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="c1"># Example input: a single carbon</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;C&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># The example&#39;s output</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>
-
-<span class="c1"># Terminating the isolated process (if it was created)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+<span class="c1"># Querying:</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Should be close to -6.2238</span>
 </pre></div>
 </div>
-</div>
-</div>
-<section id="other-keyword-arguments">
-<h3>Other keyword arguments:<a class="headerlink" href="#other-keyword-arguments" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">penalized:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></code>. Whether we are evaluating penalized logP or not.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">string_representation:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&quot;SMILES&quot;</span></code>. Can be either <code class="docutils literal notranslate"><span class="pre">&quot;SMILES&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;SELFIES&quot;</span></code>.</p></li>
-</ul>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>If you check carefully, you might have noticed that they add to their implementation the empirical means and standard deviations of the ZINC dataset for the values they compute.</p>
 </dd>
 </dl>
-</section>
 </section>
 </section>
 
@@ -734,15 +694,8 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environment">Python environment</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lambo"><code class="docutils literal notranslate"><span class="pre">lambo</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-keyword-arguments">Other keyword arguments:</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 </ul>
   </nav></div>
 

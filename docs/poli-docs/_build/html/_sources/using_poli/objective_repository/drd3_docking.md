@@ -1,7 +1,7 @@
 # DRD3 docking (using TDC)
 
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
-![Environment to run this objective function: poli lambo](https://img.shields.io/badge/Environment-poli____lambo-teal
+![Environment to run this objective function: poli tdc](https://img.shields.io/badge/Environment-poli____tdc-teal
 )
 
 ## About

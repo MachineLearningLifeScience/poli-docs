@@ -14,66 +14,29 @@ To do so, we import their scoring function.
 
 ## Prerequisites
 
-### Python environment
+None. This black box should run out-of-the-box.
 
-We expect you to have [cloned and installed the `lambo` repository](https://github.com/samuelstanton/lambo). Since there are some files we can't install automatically using `pip install git+...`, we ask you to create a `conda` environment for the lambo tasks:
-
-```
-# From the root of the poli repository
-conda env create --file src/poli/objective_repository/foldx_rfp_lambo/environment.yml
-```
-
-Activate the environment you just created using
-```
-conda activate poli__lambo
-```
-
-### `lambo`
-
-We also need `lambo`'s tasks to be available in Python's path for `poli__lambo`:
-
-```bash
-# In the poli__lambo environment
-git clone https://github.com/samuelstanton/lambo    # For reference, we use 431b052
-cd lambo
-pip install -e .  
-```
 
 ## How to run
 
-You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.
-
-You can only run this objective function either in the `poli__lambo`, or as an isolated process (which runs this environment underneath).
-
-::::{tab-set}
-
-:::{tab-item} (Isolated) in the `poli__lambo` environment
-
-After the setup described above, you can simply run the following code from 
-
 ```python
 import numpy as np
+from poli.objective_repository import (
+    PenalizedLogPLamboProblemFactory,
+    PenalizedLogPLamboBlackBox,
+)
 
-from poli import objective_factory
+# Creating the black box
+f = PenalizedLogPLamboBlackBox()
 
-# Using create
-f, x0, y0 = objective_factory.create(name="penalized_logp_lambo")
+# Creating a problem
+problem = PenalizedLogPLamboProblemFactory().create()
+f, x0 = problem.black_box, problem.x0
 
-# An example input
-print(x0)
+# Example input: a single carbon
+x = np.array(["C"]).reshape(1, -1)
 
-# The example's output
-print(y0)
-
-# Terminating the isolated process (if it was created)
-f.terminate()
+# Querying:
+y = f(x)
+print(y)  # Should be close to -6.2238
 ```
-
-:::
-
-::::
-
-### Other keyword arguments:
-
-- `penalized: bool = True`. Whether we are evaluating penalized logP or not.
-- `string_representation: str = "SMILES"`. Can be either `"SMILES"` or `"SELFIES"`.

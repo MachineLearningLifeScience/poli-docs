@@ -10,40 +10,25 @@ This objective function computes the synthetic accesibility of a small molecule 
 
 ## Prerequisites
 
+None. This black box should run out-of-the-box.
+
 ## How to run
 
-You can only run this objective function either in the `poli__tdc` environment, or as an isolated process (which runs this environment underneath).
-
-:::{warning}
-Running this objective function will create an `./oracle` folder on your working directory, where it will download the relevant files for the oracle to work.
-:::
-
-::::{tab-set}
-
-:::{tab-item} (Isolated) in the `poli__tdc` environment
-
-After the setup described above, you can simply run the following code from 
-
 ```python
-from pathlib import Path
-
 import numpy as np
+from poli.objective_repository import SAProblemFactory, SABlackBox
 
-from poli import objective_factory
+# Creating the black box
+f = SABlackBox()
 
-# How to create
-f, x0, y0 = objective_factory.create(
-    name="sa_tdc",
-    force_register=True
-)
+# Creating a problem
+problem = SAProblemFactory().create()
+f, x0 = problem.black_box, problem.x0
 
-# Example input:
-print(x0)  # [['C' 'C' 'N' 'C' ...]]
+# Example input: (taken from the TDC)
+x = np.array(["CCNC(=O)c1ccc(NC(=O)N2CC[C@H](C)[C@H](O)C2)c(C)c1"])
 
 # Querying:
-print(y0)  # [[2.8548]]
+y = f(x)
+print(y)  # Should be close to 2.85483733
 ```
-
-:::
-
-::::

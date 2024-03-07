@@ -594,39 +594,27 @@ document.write(`
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>None. This black box should run out-of-the-box.</p>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
-<p>You can only run this objective function either in the <code class="docutils literal notranslate"><span class="pre">poli__tdc</span></code> environment, or as an isolated process (which runs this environment underneath).</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Running this objective function will create an <code class="docutils literal notranslate"><span class="pre">./oracle</span></code> folder on your working directory, where it will download the relevant files for the oracle to work.</p>
-</div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-(Isolated) in the <code class="docutils literal notranslate"><span class="pre">poli__tdc</span></code> environment</label><div class="sd-tab-content docutils">
-<p>After the setup described above, you can simply run the following code from</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">SAProblemFactory</span><span class="p">,</span> <span class="n">SABlackBox</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="c1"># Creating the black box</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">SABlackBox</span><span class="p">()</span>
 
-<span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
+<span class="c1"># Creating a problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">SAProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
 
-<span class="c1"># How to create</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;sa_tdc&quot;</span><span class="p">,</span>
-    <span class="n">force_register</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
-
-<span class="c1"># Example input:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>  <span class="c1"># [[&#39;C&#39; &#39;C&#39; &#39;N&#39; &#39;C&#39; ...]]</span>
+<span class="c1"># Example input: (taken from the TDC)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;CCNC(=O)c1ccc(NC(=O)N2CC[C@H](C)[C@H](O)C2)c(C)c1&quot;</span><span class="p">])</span>
 
 <span class="c1"># Querying:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>  <span class="c1"># [[2.8548]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Should be close to 2.85483733</span>
 </pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
