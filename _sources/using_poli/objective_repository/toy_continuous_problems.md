@@ -39,25 +39,32 @@ None, this function should always run out-of-the-box
 
 ```python
 import numpy as np
-from poli import objective_factory
-
-# Choose a function name and number of dimensions
-function_name = "ackley_function_01"
-n_dimensions = 2  # it's 2 by default.
-
-# How to create
-f, x0, y0 = objective_factory.create(
-    name="toy_continuous_problem",
-    function_name=function_name,
-    n_dimensions=n_dimensions,  # For some, this can be arbitrary.
+from poli.objective_repository import (
+    ToyContinuousBlackBox,
+    ToyContinuousProblemFactory,
 )
 
+function_name = "ackley_function_01"
+n_dimensions = 2
+
+# Creating the black box
+f = ToyContinuousBlackBox(
+    function_name=function_name,
+    n_dimensions=n_dimensions,
+)
+
+# Creating a problem
+problem = ToyContinuousProblemFactory().create(
+    function_name=function_name,
+    n_dimensions=n_dimensions,
+)
+f, x0 = problem.black_box, problem.x0
 
 # Example input:
-x = np.array([[0.0, 0.0]])  # must be of shape [b, n_dimensions], in this case [1, 2].
+x = np.array([[0.5, 0.5]])  # must be of shape [b, L], in this case [1, 2].
 
 # Querying:
-print(f(x))  # Should be [[0.0]] in this example
+print(f(x))
 ```
 
 ## Creating problems with low intrinsic dimensionality
@@ -65,11 +72,12 @@ print(f(x))  # Should be [[0.0]] in this example
 Some optimization algorithms (like [LineBO](https://arxiv.org/abs/1902.03229) or [SAASBO](https://proceedings.mlr.press/v161/eriksson21a.html)) rely on the assumption that there is a _low intrinsic dimensionality_ to the problem. Roughly speaking, this means that only a subset of the variables are actually relevant to the problem in question. This `poli` objective allows you to create such problems. For example, consider `camelback_2d` (which is usually only defined in two dimensions). You can embed this function into, say, 30 dimensions by creating the objective as follows:
 
 ```python
-f, x0, y0 = objective_factory.create(
-    name="toy_continuous_problem",
+problem = ToyContinuousProblemFactory().create(
     function_name="camelback_2d",
     embed_in=30,  #  This will create a function that takes 30d input values
 )
+
+f, x0 = problem.black_box, problem.x0
 ```
 
 During the creation process, the two relevant dimensions of `camelback_2d` will be randomly embedded into two of the 30 dimensions. These are accessible under `f.function.dimensions_to_embed_in` (which is an array of integers).

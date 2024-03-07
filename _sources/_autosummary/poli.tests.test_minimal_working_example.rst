@@ -13,7 +13,8 @@ poli.tests.test\_minimal\_working\_example
 
    .. autosummary::
    
-      test_minimal_working_example
+      test_minimal_working_example_of_black_box_instancing
+      test_minimal_working_example_of_problem_creation
    
    
 

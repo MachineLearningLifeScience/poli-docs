@@ -1,7 +1,7 @@
 # DRD3 docking (using TDC)
 
 ![Type of objective function: discrete](https://img.shields.io/badge/Type-discrete_inputs-blue)
-![Environment to run this objective function: poli lambo](https://img.shields.io/badge/Environment-poli____lambo-teal
+![Environment to run this objective function: poli tdc](https://img.shields.io/badge/Environment-poli____tdc-teal
 )
 
 ## About
@@ -46,19 +46,6 @@ Thus, we recommend creating a symlink. Write this in your `~/.bashrc` or `~/.zsh
 ln -sf /path/to/ADFR/bin/prepare_receptor /path/to/AutoDock_vina/bin
 ```
 
-### Create the `poli__lambo` environment
-
-#### Create the environment from the yml file
-
-This can easily be done by running
-
-```bash
-# From the base of the poli repo
-conda env create --file src/poli/objective_repository/drd3_docking/environment.yml
-```
-
-This particular example _doesn't_ need to have the `lambo` package installed.
-
 ### Making sure you're all set
 
 If the set-up above was successful, you should be able to run
@@ -77,34 +64,21 @@ which prepare_receptor
 
 ## How to run
 
-You can only run this objective function either in the `poli__lambo` environment, or as an isolated process (which runs this environment underneath).
-
-:::{warning}
-Running this objective function will create an `./oracle` folder on your working directory, where it will download the relevant `.pdb` files.
-:::
-
-::::{tab-set}
-
-:::{tab-item} (Isolated) in the `poli__tdc` environment
-
-After the setup described above, you can simply run the following code from 
-
 ```python
-from poli import objective_factory
+import numpy as np
+from poli.objective_repository import DRD3ProblemFactory, DRD3BlackBox
 
-# How to create
-f, x0, y0 = objective_factory.create(
-    name="drd3_docking",
-    force_register=True
-)
+# Creating the black box
+f = DRD3BlackBox()
+
+# Creating a problem
+problem = DRD3ProblemFactory().create()
+f, x0 = problem.black_box, problem.x0
 
 # Example input:
-print(x0)  # [['c' '1' 'c' 'c' 'c' 'c' 'c' '1']]
+x = np.array(["c1ccccc1"])
 
 # Querying:
-print(y0)  # [[-4.1]]
+y = f(x)
+print(y)  # Should be close to -4.1
 ```
-
-:::
-
-::::

@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../contributing/a_new_problem.html">Adding a new problem to the repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing/a_new_problem.html">Adding a new black box to the repository</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/a_new_solver.html">Adding a new optimizer to <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
@@ -218,16 +218,20 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../api.html">API documentation for poli</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../_autosummary/poli.core.html">poli.core</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.abstract_black_box.html">poli.core.abstract_black_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.abstract_isolated_function.html">poli.core.abstract_isolated_function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.abstract_problem_factory.html">poli.core.abstract_problem_factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.black_box_information.html">poli.core.black_box_information</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.chemistry.tdc_black_box.html">poli.core.chemistry.tdc_black_box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.chemistry.tdc_isolated_function.html">poli.core.chemistry.tdc_isolated_function</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.exceptions.html">poli.core.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.multi_objective_black_box.html">poli.core.multi_objective_black_box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.problem.html">poli.core.problem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.problem_setup_information.html">poli.core.problem_setup_information</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.core.proteins.html">poli.core.proteins</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.proteins.foldx_black_box.html">poli.core.proteins.foldx_black_box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.proteins.foldx_isolated_function.html">poli.core.proteins.foldx_isolated_function</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../_autosummary/poli.core.registry.html">poli.core.registry</a></li>
@@ -239,6 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -254,26 +259,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.dockstring.information.html">poli.objective_repository.dockstring.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.dockstring.isolated_function.html">poli.objective_repository.dockstring.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.dockstring.register.html">poli.objective_repository.dockstring.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.drd3_docking.information.html">poli.objective_repository.drd3_docking.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.drd3_docking.isolated_function.html">poli.objective_repository.drd3_docking.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.drd3_docking.register.html">poli.objective_repository.drd3_docking.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_rfp_lambo.information.html">poli.objective_repository.foldx_rfp_lambo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_rfp_lambo.isolated_function.html">poli.objective_repository.foldx_rfp_lambo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html">poli.objective_repository.foldx_rfp_lambo.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_sasa.information.html">poli.objective_repository.foldx_sasa.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_sasa.isolated_function.html">poli.objective_repository.foldx_sasa.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_sasa.register.html">poli.objective_repository.foldx_sasa.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability.information.html">poli.objective_repository.foldx_stability.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability.isolated_function.html">poli.objective_repository.foldx_stability.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability.register.html">poli.objective_repository.foldx_stability.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.information.html">poli.objective_repository.foldx_stability_and_sasa.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.isolated_function.html">poli.objective_repository.foldx_stability_and_sasa.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html">poli.objective_repository.foldx_stability_and_sasa.register</a></li>
 </ul>
 </li>
@@ -282,45 +299,61 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html">poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html">poli.objective_repository.gfp_cbas.cbas_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.gfp_gp.html">poli.objective_repository.gfp_cbas.gfp_gp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.information.html">poli.objective_repository.gfp_cbas.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.isolated_function.html">poli.objective_repository.gfp_cbas.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.make_vae.html">poli.objective_repository.gfp_cbas.make_vae</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_cbas.register.html">poli.objective_repository.gfp_cbas.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_select.information.html">poli.objective_repository.gfp_select.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_select.isolated_function.html">poli.objective_repository.gfp_select.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.gfp_select.register.html">poli.objective_repository.gfp_select.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.penalized_logp_lambo.information.html">poli.objective_repository.penalized_logp_lambo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.penalized_logp_lambo.isolated_function.html">poli.objective_repository.penalized_logp_lambo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.penalized_logp_lambo.register.html">poli.objective_repository.penalized_logp_lambo.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rasp.information.html">poli.objective_repository.rasp.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rasp.isolated_function.html">poli.objective_repository.rasp.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rasp.register.html">poli.objective_repository.rasp.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rdkit_logp.information.html">poli.objective_repository.rdkit_logp.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rdkit_logp.register.html">poli.objective_repository.rdkit_logp.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rdkit_qed.information.html">poli.objective_repository.rdkit_qed.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rdkit_qed.register.html">poli.objective_repository.rdkit_qed.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.information.html">poli.objective_repository.rfp_foldx_stability_and_sasa.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html">poli.objective_repository.rfp_foldx_stability_and_sasa.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.sa_tdc.information.html">poli.objective_repository.sa_tdc.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.sa_tdc.isolated_function.html">poli.objective_repository.sa_tdc.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.sa_tdc.register.html">poli.objective_repository.sa_tdc.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.super_mario_bros.information.html">poli.objective_repository.super_mario_bros.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.super_mario_bros.level_utils.html">poli.objective_repository.super_mario_bros.level_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.super_mario_bros.model.html">poli.objective_repository.super_mario_bros.model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.super_mario_bros.register.html">poli.objective_repository.super_mario_bros.register</a></li>
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html">poli.objective_repository.toy_continuous_problem.definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.toy_continuous_problem.information.html">poli.objective_repository.toy_continuous_problem.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.toy_continuous_problem.register.html">poli.objective_repository.toy_continuous_problem.register</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem.toy_continuous_problem</a></li>
 </ul>
@@ -331,7 +364,6 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../_autosummary/poli.objective.html">poli.objective</a></li>
 </ul>
 </li>
 </ul>
@@ -558,11 +590,11 @@ document.write(`
 <h1>Optimizing protein stability using random mutations<a class="headerlink" href="#optimizing-protein-stability-using-random-mutations" title="Permalink to this heading">#</a></h1>
 <section id="stability-optimization-is-a-registered-problem">
 <h2>Stability optimization is a registered problem<a class="headerlink" href="#stability-optimization-is-a-registered-problem" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">poli</span></code>’s registry has a <code class="docutils literal notranslate"><span class="pre">get_problems()</span></code> method which returns the objective functions already compiled. It works by loading up a <code class="docutils literal notranslate"><span class="pre">config.rc</span></code> file sitting inside <code class="docutils literal notranslate"><span class="pre">src/poli/core</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">poli</span></code> has a <code class="docutils literal notranslate"><span class="pre">get_problems()</span></code> method which let’s you know the problems you could create.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.core.registry</span> <span class="kn">import</span> <span class="n">get_problems</span>
-<span class="n">get_problems</span><span class="p">(</span><span class="n">only_available</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">get_problems</span>
+<span class="n">get_problems</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -583,8 +615,8 @@ document.write(`
  &#39;rfp_foldx_stability_and_sasa&#39;,
  &#39;sa_tdc&#39;,
  &#39;super_mario_bros&#39;,
- &#39;toy_continuous_problem&#39;,
- &#39;white_noise&#39;]
+ &#39;white_noise&#39;,
+ &#39;toy_continuous_problem&#39;]
 </pre></div>
 </div>
 </div>
@@ -633,20 +665,21 @@ document.write(`
 </section>
 <section id="defining-the-objective-function">
 <h2>Defining the objective function<a class="headerlink" href="#defining-the-objective-function" title="Permalink to this heading">#</a></h2>
-<p>In this tutorial, we optimize the stability of <code class="docutils literal notranslate"><span class="pre">mRogue</span></code> using the <code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> problem factory. The first step is creating the problem:</p>
+<p>In this tutorial, we optimize the stability of <code class="docutils literal notranslate"><span class="pre">mRogue</span></code> using the <code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> black box. The first step is creating it:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>In general, it is a good idea to check how to create instances of individual problems in their documentation, since they might need extra inputs.</p>
-<p>For example, <a class="reference internal" href="../../objective_repository/foldx_stability.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> only needs one extra keyword argument: a single/list of <code class="docutils literal notranslate"><span class="pre">wildtype_pdb_path</span></code></span></a>. <code class="docutils literal notranslate"><span class="pre">poli</span></code> will hopefully remind you what you forgot with its error messages.</p>
+<p>In the particular case of <code class="docutils literal notranslate"><span class="pre">foldx</span></code>-related black boxes, you will need to have it properly installed. <a class="reference internal" href="../../../understanding_foldx/00-installing-foldx.html"><span class="doc std std-doc">Check our documentation on installing foldx</span></a>.</p>
 </div>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">FoldXStabilityProblemFactory</span>
 
-<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_stability&quot;</span><span class="p">,</span>
+<span class="n">problem_factory</span> <span class="o">=</span> <span class="n">FoldXStabilityProblemFactory</span><span class="p">()</span>
+
+<span class="n">problem</span> <span class="o">=</span> <span class="n">problem_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_path</span>
 <span class="p">)</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
 </pre></div>
 </div>
 </div>
@@ -656,20 +689,17 @@ document.write(`
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating an isolated black box function.
-poli 🧪: starting the isolated objective process.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Starting the function foldx_stability as an isolated process.
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">objective_factory.create</span></code> returns five things:</p>
+<p><code class="docutils literal notranslate"><span class="pre">problem_factory.create</span></code> returns a <code class="docutils literal notranslate"><span class="pre">Problem</span></code> instance. Problems have the following useful attributes:</p>
 <ol class="arabic simple">
-<li><p>a <code class="docutils literal notranslate"><span class="pre">problem_info</span></code> with a description of the problem, including useful attributes like <code class="docutils literal notranslate"><span class="pre">alphabet</span></code> or <code class="docutils literal notranslate"><span class="pre">max_sequence_length</span></code>.</p></li>
-<li><p>a black-box function <code class="docutils literal notranslate"><span class="pre">f:</span> <span class="pre">AbstractBlackBox</span></code> from <code class="docutils literal notranslate"><span class="pre">poli</span></code>.</p></li>
-<li><p>an initial design <code class="docutils literal notranslate"><span class="pre">x0:</span> <span class="pre">np.ndarray</span></code>, and</p></li>
-<li><p>an initial evaluation <code class="docutils literal notranslate"><span class="pre">y0:</span> <span class="pre">np.ndarray</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">run_info</span></code>, or the output of the observer’s initialization (see more <a class="reference internal" href="../../the_basics/defining_an_observer.html"><span class="doc std std-doc">in our chapter about making observers</span></a>).</p></li>
+<li><p>a black-box function in <code class="docutils literal notranslate"><span class="pre">problem.black_box</span></code>. In this case, it is a <code class="docutils literal notranslate"><span class="pre">FoldXStabilityBlackBox</span></code>.</p></li>
+<li><p>an initial design  in <code class="docutils literal notranslate"><span class="pre">problem.x0:</span> <span class="pre">np.ndarray</span></code>, and</p></li>
+<li><p>All the relevant information about the black box (e.g. whether it’s deterministic, what the alphabet is…) in <code class="docutils literal notranslate"><span class="pre">problem.info:</span> <span class="pre">BlackBoxInformation</span></code>.</p></li>
 </ol>
 <p>These are all the ingredients required for an abstract solver to work. The next section shows how to use a baseline solver, which can be easily replaced by any other solver you implement (as long as it inherits from the <code class="docutils literal notranslate"><span class="pre">AbstractSolver</span></code> in <code class="docutils literal notranslate"><span class="pre">poli_baselines.core.abstract_solver</span></code>).</p>
 </section>
@@ -688,6 +718,9 @@ poli 🧪: starting the isolated objective process.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli_baselines.solvers.simple.random_mutation</span> <span class="kn">import</span> <span class="n">RandomMutation</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
 <span class="n">solver</span> <span class="o">=</span> <span class="n">RandomMutation</span><span class="p">(</span>
     <span class="n">black_box</span><span class="o">=</span><span class="n">f</span><span class="p">,</span>
     <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
@@ -724,9 +757,9 @@ poli 🧪: starting the isolated objective process.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.41639]]), array([[5.56267]]), array([[0.846902]]), array([[9.39441]])]
-best stability: [9.41639]
-Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGEMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.46959]]), array([[10.4687]]), array([[9.14886]]), array([[6.56841]])]
+best stability: [10.4687]
+Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGIMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
 </pre></div>
 </div>
 </div>

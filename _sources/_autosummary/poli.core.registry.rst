@@ -15,8 +15,7 @@ poli.core.registry
    
       delete_observer_run_script
       delete_problem
-      get_problem_factories
-      get_problems
+      register_isolated_function
       register_problem
       register_problem_from_repository
       set_observer

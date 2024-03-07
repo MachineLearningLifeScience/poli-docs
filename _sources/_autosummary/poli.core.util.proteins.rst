@@ -1,4 +1,4 @@
-﻿poli.core.util.proteins
+poli.core.util.proteins
 =======================
 
 .. automodule:: poli.core.util.proteins

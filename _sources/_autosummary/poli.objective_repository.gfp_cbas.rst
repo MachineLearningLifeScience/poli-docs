@@ -31,6 +31,8 @@ poli.objective\_repository.gfp\_cbas
    poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing
    poli.objective_repository.gfp_cbas.cbas_wrapper
    poli.objective_repository.gfp_cbas.gfp_gp
+   poli.objective_repository.gfp_cbas.information
+   poli.objective_repository.gfp_cbas.isolated_function
    poli.objective_repository.gfp_cbas.make_vae
    poli.objective_repository.gfp_cbas.register
 

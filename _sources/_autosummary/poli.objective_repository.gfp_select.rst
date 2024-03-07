@@ -27,5 +27,7 @@ poli.objective\_repository.gfp\_select
    :toctree:
    :recursive:
 
+   poli.objective_repository.gfp_select.information
+   poli.objective_repository.gfp_select.isolated_function
    poli.objective_repository.gfp_select.register
 

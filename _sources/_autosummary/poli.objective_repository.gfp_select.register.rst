@@ -17,7 +17,7 @@ poli.objective\_repository.gfp\_select.register
 
    .. autosummary::
    
-      GFPBlackBox
+      GFPSelectionBlackBox
       GFPSelectionProblemFactory
    
    

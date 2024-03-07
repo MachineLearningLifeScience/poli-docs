@@ -13,7 +13,7 @@ poli.tests.test\_seeding
 
    .. autosummary::
    
-      test_seeding_in_white_noise
+      test_seeding_in_white_noise_factory_creation
    
    
 
