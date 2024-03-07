@@ -19,21 +19,19 @@ Assuming you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same 
 
 ```python
 from pathlib import Path
-    from poli.objective_repository import RaspBlackBox, RaspProblemFactory
+from poli.objective_repository import RaspBlackBox, RaspProblemFactory
 
-    wildtype_pdb_path = (
-        Path(__file__).parent.parent / "static_files_for_tests" / "3ned.pdb"
-    )
+wildtype_pdb_path = Path(__file__).parent  / "3ned.pdb"
 
-    # Creating the black box
-    f = RaspBlackBox(wildtype_pdb_path=[wildtype_pdb_path])
+# Creating the black box
+f = RaspBlackBox(wildtype_pdb_path=[wildtype_pdb_path])
 
-    # Creating a problem
-    problem = RaspProblemFactory().create(wildtype_pdb_path=[wildtype_pdb_path])
-    f, x0 = problem.black_box, problem.x0
+# Creating a problem
+problem = RaspProblemFactory().create(wildtype_pdb_path=[wildtype_pdb_path])
+f, x0 = problem.black_box, problem.x0
 
-    # Querying:
-    print(f(x0))
+# Querying:
+print(f(x0))
 ```
 
 ## Warnings

@@ -602,21 +602,19 @@ document.write(`
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
 <p>Assuming you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-    <span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">RaspBlackBox</span><span class="p">,</span> <span class="n">RaspProblemFactory</span>
+<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">RaspBlackBox</span><span class="p">,</span> <span class="n">RaspProblemFactory</span>
 
-    <span class="n">wildtype_pdb_path</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static_files_for_tests&quot;</span> <span class="o">/</span> <span class="s2">&quot;3ned.pdb&quot;</span>
-    <span class="p">)</span>
+<span class="n">wildtype_pdb_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>  <span class="o">/</span> <span class="s2">&quot;3ned.pdb&quot;</span>
 
-    <span class="c1"># Creating the black box</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">RaspBlackBox</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
+<span class="c1"># Creating the black box</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">RaspBlackBox</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
 
-    <span class="c1"># Creating a problem</span>
-    <span class="n">problem</span> <span class="o">=</span> <span class="n">RaspProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
-    <span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
+<span class="c1"># Creating a problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">RaspProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
 
-    <span class="c1"># Querying:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span>
+<span class="c1"># Querying:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
