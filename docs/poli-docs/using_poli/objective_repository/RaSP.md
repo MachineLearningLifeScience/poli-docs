@@ -15,117 +15,24 @@ However, your life would be easier if you run this black box objective function 
 
 ## How to run
 
-You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.
-
-::::{tab-set}
-
-:::{tab-item} In the `poli__rasp` environment
-
-To run this black box function directly (which is useful for debugging, or when you are interested in setting breakpoints and inspecting the objects directly), we recommend you run it from inside the `poli__rasp` environment, or make sure you satisfy all its requirements.
-
-To create this environment, run
-
-```bash
-# From the root of the `poli` repository
-conda env create --file src/poli/objective_repository/rasp/environment.yml
-```
-
-Follow that with
-
-```
-conda activate poli__rasp
-```
-
 Assuming you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same directory as this script:
 
 ```python
 from pathlib import Path
+from poli.objective_repository import RaspBlackBox, RaspProblemFactory
 
-import numpy as np
+wildtype_pdb_path = Path(__file__).parent  / "3ned.pdb"
 
-from poli import objective_factory
+# Creating the black box
+f = RaspBlackBox(wildtype_pdb_path=[wildtype_pdb_path])
 
-THIS_DIR = Path(__file__).parent.resolve()
+# Creating a problem
+problem = RaspProblemFactory().create(wildtype_pdb_path=[wildtype_pdb_path])
+f, x0 = problem.black_box, problem.x0
 
-if __name__ == "__main__":
-    wildtype_pdb_paths_for_rasp = [
-        THIS_DIR / "3ned.pdb",
-        # You could have more if you want.
-    ]
-
-    f_rasp, x0, y0 = objective_factory.create(
-        name="rasp",
-        wildtype_pdb_path=wildtype_pdb_paths_for_rasp,
-    )
-
-    # Getting the wildtype string
-    wildtype_string = "".join(x0[0])
-
-    # Mutating the first position three times:
-    three_mutations = [
-        "A" + wildtype_sequence[1:],
-        "R" + wildtype_sequence[1:],
-        "N" + wildtype_sequence[1:],
-    ]
-
-    # Computing the ddG for these three mutations:
-    x = np.array([list(mutation) for mutation in three_mutations])
-    
-    # y is approx [[0.03, -0.07, -0.28]]
-    y = f(x)
+# Querying:
+print(f(x0))
 ```
-
-:::
-
-:::{tab-item} In isolation
-
-Assuming you have [`3ned.pdb`](https://www.rcsb.org/structure/3ned) in the same directory as this script:
-
-```python
-from pathlib import Path
-
-import numpy as np
-
-from poli import objective_factory
-
-THIS_DIR = Path(__file__).parent.resolve()
-
-if __name__ == "__main__":
-    wildtype_pdb_paths_for_rasp = [
-        THIS_DIR / "3ned.pdb",
-        # You could have more if you want.
-    ]
-
-    f_rasp, x0, y0 = objective_factory.create(
-        name="rasp",
-        wildtype_pdb_path=wildtype_pdb_paths_for_rasp,
-    )
-
-    # Getting the wildtype string
-    wildtype_string = "".join(x0[0])
-
-    # Mutating the first position three times:
-    three_mutations = [
-        "A" + wildtype_sequence[1:],
-        "R" + wildtype_sequence[1:],
-        "N" + wildtype_sequence[1:],
-    ]
-
-    # Computing the ddG for these three mutations:
-    x = np.array([list(mutation) for mutation in three_mutations])
-    
-    # y is approx [[0.03, -0.07, -0.28]]
-    y = f(x)
-```
-
-```{warning}
-Registering the objective function in this way will create a `conda` environment called `poli__rasp` with the relevant dependencies. You can find the exact environment description in the following file: `src/poli/objective_repository/rasp/environment.yml`
-
-```
-
-:::
-
-::::
 
 ## Warnings
 

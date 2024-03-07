@@ -600,104 +600,24 @@ document.write(`
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
-<p>You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-In the <code class="docutils literal notranslate"><span class="pre">poli__rasp</span></code> environment</label><div class="sd-tab-content docutils">
-<p>To run this black box function directly (which is useful for debugging, or when you are interested in setting breakpoints and inspecting the objects directly), we recommend you run it from inside the <code class="docutils literal notranslate"><span class="pre">poli__rasp</span></code> environment, or make sure you satisfy all its requirements.</p>
-<p>To create this environment, run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># From the root of the `poli` repository</span>
-conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--file<span class="w"> </span>src/poli/objective_repository/rasp/environment.yml
-</pre></div>
-</div>
-<p>Follow that with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">poli__rasp</span>
-</pre></div>
-</div>
 <p>Assuming you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+    <span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">RaspBlackBox</span><span class="p">,</span> <span class="n">RaspProblemFactory</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
-
-<span class="n">THIS_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">wildtype_pdb_paths_for_rasp</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">THIS_DIR</span> <span class="o">/</span> <span class="s2">&quot;3ned.pdb&quot;</span><span class="p">,</span>
-        <span class="c1"># You could have more if you want.</span>
-    <span class="p">]</span>
-
-    <span class="n">f_rasp</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rasp&quot;</span><span class="p">,</span>
-        <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_paths_for_rasp</span><span class="p">,</span>
+    <span class="n">wildtype_pdb_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;static_files_for_tests&quot;</span> <span class="o">/</span> <span class="s2">&quot;3ned.pdb&quot;</span>
     <span class="p">)</span>
 
-    <span class="c1"># Getting the wildtype string</span>
-    <span class="n">wildtype_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># Creating the black box</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">RaspBlackBox</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
 
-    <span class="c1"># Mutating the first position three times:</span>
-    <span class="n">three_mutations</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s2">&quot;A&quot;</span> <span class="o">+</span> <span class="n">wildtype_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-        <span class="s2">&quot;R&quot;</span> <span class="o">+</span> <span class="n">wildtype_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-        <span class="s2">&quot;N&quot;</span> <span class="o">+</span> <span class="n">wildtype_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-    <span class="p">]</span>
+    <span class="c1"># Creating a problem</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">RaspProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
 
-    <span class="c1"># Computing the ddG for these three mutations:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">mutation</span><span class="p">)</span> <span class="k">for</span> <span class="n">mutation</span> <span class="ow">in</span> <span class="n">three_mutations</span><span class="p">])</span>
-    
-    <span class="c1"># y is approx [[0.03, -0.07, -0.28]]</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="c1"># Querying:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span>
 </pre></div>
-</div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-In isolation</label><div class="sd-tab-content docutils">
-<p>Assuming you have <a class="reference external" href="https://www.rcsb.org/structure/3ned"><code class="docutils literal notranslate"><span class="pre">3ned.pdb</span></code></a> in the same directory as this script:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
-
-<span class="n">THIS_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">wildtype_pdb_paths_for_rasp</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">THIS_DIR</span> <span class="o">/</span> <span class="s2">&quot;3ned.pdb&quot;</span><span class="p">,</span>
-        <span class="c1"># You could have more if you want.</span>
-    <span class="p">]</span>
-
-    <span class="n">f_rasp</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;rasp&quot;</span><span class="p">,</span>
-        <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="n">wildtype_pdb_paths_for_rasp</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Getting the wildtype string</span>
-    <span class="n">wildtype_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-    <span class="c1"># Mutating the first position three times:</span>
-    <span class="n">three_mutations</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s2">&quot;A&quot;</span> <span class="o">+</span> <span class="n">wildtype_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-        <span class="s2">&quot;R&quot;</span> <span class="o">+</span> <span class="n">wildtype_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-        <span class="s2">&quot;N&quot;</span> <span class="o">+</span> <span class="n">wildtype_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-    <span class="p">]</span>
-
-    <span class="c1"># Computing the ddG for these three mutations:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">mutation</span><span class="p">)</span> <span class="k">for</span> <span class="n">mutation</span> <span class="ow">in</span> <span class="n">three_mutations</span><span class="p">])</span>
-    
-    <span class="c1"># y is approx [[0.03, -0.07, -0.28]]</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Registering the objective function in this way will create a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment called <code class="docutils literal notranslate"><span class="pre">poli__rasp</span></code> with the relevant dependencies. You can find the exact environment description in the following file: <code class="docutils literal notranslate"><span class="pre">src/poli/objective_repository/rasp/environment.yml</span></code></p>
-</div>
-</div>
 </div>
 </section>
 <section id="warnings">
