@@ -27,5 +27,7 @@ poli.objective\_repository.dockstring
    :toctree:
    :recursive:
 
+   poli.objective_repository.dockstring.information
+   poli.objective_repository.dockstring.isolated_function
    poli.objective_repository.dockstring.register
 

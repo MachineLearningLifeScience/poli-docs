@@ -27,5 +27,6 @@ poli.objective\_repository.rdkit\_logp
    :toctree:
    :recursive:
 
+   poli.objective_repository.rdkit_logp.information
    poli.objective_repository.rdkit_logp.register
 

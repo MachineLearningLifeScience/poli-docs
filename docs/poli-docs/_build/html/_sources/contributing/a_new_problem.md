@@ -1,6 +1,8 @@
-# Adding a new problem to the repository
+# Adding a new black box to the repository
 
-This tutorial covers how problems are structured in the repository, and what it takes to add a new one.
+This tutorial covers how black boxes and problems are structured in the repository, and what it takes to add a new one.
+
+If you want to implement your own black box and problem, we recommend copy-pasting an existing folder (e.g. `sa_tdc`), and modifying it to suit your needs. We provide a checklist at the end of this tutorial for the things you need to pay attention to.
 
 ## The structure of a problem
 
@@ -8,10 +10,12 @@ If you take a look at the source code of `poli`, you will find a folder called `
 
 ```bash
 poli/objective_repository
-├── problem_name              # Has the name of the registered problem (exactly)
-│   ├── __init__.py           # Necessary, else it doesn't get included in the pip install.
-│   ├── environment.yml       # The env. where ./register.py and the problem will run
-│   └── register.py           # Definition and registration of the problem
+├── my_problem_name
+│   ├── __init__.py  # Necessary, so that it gets installed with pip.
+│   ├── information.py # A BlackBoxInformation containing a desc. of the black box
+│   ├── isolated_function.py  # The logic of your black box, as complex as you want.
+│   ├── environment.yml  # The conda env where isolated_function.py runs
+│   └── register.py  # Boilerplate for registration and importing.
 ```
 
 You can also have as many other files as you want. Think of the folder `.../problem_name` as a small project as of itself: you can use any internal code you write here, since it'll be carried with `poli` at installation time.
@@ -20,19 +24,92 @@ You can also have as many other files as you want. Think of the folder `.../prob
 
 ```bash
 ├── super_mario_bros
-│   ├── __init__.py         
+│   ├── __init__.py
 │   ├── environment.yml
+│   ├── information.py
+│   ├── isolated_function.py
 │   ├── register.py
-│   ├── example.pt           # < --
-│   ├── level_utils.py       # < --
-│   ├── model.py             # < --  extra files needed
-│   ├── readme.md            # < --  for the black box
-│   ├── simulator.jar        # < --  to run.
-│   └── simulator.py         # < --
+│   ├── requirements.txt
+│   ├── example.pt  #    <--
+│   ├── level_utils.py # <--
+│   ├── model.py  #      <-- Extra files needed
+│   ├── simulator.jar  # <-- to run the black box.
+│   └── simulator.py  #  <--
 ```
 
 :::{warning}
-As a general rule: **don't assume that your files will be there after `pip install git+...`**. File endings different from `.py` and `.yml` will be ignored by `pip` during installation. An alternative, then, is to download them in your `register.py`.
+As a general rule: **don't assume that your files will be there after `pip install git+...`**. File endings different from `.py` and `.yml` will be ignored by `pip` during installation. An alternative, then, is to download them in your `isolated_function.py` or `register.py`.
+:::
+
+## Specifying your problem information in `information.py`
+
+We recommend you create a script called `information.py`, and write your black box's information in it:
+
+```python
+# my_problem_name/information.py
+
+from poli.core.black_box_information import BlackBoxInformation
+
+my_problem_information = BlackBoxInformation(
+    name="my_problem_name",           # HAS to be the same name as the folder.
+    max_sequence_length=2,            # Maximum sequence length (usually np.inf)
+    aligned=True,                     # Whether sequences are aligned.
+    fixed_length=True,                # Whether sequences have fixed length.
+    deterministic=False,              # Whether the problem is deterministic
+    alphabet=None,                    # A potential alphabet of accepted tokens
+    log_transform_recommended=True,   # Whether the output should be log-transformed
+    discrete=False,                   # Discrete inputs
+    padding_token="",               # A token that could be used for padding
+)
+
+```
+
+## A generic `isolated_function.py`
+
+Think of `isolated_function.py` as the entry-route to all the complex, dependency-heavy logic of your black box.
+
+We expect you to implement a subclass of an `AbstractIsolatedFunction`. These are dynamically instanced in isolated environments, such as the one you provide in `environment.yml. 
+
+The average structure of this file would be as follows:
+
+```python
+# my_problem_name/isolated_function.py,
+# able to run inside the conda env you specify in environment.yml
+
+# Importing whatever you need for the implementation of the black box.
+import one_dependency
+import another_dependency
+from yet_another_dependency import ComplicatedClass
+
+# Importing the abstract isolated function
+from poli.core.abstract_isolated_function import AbstractIsolatedFunction
+
+# Your implementation of the isolated logic
+# You can have an __init__ if you want!
+class MyIsolatedLogic(AbstractIsolatedFunction):
+    def __call__(self, x: np.ndarray, context=None) -> np.ndarray:
+        """
+        Your implementation of the black box function.
+        """
+        ...
+
+        return y
+
+if __name__ == "__main__":
+    from poli.core.registry import register_isolated_function
+
+    register_isolated_function(
+        MyIsolatedLogic,  # Your function, designed to be isolated
+        name="my_problem_name__isolated",  #  Same name as the problem and folder, ending on __isolated.
+        conda_environment_name="conda_env_inside_environment_file",  # The name of the conda env inside environment.yml.
+    )
+```
+
+When run, this script will **register** your isolated logic. By this, we mean creating a shell script inside `~/.poli_objectives` that spawns an isolated process with which we communicate when you query new points.
+
+
+:::{warning}
+It is important that name of your isolated function is exactly the name of the folder it's contained in, followed by `__isolated`. (We advice using `camel_case`).
 :::
 
 ## A generic `register.py`
@@ -40,27 +117,25 @@ As a general rule: **don't assume that your files will be there after `pip insta
 The average `register.py` has the following structure
 
 ```python
-# An average register.py
+# my_problem_name/register.py
+# This one needs to run on a conda env. with minimal dependencies (numpy)
 from typing import Tuple, List
 
 import numpy as np
 
 from poli.core.abstract_black_box import AbstractBlackBox
 from poli.core.abstract_problem_factory import AbstractProblemFactory
-from poli.core.problem_setup_information import ProblemSetupInformation
+from poli.core.black_box_information import BlackBoxInformation
+from poli.core.problem import Problem
 
-# Files that are in the same folder as
-# register will get added to the
-# PYTHONPATH at runtime.
-# Imagining you have your_local_dependency.py
-# in the same folder as register.py...
-from your_local_dependency import ...
+from poli.core.util.isolation.instancing import instance_function_as_isolated_process
+
+from poli.objective_repository.my_problem_name.information import my_problem_info
 
 
-class YourBlackBox(AbstractBlackBox):
+class MyBlackBox(AbstractBlackBox):
     def __init__(
         self,
-        info: ProblemSetupInformation,
         your_arg: str,
         your_second_arg: List[float],
         your_kwarg: str=...,
@@ -70,7 +145,6 @@ class YourBlackBox(AbstractBlackBox):
         evaluation_budget: int = float("inf")
     ):
         super().__init__(
-            info=info,
             batch_size=batch_size,
             parallelize=parallelize,
             num_workers=num_workers,
@@ -79,25 +153,31 @@ class YourBlackBox(AbstractBlackBox):
 
         #... your manipulation of args and kwargs.
 
-    # The only method you have to define
+        # Importing the isolated logic if we can:
+        try:
+            from poli.objective_repository.my_problem.isolated_function import
+            MyIsolatedLogic
+
+            self.inner_function = MyIsolatedLogic(...)
+        except ImportError:
+            # If we weren't able to import it, we can still
+            # create it in an isolated process:
+            self.inner_function = instance_function_as_isolated_process(
+                name="problem_name__isolated"  # The same name in `isolated_function.py`.
+            )
+
+    # Boilerplate for the black box call:
     def _black_box(self, x: np.ndarray, context: dict = None) -> np.ndarray:
-        return ...
+        return self.inner_function(x, context)
 
+    # A static method that gives you access to the information.
+    @staticmethod
+    def get_black_box_info() -> BlackBoxInformation:
+        return my_problem_info
 
-class YourProblemFactory(AbstractProblemFactory):
-    def get_setup_information(self) -> ProblemSetupInformation:
-        # Your alphabet
-        alphabet = [...]
-
-        # A description of the problem
-        # See more in the chapter about defining
-        # problem factories.
-        return ProblemSetupInformation(
-            name="your_problem",         # HAS to be the same name as the parent folder.
-            max_sequence_length=..., 
-            aligned=...,
-            alphabet=alphabet,
-        )
+class MyProblemFactory(AbstractProblemFactory):
+    def get_setup_information(self) -> BlackBoxInformation:
+        return my_problem_info
 
     def create(
         self,
@@ -110,16 +190,12 @@ class YourProblemFactory(AbstractProblemFactory):
         num_workers: int = None,
         evaluation_budget: int = float("inf"),
         your_second_arg: List[float] = ...,
-    ) -> Tuple[AbstractBlackBox, np.ndarray, np.ndarray]:
+    ) -> Problem:
         # Manipulate args and kwargs you might need at creation time...
         ...
         
-        # Getting the problem information
-        problem_info = self.get_setup_information()
-        
         # Creating your black box function
-        f = YourBlackBox(
-            info=problem_info,
+        f = MyBlackBox(
             your_arg=your_arg,
             your_second_arg=your_second_arg,
             your_kwarg=your_kwarg,
@@ -132,7 +208,7 @@ class YourProblemFactory(AbstractProblemFactory):
         # Your first input (an np.array[str] of shape [b, L] or [b,])
         x0 = ...
 
-        return f, x0, f(x0)
+        return Problem(f, x0)
 
 
 if __name__ == "__main__":
@@ -142,19 +218,18 @@ if __name__ == "__main__":
     # (see the environment.yml file in this folder),
     # we can register our problem s.t. it uses
     # said conda environment.
-    your_problem_factory = YourProblemFactory()
+    my_problem_factory = MyProblemFactory()
     register_problem(
-        your_problem_factory,                   
+        my_problem_factory,                   
         conda_environment_name="your_env",    # This is the env specified
                                               # by your environment.yml
     )
-
 ```
 
 That is, **the script creates and registers** your problem factory.
 
 :::{warning}
-It is important that name of your problem should be the name of the folder it's contained, **exactly**. (We advice using `camel_case`).
+It is important that name of your problem should be the name of the folder it's contained in, **exactly**. (We advice using `camel_case`).
 :::
 
 :::{warning}
@@ -182,7 +257,7 @@ dependencies:
     - YOUR OTHER DEPENDENCIES
 ```
 
-This environment will be created (if it doesn't exist yet), and will be used to run `register.py`.
+This environment will be created (if it doesn't exist yet), and will be used to run `isolated_function.py`.
 
 :::{admonition} Why `conda`?
 :class: dropdown
@@ -212,28 +287,50 @@ It installs an `openjdk` that will be added to the path when the environment is 
 
 :::
 
+## Adding your new black box to the repository's `__init__`
+
+Once you do this, you can add an import to `poli/objective_repository/__init__.py`:
+
+```python
+# Add something like this after other imports
+from .my_problem_name.register import MyBlackBox, MyProblemFactory
+
+
+# Add your problem to the available problem factories and black boxes
+
+AVAILABLE_PROBLEM_FACTORIES = {
+    ...,
+    "my_problem_name": MyProblemFactory,  # <-- add this
+    ...
+}
+
+AVAILABLE_BLACK_BOXES = {
+    ...,
+    "my_problem_name": MyBlackBox,  # <-- add this
+    ...
+}
+
+
+```
+
 ## Testing your installation
 
 If you
 1. have put your new problem is inside `poli/objective_repository`,
-2. have a `register.py` that creates and register your problem factory,
-3. have an `environment.yml` that describes the environment you use,
+2. have an `information.py` that describes your black box,
+3. have an `isolated_function.py` that implements the complex logic of your black box and registers it,
+4. have a `register.py` that creates and register your problem factory,
+5. have an `environment.yml` that describes the environment you use,
+6. have imported your black box and factory in `objective_repository/__init__.py`,
 
 then you should be set!
 
-You can test that your problem is registerable by running
-
-```bash
-$ python -c "from poli.core.registry import get_problems; print(get_problems())"
-[..., "your_problem", ...]  # A list with your problem in it
-```
-
-If you can find your problem in this list, then you're set! You should be able to run
+To test, you can run
 
 ```python
 from poli import objective_factory
 
-f, x0, y0 = objective_factory.create(
+problem = objective_factory.create(
     name="your_problem",
     ...,
     your_arg_1=...,      # <-- Keywords you (maybe) needed
@@ -245,29 +342,12 @@ f, x0, y0 = objective_factory.create(
 )
 ```
 
-## (Optional) Making your problem be available if dependencies are met
-
-At this point, you can run your objective function in an isolated process (which will literally import the factory and the black box function from the `register.py` you wrote).
-
-A better alternative is to get direct access to the object itself. Having access to the actual class makes your life easy, especially when it comes to using debugging tools like the ones in VSCode.
-
-If you want to make your problem available if it can be imported, take a look at `src/poli/objective_repository/__init__.py`. Add a block like this one at the end of it:
-
+or you could just import your black box as
 ```python
-#... the rest of poli/objective_repository/__init__.py
+from poli.objective_repository import MyBlackBox
 
-# A block you could add:
-try:
-    from .your_problem.register import YourProblemFactory
-
-    AVAILABLE_PROBLEM_FACTORIES["your_problem"] = YourProblemFactory
-except ImportError:  # Maybe you'll need to check for other errors.
-    pass
-
+f = MyBlackBox(...)
 ```
-
-`AVAILABLE_PROBLEM_FACTORIES` is keeping track of all the problem factories we can import without needing to isolate the process. If a problem is in this dict, it will appear when querying `get_problems()`, and it will be passed at `objective_factory.create` time.
-
 
 ## Submitting a pull request
 

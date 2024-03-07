@@ -13,71 +13,21 @@ None. This black box should work out-of-the-box.
 
 ## How to run
 
-You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.
-
-::::{tab-set}
-
-:::{tab-item} In current environment
-
-You will have to install the following two dependencies:
-
-```bash
-pip install rdkit selfies
-```
-
-Then run
-
 ```python
 import numpy as np
+from poli.objective_repository import LogPProblemFactory, LogPBlackBox
 
-from poli import objective_factory
+# Creating the black box
+f = LogPBlackBox(string_representation="SMILES")
 
-# How to create
-f, x0, y0 = objective_factory.create(
-    name="rdkit_logp",
-    string_representation="SELFIES",  # Can be either SMILES or SELFIES
-    force_register=True, 
-)
-
-# Example input: a single carbon
-x = np.array(["[C]"]).reshape(1, -1)
-
-# Querying:
-print(f(x))  # Should be close to 0.6361
-```
-
-:::
-
-:::{tab-item} In isolation
-
-If you want us to handle dependencies, run
-
-```python
-import numpy as np
-
-from poli import objective_factory
-
-# How to create
-f, x0, y0 = objective_factory.create(
-    name="rdkit_logp",
-    string_representation="SELFIES",  # Can be either SMILES or SELFIES
-    force_register=True, 
-)
+# Creating a problem
+problem = LogPProblemFactory().create(string_representation="SMILES")
+f, x0 = problem.black_box, problem.x0
 
 # Example input: a single carbon
-x = np.array(["[C]"]).reshape(1, -1)
+x = np.array(["C"]).reshape(1, -1)
 
 # Querying:
-print(f(x))  # Should be close to 0.6361
-
-# Terminate the process.
-f.terminate()
+y = f(x)
+print(y)  # Should be close to 0.6361
 ```
-
-```{warning}
-Registering the objective function in this way will create a `conda` environment called `poli__chem` with the relevant dependencies.
-```
-
-:::
-
-::::

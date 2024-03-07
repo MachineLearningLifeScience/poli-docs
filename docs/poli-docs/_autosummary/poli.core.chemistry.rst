@@ -27,5 +27,5 @@ poli.core.chemistry
    :toctree:
    :recursive:
 
-   poli.core.chemistry.tdc_black_box
+   poli.core.chemistry.tdc_isolated_function
 

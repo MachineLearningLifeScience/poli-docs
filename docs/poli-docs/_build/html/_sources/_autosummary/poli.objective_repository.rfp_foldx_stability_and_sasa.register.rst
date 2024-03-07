@@ -17,7 +17,6 @@ poli.objective\_repository.rfp\_foldx\_stability\_and\_sasa.register
 
    .. autosummary::
    
-      RFPFoldXStabilityAndSASABlackBox
       RFPFoldXStabilityAndSASAProblemFactory
    
    

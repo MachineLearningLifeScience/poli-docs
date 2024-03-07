@@ -1,4 +1,4 @@
-poli.core
+﻿poli.core
 =========
 
 .. automodule:: poli.core
@@ -28,10 +28,13 @@ poli.core
    :recursive:
 
    poli.core.abstract_black_box
+   poli.core.abstract_isolated_function
    poli.core.abstract_problem_factory
+   poli.core.black_box_information
    poli.core.chemistry
    poli.core.exceptions
    poli.core.multi_objective_black_box
+   poli.core.problem
    poli.core.problem_setup_information
    poli.core.proteins
    poli.core.registry

@@ -109,8 +109,8 @@ $ pip install -e .
 To make sure everything went well, you can test your `poli` installation by running
 
 ```bash
-$ python -c "from poli import get_problems ; print(get_problems())"
-['aloha', 'dockstring', ...]
+$ python -c "from poli.objective_repository import AVAILABLE_BLACK_BOXES ; print(AVAILABLE_BLACK_BOXES.keys())"
+dict_keys(['aloha', ..., 'white_noise', 'toy_continuous_problem'])
 ```
 All problems available will appear, but some of them will have more pre-requisites (e.g. installing `foldx` or having OpenBabel).
 
@@ -128,7 +128,8 @@ Let's write a small script that creates an instance of `white_noise` from the re
 import numpy as np
 from poli import objective_factory
 
-f, x0, y0 = objective_factory.create(name="white_noise")
+problem = objective_factory.create(name="white_noise")
+f, x0 = problem.black_box, problem.x0
 
 x = np.array([["1", "2", "3"]])  # must be of shape [b, L], in this case [1, 3].
 for _ in range(5):

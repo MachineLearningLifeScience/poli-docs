@@ -27,5 +27,6 @@ poli.objective\_repository.rfp\_foldx\_stability\_and\_sasa
    :toctree:
    :recursive:
 
+   poli.objective_repository.rfp_foldx_stability_and_sasa.information
    poli.objective_repository.rfp_foldx_stability_and_sasa.register
 

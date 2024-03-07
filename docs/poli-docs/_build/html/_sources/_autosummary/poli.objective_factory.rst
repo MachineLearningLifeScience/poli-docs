@@ -1,4 +1,4 @@
-poli.objective\_factory
+﻿poli.objective\_factory
 =======================
 
 .. automodule:: poli.objective_factory
@@ -20,12 +20,6 @@ poli.objective\_factory
    
 
    
-   
-   .. rubric:: Classes
-
-   .. autosummary::
-   
-      ExternalBlackBox
    
    
 

@@ -28,4 +28,5 @@ poli.core.proteins
    :recursive:
 
    poli.core.proteins.foldx_black_box
+   poli.core.proteins.foldx_isolated_function
 

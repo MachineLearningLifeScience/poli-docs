@@ -13,7 +13,8 @@ poli.tests.registry.test\_basic\_loop\_without\_create
 
    .. autosummary::
    
-      test_basic_loop
+      test_basic_loop_without_create
+      test_instancing_black_boxes_alone
    
    
 

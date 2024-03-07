@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.rasp.register
+poli.objective\_repository.rasp.register
 ========================================
 
 .. automodule:: poli.objective_repository.rasp.register

@@ -27,5 +27,7 @@ poli.objective\_repository.sa\_tdc
    :toctree:
    :recursive:
 
+   poli.objective_repository.sa_tdc.information
+   poli.objective_repository.sa_tdc.isolated_function
    poli.objective_repository.sa_tdc.register
 

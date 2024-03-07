@@ -27,5 +27,7 @@ poli.objective\_repository.foldx\_rfp\_lambo
    :toctree:
    :recursive:
 
+   poli.objective_repository.foldx_rfp_lambo.information
+   poli.objective_repository.foldx_rfp_lambo.isolated_function
    poli.objective_repository.foldx_rfp_lambo.register
 

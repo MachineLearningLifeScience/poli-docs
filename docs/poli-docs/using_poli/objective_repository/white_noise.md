@@ -12,15 +12,35 @@ This objective function takes any sequence of string integers (e.g. `x=["1", "2"
 
 None, this function should always run out-of-the-box
 
+## Black box information
+
+```python
+BlackBoxInformation(
+    name="white_noise",
+    max_sequence_length=np.inf,
+    aligned=False,
+    fixed_length=False,
+    deterministic=False,
+    alphabet=[str(i) for i in range(10)],
+    log_transform_recommended=False,
+    discrete=True,
+    padding_token="",
+)
+```
+
 ## How to run
 
 
 ```python
 import numpy as np
-from poli import objective_factory
+from poli.objective_repository import WhiteNoiseProblemFactory, WhiteNoiseBlackBox
 
-# How to create
-f, x0, y0 = objective_factory.create(name="white_noise")
+# Creating the black box
+f = WhiteNoiseBlackBox()
+
+# Creating a problem
+problem = WhiteNoiseProblemFactory().create()
+f, x0 = problem.black_box, problem.x0
 
 # Example input:
 x = np.array([["1", "2", "3"]])  # must be of shape [b, L], in this case [1, 3].

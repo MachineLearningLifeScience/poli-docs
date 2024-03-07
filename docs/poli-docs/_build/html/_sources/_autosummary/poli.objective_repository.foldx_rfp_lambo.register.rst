@@ -9,12 +9,6 @@ poli.objective\_repository.foldx\_rfp\_lambo.register
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      get_config
-   
    
 
    
@@ -23,9 +17,8 @@ poli.objective\_repository.foldx\_rfp\_lambo.register
 
    .. autosummary::
    
-      Config
-      RFPWrapper
-      RFPWrapperFactory
+      FoldXRFPLamboBlackBox
+      FoldXRFPLamboProblemFactory
    
    
 

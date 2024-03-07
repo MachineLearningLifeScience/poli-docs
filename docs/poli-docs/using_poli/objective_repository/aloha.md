@@ -16,13 +16,19 @@ None, this function should always run out-of-the-box
 
 ```python
 import numpy as np
-from poli import objective_factory
+from poli.objective_repository import AlohaProblemFactory, AlohaBlackBox
 
-# How to create
-f, x0, y0 = objective_factory.create(name="aloha")
+# Creating the black box
+f = AlohaBlackBox()
+
+# Creating a problem
+problem = AlohaProblemFactory().create()
+f, x0 = problem.black_box, problem.x0
 
 # Example input:
-x = np.array([["A", "L", "O", "O", "F"]])  # must be of shape [b, L], in this case [1, 5].
+x = np.array(
+    [["A", "L", "O", "O", "F"]]
+)  # must be of shape [b, L], in this case [1, 5].
 
 # Querying:
 print(f(x))  # Should be 3 (A, L, and the first O).
