@@ -14,15 +14,12 @@ In our implementation, we use `pycma`.
 
 ```python
 from poli_baselines.solvers import CMA_ES
-from poli.objective_repository import ToyContinuousProblemFactory
+from poli.objective_repository import ToyContinuousBlackBox
 
 n_dimensions = 3
 population_size = 10
 
-problem_factory = ToyContinuousProblemFactory()
-
-f, _, _ = problem_factory.create(
-    function_name="ackley_function_01",
+f = ToyContinuousBlackBox(
     n_dimensions=n_dimensions,
 )
 

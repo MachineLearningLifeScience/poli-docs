@@ -17,7 +17,9 @@ from poli_baselines.solvers import RandomMutation
 
 problem_factory = AlohaProblemFactory()
 
-f, x0, y0 = problem_factory.create()
+problem = problem_factory.create()
+f, x0 = problem.black_box, problem.x0
+y0 = f(x0)
 
 solver = RandomMutation(
     black_box=f,

@@ -599,13 +599,13 @@ document.write(`
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Have <code class="docutils literal notranslate"><span class="pre">foldx</span></code> installed, and available in your home directory. We expect the following files to be there:</p>
+<li><p><a class="reference internal" href="../../understanding_foldx/00-installing-foldx.html"><span class="doc std std-doc">Have <code class="docutils literal notranslate"><span class="pre">foldx</span></code> installed</span></a>, and available in your home directory. We expect the following files to be there:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">~/foldx/foldx</span></code>: the binary. You might need to rename it.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">~/foldx/rotabase.txt</span></code>: a text file necessary for <code class="docutils literal notranslate"><span class="pre">foldx</span></code> to run (if you are using <code class="docutils literal notranslate"><span class="pre">v4</span></code> of <code class="docutils literal notranslate"><span class="pre">foldx</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~/foldx/rotabase.txt</span></code>: a text file necessary for <code class="docutils literal notranslate"><span class="pre">foldx</span></code> to run (only if you are using v4 of <code class="docutils literal notranslate"><span class="pre">foldx</span></code>).</p></li>
 </ul>
 </li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">wildtype_pdb_file</span></code>: a (repaired) pdb file of the wildtype.</p></li>
+<li><p>A (list of) <code class="docutils literal notranslate"><span class="pre">wildtype_pdb_file</span></code>: a (repaired) pdb file of the wildtype.</p></li>
 </ul>
 <div class="dropdown admonition">
 <p class="admonition-title">We can repair the file for you</p>
@@ -619,76 +619,23 @@ document.write(`
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
-<p>You can either run this objective function in your current environment (assuming that you have the correct dependencies installed), or you can run it in an isolated environment.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-In current environment</label><div class="sd-tab-content docutils">
-<p>You will have to install the following two dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>biopython<span class="w"> </span>python-levenshtein<span class="w"> </span>pdb-tools
-</pre></div>
-</div>
-<p>Then run</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+    
+<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">FoldXSASAProblemFactory</span><span class="p">,</span> <span class="n">FoldXSASABlackBox</span>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">wildtype_pdb_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/your/wildtype_Repair.pdb&quot;</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
+<span class="c1"># Creating the black box</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">FoldXSASABlackBox</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
 
-<span class="c1"># The path to your wildtype pdb</span>
-<span class="n">wildtype_pdb_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/wildtype.pdb&quot;</span><span class="p">)</span>
+<span class="c1"># Creating a problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">FoldXSASAProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">])</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
 
-<span class="c1"># How to create</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_sasa&quot;</span><span class="p">,</span>
-    <span class="n">wildtype_pdb_file</span><span class="o">=</span><span class="n">wildtype_pdb_file</span>
-<span class="p">)</span>
-
-<span class="c1"># Example input: (an array of strings)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
-
-<span class="c1"># Querying:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>  <span class="c1"># The stability of your wildtype</span>
+<span class="c1"># Example evaluation: SASA of your wildtype</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-1">
-In isolation</label><div class="sd-tab-content docutils">
-<p>If you want us to handle dependencies, run</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
-
-<span class="c1"># The path to your wildtype pdb</span>
-<span class="n">wildtype_pdb_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/wildtype.pdb&quot;</span><span class="p">)</span>
-
-<span class="c1"># How to create</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;foldx_sasa&quot;</span><span class="p">,</span>
-    <span class="n">wildtype_pdb_file</span><span class="o">=</span><span class="n">wildtype_pdb_file</span><span class="p">,</span>
-    <span class="n">force_register</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="c1"># Example input:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
-
-<span class="c1"># Querying:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y0</span><span class="p">)</span>  <span class="c1"># The stability of your wildtype</span>
-
-<span class="c1"># Terminate the process.</span>
-<span class="n">f</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Registering the objective function in this way will create a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment called <code class="docutils literal notranslate"><span class="pre">poli__protein</span></code> with the relevant dependencies.</p>
-</div>
-</div>
-</div>
-<p>You could also pass an <code class="docutils literal notranslate"><span class="pre">alphabet:</span> <span class="pre">List[str]</span></code> to the create method. By default, <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli/blob/44cad2a5c95f209aeb24d4893d162b3359ca91a3/src/poli/core/util/proteins/defaults.py#L1">we use this encoding</a>.</p>
 </section>
 </section>
 

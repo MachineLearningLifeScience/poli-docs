@@ -13,21 +13,23 @@ By default, we use `botorch`'s `SingleTaskGP` {cite:p}`Balandat:botorch:2020`.
 ```python
 import numpy as np
 
-from poli import objective_factory
+from poli.objective_repository import ToyContinuousBlackBox
 
 from poli_baselines.solvers import LineBO
 
-f_ackley, _, _ = objective_factory.create(
-    name="toy_continuous_problem",
+n_dimensions = 3
+population_size = 10
+
+f = ToyContinuousBlackBox(
     function_name="ackley_function_01",
-    n_dimensions=2,
+    n_dimensions=n_dimensions,
 )
 
 x0 = np.random.randn(2).reshape(1, -1).clip(-2.0, 2.0)
-y0 = f_ackley(x0)
+y0 = f(x0)
 
 solver = LineBO(
-    black_box=f_ackley,
+    black_box=f,
     x0=x0,
     y0=y0,
     type_of_line="random",  # could also be "coordinate"
