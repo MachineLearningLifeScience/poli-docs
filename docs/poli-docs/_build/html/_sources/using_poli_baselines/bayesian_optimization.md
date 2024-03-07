@@ -13,15 +13,11 @@ Our implementation uses `gpytorch` and `botorch` as the engines for Bayesian Opt
 ```python
 import numpy as np
 
-from poli import objective_factory
+from poli.objective_repository import ToyContinuousBlackBox
 
 from poli_baselines.solvers import VanillaBayesianOptimization
 
-f_ackley, _, _ = objective_factory.create(
-    name="toy_continuous_problem",
-    function_name="ackley_function_01",
-    n_dimensions=2,
-)
+f_ackley = ToyContinuousBlackBox(function_name="ackley_function_01", n_dimensions=2)
 
 x0 = np.random.randn(2).reshape(1, -1).clip(-2.0, 2.0)
 y0 = f_ackley(x0)

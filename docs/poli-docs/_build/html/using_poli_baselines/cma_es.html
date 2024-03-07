@@ -597,15 +597,12 @@ document.write(`
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli_baselines.solvers</span> <span class="kn">import</span> <span class="n">CMA_ES</span>
-<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">ToyContinuousProblemFactory</span>
+<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">ToyContinuousBlackBox</span>
 
 <span class="n">n_dimensions</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">population_size</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="n">problem_factory</span> <span class="o">=</span> <span class="n">ToyContinuousProblemFactory</span><span class="p">()</span>
-
-<span class="n">f</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">problem_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">function_name</span><span class="o">=</span><span class="s2">&quot;ackley_function_01&quot;</span><span class="p">,</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">ToyContinuousBlackBox</span><span class="p">(</span>
     <span class="n">n_dimensions</span><span class="o">=</span><span class="n">n_dimensions</span><span class="p">,</span>
 <span class="p">)</span>
 
