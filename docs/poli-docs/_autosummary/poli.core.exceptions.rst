@@ -1,4 +1,4 @@
-poli.core.exceptions
+﻿poli.core.exceptions
 ====================
 
 .. automodule:: poli.core.exceptions
@@ -22,6 +22,7 @@ poli.core.exceptions
    .. autosummary::
    
       BudgetExhaustedException
+      FoldXNotFoundException
       PoliException
    
    

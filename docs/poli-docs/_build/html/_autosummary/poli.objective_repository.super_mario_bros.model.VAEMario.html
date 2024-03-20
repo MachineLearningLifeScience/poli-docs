@@ -347,7 +347,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3 has-children"><a class="reference internal" href="poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="poli.objective_repository.super_mario_bros.information.html">poli.objective_repository.super_mario_bros.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.objective_repository.super_mario_bros.level_utils.html">poli.objective_repository.super_mario_bros.level_utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="poli.objective_repository.super_mario_bros.model.html">poli.objective_repository.super_mario_bros.model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.objective_repository.super_mario_bros.register.html">poli.objective_repository.super_mario_bros.register</a></li>
 </ul>
 </li>
@@ -574,51 +573,6 @@ document.write(`
                   
   <section id="poli-objective-repository-super-mario-bros-model-vaemario">
 <h1>poli.objective_repository.super_mario_bros.model.VAEMario<a class="headerlink" href="#poli-objective-repository-super-mario-bros-model-vaemario" title="Permalink to this heading">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="poli.objective_repository.super_mario_bros.model.VAEMario">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poli.objective_repository.super_mario_bros.model.</span></span><span class="sig-name descname"><span class="pre">VAEMario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poli.objective_repository.super_mario_bros.model.VAEMario" title="Permalink to this definition">#</a></dt>
-<dd><p>A VAE that decodes to the Categorical distribution
-on “sentences” of shape (h, w).</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="poli.objective_repository.super_mario_bros.model.VAEMario.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">14</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sprites</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poli.objective_repository.super_mario_bros.model.VAEMario.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<p class="rubric">Methods</p>
-<table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#poli.objective_repository.super_mario_bros.model.VAEMario.__init__" title="poli.objective_repository.super_mario_bros.model.VAEMario.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([w, h, z_dim, n_sprites, device])</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode</span></code>(z)</p></td>
-<td><p>A decoding function that returns the Categorical distribution p(x|z) for some latent codes z.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">elbo_loss_function</span></code>(x, q_z_given_x, p_x_given_z)</p></td>
-<td><p>The ELBO (Evidence Lower Bound) loss for the VAE, which is a linear combination of the reconconstruction loss (i.e.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode</span></code>(x)</p></td>
-<td><p>An encoding function that returns the normal distribution q(z|x) for some data x.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code>(x)</p></td>
-<td><p>A forward pass for some data x, returning the tuple [q(z|x), p(x|z)] where the latent codes in the second distribution are sampled from the first one.</p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-</tbody>
-</table>
-</dd></dl>
-
 </section>
 
     <script type="text/x-thebe-config">
