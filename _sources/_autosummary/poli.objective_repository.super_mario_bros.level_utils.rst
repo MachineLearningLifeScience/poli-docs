@@ -19,7 +19,6 @@ poli.objective\_repository.super\_mario\_bros.level\_utils
       level_to_list
       levels_to_onehot
       onehot_to_levels
-      tensor_to_sim_level
       vectorized
    
    
