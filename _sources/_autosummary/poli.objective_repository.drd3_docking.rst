@@ -28,6 +28,5 @@ poli.objective\_repository.drd3\_docking
    :recursive:
 
    poli.objective_repository.drd3_docking.information
-   poli.objective_repository.drd3_docking.isolated_function
    poli.objective_repository.drd3_docking.register
 
