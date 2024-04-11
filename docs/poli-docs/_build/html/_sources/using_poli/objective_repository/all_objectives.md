@@ -137,6 +137,18 @@ The Therapeutics Data Commons' implementation of the Sitagliptin MPO oracle of G
 The Therapeutics Data Commons' implementation of the Zaleplon MPO oracle of GuacaMol.
 :::
 
+:::{grid-item-card} Decorator Hop (using `tdc`)
+:link: ./deco_hop.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "deco Hop" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Scaffold Hop (using `tdc`)
+:link: ./deco_hop.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the scaffold Hop oracle of GuacaMol.
+:::
+
 :::{grid-item-card} DRD2 docking (using `tdc`)
 :link: ./albuterol_similarity.html
 :columns: 6

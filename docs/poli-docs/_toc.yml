@@ -35,6 +35,8 @@ parts:
       - file: using_poli/objective_repository/ranolazine_mpo.md
       - file: using_poli/objective_repository/sitagliptin_mpo.md
       - file: using_poli/objective_repository/zaleplon_mpo.md
+      - file: using_poli/objective_repository/deco_hop.md
+      - file: using_poli/objective_repository/scaffold_hop.md
       - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/sa_tdc.md
       - file: using_poli/objective_repository/albuterol_similarity.md

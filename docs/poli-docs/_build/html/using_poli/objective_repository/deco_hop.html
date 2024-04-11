@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>All objective functions &#8212; Documentation for poli and poli-baselines</title>
+    <title>Deco Hop (using TDC) &#8212; Documentation for poli and poli-baselines</title>
   
   
   
@@ -62,12 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'using_poli/objective_repository/all_objectives';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'using_poli/objective_repository/deco_hop';</script>
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="White Noise objective function" href="white_noise.html" />
-    <link rel="prev" title="Optimizing protein stability using random mutations" href="../optimization_examples/protein-stability-foldx/optimizing_protein_stability.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -129,6 +127,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -186,8 +186,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Objective functions</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">All objective functions</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="all_objectives.html">All objective functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="white_noise.html">White Noise objective function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aloha.html">Aloha objective function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="toy_continuous_problems.html">Toy continuous objective functions</a></li>
@@ -568,7 +568,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/MachineLearningLifeScience/protein-optimization-docs/issues/new?title=Issue%20on%20page%20%2Fusing_poli/objective_repository/all_objectives.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/MachineLearningLifeScience/protein-optimization-docs/issues/new?title=Issue%20on%20page%20%2Fusing_poli/objective_repository/deco_hop.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -598,7 +598,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/using_poli/objective_repository/all_objectives.md" target="_blank"
+      <li><a href="../../_sources/using_poli/objective_repository/deco_hop.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -682,7 +682,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>All objective functions</h1>
+    <h1>Deco Hop (using TDC)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -692,10 +692,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-problems">Toy problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-molecules">Small molecules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proteins">Proteins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-cite">How to cite</a></li>
 </ul>
             </nav>
         </div>
@@ -707,295 +707,92 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="all-objective-functions">
-<h1>All objective functions<a class="headerlink" href="#all-objective-functions" title="Permalink to this heading">#</a></h1>
-<p>These are all the objective functions available on <code class="docutils literal notranslate"><span class="pre">poli</span></code>. Click on one of them to get a minimal working example of how to use it.</p>
-<section id="toy-problems">
-<h2>Toy problems<a class="headerlink" href="#toy-problems" title="Permalink to this heading">#</a></h2>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-White noise</div>
-<p class="sd-card-text">White noise drawn from a unit Gaussian</p>
-</div>
-<a class="sd-stretched-link reference external" href="./white_noise.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Aloha</div>
-<p class="sd-card-text">A toy example about optimizing 5-letter words to spell “ALOHA”</p>
-</div>
-<a class="sd-stretched-link reference external" href="./aloha.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Toy continuous problems</div>
-<p class="sd-card-text">The usual benchmark functions for continuous optimization (e.g. <code class="docutils literal notranslate"><span class="pre">easom</span></code>, or <code class="docutils literal notranslate"><span class="pre">ackley_function_01</span></code>)</p>
-</div>
-<a class="sd-stretched-link reference external" href="./toy_continuous_problems.html"></a></div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="deco-hop-using-tdc">
+<h1>Deco Hop (using TDC)<a class="headerlink" href="#deco-hop-using-tdc" title="Permalink to this heading">#</a></h1>
+<p><img alt="Type of objective function: discrete" src="https://img.shields.io/badge/Type-discrete_inputs-blue" />
+<img alt="Environment to run this objective function: poli tdc" src="https://img.shields.io/badge/Environment-poli____tdc-teal" /></p>
+<section id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
+<p>This objective function computes the similarity to a certain SMILES string, and is part of the <strong>Hop</strong> family of GuacaMol <span id="id1">[<a class="reference internal" href="../../bibliography.html#id4" title="Nathan Brown, Marco Fiscato, Marwin H.S. Segler, and Alain C. Vaucher. Guacamol: benchmarking models for de novo molecular design. Journal of Chemical Information and Modeling, 59(3):1096–1108, March 2019. doi:10.1021/acs.jcim.8b00839.">Brown <em>et al.</em>, 2019</a>]</span> benchmark. We compute it using <a class="reference external" href="https://tdcommons.ai/functions/oracles/#multi-property-objective-mpo">the Therapeutics Data Common’s oracle</a> <span id="id2">[<a class="reference internal" href="../../bibliography.html#id5" title="Kexin Huang, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. Therapeutics data commons: machine learning datasets and tasks for drug discovery and development. Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks, 2021.">Huang <em>et al.</em>, 2021</a>]</span>.</p>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>None. This black box should run out-of-the-box.</p>
+</section>
+<section id="how-to-run">
+<h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DecoHopProblemFactory</span><span class="p">,</span>
+    <span class="n">DecoHopBlackBox</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Creating the black box</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">DecoHopBlackBox</span><span class="p">(</span>
+    <span class="n">string_representation</span><span class="o">=</span><span class="s2">&quot;SMILES&quot;</span> <span class="c1"># SMILES by default, can be SELFIES</span>
+<span class="p">)</span>
+
+<span class="c1"># Creating a problem</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">DecoHopProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
+
+<span class="c1"># Example input: (taken from the TDC)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;CC(C)(C)[C@H]1CCc2c(sc(NC(=O)COc3ccc(Cl)cc3)c2C(N)=O)C1&quot;</span><span class="p">])</span>
+
+<span class="c1"># Querying:</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Should be close to [[0.53383654]]</span>
+</pre></div>
 </div>
 </section>
-<section id="small-molecules">
-<h2>Small molecules<a class="headerlink" href="#small-molecules" title="Permalink to this heading">#</a></h2>
-<p>Most of our problems are based on the <a class="reference external" href="https://github.com/wenhao-gao/mol_opt">PMO</a> benchmark, by Gao et al <span id="id1">[<a class="reference internal" href="../../bibliography.html#id11" title="Wenhao Gao, Tianfan Fu, Jimeng Sun, and Connor W. Coley. Sample efficiency matters: a benchmark for practical molecular optimization. In Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track. 2022. URL: https://openreview.net/forum?id=yCZRdI0Y7G.">Gao <em>et al.</em>, 2022</a>]</span>. This benchmark extends the GuacaMol Benchmark proposed by Brown et al <span id="id2">[<a class="reference internal" href="../../bibliography.html#id4" title="Nathan Brown, Marco Fiscato, Marwin H.S. Segler, and Alain C. Vaucher. Guacamol: benchmarking models for de novo molecular design. Journal of Chemical Information and Modeling, 59(3):1096–1108, March 2019. doi:10.1021/acs.jcim.8b00839.">Brown <em>et al.</em>, 2019</a>]</span>.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Quantitative Estimate of Druglikeness (QED)</div>
-<p class="sd-card-text">Computing the QED using <code class="docutils literal notranslate"><span class="pre">RDKit</span></code>.</p>
+<section id="how-to-cite">
+<h2>How to cite<a class="headerlink" href="#how-to-cite" title="Permalink to this heading">#</a></h2>
+<p>If you use this black box, we expect that you cite the following resources:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+References as text</label><div class="sd-tab-content docutils">
+<p>[1] Brown, Nathan, Marco Fiscato, Marwin H.S. Segler, and Alain C. Vaucher. “GuacaMol: Benchmarking Models for de Novo Molecular Design.” Journal of Chemical Information and Modeling 59, no. 3 (March 25, 2019): 1096–1108. <a class="reference external" href="https://doi.org/10.1021/acs.jcim.8b00839">https://doi.org/10.1021/acs.jcim.8b00839</a>.</p>
+<p>[2] Huang, Kexin, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. “Therapeutics Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development.” Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks, 2021.</p>
+<p>[3] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
 </div>
-<a class="sd-stretched-link reference external" href="./rdkit_qed.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Log-solubility (LogP)</div>
-<p class="sd-card-text">Computing the log-quotient of solubilities using <code class="docutils literal notranslate"><span class="pre">RDKit</span></code>.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./rdkit_logp.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Penalized Log-solubility (LogP, using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</div>
-<p class="sd-card-text">Computing the penalized log-quotient of solubilities using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>’s implementation.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./penalized_logp_lambo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-<code class="docutils literal notranslate"><span class="pre">dockstring</span></code> for ligand design</div>
-<p class="sd-card-text">Using <code class="docutils literal notranslate"><span class="pre">dockstring</span></code> to assess the docking score of a small molecule.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./dockstring.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-DRD3 (or 3pbl) docking (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./drd3_docking.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Synthetic Accessibility (SA, using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">A wrapper around the Therapeutics Data Commons implementation of the synthetic accessibility oracle.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./sa_tdc.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Albuterol Similarity (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Albuterol similarity oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./albuterol_similarity.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Mestranol Similarity (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Mestranol similarity oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./albuterol_similarity.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Celecoxib rediscovery (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Celecoxib rediscovery oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./celecoxib_rediscovery.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Thiothixene rediscovery (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Thiothixene rediscovery oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./thiothixene_rediscovery.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Troglitazone rediscovery (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Troglitazone rediscovery oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./troglitazone_rediscovery.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Amlodipine MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Amlodipine MPO oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./amlodipine_mpo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Fexofenadine MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Fexofenadine MPO oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./fexofenadine_mpo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Osimetrinib MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Osimetrinib MPO oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./osimetrinib_mpo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Ranolazine MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Ranolazine MPO oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./ranolazine_mpo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Sitagliptin MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Sitagliptin MPO oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./sitagliptin_mpo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Zaleplon MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Zaleplon MPO oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./zaleplon_mpo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Decorator Hop (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the “deco Hop” oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./deco_hop.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Scaffold Hop (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the scaffold Hop oracle of GuacaMol.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./deco_hop.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-DRD2 docking (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the DRD2 docking oracle.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./albuterol_similarity.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-GSK3β (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the GSK3β oracle.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./gsk3_beta.html"></a></div>
-</div>
-</div>
-</div>
-</section>
-<section id="proteins">
-<h2>Proteins<a class="headerlink" href="#proteins" title="Permalink to this heading">#</a></h2>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Protein Stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</div>
-<p class="sd-card-text">Stability of mutations of a wildtype using <code class="docutils literal notranslate"><span class="pre">foldx</span></code></p>
-</div>
-<a class="sd-stretched-link reference external" href="./foldx_stability.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Protein SASA score (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</div>
-<p class="sd-card-text">Solvent accessibility of mutations of a wildtype using <code class="docutils literal notranslate"><span class="pre">foldx</span></code></p>
-</div>
-<a class="sd-stretched-link reference external" href="./foldx_sasa.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Protein Stability (using <code class="docutils literal notranslate"><span class="pre">RaSP</span></code>)</div>
-<p class="sd-card-text">Rapid Stability Predictions of single mutations from a wildtype.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./RaSP.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-RFP Fluorescence Protein Stability (using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</div>
-<p class="sd-card-text">LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./foldx_rfp_lambo.html"></a></div>
-</div>
-</div>
-</div>
-</section>
-<section id="other">
-<h2>Other<a class="headerlink" href="#other" title="Permalink to this heading">#</a></h2>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Mario jumps</div>
-<p class="sd-card-text">Optimizing the number of jumps on a Super Mario Bros level</p>
-</div>
-<a class="sd-stretched-link reference external" href="./super_mario_bros.html"></a></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+References as <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+@article{Brown:guacamol:2019,
+title={GuacaMol: Benchmarking Models for de Novo Molecular Design},
+    volume={59},
+    ISSN={1549-9596,
+    1549-960X},
+    DOI={10.1021/acs.jcim.8b00839},
+    number={3},
+    journal={Journal of Chemical Information and Modeling},
+    author={Brown, Nathan and Fiscato, Marco and Segler, Marwin H.S. and Vaucher, Alain C.},
+    year={2019},
+    month=mar,
+    pages={1096–1108},
+    language={en} }
+
+
+@article{Huang:TDC:2021,
+  title={Therapeutics Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development},
+  author={Huang, Kexin and Fu, Tianfan and Gao, Wenhao and Zhao, Yue and Roohani, Yusuf and Leskovec, Jure and Coley,
+          Connor W and Xiao, Cao and Sun, Jimeng and Zitnik, Marinka},
+  journal={Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks},
+  year={2021}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+</pre></div>
 </div>
 </div>
 </div>
@@ -1032,24 +829,6 @@ Mario jumps</div>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../optimization_examples/protein-stability-foldx/optimizing_protein_stability.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Optimizing protein stability using random mutations</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="white_noise.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">White Noise objective function</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1066,10 +845,10 @@ Mario jumps</div>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-problems">Toy problems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-molecules">Small molecules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proteins">Proteins</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-cite">How to cite</a></li>
 </ul>
   </nav></div>
 
