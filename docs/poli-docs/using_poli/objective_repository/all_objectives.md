@@ -77,6 +77,12 @@ A wrapper around the Therapeutics Data Commons implementation of the synthetic a
 The Therapeutics Data Commons' implementation of the Albuterol similarity oracle of GuacaMol.
 :::
 
+:::{grid-item-card} Mestranol Similarity (using `tdc`)
+:link: ./albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Mestranol similarity oracle of GuacaMol.
+:::
+
 :::{grid-item-card} DRD2 docking (using `tdc`)
 :link: ./albuterol_similarity.html
 :columns: 6

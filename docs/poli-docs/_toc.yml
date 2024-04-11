@@ -29,6 +29,7 @@ parts:
       - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/sa_tdc.md
       - file: using_poli/objective_repository/albuterol_similarity.md
+      - file: using_poli/objective_repository/mestranol_similarity.md
       - file: using_poli/objective_repository/drd2_docking.md
       - file: using_poli/objective_repository/foldx_stability.md
       - file: using_poli/objective_repository/foldx_sasa.md
