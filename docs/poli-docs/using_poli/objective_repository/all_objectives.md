@@ -149,6 +149,18 @@ The Therapeutics Data Commons' implementation of the "deco Hop" oracle of GuacaM
 The Therapeutics Data Commons' implementation of the scaffold Hop oracle of GuacaMol.
 :::
 
+:::{grid-item-card} Isomer C7H8N2O2 (using `tdc`)
+:link: ./isomer_c7h8n2o2.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the first isomer oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Isomer C9H10N2O2PF2Cl (using `tdc`)
+:link: ./isomer_c9h10n2o2pf2cl.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the second isomer oracle of GuacaMol.
+:::
+
 :::{grid-item-card} DRD2 docking (using `tdc`)
 :link: ./albuterol_similarity.html
 :columns: 6
