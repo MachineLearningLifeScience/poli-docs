@@ -83,6 +83,24 @@ The Therapeutics Data Commons' implementation of the Albuterol similarity oracle
 The Therapeutics Data Commons' implementation of the Mestranol similarity oracle of GuacaMol.
 :::
 
+:::{grid-item-card} Celecoxib rediscovery (using `tdc`)
+:link: ./celecoxib_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Celecoxib rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Thiothixene rediscovery (using `tdc`)
+:link: ./thiothixene_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Thiothixene rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Troglitazone rediscovery (using `tdc`)
+:link: ./troglitazone_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Troglitazone rediscovery oracle of GuacaMol.
+:::
+
 :::{grid-item-card} DRD2 docking (using `tdc`)
 :link: ./albuterol_similarity.html
 :columns: 6

@@ -26,6 +26,9 @@ parts:
       - file: using_poli/objective_repository/dockstring.md
       - file: using_poli/objective_repository/gsk3_beta.md
       - file: using_poli/objective_repository/drd3_docking.md
+      - file: using_poli/objective_repository/celecoxib_rediscovery.md
+      - file: using_poli/objective_repository/thiothixene_rediscovery.md
+      - file: using_poli/objective_repository/troglitazone_rediscovery.md
       - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/sa_tdc.md
       - file: using_poli/objective_repository/albuterol_similarity.md
