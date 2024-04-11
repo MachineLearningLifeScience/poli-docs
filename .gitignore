@@ -13,3 +13,6 @@
 
 # # Build directory
 # docs/poli-docs/_build
+
+# Ignore tdc
+oracle/

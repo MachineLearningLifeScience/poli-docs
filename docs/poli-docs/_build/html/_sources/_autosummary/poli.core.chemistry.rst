@@ -1,4 +1,4 @@
-poli.core.chemistry
+﻿poli.core.chemistry
 ===================
 
 .. automodule:: poli.core.chemistry
@@ -27,5 +27,6 @@ poli.core.chemistry
    :toctree:
    :recursive:
 
+   poli.core.chemistry.tdc_black_box
    poli.core.chemistry.tdc_isolated_function
 

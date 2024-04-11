@@ -30,7 +30,7 @@ The usual benchmark functions for continuous optimization (e.g. `easom`, or `ack
 
 ## Small molecules
 
-Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`gao:PMO:2022`.
+Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`gao:PMO:2022`. This benchmark extends the GuacaMol Benchmark proposed by Brown et al {cite:p}`Brown:guacamol:2019`.
 
 ::::{grid}
 :gutter: 3
@@ -62,13 +62,133 @@ Using `dockstring` to assess the docking score of a small molecule.
 :::{grid-item-card} DRD3 (or 3pbl) docking (using `tdc`)
 :link: ./drd3_docking.html
 :columns: 6
-A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.
+A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.
 :::
 
 :::{grid-item-card} Synthetic Accessibility (SA, using `tdc`)
 :link: ./sa_tdc.html
 :columns: 6
-A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.
+A wrapper around the Therapeutics Data Commons implementation of the synthetic accessibility oracle.
+:::
+
+:::{grid-item-card} Albuterol Similarity (using `tdc`)
+:link: ./albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Albuterol similarity oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Mestranol Similarity (using `tdc`)
+:link: ./albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Mestranol similarity oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Celecoxib rediscovery (using `tdc`)
+:link: ./celecoxib_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Celecoxib rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Thiothixene rediscovery (using `tdc`)
+:link: ./thiothixene_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Thiothixene rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Troglitazone rediscovery (using `tdc`)
+:link: ./troglitazone_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Troglitazone rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Amlodipine MPO (using `tdc`)
+:link: ./amlodipine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Amlodipine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Fexofenadine MPO (using `tdc`)
+:link: ./fexofenadine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Fexofenadine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Osimetrinib MPO (using `tdc`)
+:link: ./osimetrinib_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Osimetrinib MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Ranolazine MPO (using `tdc`)
+:link: ./ranolazine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Ranolazine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Sitagliptin MPO (using `tdc`)
+:link: ./sitagliptin_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Sitagliptin MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Zaleplon MPO (using `tdc`)
+:link: ./zaleplon_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Zaleplon MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Decorator Hop (using `tdc`)
+:link: ./deco_hop.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "deco Hop" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Scaffold Hop (using `tdc`)
+:link: ./deco_hop.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the scaffold Hop oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Isomer C7H8N2O2 (using `tdc`)
+:link: ./isomer_c7h8n2o2.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the first isomer oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Isomer C9H10N2O2PF2Cl (using `tdc`)
+:link: ./isomer_c9h10n2o2pf2cl.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the second isomer oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Median 1 (using `tdc`)
+:link: ./median_1.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "median 1" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Median 1 (using `tdc`)
+:link: ./median_2.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "median 2" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Valsartan SMARTS (using `tdc`)
+:link: ./valsartan_smarts.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Valsartan SMARTS oracle of GuacaMol.
+:::
+
+:::{grid-item-card} DRD2 docking (using `tdc`)
+:link: ./albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the DRD2 docking oracle.
+:::
+
+:::{grid-item-card} GSK3β (using `tdc`)
+:link: ./gsk3_beta.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the GSK3β oracle.
 :::
 
 ::::
