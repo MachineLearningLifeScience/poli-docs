@@ -29,6 +29,12 @@ parts:
       - file: using_poli/objective_repository/celecoxib_rediscovery.md
       - file: using_poli/objective_repository/thiothixene_rediscovery.md
       - file: using_poli/objective_repository/troglitazone_rediscovery.md
+      - file: using_poli/objective_repository/amlodipine_mpo.md
+      - file: using_poli/objective_repository/fexofenadine_mpo.md
+      - file: using_poli/objective_repository/osimetrinib_mpo.md
+      - file: using_poli/objective_repository/ranolazine_mpo.md
+      - file: using_poli/objective_repository/sitagliptin_mpo.md
+      - file: using_poli/objective_repository/zaleplon_mpo.md
       - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/sa_tdc.md
       - file: using_poli/objective_repository/albuterol_similarity.md

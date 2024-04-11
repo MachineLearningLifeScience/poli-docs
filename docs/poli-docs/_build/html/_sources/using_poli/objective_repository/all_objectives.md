@@ -101,6 +101,42 @@ The Therapeutics Data Commons' implementation of the Thiothixene rediscovery ora
 The Therapeutics Data Commons' implementation of the Troglitazone rediscovery oracle of GuacaMol.
 :::
 
+:::{grid-item-card} Amlodipine MPO (using `tdc`)
+:link: ./amlodipine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Amlodipine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Fexofenadine MPO (using `tdc`)
+:link: ./fexofenadine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Fexofenadine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Osimetrinib MPO (using `tdc`)
+:link: ./osimetrinib_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Osimetrinib MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Ranolazine MPO (using `tdc`)
+:link: ./ranolazine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Ranolazine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Sitagliptin MPO (using `tdc`)
+:link: ./sitagliptin_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Sitagliptin MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Zaleplon MPO (using `tdc`)
+:link: ./zaleplon_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Zaleplon MPO oracle of GuacaMol.
+:::
+
 :::{grid-item-card} DRD2 docking (using `tdc`)
 :link: ./albuterol_similarity.html
 :columns: 6
