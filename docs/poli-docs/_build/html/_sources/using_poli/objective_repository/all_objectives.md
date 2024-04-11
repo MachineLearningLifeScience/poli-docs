@@ -161,6 +161,24 @@ The Therapeutics Data Commons' implementation of the first isomer oracle of Guac
 The Therapeutics Data Commons' implementation of the second isomer oracle of GuacaMol.
 :::
 
+:::{grid-item-card} Median 1 (using `tdc`)
+:link: ./median_1.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "median 1" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Median 1 (using `tdc`)
+:link: ./median_2.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "median 2" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Valsartan SMARTS (using `tdc`)
+:link: ./valsartan_smarts.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Valsartan SMARTS oracle of GuacaMol.
+:::
+
 :::{grid-item-card} DRD2 docking (using `tdc`)
 :link: ./albuterol_similarity.html
 :columns: 6

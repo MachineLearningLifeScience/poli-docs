@@ -39,6 +39,9 @@ parts:
       - file: using_poli/objective_repository/scaffold_hop.md
       - file: using_poli/objective_repository/isomer_c7h8n2o2.md
       - file: using_poli/objective_repository/isomer_c9h10n2o2pf2cl.md
+      - file: using_poli/objective_repository/median_1.md
+      - file: using_poli/objective_repository/median_2.md
+      - file: using_poli/objective_repository/valsartan_smarts.md
       - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/sa_tdc.md
       - file: using_poli/objective_repository/albuterol_similarity.md

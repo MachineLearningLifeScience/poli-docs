@@ -35,7 +35,7 @@ x = np.array(["CC(C)(C)[C@H]1CCc2c(sc(NC(=O)COc3ccc(Cl)cc3)c2C(N)=O)C1"])
 
 # Querying:
 y = f(x)
-print(y)  # Should be close to [[[0.09011743]]
+print(y)  # Should be close to [[0.09011743]]
 ```
 
 ## How to cite
