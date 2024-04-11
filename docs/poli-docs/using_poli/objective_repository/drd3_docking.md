@@ -6,7 +6,7 @@
 
 ## About
 
-This objective function computes the docking score of a small molecule w.r.t. the protein `3pbl`, [which is the canonical example in the Therapeutics Data Common's docking oracles](https://tdcommons.ai/functions/oracles/#docking-scores) {cite:p}`huang:TDC:2021`. Under the hood, it uses pyscreener, vina and the ADFR suite.
+This objective function computes the docking score of a small molecule w.r.t. the protein `3pbl`, [which is the canonical example in the Therapeutics Data Common's docking oracles](https://tdcommons.ai/functions/oracles/#docking-scores) {cite:p}`Huang:TDC:2021`. Under the hood, it uses pyscreener, vina and the ADFR suite.
 
 ## Prerequisites
 

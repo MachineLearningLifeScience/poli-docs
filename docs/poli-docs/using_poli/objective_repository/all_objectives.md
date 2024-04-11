@@ -30,7 +30,7 @@ The usual benchmark functions for continuous optimization (e.g. `easom`, or `ack
 
 ## Small molecules
 
-Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`gao:PMO:2022`.
+Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`gao:PMO:2022`. This benchmark extends the GuacaMol Benchmark proposed by Brown et al {cite:p}`Brown:guacamol:2019`.
 
 ::::{grid}
 :gutter: 3
@@ -62,13 +62,31 @@ Using `dockstring` to assess the docking score of a small molecule.
 :::{grid-item-card} DRD3 (or 3pbl) docking (using `tdc`)
 :link: ./drd3_docking.html
 :columns: 6
-A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.
+A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.
 :::
 
 :::{grid-item-card} Synthetic Accessibility (SA, using `tdc`)
 :link: ./sa_tdc.html
 :columns: 6
-A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.
+A wrapper around the Therapeutics Data Commons implementation of the synthetic accessibility oracle.
+:::
+
+:::{grid-item-card} Albuterol Similarity (using `tdc`)
+:link: ./albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Albuterol similarity oracle of GuacaMol.
+:::
+
+:::{grid-item-card} DRD2 docking (using `tdc`)
+:link: ./albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the DRD2 docking oracle.
+:::
+
+:::{grid-item-card} GSK3β (using `tdc`)
+:link: ./gsk3_beta.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the GSK3β oracle.
 :::
 
 ::::

@@ -194,9 +194,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="rdkit_qed.html">Quantitative Estimate of Druglikeness (QED)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rdkit_logp.html">Log-solubility (logP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dockstring.html">dockstring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gsk3_beta.html">GSK3β (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="drd3_docking.html">DRD3 docking (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="penalized_logp_lambo.html">Penalized logP (using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sa_tdc.html">Synthetic Accessibility (using TDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="albuterol_similarity.html">Albuterol Similarity (using TDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drd2_docking.html">DRD2 Docking (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="foldx_stability.html">Protein stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="foldx_sasa.html">Protein solvent accessibility (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="RaSP.html">Rapid Stability Predictions</a></li>
@@ -222,6 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.abstract_problem_factory.html">poli.core.abstract_problem_factory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.black_box_information.html">poli.core.black_box_information</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.chemistry.tdc_black_box.html">poli.core.chemistry.tdc_black_box</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.chemistry.tdc_isolated_function.html">poli.core.chemistry.tdc_isolated_function</a></li>
 </ul>
 </li>
@@ -254,47 +258,76 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../_autosummary/poli.objective_factory.html">poli.objective_factory</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.html">poli.objective_repository</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.aloha.html">poli.objective_repository.aloha</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.albuterol_similarity.html">poli.objective_repository.albuterol_similarity</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.albuterol_similarity.information.html">poli.objective_repository.albuterol_similarity.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.albuterol_similarity.register.html">poli.objective_repository.albuterol_similarity.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.aloha.html">poli.objective_repository.aloha</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.aloha.register.html">poli.objective_repository.aloha.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.amlodipine_mpo.html">poli.objective_repository.amlodipine_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.amlodipine_mpo.information.html">poli.objective_repository.amlodipine_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.amlodipine_mpo.register.html">poli.objective_repository.amlodipine_mpo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.celecoxib_rediscovery.html">poli.objective_repository.celecoxib_rediscovery</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.celecoxib_rediscovery.information.html">poli.objective_repository.celecoxib_rediscovery.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.celecoxib_rediscovery.register.html">poli.objective_repository.celecoxib_rediscovery.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.deco_hop.html">poli.objective_repository.deco_hop</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.deco_hop.information.html">poli.objective_repository.deco_hop.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.deco_hop.register.html">poli.objective_repository.deco_hop.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.dockstring.information.html">poli.objective_repository.dockstring.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.dockstring.isolated_function.html">poli.objective_repository.dockstring.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.dockstring.register.html">poli.objective_repository.dockstring.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd2_docking.html">poli.objective_repository.drd2_docking</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd2_docking.information.html">poli.objective_repository.drd2_docking.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd2_docking.register.html">poli.objective_repository.drd2_docking.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd3_docking.information.html">poli.objective_repository.drd3_docking.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd3_docking.isolated_function.html">poli.objective_repository.drd3_docking.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.drd3_docking.register.html">poli.objective_repository.drd3_docking.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.fexofenadine_mpo.html">poli.objective_repository.fexofenadine_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.fexofenadine_mpo.information.html">poli.objective_repository.fexofenadine_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.fexofenadine_mpo.register.html">poli.objective_repository.fexofenadine_mpo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_rfp_lambo.information.html">poli.objective_repository.foldx_rfp_lambo.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_rfp_lambo.isolated_function.html">poli.objective_repository.foldx_rfp_lambo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html">poli.objective_repository.foldx_rfp_lambo.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_sasa.information.html">poli.objective_repository.foldx_sasa.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_sasa.isolated_function.html">poli.objective_repository.foldx_sasa.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_sasa.register.html">poli.objective_repository.foldx_sasa.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability.information.html">poli.objective_repository.foldx_stability.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability.isolated_function.html">poli.objective_repository.foldx_stability.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability.register.html">poli.objective_repository.foldx_stability.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.information.html">poli.objective_repository.foldx_stability_and_sasa.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.isolated_function.html">poli.objective_repository.foldx_stability_and_sasa.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html">poli.objective_repository.foldx_stability_and_sasa.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_cbas.html">poli.objective_repository.gfp_cbas</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_cbas.html">poli.objective_repository.gfp_cbas</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.html">poli.objective_repository.gfp_cbas.abstract_vae_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html">poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html">poli.objective_repository.gfp_cbas.cbas_wrapper</a></li>
@@ -305,60 +338,140 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_cbas.register.html">poli.objective_repository.gfp_cbas.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_select.information.html">poli.objective_repository.gfp_select.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_select.isolated_function.html">poli.objective_repository.gfp_select.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gfp_select.register.html">poli.objective_repository.gfp_select.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gsk3_beta.html">poli.objective_repository.gsk3_beta</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gsk3_beta.information.html">poli.objective_repository.gsk3_beta.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.gsk3_beta.register.html">poli.objective_repository.gsk3_beta.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.isomer_c7h8n2o2.html">poli.objective_repository.isomer_c7h8n2o2</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.isomer_c7h8n2o2.information.html">poli.objective_repository.isomer_c7h8n2o2.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.isomer_c7h8n2o2.register.html">poli.objective_repository.isomer_c7h8n2o2.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.html">poli.objective_repository.isomer_c9h10n2o2pf2cl</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.information.html">poli.objective_repository.isomer_c9h10n2o2pf2cl.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.register.html">poli.objective_repository.isomer_c9h10n2o2pf2cl.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.jnk3.html">poli.objective_repository.jnk3</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-25"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.jnk3.information.html">poli.objective_repository.jnk3.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.jnk3.register.html">poli.objective_repository.jnk3.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.median_1.html">poli.objective_repository.median_1</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-26"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.median_1.information.html">poli.objective_repository.median_1.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.median_1.register.html">poli.objective_repository.median_1.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.median_2.html">poli.objective_repository.median_2</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-27"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.median_2.information.html">poli.objective_repository.median_2.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.median_2.register.html">poli.objective_repository.median_2.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.mestranol_similarity.html">poli.objective_repository.mestranol_similarity</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-28"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.mestranol_similarity.information.html">poli.objective_repository.mestranol_similarity.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.mestranol_similarity.register.html">poli.objective_repository.mestranol_similarity.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.osimetrinib_mpo.html">poli.objective_repository.osimetrinib_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-29"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.osimetrinib_mpo.information.html">poli.objective_repository.osimetrinib_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.osimetrinib_mpo.register.html">poli.objective_repository.osimetrinib_mpo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-30"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.penalized_logp_lambo.information.html">poli.objective_repository.penalized_logp_lambo.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.penalized_logp_lambo.isolated_function.html">poli.objective_repository.penalized_logp_lambo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.penalized_logp_lambo.register.html">poli.objective_repository.penalized_logp_lambo.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.perindopril_mpo.html">poli.objective_repository.perindopril_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-31"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.perindopril_mpo.information.html">poli.objective_repository.perindopril_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.perindopril_mpo.register.html">poli.objective_repository.perindopril_mpo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.ranolazine_mpo.html">poli.objective_repository.ranolazine_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-32"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.ranolazine_mpo.information.html">poli.objective_repository.ranolazine_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.ranolazine_mpo.register.html">poli.objective_repository.ranolazine_mpo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-33"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rasp.information.html">poli.objective_repository.rasp.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rasp.isolated_function.html">poli.objective_repository.rasp.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rasp.register.html">poli.objective_repository.rasp.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-34"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_logp.information.html">poli.objective_repository.rdkit_logp.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_logp.register.html">poli.objective_repository.rdkit_logp.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-35"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_qed.information.html">poli.objective_repository.rdkit_qed.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rdkit_qed.register.html">poli.objective_repository.rdkit_qed.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-36"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.information.html">poli.objective_repository.rfp_foldx_stability_and_sasa.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html">poli.objective_repository.rfp_foldx_stability_and_sasa.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-37"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sa_tdc.information.html">poli.objective_repository.sa_tdc.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sa_tdc.isolated_function.html">poli.objective_repository.sa_tdc.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sa_tdc.register.html">poli.objective_repository.sa_tdc.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.scaffold_hop.html">poli.objective_repository.scaffold_hop</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-38"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.scaffold_hop.information.html">poli.objective_repository.scaffold_hop.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.scaffold_hop.register.html">poli.objective_repository.scaffold_hop.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sitagliptin_mpo.html">poli.objective_repository.sitagliptin_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-39"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sitagliptin_mpo.information.html">poli.objective_repository.sitagliptin_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.sitagliptin_mpo.register.html">poli.objective_repository.sitagliptin_mpo.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-40"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.super_mario_bros.information.html">poli.objective_repository.super_mario_bros.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.super_mario_bros.level_utils.html">poli.objective_repository.super_mario_bros.level_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.super_mario_bros.register.html">poli.objective_repository.super_mario_bros.register</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.thiothixene_rediscovery.html">poli.objective_repository.thiothixene_rediscovery</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-41"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.thiothixene_rediscovery.information.html">poli.objective_repository.thiothixene_rediscovery.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.thiothixene_rediscovery.register.html">poli.objective_repository.thiothixene_rediscovery.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-42"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html">poli.objective_repository.toy_continuous_problem.definitions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.toy_continuous_problem.information.html">poli.objective_repository.toy_continuous_problem.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.toy_continuous_problem.register.html">poli.objective_repository.toy_continuous_problem.register</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem.toy_continuous_problem</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.white_noise.html">poli.objective_repository.white_noise</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.troglitazone_rediscovery.html">poli.objective_repository.troglitazone_rediscovery</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-43"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.troglitazone_rediscovery.information.html">poli.objective_repository.troglitazone_rediscovery.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.troglitazone_rediscovery.register.html">poli.objective_repository.troglitazone_rediscovery.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.valsartan_smarts.html">poli.objective_repository.valsartan_smarts</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-44"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.valsartan_smarts.information.html">poli.objective_repository.valsartan_smarts.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.valsartan_smarts.register.html">poli.objective_repository.valsartan_smarts.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.white_noise.html">poli.objective_repository.white_noise</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.white_noise.register.html">poli.objective_repository.white_noise.register</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.zaleplon_mpo.html">poli.objective_repository.zaleplon_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-46"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.zaleplon_mpo.information.html">poli.objective_repository.zaleplon_mpo.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.zaleplon_mpo.register.html">poli.objective_repository.zaleplon_mpo.register</a></li>
 </ul>
 </li>
 </ul>
@@ -623,7 +736,7 @@ Toy continuous problems</div>
 </section>
 <section id="small-molecules">
 <h2>Small molecules<a class="headerlink" href="#small-molecules" title="Permalink to this heading">#</a></h2>
-<p>Most of our problems are based on the <a class="reference external" href="https://github.com/wenhao-gao/mol_opt">PMO</a> benchmark, by Gao et al <span id="id1">[<a class="reference internal" href="../../bibliography.html#id9" title="Wenhao Gao, Tianfan Fu, Jimeng Sun, and Connor W. Coley. Sample efficiency matters: a benchmark for practical molecular optimization. In Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track. 2022. URL: https://openreview.net/forum?id=yCZRdI0Y7G.">Gao <em>et al.</em>, 2022</a>]</span>.</p>
+<p>Most of our problems are based on the <a class="reference external" href="https://github.com/wenhao-gao/mol_opt">PMO</a> benchmark, by Gao et al <span id="id1">[<a class="reference internal" href="../../bibliography.html#id11" title="Wenhao Gao, Tianfan Fu, Jimeng Sun, and Connor W. Coley. Sample efficiency matters: a benchmark for practical molecular optimization. In Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track. 2022. URL: https://openreview.net/forum?id=yCZRdI0Y7G.">Gao <em>et al.</em>, 2022</a>]</span>. This benchmark extends the GuacaMol Benchmark proposed by Brown et al <span id="id2">[<a class="reference internal" href="../../bibliography.html#id4" title="Nathan Brown, Marco Fiscato, Marwin H.S. Segler, and Alain C. Vaucher. Guacamol: benchmarking models for de novo molecular design. Journal of Chemical Information and Modeling, 59(3):1096–1108, March 2019. doi:10.1021/acs.jcim.8b00839.">Brown <em>et al.</em>, 2019</a>]</span>.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
@@ -667,7 +780,7 @@ Penalized Log-solubility (LogP, using <code class="docutils literal notranslate"
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 DRD3 (or 3pbl) docking (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">A wrapper around the Therapeutics Data Commons implmenetation of 3pbl docking.</p>
+<p class="sd-card-text">A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.</p>
 </div>
 <a class="sd-stretched-link reference external" href="./drd3_docking.html"></a></div>
 </div>
@@ -676,9 +789,36 @@ DRD3 (or 3pbl) docking (using <code class="docutils literal notranslate"><span c
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 Synthetic Accessibility (SA, using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
-<p class="sd-card-text">A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.</p>
+<p class="sd-card-text">A wrapper around the Therapeutics Data Commons implementation of the synthetic accessibility oracle.</p>
 </div>
 <a class="sd-stretched-link reference external" href="./sa_tdc.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Albuterol Similarity (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
+<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Albuterol similarity oracle of GuacaMol.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./albuterol_similarity.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+DRD2 docking (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
+<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the DRD2 docking oracle.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./albuterol_similarity.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+GSK3β (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
+<p class="sd-card-text">The Therapeutics Data Commons’ implementation of the GSK3β oracle.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./gsk3_beta.html"></a></div>
 </div>
 </div>
 </div>

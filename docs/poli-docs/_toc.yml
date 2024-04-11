@@ -24,9 +24,12 @@ parts:
       - file: using_poli/objective_repository/rdkit_qed.md
       - file: using_poli/objective_repository/rdkit_logp.md
       - file: using_poli/objective_repository/dockstring.md
+      - file: using_poli/objective_repository/gsk3_beta.md
       - file: using_poli/objective_repository/drd3_docking.md
       - file: using_poli/objective_repository/penalized_logp_lambo.md
       - file: using_poli/objective_repository/sa_tdc.md
+      - file: using_poli/objective_repository/albuterol_similarity.md
+      - file: using_poli/objective_repository/drd2_docking.md
       - file: using_poli/objective_repository/foldx_stability.md
       - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/RaSP.md
