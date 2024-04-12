@@ -33,3 +33,36 @@ x = np.array(
 # Querying:
 print(f(x))  # Should be 3 (A, L, and the first O).
 ```
+
+## How to cite
+
+
+If you use this black box, we expect you to cite the following resources:
+
+::::{tab-set}
+
+:::{tab-item} References as text
+
+[1] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+
+
+:::
+
+:::{tab-item} References as `BibTeX`
+
+```
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+```
+
+:::
+
+::::

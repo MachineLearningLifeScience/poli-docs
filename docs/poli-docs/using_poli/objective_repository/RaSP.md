@@ -48,6 +48,56 @@ Namely, we download `cavity_model_15.pt` and all `ds_models` and store them in `
 
 :::
 
+
+## How to cite
+
+If you use this black box, we expect you to cite the following resources:
+
+::::{tab-set}
+
+:::{tab-item} References as text
+
+[1] Blaabjerg, Lasse M, Maher M Kassem, Lydia L Good, Nicolas Jonsson, Matteo Cagiada, Kristoffer E Johansson, Wouter Boomsma, Amelie Stein, and Kresten Lindorff-Larsen. “Rapid Protein Stability Prediction Using Deep Learning Representations.” Edited by José D Faraldo-Gómez, Detlef Weigel, Nir Ben-Tal, and Julian Echave. eLife 12 (May 2023): e82593. https://doi.org/10.7554/eLife.82593.
+
+
+[2] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+
+
+:::
+
+:::{tab-item} References as `BibTeX`
+
+```
+@article{Blaabjerg:RaSP:2023,
+  title        = {Rapid protein stability prediction using deep learning representations},
+  volume       = {12},
+  issn         = {2050-084X},
+  doi          = {10.7554/eLife.82593},
+  journal      = {eLife},
+  publisher    = {eLife Sciences Publications, Ltd},
+  author       = {Blaabjerg, Lasse M and Kassem, Maher M and Good, Lydia L and Jonsson, Nicolas and Cagiada, Matteo and Johansson, Kristoffer E and Boomsma, Wouter and Stein, Amelie and Lindorff-Larsen, Kresten},
+  editor       = {Faraldo-Gómez, José D and Weigel, Detlef and Ben-Tal, Nir and Echave, Julian},
+  year         = {2023},
+  month        = may,
+  pages        = {e82593}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+```
+
+:::
+
+::::
+
+
 ## Further reading
 
 In the examples of `poli` you can find how to compute the saturation mutagenesis for a given protein at a given position.
