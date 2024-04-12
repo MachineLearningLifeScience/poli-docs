@@ -62,10 +62,76 @@ The usual benchmark functions for continuous optimization (e.g. `easom`, or `ack
 ::::{grid}
 :gutter: 3
 
-:::{grid-item-card} Quantitative Estimate of Druglikeness (QED)
-:link: ./using_poli/objective_repository/rdkit_qed.html
+:::{grid-item-card} Albuterol Similarity (using `tdc`)
+:link: ./using_poli/objective_repository/albuterol_similarity.html
 :columns: 6
-Computing the QED using `RDKit`.
+The Therapeutics Data Commons' implementation of the Albuterol similarity oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Amlodipine MPO (using `tdc`)
+:link: ./using_poli/objective_repository/amlodipine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Amlodipine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Celecoxib rediscovery (using `tdc`)
+:link: ./using_poli/objective_repository/celecoxib_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Celecoxib rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Decorator Hop (using `tdc`)
+:link: ./using_poli/objective_repository/deco_hop.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "deco Hop" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} `dockstring` for ligand design
+:link: ./using_poli/objective_repository/dockstring.html
+:columns: 6
+Using `dockstring` to assess the docking score of a small molecule.
+:::
+
+:::{grid-item-card} DRD2 docking (using `tdc`)
+:link: ./using_poli/objective_repository/albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the DRD2 docking oracle.
+:::
+
+:::{grid-item-card} DRD3 (or 3pbl) docking (using `tdc`)
+:link: ./using_poli/objective_repository/drd3_docking.html
+:columns: 6
+A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.
+:::
+
+:::{grid-item-card} Fexofenadine MPO (using `tdc`)
+:link: ./using_poli/objective_repository/fexofenadine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Fexofenadine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} GSK3β (using `tdc`)
+:link: ./using_poli/objective_repository/gsk3_beta.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the GSK3β oracle.
+:::
+
+:::{grid-item-card} Isomer C7H8N2O2 (using `tdc`)
+:link: ./using_poli/objective_repository/isomer_c7h8n2o2.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the first isomer oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Isomer C9H10N2O2PF2Cl (using `tdc`)
+:link: ./using_poli/objective_repository/isomer_c9h10n2o2pf2cl.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the second isomer oracle of GuacaMol.
+:::
+
+:::{grid-item-card} JNK3 (using `tdc`)
+:link: ./using_poli/objective_repository/jnk3.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the JNK3 oracle.
 :::
 
 :::{grid-item-card} Log-solubility (LogP)
@@ -74,23 +140,90 @@ Computing the QED using `RDKit`.
 Computing the log-quotient of solubilities using `RDKit`.
 :::
 
+:::{grid-item-card} Median 1 (using `tdc`)
+:link: ./using_poli/objective_repository/median_1.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "median 1" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Median 2 (using `tdc`)
+:link: ./using_poli/objective_repository/median_2.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the "median 2" oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Mestranol Similarity (using `tdc`)
+:link: ./using_poli/objective_repository/albuterol_similarity.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Mestranol similarity oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Osimetrinib MPO (using `tdc`)
+:link: ./using_poli/objective_repository/osimetrinib_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Osimetrinib MPO oracle of GuacaMol.
+:::
+
 :::{grid-item-card} Penalized Log-solubility (LogP, using `lambo`)
 :link: ./using_poli/objective_repository/penalized_logp_lambo.html
 :columns: 6
 Computing the penalized log-quotient of solubilities using `lambo`'s implementation.
 :::
 
-:::{grid-item-card} DRD3 (or 3pbl) docking (using `tdc`)
-:link: ./using_poli/objective_repository/drd3_docking.html
+:::{grid-item-card} Quantitative Estimate of Druglikeness (QED)
+:link: ./using_poli/objective_repository/rdkit_qed.html
 :columns: 6
-A wrapper around the Therapeutics Data Commons implmenetation of `3pbl` docking.
+Computing the QED using `RDKit`.
+:::
+
+:::{grid-item-card} Ranolazine MPO (using `tdc`)
+:link: ./using_poli/objective_repository/ranolazine_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Ranolazine MPO oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Scaffold Hop (using `tdc`)
+:link: ./using_poli/objective_repository/deco_hop.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the scaffold Hop oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Sitagliptin MPO (using `tdc`)
+:link: ./using_poli/objective_repository/sitagliptin_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Sitagliptin MPO oracle of GuacaMol.
 :::
 
 :::{grid-item-card} Synthetic Accessibility (SA, using `tdc`)
 :link: ./using_poli/objective_repository/sa_tdc.html
 :columns: 6
-A wrapper around the Therapeutics Data Commons implmenetation of the synthetic accessibility oracle.
+A wrapper around the Therapeutics Data Commons implementation of the synthetic accessibility oracle.
 :::
+
+:::{grid-item-card} Thiothixene rediscovery (using `tdc`)
+:link: ./using_poli/objective_repository/thiothixene_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Thiothixene rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Troglitazone rediscovery (using `tdc`)
+:link: ./using_poli/objective_repository/troglitazone_rediscovery.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Troglitazone rediscovery oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Valsartan SMARTS (using `tdc`)
+:link: ./using_poli/objective_repository/valsartan_smarts.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Valsartan SMARTS oracle of GuacaMol.
+:::
+
+:::{grid-item-card} Zaleplon MPO (using `tdc`)
+:link: ./using_poli/objective_repository/zaleplon_mpo.html
+:columns: 6
+The Therapeutics Data Commons' implementation of the Zaleplon MPO oracle of GuacaMol.
+:::
+
 
 ::::
 
@@ -170,36 +303,7 @@ A version of Bayesian Optimization where the acquisition is optimized over a lin
 
 ## Cite us and other relevant work
 
-If you use `poli`, we encourage you to cite us
-
-```
-@software{GonzalezDuqueBartelsMichael:poli:2024,
-author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
-month = jan,
-title = {{poli: a libary of discrete sequence objectives}},
-url = {https://github.com/MachineLearningLifeScience/poli},
-version = {0.0.1},
-year = {2024}
-}
-```
-
-If you use certain black boxes, we also recommend citing the original work:
-
-|Black box|Reference(s)|
-|---------|---------|
-|`dockstring`|[(García-Ortegón et al. 2022)](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01334)|
-|`drd3_docking`|[(Graff, Shakhnovich and Coley 2020)](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01334), [(Graff and Coley 2022)](https://joss.theoj.org/papers/10.21105/joss.03950), [(Huang et al. 2022)](https://www.nature.com/articles/s41589-022-01131-2)|
-|`foldx_*`|[(Schymkowitz et al. 2005)](https://academic.oup.com/nar/article/33/suppl_2/W382/2505499)|
-|`gfp_cbas`|[(Brookes, Park and Listgarten 2019)](https://proceedings.mlr.press/v97/brookes19a.html)|
-|`gfp_select`|[(Brookes, Park and Listgarten 2019)](https://proceedings.mlr.press/v97/brookes19a.html)|
-|`penalized_logp_lambo`|[(Stanton et al. 2022)](https://github.com/samuelstanton/lambo)|
-|`rasp`|[(Blaabjerg et al. 2022)](https://github.com/KULL-Centre/_2022_ML-ddG-Blaabjerg)|
-|`rdkit_*`|[(rdkit)](https://github.com/rdkit/rdkit)|
-|`rfp_foldx_*`|[(Schymkowitz et al. 2005)](https://academic.oup.com/nar/article/33/suppl_2/W382/2505499), [(Stanton et al. 2022)](https://github.com/samuelstanton/lambo)|
-|`sa_tdc`|[(Huang et al. 2022)](https://www.nature.com/articles/s41589-022-01131-2), [(rdkit)](https://github.com/rdkit/rdkit), [(Ertl and Schuffenhauer 2009)](https://link.springer.com/article/10.1186/1758-2946-1-8)|
-|`super_mario_bros`|[(Volz et al. 2018)](https://github.com/CIGbalance/DagstuhlGAN), [(González-Duque 2023)](https://github.com/miguelgondu/minimal_VAE_on_Mario) |
-|`toy_continuous_problem`|[(Al-Roomi 2015)](https://www.al-roomi.org/benchmarks/unconstrained), [(Surjanovic and Bingham 2013)](https://www.sfu.ca/~ssurjano/optimization.html) |
-
+If you use certain black boxes, we expect you to cite the relevant work. [Check inside the documentation of each black box for the relevant references](./using_poli/objective_repository/all_objectives.md).
 
 ## Contribute problems or solvers
 

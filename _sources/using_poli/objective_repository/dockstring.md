@@ -35,3 +35,52 @@ y = f(x)
 print(y)  # Should be 11.9
 ```
 
+
+## How to cite
+
+If you use this black box, we expect you to cite the following resources:
+
+::::{tab-set}
+
+:::{tab-item} References as text
+
+[1] García-Ortegón, Miguel, Gregor N. C. Simm, Austin J. Tripp, José Miguel Hernández-Lobato, Andreas Bender, and Sergio Bacallado. “DOCKSTRING: Easy Molecular Docking Yields Better Benchmarks for Ligand Design.” Journal of Chemical Information and Modeling 62, no. 15 (August 8, 2022): 3486–3502. https://doi.org/10.1021/acs.jcim.1c01334.
+
+
+[2] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+
+
+:::
+
+:::{tab-item} References as `BibTeX`
+
+```
+
+@article{GarciaOrtegon:dockstring:2022,
+  title    = {DOCKSTRING: Easy Molecular Docking Yields Better Benchmarks for Ligand Design},
+  volume   = {62},
+  issn     = {1549-9596, 1549-960X},
+  doi      = {10.1021/acs.jcim.1c01334},
+  number   = {15},
+  journal  = {Journal of Chemical Information and Modeling},
+  author   = {García-Ortegón, Miguel and Simm, Gregor N. C. and Tripp, Austin J. and Hernández-Lobato, José Miguel and Bender, Andreas and Bacallado, Sergio},
+  year     = {2022},
+  month    = aug,
+  pages    = {3486–3502},
+  language = {en}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+```
+
+:::
+
+::::

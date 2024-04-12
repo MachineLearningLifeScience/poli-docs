@@ -54,3 +54,49 @@ f, x0 = problem.black_box, problem.x0
 # Example evaluation: SASA of your wildtype
 print(f(x0))
 ```
+
+## How to cite
+
+If you use this black box, we expect you to cite the following resources:
+
+::::{tab-set}
+
+:::{tab-item} References as text
+
+[1] Schymkowitz, Joost, Jesper Borg, Francois Stricher, Robby Nys, Frederic Rousseau, and Luis Serrano. “The FoldX Web Server: An Online Force Field.” Nucleic Acids Research 33, no. Web Server issue (July 1, 2005): W382–88. https://doi.org/10.1093/nar/gki387.
+
+[2] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+
+
+:::
+
+:::{tab-item} References as `BibTeX`
+
+```
+
+@article{Schymkowitz:foldx:2005, title={The FoldX web server: an online force field},
+  volume={33},
+  ISSN={0305-1048},
+  DOI={10.1093/nar/gki387},
+  journal={Nucleic Acids Research},
+    author={Schymkowitz, Joost and Borg, Jesper and Stricher, Francois and Nys, Robby and Rousseau, Frederic and Serrano, Luis},
+    year={2005},
+    month=jul,
+    pages={W382–W388}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+```
+
+:::
+
+::::
+

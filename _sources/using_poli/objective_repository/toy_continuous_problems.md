@@ -6,7 +6,7 @@
 
 ## About
 
-These are the usual objective function people use to test continuous optimizers {cite:p}`Al-Roomi:continuous_objective_benchmarks:2015`. In particular, we include:
+These are the usual objective function people use to test continuous optimizers {cite:p}`Al-Roomi:continuous_objective_benchmarks:2015,SurjanovicBingham:test_functions:2013`. In particular, we include:
 
 - For $n$-dimensional optimization:
     - [`ackley_function_01`](https://www.al-roomi.org/benchmarks/unconstrained/n-dimensions/227-ackley-s-function-no-1-or-ackley-s-path-function),
@@ -81,3 +81,58 @@ f, x0 = problem.black_box, problem.x0
 ```
 
 During the creation process, the two relevant dimensions of `camelback_2d` will be randomly embedded into two of the 30 dimensions. These are accessible under `f.function.dimensions_to_embed_in` (which is an array of integers).
+
+## How to cite
+
+If you use this black box, we expect that you cite the following resources:
+
+::::{tab-set}
+
+:::{tab-item} References as text
+
+[1] Al-Roomi, A. R. (2015). Unconstrained Single-Objective Benchmark Functions Repository. Dalhousie University, Electrical and Computer Engineering. Halifax, Nova Scotia, Canada. Available at: https://www.al-roomi.org/benchmarks/unconstrained
+
+[2] Surjanovic, S., Bingham, D., “Optimization Test Functions and Datasets.” Accessed April 12, 2024. https://www.sfu.ca/~ssurjano/optimization.html.
+
+[3] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+
+
+:::
+
+:::{tab-item} References as `BibTeX`
+
+```
+
+@MISC{Al-Roomi:continuous_objective_benchmarks:2015,
+    author = {Ali R. Al-Roomi},
+    title = {{Unconstrained Single-Objective Benchmark Functions Repository}},
+    year = {2015},
+    address = {Halifax, Nova Scotia, Canada},
+    institution = {Dalhousie University, Electrical and Computer Engineering},
+    url = {https://www.al-roomi.org/benchmarks/unconstrained}
+}
+
+
+@misc{SurjanovicBingham:test_functions:2013,
+  author = {Surjanovic, S. and Bingham, D.},
+  title = {Optimization Test Functions and Datasets},
+  year = {2013},
+  howpublished = {\url{https://www.sfu.ca/~ssurjano/optimization.html}},
+  note = {Accessed: 2024-04-12}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+```
+
+:::
+
+::::
+
