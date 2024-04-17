@@ -30,7 +30,7 @@ White noise drawn from a unit Gaussian
 
 ## Small molecules
 
-Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`gao:PMO:2022`. This benchmark extends the GuacaMol Benchmark proposed by Brown et al {cite:p}`Brown:guacamol:2019`.
+Most of our problems are based on the [PMO](https://github.com/wenhao-gao/mol_opt) benchmark, by Gao et al {cite:p}`Gao:PMO:2022`, which extends the GuacaMol Benchmark proposed by Brown et al {cite:p}`Brown:guacamol:2019`.
 
 ::::{grid}
 :gutter: 3
