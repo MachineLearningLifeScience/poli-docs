@@ -27,9 +27,11 @@
    :toctree:
    :recursive:
 
+   poli.core.abstract_benchmark
    poli.core.abstract_black_box
    poli.core.abstract_isolated_function
    poli.core.abstract_problem_factory
+   poli.core.benchmark_information
    poli.core.black_box_information
    poli.core.chemistry
    poli.core.exceptions
