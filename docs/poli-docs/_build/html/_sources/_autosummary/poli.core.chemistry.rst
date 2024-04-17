@@ -1,4 +1,4 @@
-﻿poli.core.chemistry
+poli.core.chemistry
 ===================
 
 .. automodule:: poli.core.chemistry

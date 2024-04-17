@@ -27,6 +27,7 @@
    :toctree:
    :recursive:
 
+   poli.tests.benchmarks
    poli.tests.docs_examples
    poli.tests.registry
    poli.tests.test_core_promises

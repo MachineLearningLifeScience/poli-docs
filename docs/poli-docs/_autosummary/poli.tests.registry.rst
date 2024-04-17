@@ -1,4 +1,4 @@
-﻿poli.tests.registry
+poli.tests.registry
 ===================
 
 .. automodule:: poli.tests.registry

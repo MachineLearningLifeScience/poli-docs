@@ -1,4 +1,4 @@
-﻿poli.core.exceptions
+poli.core.exceptions
 ====================
 
 .. automodule:: poli.core.exceptions

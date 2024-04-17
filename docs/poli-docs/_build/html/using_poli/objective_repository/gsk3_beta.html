@@ -237,9 +237,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../api.html">API documentation for poli</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../_autosummary/poli.core.html">poli.core</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.abstract_benchmark.html">poli.core.abstract_benchmark</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.abstract_black_box.html">poli.core.abstract_black_box</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.abstract_isolated_function.html">poli.core.abstract_isolated_function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.abstract_problem_factory.html">poli.core.abstract_problem_factory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.benchmark_information.html">poli.core.benchmark_information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.black_box_information.html">poli.core.black_box_information</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.chemistry.tdc_black_box.html">poli.core.chemistry.tdc_black_box</a></li>
@@ -720,7 +722,7 @@ document.write(`
 <img alt="Environment to run this objective function: poli tdc" src="https://img.shields.io/badge/Environment-poli____tdc-teal" /></p>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
-<p>An interface to <a class="reference external" href="https://tdcommons.ai/functions/oracles/#glycogen-synthase-kinase-3-beta-gsk3%CE%B2">the Therapeutics Data Common’s oracle GSK3β</a> <span id="id1">[<a class="reference internal" href="../../bibliography.html#id5" title="Kexin Huang, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. Therapeutics data commons: machine learning datasets and tasks for drug discovery and development. Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks, 2021.">Huang <em>et al.</em>, 2021</a>]</span>. The underlying black box is actually using a trained random forest for classification <span id="id2">[<a class="reference internal" href="../../bibliography.html#id27" title="Wengong Jin, Regina Barzilay, and Tommi Jaakkola. Multi-objective molecule generation using interpretable substructures. Proceedings of the 37 th International Conference on Machine Learning PMLR, 2020.">Jin <em>et al.</em>, 2020</a>, <a class="reference internal" href="../../bibliography.html#id26" title="Yibo Li, Liangren Zhang, and Zhenming Liu. Multi-objective de novo drug design with conditional graph generative model. Journal of Cheminformatics, 10(1):33, July 2018. doi:10.1186/s13321-018-0287-6.">Li <em>et al.</em>, 2018</a>]</span>.</p>
+<p>An interface to <a class="reference external" href="https://tdcommons.ai/functions/oracles/#glycogen-synthase-kinase-3-beta-gsk3%CE%B2">the Therapeutics Data Common’s oracle GSK3β</a> <span id="id1">[<a class="reference internal" href="../../bibliography.html#id5" title="Kexin Huang, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. Therapeutics data commons: machine learning datasets and tasks for drug discovery and development. Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks, 2021.">Huang <em>et al.</em>, 2021</a>]</span>. The underlying black box is actually using a trained random forest for classification <span id="id2">[<a class="reference internal" href="../../bibliography.html#id27" title="Wengong Jin, Regina Barzilay, and Tommi Jaakkola. Multi-objective molecule generation using interpretable substructures. Proceedings of the 37 th International Conference on Machine Learning PMLR, 2020.">Jin <em>et al.</em>, 2020</a>, <a class="reference internal" href="../../bibliography.html#id26" title="Yibo Li, Liangren Zhang, and Zhenming Liu. Multi-objective de novo drug design with conditional graph generative model. Journal of Cheminformatics, 10(1):33, July 2018. doi:10.1186/s13321-018-0287-6.">Li <em>et al.</em>, 2018</a>]</span>. This objective function is part of the Practical molecular Optimization benchmark <span id="id3">[]</span>.</p>
 </section>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
@@ -762,53 +764,66 @@ References as text</label><div class="sd-tab-content docutils">
 <p>[1] Li, Yibo, Liangren Zhang, and Zhenming Liu. “Multi-Objective de Novo Drug Design with Conditional Graph Generative Model.” Journal of Cheminformatics 10, no. 1 (July 24, 2018): 33. <a class="reference external" href="https://doi.org/10.1186/s13321-018-0287-6">https://doi.org/10.1186/s13321-018-0287-6</a>.</p>
 <p>[2] Jin, Wengong, Regina Barzilay, and Tommi Jaakkola. “Multi-Objective Molecule Generation Using Interpretable Substructures.” Proceedings of the 37 Th International Conference on Machine Learning PMLR 119 (2020).</p>
 <p>[3] Huang, Kexin, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. “Therapeutics Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development.” Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks, 2021.</p>
-<p>[4] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+<p>[4] Gao, Wenhao, Tianfan Fu, Jimeng Sun, and Connor W. Coley.
+“Sample Efficiency Matters: A Benchmark for Practical Molecular Optimization,” 2022.
+<a class="reference external" href="https://openreview.net/forum?id=yCZRdI0Y7G">https://openreview.net/forum?id=yCZRdI0Y7G</a>.</p>
+<p>[5] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 References as <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code></label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="nd">@article</span><span class="p">{</span><span class="n">Li</span><span class="p">:</span><span class="n">MOConditional</span><span class="p">:</span><span class="mi">2018</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Multi</span><span class="o">-</span><span class="n">objective</span> <span class="n">de</span> <span class="n">novo</span> <span class="n">drug</span> <span class="n">design</span> <span class="k">with</span> <span class="n">conditional</span> <span class="n">graph</span> <span class="n">generative</span> <span class="n">model</span><span class="p">},</span>
-  <span class="n">volume</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">},</span>
-  <span class="n">ISSN</span><span class="o">=</span><span class="p">{</span><span class="mi">1758</span><span class="o">-</span><span class="mi">2946</span><span class="p">},</span>
-  <span class="n">DOI</span><span class="o">=</span><span class="p">{</span><span class="mf">10.1186</span><span class="o">/</span><span class="n">s13321</span><span class="o">-</span><span class="mi">018</span><span class="o">-</span><span class="mi">0287</span><span class="o">-</span><span class="mi">6</span><span class="p">},</span>
-  <span class="n">number</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span>
-  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Journal</span> <span class="n">of</span> <span class="n">Cheminformatics</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Li</span><span class="p">,</span> <span class="n">Yibo</span> <span class="ow">and</span> <span class="n">Zhang</span><span class="p">,</span> <span class="n">Liangren</span> <span class="ow">and</span> <span class="n">Liu</span><span class="p">,</span> <span class="n">Zhenming</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2018</span><span class="p">},</span>
-  <span class="n">month</span><span class="o">=</span><span class="n">jul</span><span class="p">,</span>
-  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">33</span><span class="p">},</span>
-  <span class="n">language</span><span class="o">=</span><span class="p">{</span><span class="n">en</span><span class="p">}</span>
-<span class="p">}</span>
+@article{Li:MOConditional:2018,
+  title={Multi-objective de novo drug design with conditional graph generative model},
+  volume={10},
+  ISSN={1758-2946},
+  DOI={10.1186/s13321-018-0287-6},
+  number={1},
+  journal={Journal of Cheminformatics},
+  author={Li, Yibo and Zhang, Liangren and Liu, Zhenming},
+  year={2018},
+  month=jul,
+  pages={33},
+  language={en}
+}
 
 
-<span class="nd">@article</span><span class="p">{</span><span class="n">Jin</span><span class="p">:</span><span class="n">MOInterpretable</span><span class="p">:</span><span class="mi">2020</span><span class="p">,</span>
-     <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Multi</span><span class="o">-</span><span class="n">Objective</span> <span class="n">Molecule</span> <span class="n">Generation</span> <span class="n">using</span> <span class="n">Interpretable</span> <span class="n">Substructures</span><span class="p">},</span>
-     <span class="n">volume</span><span class="o">=</span><span class="p">{</span><span class="mi">119</span><span class="p">},</span>
-     <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Proceedings</span> <span class="n">of</span> <span class="n">the</span> <span class="mi">37</span> <span class="n">th</span> <span class="n">International</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Machine</span> <span class="n">Learning</span> <span class="n">PMLR</span><span class="p">},</span>
-     <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Jin</span><span class="p">,</span> <span class="n">Wengong</span> <span class="ow">and</span> <span class="n">Barzilay</span><span class="p">,</span> <span class="n">Regina</span> <span class="ow">and</span> <span class="n">Jaakkola</span><span class="p">,</span> <span class="n">Tommi</span><span class="p">},</span>
-     <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2020</span><span class="p">},</span>
-     <span class="n">language</span><span class="o">=</span><span class="p">{</span><span class="n">en</span><span class="p">}</span>
-<span class="p">}</span>
+@article{Jin:MOInterpretable:2020,
+     title={Multi-Objective Molecule Generation using Interpretable Substructures},
+     volume={119},
+     journal={Proceedings of the 37 th International Conference on Machine Learning PMLR},
+     author={Jin, Wengong and Barzilay, Regina and Jaakkola, Tommi},
+     year={2020},
+     language={en}
+}
 
 
-<span class="nd">@article</span><span class="p">{</span><span class="n">Huang</span><span class="p">:</span><span class="n">TDC</span><span class="p">:</span><span class="mi">2021</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Therapeutics</span> <span class="n">Data</span> <span class="n">Commons</span><span class="p">:</span> <span class="n">Machine</span> <span class="n">Learning</span> <span class="n">Datasets</span> <span class="ow">and</span> <span class="n">Tasks</span> <span class="k">for</span> <span class="n">Drug</span> <span class="n">Discovery</span> <span class="ow">and</span> <span class="n">Development</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Huang</span><span class="p">,</span> <span class="n">Kexin</span> <span class="ow">and</span> <span class="n">Fu</span><span class="p">,</span> <span class="n">Tianfan</span> <span class="ow">and</span> <span class="n">Gao</span><span class="p">,</span> <span class="n">Wenhao</span> <span class="ow">and</span> <span class="n">Zhao</span><span class="p">,</span> <span class="n">Yue</span> <span class="ow">and</span> <span class="n">Roohani</span><span class="p">,</span> <span class="n">Yusuf</span> <span class="ow">and</span> <span class="n">Leskovec</span><span class="p">,</span> <span class="n">Jure</span> <span class="ow">and</span> <span class="n">Coley</span><span class="p">,</span>
-          <span class="n">Connor</span> <span class="n">W</span> <span class="ow">and</span> <span class="n">Xiao</span><span class="p">,</span> <span class="n">Cao</span> <span class="ow">and</span> <span class="n">Sun</span><span class="p">,</span> <span class="n">Jimeng</span> <span class="ow">and</span> <span class="n">Zitnik</span><span class="p">,</span> <span class="n">Marinka</span><span class="p">},</span>
-  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Proceedings</span> <span class="n">of</span> <span class="n">Neural</span> <span class="n">Information</span> <span class="n">Processing</span> <span class="n">Systems</span><span class="p">,</span> <span class="n">NeurIPS</span> <span class="n">Datasets</span> <span class="ow">and</span> <span class="n">Benchmarks</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2021</span><span class="p">}</span>
-<span class="p">}</span>
+@article{Huang:TDC:2021,
+  title={Therapeutics Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development},
+  author={Huang, Kexin and Fu, Tianfan and Gao, Wenhao and Zhao, Yue and Roohani, Yusuf and Leskovec, Jure and Coley,
+          Connor W and Xiao, Cao and Sun, Jimeng and Zitnik, Marinka},
+  journal={Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks},
+  year={2021}
+}
 
-<span class="nd">@software</span><span class="p">{</span><span class="n">Gonzalez</span><span class="o">-</span><span class="n">Duque</span><span class="p">:</span><span class="n">poli</span><span class="p">:</span><span class="mi">2024</span><span class="p">,</span>
-<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">González</span><span class="o">-</span><span class="n">Duque</span><span class="p">,</span> <span class="n">Miguel</span> <span class="ow">and</span> <span class="n">Bartels</span><span class="p">,</span> <span class="n">Simon</span> <span class="ow">and</span> <span class="n">Michael</span><span class="p">,</span> <span class="n">Richard</span><span class="p">},</span>
-<span class="n">month</span> <span class="o">=</span> <span class="n">jan</span><span class="p">,</span>
-<span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">poli</span><span class="p">:</span> <span class="n">a</span> <span class="n">libary</span> <span class="n">of</span> <span class="n">discrete</span> <span class="n">sequence</span> <span class="n">objectives</span><span class="p">}},</span>
-<span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MachineLearningLifeScience</span><span class="o">/</span><span class="n">poli</span><span class="p">},</span>
-<span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0.1</span><span class="p">},</span>
-<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2024</span><span class="p">}</span>
-<span class="p">}</span>
+ @inproceedings{Gao:PMO:2022,
+    title={Sample Efficiency Matters: A Benchmark for Practical Molecular Optimization},
+    url={https://openreview.net/forum?id=yCZRdI0Y7G},
+    author={Gao, Wenhao and Fu, Tianfan and Sun, Jimeng and Coley, Connor W.},
+    year={2022},
+    month=jun,
+    language={en}
+}
+
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
 
 </pre></div>
 </div>

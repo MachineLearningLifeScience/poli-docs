@@ -6,7 +6,7 @@
 
 ## About
 
-This objective function computes the docking score of a small molecule (provided as a SMILES/SELFIES string) to the Dopamine Type 2 receptor. The underlying black box is actually using a trained random forest for classification {cite:p}`Olivecrona:DeNovoRL:2017`. We compute it using [the Therapeutics Data Common's oracle](https://tdcommons.ai/functions/oracles/#similaritydissimilarity) {cite:p}`Huang:TDC:2021`.
+This objective function computes the docking score of a small molecule (provided as a SMILES/SELFIES string) to the Dopamine Type 2 receptor. The underlying black box is actually using a trained random forest for classification {cite:p}`Olivecrona:DeNovoRL:2017`. We compute it using [the Therapeutics Data Common's oracle](https://tdcommons.ai/functions/oracles/#similaritydissimilarity) {cite:p}`Huang:TDC:2021`. This objective function is part of the Practical molecular Optimization benchmark {cite:p}`Gao:PMO:2022`.
 
 ## Prerequisites
 
@@ -50,6 +50,10 @@ If you use this black box, we expect that you cite the following resources:
 
 [2] Huang, Kexin, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. “Therapeutics Data Commons: Machine Learning Datasets and Tasks for Drug Discovery and Development.” Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks, 2021.
 
+[3] Gao, Wenhao, Tianfan Fu, Jimeng Sun, and Connor W. Coley.
+    “Sample Efficiency Matters: A Benchmark for Practical Molecular Optimization,” 2022.
+    https://openreview.net/forum?id=yCZRdI0Y7G.
+
 [3] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
 
 
@@ -81,6 +85,17 @@ If you use this black box, we expect that you cite the following resources:
   journal={Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks},
   year={2021}
 }
+
+
+ @inproceedings{Gao:PMO:2022,
+    title={Sample Efficiency Matters: A Benchmark for Practical Molecular Optimization},
+    url={https://openreview.net/forum?id=yCZRdI0Y7G},
+    author={Gao, Wenhao and Fu, Tianfan and Sun, Jimeng and Coley, Connor W.},
+    year={2022},
+    month=jun,
+    language={en}
+}
+
 
 @software{Gonzalez-Duque:poli:2024,
 author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
