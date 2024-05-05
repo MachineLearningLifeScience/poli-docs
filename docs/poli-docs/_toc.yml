@@ -57,20 +57,21 @@ parts:
       - file: using_poli_baselines/cma_es.md
       - file: using_poli_baselines/bayesian_optimization.md
       - file: using_poli_baselines/line_bayesian_optimization.md
+      - file: using_poli_baselines/hvarfners_vanilla_bo.md
   - caption: "Observers"
     chapters:
-    - file: observers/registering_an_observer.md
+      - file: observers/registering_an_observer.md
   - caption: "Contributing"
     chapters:
-    - file: contributing/a_new_problem.md
-    - file: contributing/a_new_solver.md
+      - file: contributing/a_new_problem.md
+      - file: contributing/a_new_solver.md
   - caption: "API reference"
     chapters:
-    - file: api.rst
+      - file: api.rst
   - caption: "Bibliography"
     chapters:
-    - file: bibliography.md
+      - file: bibliography.md
   - caption: "Appendix: Understanding foldx"
     chapters:
-    - file: understanding_foldx/00-installing-foldx.md
-    - file: understanding_foldx/01-single-mutation-using-foldx/index.ipynb
+      - file: understanding_foldx/00-installing-foldx.md
+      - file: understanding_foldx/01-single-mutation-using-foldx/index.ipynb

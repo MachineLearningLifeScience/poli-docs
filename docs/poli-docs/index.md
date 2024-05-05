@@ -299,6 +299,13 @@ A vanilla implementation of Bayesian Optimization using `botorch`.
 A version of Bayesian Optimization where the acquisition is optimized over a line.
 :::
 
+:::{grid-item-card} Hvarfner's Vanilla Bayesian Optimization
+:link: ./using_poli_baselines/hvarfners_vanilla_bo.html
+:columns: 6
+
+Bayesian Optimization with log-expected improvement and a dimensionality-dependent prior over the lengthscales.
+
+:::
 ::::
 
 ## Cite us and other relevant work

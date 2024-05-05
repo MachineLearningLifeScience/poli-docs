@@ -29,6 +29,8 @@
       easom
       egg_holder
       hartmann_6d
+      levy
+      rosenbrock
       shifted_sphere
       styblinski_tang
    
