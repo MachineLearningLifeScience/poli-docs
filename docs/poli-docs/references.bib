@@ -538,3 +538,38 @@
   archivePrefix = {arXiv},
   primaryClass = {cs.LG},
 }
+
+
+@inproceedings{Eriksson:saasbo:2021,
+  title = {High-dimensional {Bayesian} optimization with sparse axis-aligned
+           subspaces},
+  author = {Eriksson, David and Jankowiak, Martin},
+  booktitle = {Proceedings of the Thirty-Seventh Conference on Uncertainty in
+               Artificial Intelligence},
+  pages = {493--503},
+  year = {2021},
+  editor = {de Campos, Cassio and Maathuis, Marloes H.},
+  volume = {161},
+  series = {Proceedings of Machine Learning Research},
+  month = {27--30 Jul},
+  publisher = {PMLR},
+  pdf = {https://proceedings.mlr.press/v161/eriksson21a/eriksson21a.pdf},
+  url = {https://proceedings.mlr.press/v161/eriksson21a.html},
+  abstract = {Bayesian optimization (BO) is a powerful paradigm for efficient
+              optimization of black-box objective functions. High-dimensional BO
+              presents a particular challenge, in part because the curse of
+              dimensionality makes it difficult to define—as well as do inference
+              over—a suitable class of surrogate models. We argue that Gaussian
+              process surrogate models defined on sparse axis-aligned subspaces
+              offer an attractive compromise between flexibility and parsimony.
+              We demonstrate that our approach, which relies on Hamiltonian Monte
+              Carlo for inference, can rapidly identify sparse subspaces relevant
+              to modeling the unknown objective function, enabling
+              sample-efficient high-dimensional BO. In an extensive suite of
+              experiments comparing to existing methods for high-dimensional BO
+              we demonstrate that our algorithm, Sparse Axis-Aligned Subspace BO
+              (SAASBO), achieves excellent performance on several synthetic and
+              real-world problems without the need to set problem-specific
+              hyperparameters.},
+}
+

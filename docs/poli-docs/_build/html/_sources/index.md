@@ -306,6 +306,15 @@ A version of Bayesian Optimization where the acquisition is optimized over a lin
 Bayesian Optimization with log-expected improvement and a dimensionality-dependent prior over the lengthscales.
 
 :::
+
+:::{grid-item-card} Sparse Axis-Aligned Subspace Bayesian Optimization (SAASBO) 
+:link: ./using_poli_baselines/saasbo.html
+:columns: 6
+
+Eriksson and Jankowiak's SAASBO, using `Ax`.
+
+:::
+
 ::::
 
 ## Cite us and other relevant work

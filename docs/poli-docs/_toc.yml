@@ -58,6 +58,7 @@ parts:
       - file: using_poli_baselines/bayesian_optimization.md
       - file: using_poli_baselines/line_bayesian_optimization.md
       - file: using_poli_baselines/hvarfners_vanilla_bo.md
+      - file: using_poli_baselines/saasbo.md
   - caption: "Observers"
     chapters:
       - file: observers/registering_an_observer.md
