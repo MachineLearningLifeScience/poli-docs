@@ -225,8 +225,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/random_mutations.html">Random mutations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/cma_es.html">CMA-ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/bayesian_optimization.html">Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/hvarfners_vanilla_bo.html">Hvarfner’s Vanilla Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/saasbo.html">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/alebo.html">Adaptive Linear Embedding Bayesian Optimization (ALEBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/turbo.html">Trust Region Bayesian Optimization (Turbo)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/baxus.html">Adaptively expanding subspaces (BAxUS)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul class="nav bd-sidenav">
@@ -267,6 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -725,6 +730,12 @@ document.write(`
 <dt class="label" id="id13"><span class="brackets">DPAM02</span></dt>
 <dd><p>K. Deb, A. Pratap, S. Agarwal, and T. Meyarivan. A fast and elitist multiobjective genetic algorithm: nsga-ii. <em>IEEE Transactions on Evolutionary Computation</em>, 6(2):182–197, April 2002. <a class="reference external" href="https://doi.org/10.1109/4235.996017">doi:10.1109/4235.996017</a>.</p>
 </dd>
+<dt class="label" id="id33"><span class="brackets">EJ21</span></dt>
+<dd><p>David Eriksson and Martin Jankowiak. High-dimensional Bayesian optimization with sparse axis-aligned subspaces. In Cassio de Campos and Marloes H. Maathuis, editors, <em>Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence</em>, volume 161 of Proceedings of Machine Learning Research, 493–503. PMLR, 27–30 Jul 2021. URL: <a class="reference external" href="https://proceedings.mlr.press/v161/eriksson21a.html">https://proceedings.mlr.press/v161/eriksson21a.html</a>.</p>
+</dd>
+<dt class="label" id="id35"><span class="brackets">EPG+19</span></dt>
+<dd><p>David Eriksson, Michael Pearce, Jacob Gardner, Ryan D Turner, and Matthias Poloczek. Scalable global optimization via local bayesian optimization. In <em>Advances in Neural Information Processing Systems</em>, volume 32. Curran Associates, Inc., 2019. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2019/hash/6c990b7aca7bc7058f5e98ea909e924b-Abstract.html">https://proceedings.neurips.cc/paper/2019/hash/6c990b7aca7bc7058f5e98ea909e924b-Abstract.html</a>.</p>
+</dd>
 <dt class="label" id="id28"><span class="brackets">ES09</span></dt>
 <dd><p>Peter Ertl and Ansgar Schuffenhauer. Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions. <em>Journal of Cheminformatics</em>, 1(1):8, June 2009. <a class="reference external" href="https://doi.org/10.1186/1758-2946-1-8">doi:10.1186/1758-2946-1-8</a>.</p>
 </dd>
@@ -746,8 +757,11 @@ document.write(`
 <dt class="label" id="id5"><span class="brackets">HFG+21</span></dt>
 <dd><p>Kexin Huang, Tianfan Fu, Wenhao Gao, Yue Zhao, Yusuf Roohani, Jure Leskovec, Connor W Coley, Cao Xiao, Jimeng Sun, and Marinka Zitnik. Therapeutics data commons: machine learning datasets and tasks for drug discovery and development. <em>Proceedings of Neural Information Processing Systems, NeurIPS Datasets and Benchmarks</em>, 2021.</p>
 </dd>
+<dt class="label" id="id32"><span class="brackets">HHN24</span></dt>
+<dd><p>Carl Hvarfner, Erik Orm Hellsten, and Luigi Nardi. Vanilla bayesian optimization performs great in high dimensions. 2024. <a class="reference external" href="https://arxiv.org/abs/2402.02229">arXiv:2402.02229</a>.</p>
+</dd>
 <dt class="label" id="id21"><span class="brackets">JRHernandezGarcia+23</span></dt>
-<dd><p>Moksh Jain, Sharath Chandra Raparthy, Alex Hernández-Garc\'ıa, Jarrid Rector-Brooks, Yoshua Bengio, Santiago Miret, and Emmanuel Bengio. Multi-objective GFlowNets. In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, <em>Proceedings of the 40th International Conference on Machine Learning</em>, volume 202 of Proceedings of Machine Learning Research, 14631–14653. PMLR, 23–29 Jul 2023. URL: <a class="reference external" href="https://proceedings.mlr.press/v202/jain23a.html">https://proceedings.mlr.press/v202/jain23a.html</a>.</p>
+<dd><p>Moksh Jain, Sharath Chandra Raparthy, Alex Hernández-Garc\' ıa, Jarrid Rector-Brooks, Yoshua Bengio, Santiago Miret, and Emmanuel Bengio. Multi-objective GFlowNets. In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, <em>Proceedings of the 40th International Conference on Machine Learning</em>, volume 202 of Proceedings of Machine Learning Research, 14631–14653. PMLR, 23–29 Jul 2023. URL: <a class="reference external" href="https://proceedings.mlr.press/v202/jain23a.html">https://proceedings.mlr.press/v202/jain23a.html</a>.</p>
 </dd>
 <dt class="label" id="id27"><span class="brackets">JBJ20</span></dt>
 <dd><p>Wengong Jin, Regina Barzilay, and Tommi Jaakkola. Multi-objective molecule generation using interpretable substructures. <em>Proceedings of the 37 th International Conference on Machine Learning PMLR</em>, 2020.</p>
@@ -758,11 +772,17 @@ document.write(`
 <dt class="label" id="id16"><span class="brackets">KMH+19</span></dt>
 <dd><p>Johannes Kirschner, Mojmir Mutny, Nicole Hiller, Rasmus Ischebeck, and Andreas Krause. Adaptive and safe bayesian optimization in high dimensions via one-dimensional subspaces. In <em>Proceedings of the 36th International Conference on Machine Learning</em>, 3429–3438. PMLR, May 2019. URL: <a class="reference external" href="https://proceedings.mlr.press/v97/kirschner19a.html">https://proceedings.mlr.press/v97/kirschner19a.html</a>.</p>
 </dd>
+<dt class="label" id="id34"><span class="brackets">LCRB20</span></dt>
+<dd><p>Ben Letham, Roberto Calandra, Akshara Rai, and Eytan Bakshy. Re-examining linear embeddings for high-dimensional bayesian optimization. In <em>Advances in Neural Information Processing Systems</em>, volume 33, 1546–1558. Curran Associates, Inc., 2020. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2020/hash/10fb6cfa4c990d2bad5ddef4f70e8ba2-Abstract.html">https://proceedings.neurips.cc/paper/2020/hash/10fb6cfa4c990d2bad5ddef4f70e8ba2-Abstract.html</a>.</p>
+</dd>
 <dt class="label" id="id26"><span class="brackets">LZL18</span></dt>
 <dd><p>Yibo Li, Liangren Zhang, and Zhenming Liu. Multi-objective de novo drug design with conditional graph generative model. <em>Journal of Cheminformatics</em>, 10(1):33, July 2018. <a class="reference external" href="https://doi.org/10.1186/s13321-018-0287-6">doi:10.1186/s13321-018-0287-6</a>.</p>
 </dd>
 <dt class="label" id="id6"><span class="brackets">OBEC17</span></dt>
 <dd><p>Marcus Olivecrona, Thomas Blaschke, Ola Engkvist, and Hongming Chen. Molecular de-novo design through deep reinforcement learning. <em>Journal of Cheminformatics</em>, 9(1):48, September 2017. <a class="reference external" href="https://doi.org/10.1186/s13321-017-0235-x">doi:10.1186/s13321-017-0235-x</a>.</p>
+</dd>
+<dt class="label" id="id36"><span class="brackets">PNP22</span></dt>
+<dd><p><strong>missing booktitle in Papenmeier:BAxUS:2022</strong></p>
 </dd>
 <dt class="label" id="id29"><span class="brackets">PZSL+20</span></dt>
 <dd><p><strong>missing journal in Polykovskiy:MOSES:2020</strong></p>

@@ -287,16 +287,32 @@ Optimizing a discrete sequence by performing random mutations
 An evolutionary strategy for continuous problems
 :::
 
-:::{grid-item-card} Bayesian Optimization
-:link: ./using_poli_baselines/latent_space_bo.html
-:columns: 6
-A vanilla implementation of Bayesian Optimization using `botorch`.
-:::
-
 :::{grid-item-card} Line Bayesian Optimization
 :link: ./using_poli_baselines/latent_space_bo.html
 :columns: 6
 A version of Bayesian Optimization where the acquisition is optimized over a line.
+:::
+
+:::{grid-item-card} Hvarfner's Vanilla Bayesian Optimization
+:link: ./using_poli_baselines/hvarfners_vanilla_bo.html
+:columns: 6
+
+Bayesian Optimization with log-expected improvement and a dimensionality-dependent prior over the lengthscales.
+
+:::
+
+:::{grid-item-card} Sparse Axis-Aligned Subspace Bayesian Optimization (SAASBO) 
+:link: ./using_poli_baselines/saasbo.html
+:columns: 6
+
+Eriksson and Jankowiak's SAASBO, using `Ax`.
+:::
+
+:::{grid-item-card} Adaptive expanding subspaces (BAxUS) 
+:link: ./using_poli_baselines/baxus.html
+:columns: 6
+
+Papenmeier et al's BAxUS, using their official implementation.
 :::
 
 ::::

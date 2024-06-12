@@ -224,8 +224,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/random_mutations.html">Random mutations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/cma_es.html">CMA-ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/bayesian_optimization.html">Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/hvarfners_vanilla_bo.html">Hvarfner’s Vanilla Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/saasbo.html">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/alebo.html">Adaptive Linear Embedding Bayesian Optimization (ALEBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/turbo.html">Trust Region Bayesian Optimization (Turbo)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/baxus.html">Adaptively expanding subspaces (BAxUS)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul class="nav bd-sidenav">
@@ -266,6 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -1208,6 +1213,8 @@ document.write(`
 </li>
         <li><a href="_autosummary/poli.core.util.isolation.isolated_black_box.html#module-poli.core.util.isolation.isolated_black_box">poli.core.util.isolation.isolated_black_box</a>
 </li>
+        <li><a href="_autosummary/poli.core.util.multi_observer.html#module-poli.core.util.multi_observer">poli.core.util.multi_observer</a>
+</li>
         <li><a href="_autosummary/poli.core.util.objective_management.html#module-poli.core.util.objective_management">poli.core.util.objective_management</a>
 </li>
         <li><a href="_autosummary/poli.core.util.objective_management.make_run_script.html#module-poli.core.util.objective_management.make_run_script">poli.core.util.objective_management.make_run_script</a>
@@ -1888,6 +1895,13 @@ document.write(`
 </li>
       </ul></li>
       <li>
+    poli.core.util.multi_observer
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.multi_observer.html#module-poli.core.util.multi_observer">module</a>
+</li>
+      </ul></li>
+      <li>
     poli.core.util.objective_management
 
       <ul>
@@ -2335,6 +2349,8 @@ document.write(`
         <li><a href="_autosummary/poli.objective_repository.gfp_cbas.isolated_function.html#module-poli.objective_repository.gfp_cbas.isolated_function">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     poli.objective_repository.gfp_cbas.make_vae
 
@@ -2342,8 +2358,6 @@ document.write(`
         <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.html#module-poli.objective_repository.gfp_cbas.make_vae">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     poli.objective_repository.gfp_cbas.register
 
