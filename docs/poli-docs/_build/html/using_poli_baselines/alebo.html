@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>ALEBO &#8212; Documentation for poli and poli-baselines</title>
+    <title>Adaptive Linear Embedding Bayesian Optimization (ALEBO) &#8212; Documentation for poli and poli-baselines</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Trust Region Bayesian Optimization (Turbo)" href="turbo.html" />
+    <link rel="prev" title="Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)" href="saasbo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -126,8 +128,6 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -222,13 +222,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/zaleplon_mpo.html">Zaleplon MPO (using TDC)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Optimizers</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="random_mutations.html">Random mutations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cma_es.html">CMA-ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bayesian_optimization.html">Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="hvarfners_vanilla_bo.html">Hvarfner’s Vanilla Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="saasbo.html">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Adaptive Linear Embedding Bayesian Optimization (ALEBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbo.html">Trust Region Bayesian Optimization (Turbo)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baxus.html">Adaptively expanding subspaces (BAxUS)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul class="nav bd-sidenav">
@@ -694,7 +696,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>ALEBO</h1>
+    <h1>Adaptive Linear Embedding Bayesian Optimization (ALEBO)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -707,6 +709,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-more">See more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -718,14 +721,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="alebo">
-<h1>ALEBO<a class="headerlink" href="#alebo" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="adaptive-linear-embedding-bayesian-optimization-alebo">
+<h1>Adaptive Linear Embedding Bayesian Optimization (ALEBO)<a class="headerlink" href="#adaptive-linear-embedding-bayesian-optimization-alebo" title="Permalink to this heading">#</a></h1>
 <p><img alt="Type of optimizer algorithm: continuous inputs" src="https://img.shields.io/badge/Type-continuous_inputs-cyan" />
 <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-ax.yml"><img alt="Ax (py3.10 in conda)" src="https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-ax.yml/badge.svg" /></a></p>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
-<p>This is an implementation of <em>vanilla Bayesian Optimization</em> as described in <span id="id1">[<a class="reference internal" href="../bibliography.html#id32" title="Carl Hvarfner, Erik Orm Hellsten, and Luigi Nardi. Vanilla bayesian optimization performs great in high dimensions. 2024. arXiv:2402.02229.">Hvarfner <em>et al.</em>, 2024</a>]</span>.</p>
-<p>The core differences with standard Bayesian Optimization are threefold: they include a prior on the lengthscales that scales with the dimensionality of the inputs, the use of log-expected improvement instead of the usual expected improvement, and keeping the outputscale constant at 1.</p>
+<p>This is an implementation of <em>Adaptive Linear Embeddings</em> (ALEBO) as described in <span id="id1">[<a class="reference internal" href="../bibliography.html#id34" title="Ben Letham, Roberto Calandra, Akshara Rai, and Eytan Bakshy. Re-examining linear embeddings for high-dimensional bayesian optimization. In Advances in Neural Information Processing Systems, volume 33, 1546-1558. Curran Associates, Inc., 2020. URL: https://proceedings.neurips.cc/paper/2020/hash/10fb6cfa4c990d2bad5ddef4f70e8ba2-Abstract.html.">Letham <em>et al.</em>, 2020</a>]</span>. We use <a class="reference external" href="https://ax.dev/api/_modules/ax/modelbridge/strategies/alebo.html">the model provided by Ax</a>.</p>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
@@ -738,20 +740,21 @@ document.write(`
 
 <span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">ToyContinuousBlackBox</span>
 
-<span class="kn">from</span> <span class="nn">poli_baselines.solvers.bayesian_optimization.vanilla_bo_hvarfner</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">VanillaBOHvarfner</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">poli_baselines.solvers.bayesian_optimization.alebo</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ALEBO</span><span class="p">,</span>
 <span class="p">)</span>
 
 
-<span class="n">f_ackley</span> <span class="o">=</span> <span class="n">ToyContinuousBlackBox</span><span class="p">(</span><span class="n">function_name</span><span class="o">=</span><span class="s2">&quot;ackley_function_01&quot;</span><span class="p">,</span> <span class="n">n_dimensions</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f_ackley</span> <span class="o">=</span> <span class="n">ToyContinuousBlackBox</span><span class="p">(</span><span class="n">function_name</span><span class="o">=</span><span class="s2">&quot;ackley_function_01&quot;</span><span class="p">,</span> <span class="n">n_dimensions</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
 <span class="n">y0</span> <span class="o">=</span> <span class="n">f_ackley</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
 
-<span class="n">bo_solver</span> <span class="o">=</span> <span class="n">VanillaBOHvarfner</span><span class="p">(</span>
+<span class="n">bo_solver</span> <span class="o">=</span> <span class="n">ALEBO</span><span class="p">(</span>
     <span class="n">black_box</span><span class="o">=</span><span class="n">f_ackley</span><span class="p">,</span>
     <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
     <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span>
+    <span class="n">lower_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># It&#39;s necessary to specify the assumed effective dim.</span>
 <span class="p">)</span>
 
 <span class="n">bo_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -761,9 +764,51 @@ document.write(`
 <section id="see-more">
 <h2>See more<a class="headerlink" href="#see-more" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
+<li><p>The original reference: <a class="reference external" href="https://proceedings.neurips.cc/paper/2020/file/10fb6cfa4c990d2bad5ddef4f70e8ba2-Paper.pdf"><em>Re-Examining Linear Embeddings for High-Dimensional Bayesian Optimization</em></a>.</p></li>
 <li><p><a class="reference external" href="https://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf"><em>Taking the human out of the loop</em></a> is a great tutorial of Bayesian Optimization <span id="id2">[<a class="reference internal" href="../bibliography.html#id15" title="Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan P. Adams, and Nando De Freitas. Taking the human out of the loop: a review of bayesian optimization. Proceedings of the IEEE, 104(1):148–175, January 2016. doi:10.1109/JPROC.2015.2494218.">Shahriari <em>et al.</em>, 2016</a>]</span>.</p></li>
 <li><p>Since <code class="docutils literal notranslate"><span class="pre">poli</span></code> works mostly on discrete inputs, this baseline is implemented with the intention of optimizing in the latent spaces of deep generative models like Generative Adversarial Networks (GANs) or Variational Autoencoders (VAEs) <span id="id3">[<a class="reference internal" href="../bibliography.html#id19" title="Rafael Gómez-Bombarelli, Jennifer N. Wei, David Duvenaud, José Miguel Hernández-Lobato, Benjamín Sánchez-Lengeling, Dennis Sheberla, Jorge Aguilera-Iparraguirre, Timothy D. Hirzel, Ryan P. Adams, and Alán Aspuru-Guzik. Automatic chemical design using a data-driven continuous representation of molecules. ACS Central Science, 4(2):268–276, February 2018. doi:10.1021/acscentsci.7b00572.">Gómez-Bombarelli <em>et al.</em>, 2018</a>]</span>.</p></li>
 </ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>If you use this solver, we expect that you cite the following resources:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+References as text</label><div class="sd-tab-content docutils">
+<p>[1] Letham, B., Calandra, R., Rai, A., &amp; Bakshy, E. (2020). Re-Examining Linear Embeddings for High-Dimensional Bayesian Optimization. Advances in Neural Information Processing Systems, 33, 1546–1558. <a class="reference external" href="https://proceedings.neurips.cc/paper/2020/hash/10fb6cfa4c990d2bad5ddef4f70e8ba2-Abstract.html">https://proceedings.neurips.cc/paper/2020/hash/10fb6cfa4c990d2bad5ddef4f70e8ba2-Abstract.html</a></p>
+<p>[2] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+References as <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+@inproceedings{Letham:ALEBO:2020,
+     title={Re-Examining Linear Embeddings for High-Dimensional Bayesian Optimization},
+     volume={33},
+     url={https://proceedings.neurips.cc/paper/2020/hash/10fb6cfa4c990d2bad5ddef4f70e8ba2-Abstract.html},
+     booktitle={Advances in Neural Information Processing Systems},
+     publisher={Curran Associates, Inc.},
+     author={Letham, Ben and Calandra, Roberto and Rai, Akshara and Bakshy, Eytan},
+     year={2020},
+     pages={1546–1558}
+}
+
+
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -797,6 +842,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="saasbo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="turbo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Trust Region Bayesian Optimization (Turbo)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -816,6 +879,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-more">See more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

@@ -226,10 +226,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/random_mutations.html">Random mutations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/cma_es.html">CMA-ES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/bayesian_optimization.html">Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/hvarfners_vanilla_bo.html">Hvarfner’s Vanilla Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/saasbo.html">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/alebo.html">Adaptive Linear Embedding Bayesian Optimization (ALEBO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/turbo.html">Trust Region Bayesian Optimization (Turbo)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/baxus.html">Adaptively expanding subspaces (BAxUS)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul class="nav bd-sidenav">
@@ -1125,15 +1127,6 @@ CMA-ES</div>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Bayesian Optimization</div>
-<p class="sd-card-text">A vanilla implementation of Bayesian Optimization using <code class="docutils literal notranslate"><span class="pre">botorch</span></code>.</p>
-</div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/latent_space_bo.html"></a></div>
-</div>
-<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
 Line Bayesian Optimization</div>
 <p class="sd-card-text">A version of Bayesian Optimization where the acquisition is optimized over a line.</p>
 </div>
@@ -1156,6 +1149,15 @@ Sparse Axis-Aligned Subspace Bayesian Optimization (SAASBO) </div>
 <p class="sd-card-text">Eriksson and Jankowiak’s SAASBO, using <code class="docutils literal notranslate"><span class="pre">Ax</span></code>.</p>
 </div>
 <a class="sd-stretched-link reference external" href="./using_poli_baselines/saasbo.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Adaptive expanding subspaces (BAxUS) </div>
+<p class="sd-card-text">Papenmeier et al’s BAxUS, using their official implementation.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli_baselines/baxus.html"></a></div>
 </div>
 </div>
 </div>
