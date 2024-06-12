@@ -269,6 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -706,6 +707,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-more">See more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -723,7 +725,7 @@ document.write(`
 <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-ax.yml"><img alt="Ax (py3.10 in conda)" src="https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-ax.yml/badge.svg" /></a></p>
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
-<p>This is an implementation of <em>vanilla Bayesian Optimization</em> as described in <span id="id1">[<a class="reference internal" href="../bibliography.html#id32" title="Carl Hvarfner, Erik Orm Hellsten, and Luigi Nardi. Vanilla bayesian optimization performs great in high dimensions. 2024. arXiv:2402.02229.">Hvarfner <em>et al.</em>, 2024</a>]</span>.</p>
+<p>This is an implementation of <em>vanilla Bayesian Optimization</em> as described in <span id="id1">[<a class="reference internal" href="../bibliography.html#id32" title="Carl Hvarfner, Erik Orm Hellsten, and Luigi Nardi. Vanilla bayesian optimization performs great in high dimensions. 2024. arXiv:2402.02229.">Hvarfner <em>et al.</em>, 2024</a>]</span>. We adapt the <a class="reference external" href="https://github.com/hvarfner/vanilla_bo_in_highdim">official GitHub implementation</a>, which relies on Ax, to our interface.</p>
 <p>The core differences with standard Bayesian Optimization are threefold: they include a prior on the lengthscales that scales with the dimensionality of the inputs, the use of log-expected improvement instead of the usual expected improvement, and keeping the outputscale constant at 1.</p>
 </section>
 <section id="how-to-run">
@@ -751,6 +753,8 @@ document.write(`
     <span class="n">black_box</span><span class="o">=</span><span class="n">f_ackley</span><span class="p">,</span>
     <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
     <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span>
+    <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">),</span>
+    <span class="n">noise_std</span><span class="o">=</span><span class="mf">0.0</span>
 <span class="p">)</span>
 
 <span class="n">bo_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -760,9 +764,51 @@ document.write(`
 <section id="see-more">
 <h2>See more<a class="headerlink" href="#see-more" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
+<li><p>The original reference for this solver: <a class="reference external" href="https://arxiv.org/abs/2402.02229"><em>Vanilla Bayesian Optimization Performs Great in High Dimensions</em></a>.</p></li>
 <li><p><a class="reference external" href="https://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf"><em>Taking the human out of the loop</em></a> is a great tutorial of Bayesian Optimization <span id="id2">[<a class="reference internal" href="../bibliography.html#id15" title="Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan P. Adams, and Nando De Freitas. Taking the human out of the loop: a review of bayesian optimization. Proceedings of the IEEE, 104(1):148–175, January 2016. doi:10.1109/JPROC.2015.2494218.">Shahriari <em>et al.</em>, 2016</a>]</span>.</p></li>
 <li><p>Since <code class="docutils literal notranslate"><span class="pre">poli</span></code> works mostly on discrete inputs, this baseline is implemented with the intention of optimizing in the latent spaces of deep generative models like Generative Adversarial Networks (GANs) or Variational Autoencoders (VAEs) <span id="id3">[<a class="reference internal" href="../bibliography.html#id19" title="Rafael Gómez-Bombarelli, Jennifer N. Wei, David Duvenaud, José Miguel Hernández-Lobato, Benjamín Sánchez-Lengeling, Dennis Sheberla, Jorge Aguilera-Iparraguirre, Timothy D. Hirzel, Ryan P. Adams, and Alán Aspuru-Guzik. Automatic chemical design using a data-driven continuous representation of molecules. ACS Central Science, 4(2):268–276, February 2018. doi:10.1021/acscentsci.7b00572.">Gómez-Bombarelli <em>et al.</em>, 2018</a>]</span>.</p></li>
 </ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>If you use this solver, we expect that you cite the following resources:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+References as text</label><div class="sd-tab-content docutils">
+<p>[1] Hvarfner, C., Hellsten, E. O., &amp; Nardi, L. (2024). Vanilla Bayesian Optimization Performs Great in High Dimensions (arXiv:2402.02229). arXiv. <a class="reference external" href="https://doi.org/10.48550/arXiv.2402.02229">https://doi.org/10.48550/arXiv.2402.02229</a></p>
+<p>[2] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+References as <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="nd">@article</span><span class="p">{</span><span class="n">Hvarfner</span><span class="p">:</span><span class="n">VanillaBO</span><span class="p">:</span><span class="mi">2024</span><span class="p">,</span>
+     <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Vanilla</span> <span class="n">Bayesian</span> <span class="n">Optimization</span> <span class="n">Performs</span> <span class="n">Great</span> <span class="ow">in</span> <span class="n">High</span> <span class="n">Dimensions</span><span class="p">},</span>
+     <span class="n">url</span><span class="o">=</span><span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">arxiv</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="nb">abs</span><span class="o">/</span><span class="mf">2402.02229</span><span class="p">},</span>
+     <span class="n">DOI</span><span class="o">=</span><span class="p">{</span><span class="mf">10.48550</span><span class="o">/</span><span class="n">arXiv</span><span class="mf">.2402.02229</span><span class="p">},</span>
+     <span class="n">note</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span><span class="p">:</span><span class="mf">2402.02229</span> <span class="p">[</span><span class="n">cs</span><span class="p">,</span> <span class="n">stat</span><span class="p">]},</span>
+    <span class="n">number</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span><span class="p">:</span><span class="mf">2402.02229</span><span class="p">},</span>
+    <span class="n">publisher</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span><span class="p">},</span>
+    <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Hvarfner</span><span class="p">,</span> <span class="n">Carl</span> <span class="ow">and</span> <span class="n">Hellsten</span><span class="p">,</span> <span class="n">Erik</span> <span class="n">Orm</span> <span class="ow">and</span> <span class="n">Nardi</span><span class="p">,</span> <span class="n">Luigi</span><span class="p">},</span>
+    <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2024</span><span class="p">},</span>
+    <span class="n">month</span><span class="o">=</span><span class="n">feb</span>
+<span class="p">}</span>
+
+
+<span class="nd">@software</span><span class="p">{</span><span class="n">Gonzalez</span><span class="o">-</span><span class="n">Duque</span><span class="p">:</span><span class="n">poli</span><span class="p">:</span><span class="mi">2024</span><span class="p">,</span>
+<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">González</span><span class="o">-</span><span class="n">Duque</span><span class="p">,</span> <span class="n">Miguel</span> <span class="ow">and</span> <span class="n">Bartels</span><span class="p">,</span> <span class="n">Simon</span> <span class="ow">and</span> <span class="n">Michael</span><span class="p">,</span> <span class="n">Richard</span><span class="p">},</span>
+<span class="n">month</span> <span class="o">=</span> <span class="n">jan</span><span class="p">,</span>
+<span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">poli</span><span class="p">:</span> <span class="n">a</span> <span class="n">libary</span> <span class="n">of</span> <span class="n">discrete</span> <span class="n">sequence</span> <span class="n">objectives</span><span class="p">}},</span>
+<span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MachineLearningLifeScience</span><span class="o">/</span><span class="n">poli</span><span class="p">},</span>
+<span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.0.1</span><span class="p">},</span>
+<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2024</span><span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -833,6 +879,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-more">See more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
