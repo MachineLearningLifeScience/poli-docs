@@ -707,6 +707,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-more">See more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">References</a></li>
 </ul>
             </nav>
         </div>
@@ -725,7 +727,7 @@ document.write(`
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
 <p>This is an implementation of <em>Sparse Axis-Aligned Subspaces</em> Bayesian Optimization (SAASBO), proposed in <span id="id1">[<a class="reference internal" href="../bibliography.html#id33" title="David Eriksson and Martin Jankowiak. High-dimensional Bayesian optimization with sparse axis-aligned subspaces. In Cassio de Campos and Marloes H. Maathuis, editors, Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence, volume 161 of Proceedings of Machine Learning Research, 493–503. PMLR, 27–30 Jul 2021. URL: https://proceedings.mlr.press/v161/eriksson21a.html.">Eriksson and Jankowiak, 2021</a>]</span>.</p>
-<p>SAAS corresponds to a certain Gaussian Process model, in which lengthscales have priors that encourage sparcity. Moreover, the authors encourage a fully Bayesian treatment and thus rely on No U-turn Sampling (NUTS).</p>
+<p>SAAS corresponds to a certain Gaussian Process model, in which lengthscales have priors that encourage sparcity. Moreover, the authors train the model following  a fully Bayesian treatment, relying on e.g. No U-turn Sampling (NUTS).</p>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
@@ -758,9 +760,53 @@ document.write(`
 <section id="see-more">
 <h2>See more<a class="headerlink" href="#see-more" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
+<li><p>The original reference for this solver: <a class="reference external" href="https://proceedings.mlr.press/v161/eriksson21a/eriksson21a.pdf"><em>High-dimensional Bayesian optimization with sparse axis-aligned subspaces</em></a>.</p></li>
 <li><p><a class="reference external" href="https://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf"><em>Taking the human out of the loop</em></a> is a great tutorial of Bayesian Optimization <span id="id2">[<a class="reference internal" href="../bibliography.html#id15" title="Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan P. Adams, and Nando De Freitas. Taking the human out of the loop: a review of bayesian optimization. Proceedings of the IEEE, 104(1):148–175, January 2016. doi:10.1109/JPROC.2015.2494218.">Shahriari <em>et al.</em>, 2016</a>]</span>.</p></li>
 <li><p>Since <code class="docutils literal notranslate"><span class="pre">poli</span></code> works mostly on discrete inputs, this baseline is implemented with the intention of optimizing in the latent spaces of deep generative models like Generative Adversarial Networks (GANs) or Variational Autoencoders (VAEs) <span id="id3">[<a class="reference internal" href="../bibliography.html#id19" title="Rafael Gómez-Bombarelli, Jennifer N. Wei, David Duvenaud, José Miguel Hernández-Lobato, Benjamín Sánchez-Lengeling, Dennis Sheberla, Jorge Aguilera-Iparraguirre, Timothy D. Hirzel, Ryan P. Adams, and Alán Aspuru-Guzik. Automatic chemical design using a data-driven continuous representation of molecules. ACS Central Science, 4(2):268–276, February 2018. doi:10.1021/acscentsci.7b00572.">Gómez-Bombarelli <em>et al.</em>, 2018</a>]</span>.</p></li>
 </ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id4">
+<h2>References<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>If you use this solver, we expect that you cite the following resources:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+References as text</label><div class="sd-tab-content docutils">
+<p>[1] Eriksson, D., &amp; Jankowiak, M. (2021). High-dimensional Bayesian optimization with sparse axis-aligned subspaces. Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence, 493–503. <a class="reference external" href="https://proceedings.mlr.press/v161/eriksson21a.html">https://proceedings.mlr.press/v161/eriksson21a.html</a></p>
+<p>[2] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+References as <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+@inproceedings{ErikssonJankowiak:SAASBO:2021,
+     title={High-dimensional Bayesian optimization with sparse axis-aligned subspaces},
+     ISSN={2640-3498},
+     url={https://proceedings.mlr.press/v161/eriksson21a.html},
+     publisher={PMLR},
+    author={Eriksson, David and Jankowiak, Martin},
+    year={2021},
+    month=dec,
+    pages={493–503},
+    language={en}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -831,6 +877,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-more">See more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">References</a></li>
 </ul>
   </nav></div>
 

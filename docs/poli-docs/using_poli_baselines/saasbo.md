@@ -8,7 +8,7 @@
 
 This is an implementation of _Sparse Axis-Aligned Subspaces_ Bayesian Optimization (SAASBO), proposed in {cite:p}`Eriksson:saasbo:2021`.
 
-SAAS corresponds to a certain Gaussian Process model, in which lengthscales have priors that encourage sparcity. Moreover, the authors encourage a fully Bayesian treatment and thus rely on No U-turn Sampling (NUTS).
+SAAS corresponds to a certain Gaussian Process model, in which lengthscales have priors that encourage sparcity. Moreover, the authors train the model following  a fully Bayesian treatment, relying on e.g. No U-turn Sampling (NUTS).
 
 ## How to run
 
@@ -43,5 +43,57 @@ bo_solver.solve(max_iter=10)
 
 ## See more
 
+- The original reference for this solver: [*High-dimensional Bayesian optimization with sparse axis-aligned subspaces*](https://proceedings.mlr.press/v161/eriksson21a/eriksson21a.pdf).
 - [*Taking the human out of the loop*](https://www.cs.ox.ac.uk/people/nando.defreitas/publications/BayesOptLoop.pdf) is a great tutorial of Bayesian Optimization {cite:p}`Shahriari:BOReview:2016`.
 - Since `poli` works mostly on discrete inputs, this baseline is implemented with the intention of optimizing in the latent spaces of deep generative models like Generative Adversarial Networks (GANs) or Variational Autoencoders (VAEs) {cite:p}`GomezBombarelli:VAEsAndOpt:2018`.
+
+## References
+
+
+## References
+
+If you use this solver, we expect that you cite the following resources:
+
+::::{tab-set}
+
+:::{tab-item} References as text
+
+[1] Eriksson, D., & Jankowiak, M. (2021). High-dimensional Bayesian optimization with sparse axis-aligned subspaces. Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence, 493–503. https://proceedings.mlr.press/v161/eriksson21a.html
+
+
+[2] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+
+
+:::
+
+:::{tab-item} References as `BibTeX`
+
+```
+
+@inproceedings{ErikssonJankowiak:SAASBO:2021,
+     title={High-dimensional Bayesian optimization with sparse axis-aligned subspaces},
+     ISSN={2640-3498},
+     url={https://proceedings.mlr.press/v161/eriksson21a.html},
+     publisher={PMLR},
+    author={Eriksson, David and Jankowiak, Martin},
+    year={2021},
+    month=dec,
+    pages={493–503},
+    language={en}
+}
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+```
+
+:::
+
+::::
+
