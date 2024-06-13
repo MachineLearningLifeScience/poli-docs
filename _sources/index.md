@@ -274,6 +274,20 @@ On top of `poli`, we provide `poli-baselines`, a collection of **black-box optim
 Optimizing a discrete sequence by performing random mutations
 :::
 
+:::{grid-item-card} Increasingly high-dimensional combinatorial and continuous embeddings (Bounce) 
+:link: ./using_poli_baselines/bounce.html
+:columns: 6
+
+Papenmeier et al's Bounce, using their official implementation.
+:::
+
+:::{grid-item-card} Bayesian optimization with probabilistic reparametrization (ProbRep) 
+:link: ./using_poli_baselines/probrep.html
+:columns: 6
+
+Daulton et al's PR, using their official implementation.
+:::
+
 ::::
 
 ### Continuous
