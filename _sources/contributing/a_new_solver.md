@@ -32,7 +32,7 @@ class AbstractSolver:
 
 i.e. the minimal ingredients required to instantiate a solver are a black-box function defined through `poli`, the initial design `x0`, and its evaluation `y0`.
 
-**The only abstract method required** is a `solve(max_iter: int)`, in which you can implement all the complex logic required to optimize the objective function for `max_iter` iterations.
+**The only abstract method required** is a `solve`, in which you can implement all the complex logic required to optimize the objective function for `max_iter: int` iterations.
 
 ```python
 # poli_baselines/core/abstract_solver.py
@@ -198,3 +198,5 @@ your_solver = YourSolver(
 # Optimize for a given number of iterations.
 your_solver.solve(10)
 ```
+
+Once you know your optimizer works in this setting, you can **submit a pull-request** to `poli-baselines`.
