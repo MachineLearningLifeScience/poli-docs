@@ -198,3 +198,5 @@ your_solver = YourSolver(
 # Optimize for a given number of iterations.
 your_solver.solve(10)
 ```
+
+Once you know your optimizer works in this setting, you can **submit a pull-request** to `poli-baselines`.

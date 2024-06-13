@@ -748,7 +748,7 @@ document.write(`
 </pre></div>
 </div>
 <p>i.e. the minimal ingredients required to instantiate a solver are a black-box function defined through <code class="docutils literal notranslate"><span class="pre">poli</span></code>, the initial design <code class="docutils literal notranslate"><span class="pre">x0</span></code>, and its evaluation <code class="docutils literal notranslate"><span class="pre">y0</span></code>.</p>
-<p><strong>The only abstract method required</strong> is a <code class="docutils literal notranslate"><span class="pre">solve(max_iter:</span> <span class="pre">int)</span></code>, in which you can implement all the complex logic required to optimize the objective function for <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> iterations.</p>
+<p><strong>The only abstract method required</strong> is a <code class="docutils literal notranslate"><span class="pre">solve</span></code>, in which you can implement all the complex logic required to optimize the objective function for <code class="docutils literal notranslate"><span class="pre">max_iter:</span> <span class="pre">int</span></code> iterations.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># poli_baselines/core/abstract_solver.py</span>
 <span class="k">class</span> <span class="nc">AbstractSolver</span><span class="p">:</span>
     <span class="o">...</span>
@@ -898,6 +898,7 @@ dependencies:
 <span class="n">your_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Once you know your optimizer works in this setting, you can <strong>submit a pull-request</strong> to <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>.</p>
 </section>
 </section>
 
