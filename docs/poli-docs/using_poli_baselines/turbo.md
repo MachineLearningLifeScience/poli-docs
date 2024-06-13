@@ -1,6 +1,6 @@
 # Trust Region Bayesian Optimization (Turbo)
 
-![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-cyan)
+![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-red)
 [![Base (python 3.9 in conda)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing.yml) 
 
 ## About

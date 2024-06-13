@@ -9,6 +9,21 @@ An interface to *Bayesian optimization with Probabilistic Reparametrization* (Pr
 
 ## How to run
 
+:::{warning}
+
+This solver runs in a different conda environment than base.
+
+You can find a [conda environment where this solver can run here](https://github.com/MachineLearningLifeScience/poli-baselines/blob/main/src/poli_baselines/solvers/bayesian_optimization/pr/environment.pr.yml).
+
+If you have cloned `poli-baselines` locally:
+
+```bash
+conda env create --file src/poli_baselines/solvers/bayesian_optimization/pr/environment.pr.yml
+conda activate poli__pr
+```
+
+:::
+
 ```python
 
 import numpy as np

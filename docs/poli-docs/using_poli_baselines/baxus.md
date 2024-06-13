@@ -1,6 +1,6 @@
 # Adaptively expanding subspaces (BAxUS)
 
-![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-cyan)
+![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-red)
 [![BAxUS (py3.10 in conda)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-baxus.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-baxus.yml)
 
 ## About
@@ -14,6 +14,14 @@ This is an implementation of _Bayesian Optimization with adaptively expanding su
 This solver runs in a different conda environment than base.
 
 You can find a [conda environment where this solver can run here](https://github.com/MachineLearningLifeScience/poli-baselines/blob/main/src/poli_baselines/solvers/bayesian_optimization/baxus/environment.baxus.yml).
+
+If you have cloned `poli-baselines` locally:
+
+```bash
+conda env create --file src/poli_baselines/solvers/bayesian_optimization/baxus/environment.baxus.yml
+conda activate poli__baxus
+```
+
 
 :::
 
