@@ -724,8 +724,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="adding-a-new-optimizer-to-poli-baselines">
 <h1>Adding a new optimizer to <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code><a class="headerlink" href="#adding-a-new-optimizer-to-poli-baselines" title="Permalink to this heading">#</a></h1>
-<p>The main use-case for <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code> is <strong>defining optimizers for objective functions</strong>.</p>
-<p>The main design objective of <code class="docutils literal notranslate"><span class="pre">poli</span></code> is for it to be almost trivial to <strong>query</strong> complicated black box objective functions; likewise, the design objective of <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code> is to allow developers of black-box optimization algorithms to test them on said objective functions.</p>
+<p>The main use-case for <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code> is <strong>defining optimizers for objective functions</strong> defined in <code class="docutils literal notranslate"><span class="pre">poli</span></code>.</p>
+<p>The main design objective of <code class="docutils literal notranslate"><span class="pre">poli</span></code> is for it to be almost trivial to <strong>query</strong> complicated black box objective functions; likewise, the design objective of <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code> is to allow developers of black-box optimization algorithms to benchmark them on said objective functions.</p>
 <p>This chapter explains how to define a “solver”, or a black-box optimization algorithm.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -739,62 +739,48 @@ document.write(`
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
-        <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-        <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+        <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">black_box</span> <span class="o">=</span> <span class="n">black_box</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x0</span> <span class="o">=</span> <span class="n">x0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y0</span> <span class="o">=</span> <span class="n">y0</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x0_i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x0_i</span> <span class="ow">in</span> <span class="n">x0</span><span class="p">],</span>
-            <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">y0_i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">y0_i</span> <span class="ow">in</span> <span class="n">y0</span><span class="p">],</span>
-        <span class="p">}</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">iteration</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>i.e. the minimal ingredients required to instantiate a solver are a black-box function defined through <code class="docutils literal notranslate"><span class="pre">poli</span></code>, the initial design <code class="docutils literal notranslate"><span class="pre">x0</span></code>, and its evaluation <code class="docutils literal notranslate"><span class="pre">y0</span></code>.</p>
-<p><strong>The only abstract method required</strong> is a <code class="docutils literal notranslate"><span class="pre">next_candidate()</span> <span class="pre">-&gt;</span> <span class="pre">np.ndarray</span></code>, which uses the <code class="docutils literal notranslate"><span class="pre">self.history</span></code> to propose a new candidate. Using this method, the abstract solver implements a <code class="docutils literal notranslate"><span class="pre">.solve(max_iter:</span> <span class="pre">int)</span></code> as follows:</p>
+<p><strong>The only abstract method required</strong> is a <code class="docutils literal notranslate"><span class="pre">solve(max_iter:</span> <span class="pre">int)</span></code>, in which you can implement all the complex logic required to optimize the objective function for <code class="docutils literal notranslate"><span class="pre">max_iter</span></code> iterations.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># poli_baselines/core/abstract_solver.py</span>
 <span class="k">class</span> <span class="nc">AbstractSolver</span><span class="p">:</span>
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">next_candidate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="n">n_initial_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Returns the next candidate solution</span>
-<span class="sd">        after checking the history.</span>
+<span class="sd">        Optimizes the problem for a given number of iterations.</span>
+
+<span class="sd">        Logging of the black box calls is usually handled by</span>
+<span class="sd">        poli and their observers.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        max_iter: int, optional</span>
+<span class="sd">            The maximum number of iterations to run. By default, 100.</span>
+<span class="sd">        n_initial_points: int, optional</span>
+<span class="sd">            The number of initial points to evaluate before starting</span>
+<span class="sd">            the optimization. By default, 0 (since initialization</span>
+<span class="sd">            is usually handled by passing x0 and y0 to the solver)</span>
+<span class="sd">        seed: int, optional</span>
+<span class="sd">            The seed to use for the random number generator. By default,</span>
+<span class="sd">            None, which means that no seed is set.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
-            <span class="s2">&quot;This method is abstract, and should be implemented by a subclass.&quot;</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Runs the solver for the given number of iterations.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
-            <span class="c1"># Call the pre-step callbacks</span>
-            <span class="k">if</span> <span class="n">pre_step_callbacks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="n">pre_step_callbacks</span><span class="p">:</span>
-                    <span class="n">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-            <span class="c1"># Take a step, which in turn updates the local history.</span>
-            <span class="n">_</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-            <span class="c1"># Call the post-step callbacks</span>
-            <span class="k">if</span> <span class="n">post_step_callbacks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="n">post_step_callbacks</span><span class="p">:</span>
-                    <span class="n">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, best so far: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_best_performance</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">break_at_performance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">break_at_performance</span><span class="p">:</span>
-                    <span class="k">break</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 </pre></div>
 </div>
+<p>Some solvers out there don’t allow for imposing an initial condition. In those cases, you can usually pass a <code class="docutils literal notranslate"><span class="pre">n_initial_points</span></code> instead, and leave <code class="docutils literal notranslate"><span class="pre">x0</span> <span class="pre">=</span> <span class="pre">None</span></code> and <code class="docutils literal notranslate"><span class="pre">y0</span> <span class="pre">=</span> <span class="pre">None</span></code> in the initialization.</p>
 </section>
 <section id="an-example-randommutations">
 <h2>An example: <code class="docutils literal notranslate"><span class="pre">RandomMutations</span></code><a class="headerlink" href="#an-example-randommutations" title="Permalink to this heading">#</a></h2>
@@ -809,6 +795,13 @@ document.write(`
         <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">black_box</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+
+        <span class="c1"># Storing the history</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">x0_i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x0_i</span> <span class="ow">in</span> <span class="n">x0</span><span class="p">],</span>
+            <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">y0_i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">y0_i</span> <span class="ow">in</span> <span class="n">y0</span><span class="p">],</span>
+        <span class="p">}</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span> <span class="o">=</span> <span class="n">black_box</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">alphabet</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alphabet_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span><span class="p">)</span>
 
@@ -832,18 +825,79 @@ document.write(`
         <span class="n">next_x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">pos</span><span class="p">]</span> <span class="o">=</span> <span class="n">mutant</span>
 
         <span class="k">return</span> <span class="n">next_x</span>
+    
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n_initial_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># then seed everything...</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+            <span class="c1"># Evaluate</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">next_candidate</span><span class="p">()</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">black_box</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+            <span class="c1"># and update the history</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="n">x_i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[</span><span class="n">y_i</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">y_i</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Pretty lean! Notice how <strong>the <code class="docutils literal notranslate"><span class="pre">next_candidate</span></code> method could perform all sorts of complicated logic</strong> like latent space Bayesian Optimization, evolutionary algorithms… Moreover, the conda environment where you do the optimization has nothing to do with the enviroment where the objective function was defined: <code class="docutils literal notranslate"><span class="pre">poli</span></code> is set up in such a way that you can query the objective functions without having to worry!</p>
+<p>Pretty lean! Notice how <strong>the <code class="docutils literal notranslate"><span class="pre">solve</span></code> method could perform all sorts of complicated logic</strong> like latent space Bayesian Optimization, evolutionary algorithms… The main reason for us to only ask for <code class="docutils literal notranslate"><span class="pre">solve</span></code> to be implemented is to allow practitioners to quickly pipe in their own implementations.</p>
+<p>Moreover, the conda environment where you do the optimization has nothing to do with the environment where the objective function was defined: <code class="docutils literal notranslate"><span class="pre">poli</span></code> is set up in such a way that you can query the objective functions without having to worry!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Our implementation of <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> is slightly different, since we allow users to query e.g. integer indices instead of strings.</p>
+<p>Our implementation of <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> is slightly different, since we allow users to query e.g. integer indices instead of strings. It also uses a <code class="docutils literal notranslate"><span class="pre">StepByStepSolver</span></code> in which you would only have to implement the <code class="docutils literal notranslate"><span class="pre">next_candidate</span></code> method.</p>
 <p><a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines/blob/main/src/poli_baselines/solvers/simple/random_mutation.py">Take a look at the exact implementation on <code class="docutils literal notranslate"><span class="pre">poli_baselines/solvers/simple/random_mutation.py</span></code></a>.</p>
 </div>
 </section>
 <section id="submitting-a-pull-request">
 <h2>Submitting a pull request<a class="headerlink" href="#submitting-a-pull-request" title="Permalink to this heading">#</a></h2>
-<p>If you want to share your problem with us, feel free to create a pull request in our repository following the instructions in our <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code>: <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines">MachineLearningLifeScience/poli-baselines</a></p>
+<p>If you want to share your optimizer with us, feel free to create a pull request in our repository following these instructions:</p>
+<p>First, create a fork of <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines"><code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a>.</p>
+<p>Secondly, add a new subfolder in the <code class="docutils literal notranslate"><span class="pre">solvers</span></code> folder following this structure:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># In poli-baselines&#39; solvers folder</span>
+solvers
+├──<span class="w"> </span>...
+├──<span class="w"> </span>your_solver_name
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>├──<span class="w"> </span>environment.your_solver_name.yml
+│<span class="w">   </span>└──<span class="w"> </span>your_solver_name.py
+</pre></div>
+</div>
+<p>If your solver needs a special set of requirements, we expect you to add a conda environment <code class="docutils literal notranslate"><span class="pre">environment.your_solver_name.yml</span></code> in which <code class="docutils literal notranslate"><span class="pre">your_solver_name.py</span></code> could be imported. See a template here:</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: poli__your_solver_name
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - your
+      - dependencies
+      - here
+      - &quot;git+https://github.com/MachineLearningLifeScience/poli.git@dev&quot;
+      - &quot;git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main&quot;
+</pre></div>
+</div>
+<p>Ideally, you would also add a couple of tests in the relevant subfolder of <code class="docutils literal notranslate"><span class="pre">tests</span></code>. Feel free to pattern-match from other solvers.</p>
+<p>Finally, you can test your solver using something a toy function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.repository</span> <span class="kn">import</span> <span class="n">AlohaProblemFactory</span>
+<span class="kn">from</span> <span class="nn">poli_baselines.solvers.your_solver_name</span> <span class="kn">import</span> <span class="n">YourSolver</span>
+
+<span class="c1"># Define the toy-est of toy functions</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">AlohaProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+<span class="n">black_box</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
+
+<span class="c1"># Create an instance of your solver</span>
+<span class="n">your_solver</span> <span class="o">=</span> <span class="n">YourSolver</span><span class="p">(</span>
+    <span class="n">black_box</span><span class="o">=</span><span class="n">black_box</span><span class="p">,</span>
+    <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
+    <span class="n">y0</span><span class="o">=</span><span class="n">black_box</span><span class="p">(</span><span class="n">x0</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># Optimize for a given number of iterations.</span>
+<span class="n">your_solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
