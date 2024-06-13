@@ -13,6 +13,12 @@ Some of `poli`'s features:
 
 This documentation also discusses [`poli-baselines`](https://github.com/MachineLearningLifeScience/poli-baselines), a collection of optimizers of these discrete black box functions.
 
+:::{admonition} We are running a benchmark!
+
+Using `poli` and `poli-baselines`, [we are running a benchmark comparing high-dimensional Bayesian optimization algorithms for discrete sequence](https://machinelearninglifescience.github.io/hdbo_benchmark/).
+
+:::
+
 ## Getting started
 
 A good place to start is the next chapter! [Go to Getting Started](./getting_started/getting_started.md).
