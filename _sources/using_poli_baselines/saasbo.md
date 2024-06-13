@@ -1,6 +1,6 @@
 # Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)
 
-![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-cyan)
+![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-red)
 [![Ax (py3.10 in conda)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-ax.yml/badge.svg)](https://github.com/MachineLearningLifeScience/poli-baselines/actions/workflows/python-tox-testing-ax.yml) 
 
 ## About
@@ -17,6 +17,13 @@ SAAS corresponds to a certain Gaussian Process model, in which lengthscales have
 This solver runs in a different conda environment than base.
 
 You can find a [conda environment where this solver can run here](https://github.com/MachineLearningLifeScience/poli-baselines/blob/fb7d3b6f48c58d05c114cab4ff45b8f5c02428c5/src/poli_baselines/core/utils/ax/environment.ax.yml#L1).
+
+If you have cloned `poli-baselines` locally:
+
+```bash
+conda env create --file src/poli_baselines/core/utils/ax/environment.ax.yml
+conda activate poli__ax
+```
 
 :::
 

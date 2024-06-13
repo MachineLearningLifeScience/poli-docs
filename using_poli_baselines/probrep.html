@@ -732,6 +732,16 @@ document.write(`
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This solver runs in a different conda environment than base.</p>
+<p>You can find a <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines/blob/main/src/poli_baselines/solvers/bayesian_optimization/pr/environment.pr.yml">conda environment where this solver can run here</a>.</p>
+<p>If you have cloned <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code> locally:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>--file<span class="w"> </span>src/poli_baselines/solvers/bayesian_optimization/pr/environment.pr.yml
+conda<span class="w"> </span>activate<span class="w"> </span>poli__pr
+</pre></div>
+</div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 

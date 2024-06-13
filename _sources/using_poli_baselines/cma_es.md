@@ -1,6 +1,6 @@
 # CMA-ES
 
-![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-cyan)
+![Type of optimizer algorithm: continuous inputs](https://img.shields.io/badge/Type-continuous_inputs-red)
 
 ## About
 
