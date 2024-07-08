@@ -8,7 +8,7 @@ This objective function returns the stability (i.e. negative change in energy) u
 
 :::{note}
 
-If you are interested in computing both a protein's stability and it's SASA score, try `foldx_stability_and_sasa` instead! Just change the `name` in the `create` method below.
+If you are interested in computing both a protein's stability and it's SASA score, try `foldx_stability_and_sasa` instead! Import `FoldXStabilityAndSASABlackBox` instead of `FoldXStabilityBlackBox`.
 
 :::
 
@@ -70,7 +70,9 @@ If you use this black box, we expect you to cite the following resources:
 
 [1] Schymkowitz, Joost, Jesper Borg, Francois Stricher, Robby Nys, Frederic Rousseau, and Luis Serrano. “The FoldX Web Server: An Online Force Field.” Nucleic Acids Research 33, no. Web Server issue (July 1, 2005): W382–88. https://doi.org/10.1093/nar/gki387.
 
-[2] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
+[2] Stanton, Samuel, Wesley Maddox, Nate Gruver, Phillip Maffettone, Emily Delaney, Peyton Greenside, and Andrew Gordon Wilson. “Accelerating Bayesian Optimization for Biological Sequence Design with Denoising Autoencoders.” arXiv, July 12, 2022. http://arxiv.org/abs/2203.12742.
+
+[3] González-Duque, M., Bartels, S., & Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. https://github.com/MachineLearningLifeScience/poli
 
 
 :::
@@ -88,6 +90,13 @@ If you use this black box, we expect you to cite the following resources:
     year={2005},
     month=jul,
     pages={W382–W388}
+}
+
+@article{stanton:LaMBO:2022,
+  title   = {Accelerating Bayesian Optimization for Biological Sequence Design with Denoising Autoencoders},
+  author  = {Stanton, Samuel and Maddox, Wesley and Gruver, Nate and Maffettone, Phillip and Delaney, Emily and Greenside, Peyton and Wilson, Andrew Gordon},
+  journal = {arXiv preprint arXiv:2203.12742},
+  year    = {2022}
 }
 
 @software{Gonzalez-Duque:poli:2024,

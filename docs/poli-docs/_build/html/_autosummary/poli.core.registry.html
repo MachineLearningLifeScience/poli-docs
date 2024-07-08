@@ -266,14 +266,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">poli.core.registry</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.alignment.html">poli.core.util.alignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.batch.html">poli.core.util.batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -720,14 +721,14 @@ document.write(`
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.registry.delete_observer_run_script.html#poli.core.registry.delete_observer_run_script" title="poli.core.registry.delete_observer_run_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_observer_run_script</span></code></a>([observer_name])</p></td>
-<td><p>Deletes the run script for the given observer.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="poli.core.registry.delete_problem.html#poli.core.registry.delete_problem" title="poli.core.registry.delete_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_problem</span></code></a>(problem_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.registry.delete_problem.html#poli.core.registry.delete_problem" title="poli.core.registry.delete_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_problem</span></code></a>(problem_name)</p></td>
 <td><p>Deletes a problem.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_isolated_function</span></code>(...[, ...])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_isolated_function</span></code>(...[, ...])</p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_observer</span></code>(observer[, ...])</p></td>
+<td><p>Defines an external observer to be run in a separate process.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="poli.core.registry.register_problem.html#poli.core.registry.register_problem" title="poli.core.registry.register_problem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_problem</span></code></a>(problem_factory[, ...])</p></td>
 <td><p>Registers a problem.</p></td>
@@ -735,11 +736,8 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="poli.core.registry.register_problem_from_repository.html#poli.core.registry.register_problem_from_repository" title="poli.core.registry.register_problem_from_repository"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register_problem_from_repository</span></code></a>(name[, quiet])</p></td>
 <td><p>Registers a problem from the repository.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="poli.core.registry.set_observer.html#poli.core.registry.set_observer" title="poli.core.registry.set_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_observer</span></code></a>(observer[, ...])</p></td>
-<td><p>Defines an external observer to be run in a separate process.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.registry.set_observer_run_script.html#poli.core.registry.set_observer_run_script" title="poli.core.registry.set_observer_run_script"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_observer_run_script</span></code></a>(script_file_name[, ...])</p></td>
-<td><p>Sets a run_script to be called on observer instantiation.</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_default_observer</span></code>()</p></td>
+<td><p>This functions resets the default observer to do nothing.</p></td>
 </tr>
 </tbody>
 </table>

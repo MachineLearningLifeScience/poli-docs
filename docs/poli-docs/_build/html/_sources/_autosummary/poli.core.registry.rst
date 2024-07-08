@@ -1,4 +1,4 @@
-poli.core.registry
+﻿poli.core.registry
 ==================
 
 .. automodule:: poli.core.registry
@@ -13,13 +13,12 @@ poli.core.registry
 
    .. autosummary::
    
-      delete_observer_run_script
       delete_problem
       register_isolated_function
+      register_observer
       register_problem
       register_problem_from_repository
-      set_observer
-      set_observer_run_script
+      remove_default_observer
    
    
 

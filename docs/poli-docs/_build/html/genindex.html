@@ -265,14 +265,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.registry.html">poli.core.registry</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.alignment.html">poli.core.util.alignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.batch.html">poli.core.util.batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -955,8 +956,6 @@ document.write(`
 </li>
       <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.deflected_corrugated_spring.html#poli.objective_repository.toy_continuous_problem.definitions.deflected_corrugated_spring">deflected_corrugated_spring() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
 </li>
-      <li><a href="_autosummary/poli.core.registry.delete_observer_run_script.html#poli.core.registry.delete_observer_run_script">delete_observer_run_script() (in module poli.core.registry)</a>
-</li>
       <li><a href="_autosummary/poli.core.registry.delete_problem.html#poli.core.registry.delete_problem">delete_problem() (in module poli.core.registry)</a>
 </li>
   </ul></td>
@@ -1181,6 +1180,8 @@ document.write(`
 </li>
         <li><a href="_autosummary/poli.core.util.abstract_observer.html#module-poli.core.util.abstract_observer">poli.core.util.abstract_observer</a>
 </li>
+        <li><a href="_autosummary/poli.core.util.algorithm_observer_wrapper.html#module-poli.core.util.algorithm_observer_wrapper">poli.core.util.algorithm_observer_wrapper</a>
+</li>
         <li><a href="_autosummary/poli.core.util.alignment.html#module-poli.core.util.alignment">poli.core.util.alignment</a>
 </li>
         <li><a href="_autosummary/poli.core.util.alignment.is_aligned.html#module-poli.core.util.alignment.is_aligned">poli.core.util.alignment.is_aligned</a>
@@ -1192,6 +1193,8 @@ document.write(`
         <li><a href="_autosummary/poli.core.util.chemistry.html#module-poli.core.util.chemistry">poli.core.util.chemistry</a>
 </li>
         <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.html#module-poli.core.util.chemistry.string_to_molecule">poli.core.util.chemistry.string_to_molecule</a>
+</li>
+        <li><a href="_autosummary/poli.core.util.default_observer.html#module-poli.core.util.default_observer">poli.core.util.default_observer</a>
 </li>
         <li><a href="_autosummary/poli.core.util.external_observer.html#module-poli.core.util.external_observer">poli.core.util.external_observer</a>
 </li>
@@ -1214,8 +1217,6 @@ document.write(`
         <li><a href="_autosummary/poli.core.util.isolation.instancing.html#module-poli.core.util.isolation.instancing">poli.core.util.isolation.instancing</a>
 </li>
         <li><a href="_autosummary/poli.core.util.isolation.isolated_black_box.html#module-poli.core.util.isolation.isolated_black_box">poli.core.util.isolation.isolated_black_box</a>
-</li>
-        <li><a href="_autosummary/poli.core.util.multi_observer.html#module-poli.core.util.multi_observer">poli.core.util.multi_observer</a>
 </li>
         <li><a href="_autosummary/poli.core.util.objective_management.html#module-poli.core.util.objective_management">poli.core.util.objective_management</a>
 </li>
@@ -1778,6 +1779,13 @@ document.write(`
 </li>
       </ul></li>
       <li>
+    poli.core.util.algorithm_observer_wrapper
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.algorithm_observer_wrapper.html#module-poli.core.util.algorithm_observer_wrapper">module</a>
+</li>
+      </ul></li>
+      <li>
     poli.core.util.alignment
 
       <ul>
@@ -1817,6 +1825,13 @@ document.write(`
 
       <ul>
         <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.html#module-poli.core.util.chemistry.string_to_molecule">module</a>
+</li>
+      </ul></li>
+      <li>
+    poli.core.util.default_observer
+
+      <ul>
+        <li><a href="_autosummary/poli.core.util.default_observer.html#module-poli.core.util.default_observer">module</a>
 </li>
       </ul></li>
       <li>
@@ -1894,13 +1909,6 @@ document.write(`
 
       <ul>
         <li><a href="_autosummary/poli.core.util.isolation.isolated_black_box.html#module-poli.core.util.isolation.isolated_black_box">module</a>
-</li>
-      </ul></li>
-      <li>
-    poli.core.util.multi_observer
-
-      <ul>
-        <li><a href="_autosummary/poli.core.util.multi_observer.html#module-poli.core.util.multi_observer">module</a>
 </li>
       </ul></li>
       <li>
@@ -3146,18 +3154,12 @@ document.write(`
 </li>
       <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.selfies_to_molecules.html#poli.core.util.chemistry.string_to_molecule.selfies_to_molecules">selfies_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
 </li>
-      <li><a href="_autosummary/poli.core.registry.set_observer.html#poli.core.registry.set_observer">set_observer() (in module poli.core.registry)</a>
-
-      <ul>
-        <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.set_observer">(poli.core.abstract_black_box.AbstractBlackBox method)</a>
+      <li><a href="_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox.set_observer">set_observer() (poli.core.abstract_black_box.AbstractBlackBox method)</a>
 </li>
-      </ul></li>
-      <li><a href="_autosummary/poli.core.registry.set_observer_run_script.html#poli.core.registry.set_observer_run_script">set_observer_run_script() (in module poli.core.registry)</a>
+      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere.html#poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere">shifted_sphere() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere.html#poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere">shifted_sphere() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
-</li>
       <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.SimpleVAE.html#poli.objective_repository.gfp_cbas.make_vae.SimpleVAE">SimpleVAE (class in poli.objective_repository.gfp_cbas.make_vae)</a>
 </li>
       <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.smiles_to_molecules.html#poli.core.util.chemistry.string_to_molecule.smiles_to_molecules">smiles_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
