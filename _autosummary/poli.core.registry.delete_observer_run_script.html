@@ -266,14 +266,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="poli.core.registry.html">poli.core.registry</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.alignment.html">poli.core.util.alignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.batch.html">poli.core.util.batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -712,28 +713,6 @@ document.write(`
                   
   <section id="poli-core-registry-delete-observer-run-script">
 <h1>poli.core.registry.delete_observer_run_script<a class="headerlink" href="#poli-core-registry-delete-observer-run-script" title="Permalink to this heading">#</a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="poli.core.registry.delete_observer_run_script">
-<span class="sig-prename descclassname"><span class="pre">poli.core.registry.</span></span><span class="sig-name descname"><span class="pre">delete_observer_run_script</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observer_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#poli.core.registry.delete_observer_run_script" title="Permalink to this definition">#</a></dt>
-<dd><p>Deletes the run script for the given observer.</p>
-<p>This function takes as input an observer name. Using this, it deletes the
-run script for the given observer. If no observer name is passed, the
-default observer is deleted.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>observer_name</strong> (<em>str</em>) – The name of the observer to be deleted.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>location</strong> – The location of the deleted run script.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-<p class="rubric">Notes</p>
-<p>The observer script MUST accept port and password as arguments.</p>
-</dd></dl>
-
 </section>
 
     <script type="text/x-thebe-config">

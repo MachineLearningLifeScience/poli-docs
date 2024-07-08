@@ -266,14 +266,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="poli.core.registry.html">poli.core.registry</a></li>
 <li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">poli.core.util</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.alignment.html">poli.core.util.alignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.batch.html">poli.core.util.batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -723,14 +724,20 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.abstract_observer.html#module-poli.core.util.abstract_observer" title="poli.core.util.abstract_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.abstract_observer</span></code></a></p></td>
 <td><p>Abstract class for observers in poli.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.alignment.html#module-poli.core.util.alignment" title="poli.core.util.alignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.alignment</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.algorithm_observer_wrapper.html#module-poli.core.util.algorithm_observer_wrapper" title="poli.core.util.algorithm_observer_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.algorithm_observer_wrapper</span></code></a></p></td>
+<td><p>A wrapper around observers that prohibits the use of observer.observe</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.alignment.html#module-poli.core.util.alignment" title="poli.core.util.alignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.alignment</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.batch.html#module-poli.core.util.batch" title="poli.core.util.batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.batch</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.batch.html#module-poli.core.util.batch" title="poli.core.util.batch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.batch</span></code></a></p></td>
 <td><p>Utility functions for batching data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.chemistry.html#module-poli.core.util.chemistry" title="poli.core.util.chemistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.chemistry</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.chemistry.html#module-poli.core.util.chemistry" title="poli.core.util.chemistry"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.chemistry</span></code></a></p></td>
 <td><p>Utilities for the chemistry-related black-boxes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.default_observer.html#module-poli.core.util.default_observer" title="poli.core.util.default_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.default_observer</span></code></a></p></td>
+<td><p>Default observer that just does nothing.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.external_observer.html#module-poli.core.util.external_observer" title="poli.core.util.external_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.external_observer</span></code></a></p></td>
 <td><p>External observer, which can be run in an isolated process.</p></td>
@@ -744,19 +751,16 @@ document.write(`
 <tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.isolation.html#module-poli.core.util.isolation" title="poli.core.util.isolation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.isolation</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.multi_observer.html#module-poli.core.util.multi_observer" title="poli.core.util.multi_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.multi_observer</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.objective_management.html#module-poli.core.util.objective_management" title="poli.core.util.objective_management"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.objective_management</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.objective_management.html#module-poli.core.util.objective_management" title="poli.core.util.objective_management"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.objective_management</span></code></a></p></td>
 <td><p>Utilities for creating run scripts for problems and observers.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.observer_wrapper.html#module-poli.core.util.observer_wrapper" title="poli.core.util.observer_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.observer_wrapper</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.observer_wrapper.html#module-poli.core.util.observer_wrapper" title="poli.core.util.observer_wrapper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.observer_wrapper</span></code></a></p></td>
 <td><p>Script that gets called by the mother process to start an external observer process.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.proteins.html#module-poli.core.util.proteins" title="poli.core.util.proteins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.proteins</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.proteins.html#module-poli.core.util.proteins" title="poli.core.util.proteins"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.proteins</span></code></a></p></td>
 <td><p>Utilities for the protein-related black-boxes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="poli.core.util.seeding.html#module-poli.core.util.seeding" title="poli.core.util.seeding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.seeding</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="poli.core.util.seeding.html#module-poli.core.util.seeding" title="poli.core.util.seeding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poli.core.util.seeding</span></code></a></p></td>
 <td><p>Utilities for seeding random number generators.</p></td>
 </tr>
 </tbody>

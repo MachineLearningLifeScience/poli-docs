@@ -266,14 +266,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../_autosummary/poli.core.registry.html">poli.core.registry</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../_autosummary/poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.alignment.html">poli.core.util.alignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.batch.html">poli.core.util.batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -710,6 +711,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -757,6 +759,51 @@ document.write(`
 
 <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
+</div>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>If you use this solver, we expect that you cite the following resources:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+References as text</label><div class="sd-tab-content docutils">
+<p>[1] Kirschner, J., Mutny, M., Hiller, N., Ischebeck, R., &amp; Krause, A. (2019). Adaptive and safe Bayesian optimization in high dimensions via one-dimensional subspaces. In Proceedings of the 36th International Conference on Machine Learning (pp. 3429–3438). PMLR. <a class="reference external" href="https://proceedings.mlr.press/v97/kirschner19a.html">https://proceedings.mlr.press/v97/kirschner19a.html</a></p>
+<p>[2] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+References as <code class="docutils literal notranslate"><span class="pre">BibTeX</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+@inproceedings{Kirschner:LineBO:2019,
+  title = {Adaptive and Safe Bayesian Optimization in High Dimensions via
+           One-Dimensional Subspaces},
+  ISSN = {2640-3498},
+  url = {https://proceedings.mlr.press/v97/kirschner19a.html},
+  booktitle = {Proceedings of the 36th International Conference on Machine
+               Learning},
+  publisher = {PMLR},
+  author = {Kirschner, Johannes and Mutny, Mojmir and Hiller, Nicole and
+            Ischebeck, Rasmus and Krause, Andreas},
+  year = {2019},
+  month = may,
+  pages = {3429–3438},
+  language = {en},
+}
+
+
+@software{Gonzalez-Duque:poli:2024,
+author = {González-Duque, Miguel and Bartels, Simon and Michael, Richard},
+month = jan,
+title = {{poli: a libary of discrete sequence objectives}},
+url = {https://github.com/MachineLearningLifeScience/poli},
+version = {0.0.1},
+year = {2024}
+}
+
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -827,6 +874,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">About</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

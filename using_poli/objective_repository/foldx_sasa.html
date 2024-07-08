@@ -266,14 +266,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l3"><a class="reference internal" href="../../_autosummary/poli.core.registry.html">poli.core.registry</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.alignment.html">poli.core.util.alignment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.batch.html">poli.core.util.batch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.multi_observer.html">poli.core.util.multi_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
@@ -732,7 +733,7 @@ document.write(`
 <p>This objective function returns the solvent accesible surface area (SASA) of a wildtype and its mutations using <code class="docutils literal notranslate"><span class="pre">foldx</span></code> and <code class="docutils literal notranslate"><span class="pre">biopython</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you are interested in computing <strong>both</strong> a protein’s stability and it’s SASA score, try <code class="docutils literal notranslate"><span class="pre">foldx_stability_and_sasa</span></code> instead! Just change the <code class="docutils literal notranslate"><span class="pre">name</span></code> in the <code class="docutils literal notranslate"><span class="pre">create</span></code> method below.</p>
+<p>If you are interested in computing <strong>both</strong> a protein’s stability and it’s SASA score, try <code class="docutils literal notranslate"><span class="pre">foldx_stability_and_sasa</span></code> instead! Import <code class="docutils literal notranslate"><span class="pre">FoldXStabilityAndSASABlackBox</span></code> instead of <code class="docutils literal notranslate"><span class="pre">FoldXSASABlackBox</span></code>.</p>
 </div>
 </section>
 <section id="prerequisites">
@@ -784,7 +785,8 @@ document.write(`
 </input><label class="sd-tab-label" for="sd-tab-item-0">
 References as text</label><div class="sd-tab-content docutils">
 <p>[1] Schymkowitz, Joost, Jesper Borg, Francois Stricher, Robby Nys, Frederic Rousseau, and Luis Serrano. “The FoldX Web Server: An Online Force Field.” Nucleic Acids Research 33, no. Web Server issue (July 1, 2005): W382–88. <a class="reference external" href="https://doi.org/10.1093/nar/gki387">https://doi.org/10.1093/nar/gki387</a>.</p>
-<p>[2] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+<p>[2] Stanton, Samuel, Wesley Maddox, Nate Gruver, Phillip Maffettone, Emily Delaney, Peyton Greenside, and Andrew Gordon Wilson. “Accelerating Bayesian Optimization for Biological Sequence Design with Denoising Autoencoders.” arXiv, July 12, 2022. <a class="reference external" href="http://arxiv.org/abs/2203.12742">http://arxiv.org/abs/2203.12742</a>.</p>
+<p>[3] González-Duque, M., Bartels, S., &amp; Michael, R. (2024). poli: a libary of discrete sequence objectives [Computer software]. <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
@@ -799,6 +801,13 @@ References as <code class="docutils literal notranslate"><span class="pre">BibTe
     year={2005},
     month=jul,
     pages={W382–W388}
+}
+
+@article{stanton:LaMBO:2022,
+  title   = {Accelerating Bayesian Optimization for Biological Sequence Design with Denoising Autoencoders},
+  author  = {Stanton, Samuel and Maddox, Wesley and Gruver, Nate and Maffettone, Phillip and Delaney, Emily and Greenside, Peyton and Wilson, Andrew Gordon},
+  journal = {arXiv preprint arXiv:2203.12742},
+  year    = {2022}
 }
 
 @software{Gonzalez-Duque:poli:2024,
