@@ -2,7 +2,7 @@
 
 This tutorial covers how black boxes and problems are structured in the repository, and what it takes to add a new one.
 
-If you want to implement your own black box and problem, we recommend copy-pasting an existing folder (e.g. `sa_tdc`), and modifying it to suit your needs. We provide a checklist at the end of this tutorial for the things you need to pay attention to.
+If you want to implement your own black box and problem, we recommend copy-pasting an existing folder (e.g. `dockstring`), and modifying it to suit your needs. We provide a checklist at the end of this tutorial for the things you need to pay attention to.
 
 ## The structure of a problem
 
