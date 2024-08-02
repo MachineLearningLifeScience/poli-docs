@@ -26,6 +26,7 @@ parts:
       - file: using_poli/objective_repository/dockstring.md
       - file: using_poli/objective_repository/drd2_docking.md
       - file: using_poli/objective_repository/drd3_docking.md
+      - file: using_poli/objective_repository/ehrlich_functions.md
       - file: using_poli/objective_repository/fexofenadine_mpo.md
       - file: using_poli/objective_repository/foldx_sasa.md
       - file: using_poli/objective_repository/foldx_stability.md

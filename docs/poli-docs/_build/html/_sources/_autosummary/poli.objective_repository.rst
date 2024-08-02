@@ -41,6 +41,7 @@
    poli.objective_repository.dockstring
    poli.objective_repository.drd2_docking
    poli.objective_repository.drd3_docking
+   poli.objective_repository.ehrlich
    poli.objective_repository.fexofenadine_mpo
    poli.objective_repository.foldx_rfp_lambo
    poli.objective_repository.foldx_sasa
@@ -63,6 +64,7 @@
    poli.objective_repository.rdkit_logp
    poli.objective_repository.rdkit_qed
    poli.objective_repository.rfp_foldx_stability_and_sasa
+   poli.objective_repository.rmf_landscape
    poli.objective_repository.sa_tdc
    poli.objective_repository.scaffold_hop
    poli.objective_repository.sitagliptin_mpo

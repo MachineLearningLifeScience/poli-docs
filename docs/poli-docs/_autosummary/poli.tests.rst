@@ -28,10 +28,9 @@
    :recursive:
 
    poli.tests.benchmarks
-   poli.tests.docs_examples
+   poli.tests.conftest
    poli.tests.registry
    poli.tests.test_core_promises
-   poli.tests.test_minimal_working_example
    poli.tests.test_seeding
    poli.tests.util
 

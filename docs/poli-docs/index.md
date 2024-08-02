@@ -110,6 +110,12 @@ The Therapeutics Data Commons' implementation of the DRD2 docking oracle.
 A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.
 :::
 
+:::{grid-item-card} Ehrlich Functions
+:link: ./using_poli/objective_repository/ehrlich_functions.html
+:columns: 6
+A Closed-form objective for discrete sequences
+:::
+
 :::{grid-item-card} Fexofenadine MPO (using `tdc`)
 :link: ./using_poli/objective_repository/fexofenadine_mpo.html
 :columns: 6

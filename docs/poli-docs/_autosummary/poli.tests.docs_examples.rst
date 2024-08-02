@@ -1,4 +1,4 @@
-poli.tests.docs\_examples
+﻿poli.tests.docs\_examples
 =========================
 
 .. automodule:: poli.tests.docs_examples
@@ -20,12 +20,4 @@ poli.tests.docs\_examples
    
 
 
-
-.. rubric:: Modules
-
-.. autosummary::
-   :toctree:
-   :recursive:
-
-   poli.tests.docs_examples.test_objective_functions
 

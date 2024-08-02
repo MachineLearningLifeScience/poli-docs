@@ -1,4 +1,4 @@
-poli.core.util.isolation
+﻿poli.core.util.isolation
 ========================
 
 .. automodule:: poli.core.util.isolation
@@ -27,7 +27,6 @@ poli.core.util.isolation
    :toctree:
    :recursive:
 
-   poli.core.util.isolation.external_black_box
    poli.core.util.isolation.external_function
    poli.core.util.isolation.instancing
    poli.core.util.isolation.isolated_black_box
