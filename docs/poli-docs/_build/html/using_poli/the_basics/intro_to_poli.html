@@ -758,9 +758,9 @@ document.write(`
 </li>
 </ul>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">poli</span></code> is a library for creating and calling black box optimization functions, with a special focus on <em>discrete</em> sequence optimization. It stands for <em>Protein Objectives Library</em>, since some of the work done on drug design is done through representing proteins and small molecules as discrete sequences.</p>
+<p><code class="docutils literal notranslate"><span class="pre">poli</span></code> is a library for creating and calling black box objective functions, with a special focus on <em>discrete</em> sequence optimization. It stands for <em>Protein Objectives Library</em>, since some of the work done on drug design and protein engineering is done through representing proteins and small molecules as discrete sequences.</p>
 <p>We also build <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code> on top, allowing you to define black box optimization algorithms for discrete sequences.</p>
-<p>These next chapters detail a basic example of how to use <code class="docutils literal notranslate"><span class="pre">poli</span></code> and <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>. If you want to start coding now, continue to <a class="reference internal" href="registering_an_objective_function.html"><span class="doc std std-doc">the next chapter</span></a>!</p>
+<p>These next chapters detail a basic example of how to use <code class="docutils literal notranslate"><span class="pre">poli</span></code> and <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>.</p>
 <p>The rest of this intro details the usual development loops we assume you’ll follow when using <code class="docutils literal notranslate"><span class="pre">poli</span></code> and <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>:</p>
 <section id="the-usual-development-loop">
 <h2><a class="toc-backref" href="#id2">The usual development loop</a><a class="headerlink" href="#the-usual-development-loop" title="Permalink to this heading">#</a></h2>
@@ -778,7 +778,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aloha&#39;, &#39;dockstring&#39;, &#39;drd3_docking&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_cbas&#39;, &#39;gfp_select&#39;, &#39;penalized_logp_lambo&#39;, &#39;rasp&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;rfp_foldx_stability_and_sasa&#39;, &#39;sa_tdc&#39;, &#39;super_mario_bros&#39;, &#39;white_noise&#39;, &#39;toy_continuous_problem&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;albuterol_similarity&#39;, &#39;aloha&#39;, &#39;amlodipine_mpo&#39;, &#39;celecoxib_rediscovery&#39;, &#39;deco_hop&#39;, &#39;dockstring&#39;, &#39;drd2_docking&#39;, &#39;drd3_docking&#39;, &#39;ehrlich&#39;, &#39;fexofenadine_mpo&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_cbas&#39;, &#39;gfp_select&#39;, &#39;gsk3_beta&#39;, &#39;isomer_c7h8n2o2&#39;, &#39;isomer_c9h10n2o2pf2cl&#39;, &#39;jnk3&#39;, &#39;median_1&#39;, &#39;median_2&#39;, &#39;mestranol_similarity&#39;, &#39;osimetrinib_mpo&#39;, &#39;penalized_logp_lambo&#39;, &#39;perindopril_mpo&#39;, &#39;ranolazine_mpo&#39;, &#39;rasp&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;rfp_foldx_stability_and_sasa&#39;, &#39;rmf_landscape&#39;, &#39;sa_tdc&#39;, &#39;scaffold_hop&#39;, &#39;sitagliptin_mpo&#39;, &#39;super_mario_bros&#39;, &#39;thiothixene_rediscovery&#39;, &#39;toy_continuous_problem&#39;, &#39;troglitazone_rediscovery&#39;, &#39;valsartan_smarts&#39;, &#39;white_noise&#39;, &#39;zaleplon_mpo&#39;]
 </pre></div>
 </div>
 </div>
@@ -786,7 +786,7 @@ document.write(`
 <p>The output is a list of problems you may be able to run.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Some objective functions have more requirements, like installing external dependencies. Check <a class="reference internal" href="../objective_repository/all_objectives.html"><span class="doc std std-doc">the page on all objective functions</span></a> and click on the objective function you are interested in to get a detailed set of instructions on how to install and run it.</p>
+<p>Most black box functions run out-of-the-box, but some have more requirements, like installing external dependencies. Check <a class="reference internal" href="../objective_repository/all_objectives.html"><span class="doc std std-doc">the page on all objective functions</span></a> and click on the objective function you are interested in to get a detailed set of instructions on how to install and run it.</p>
 </div>
 <p>In what follows, we will use the <code class="docutils literal notranslate"><span class="pre">white_noise</span></code> objective function. You could drop-in another function if desired.</p>
 <div class="cell docutils container">
@@ -801,11 +801,6 @@ document.write(`
 <span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">WhiteNoiseBlackBox</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">WhiteNoiseBlackBox</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Creating the objective white_noise from the repository.
 </pre></div>
 </div>
 </div>
@@ -839,38 +834,28 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0: [[&#39;1&#39; &#39;2&#39; &#39;3&#39;]]
-y0: [[1.08390547]]
+y0: [[-0.47139683]]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Solvers implement a <code class="docutils literal notranslate"><span class="pre">next_candidate()</span></code> method, based on their history:</p>
+<p>Solvers implement a <code class="docutils literal notranslate"><span class="pre">solve(max_iter:</span> <span class="pre">int)</span></code> method, which runs the optimization for the provided budget.</p>
+<p>In the specific example of <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code>, each step proposes a new candidate by choosing an element from the alphabet at random, and mutating a random position. This alphabet is part of the black box information:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="o">.</span><span class="n">next_candidate</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">alphabet</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;4&#39;, &#39;2&#39;, &#39;3&#39;]], dtype=&#39;&lt;U1&#39;)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BlackBoxInformation(name=white_noise, max_sequence_length=inf, aligned=False, fixed_length=False, discrete=True)
+[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> simply selects one token at random from the alphabet:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="o">.</span><span class="n">alphabet</span>  <span class="c1"># It&#39;s the same as f.info.alphabet</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>If you are interested in building your own solver</strong>, check out <a class="reference internal" href="defining_a_problem_solver.html"><span class="doc std std-doc">the chapter detailing how <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> is implemented</span></a>.</p>
+<p><strong>If you are interested in building your own solver</strong>, check out <a class="reference internal" href="defining_a_problem_solver.html"><span class="doc std std-doc">the chapter detailing how <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> is implemented</span></a> or <a class="reference internal" href="../../contributing/a_new_solver.html"><span class="doc std std-doc">our guide for contributing a new solver</span></a>.</p>
 </section>
 <section id="optimizing">
 <h3><a class="toc-backref" href="#id5">Optimizing</a><a class="headerlink" href="#optimizing" title="Permalink to this heading">#</a></h3>
@@ -889,7 +874,7 @@ y0: [[1.08390547]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;1&#39; &#39;5&#39; &#39;3&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;7&#39; &#39;3&#39; &#39;3&#39;]]
 </pre></div>
 </div>
 </div>

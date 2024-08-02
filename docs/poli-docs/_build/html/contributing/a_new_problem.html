@@ -743,7 +743,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="adding-a-new-black-box-to-the-repository">
 <h1>Adding a new black box to the repository<a class="headerlink" href="#adding-a-new-black-box-to-the-repository" title="Permalink to this heading">#</a></h1>
 <p>This tutorial covers how black boxes and problems are structured in the repository, and what it takes to add a new one.</p>
-<p>If you want to implement your own black box and problem, we recommend copy-pasting an existing folder (e.g. <code class="docutils literal notranslate"><span class="pre">sa_tdc</span></code>), and modifying it to suit your needs. We provide a checklist at the end of this tutorial for the things you need to pay attention to.</p>
+<p>If you want to implement your own black box and problem, we recommend copy-pasting an existing folder (e.g. <code class="docutils literal notranslate"><span class="pre">dockstring</span></code>), and modifying it to suit your needs. We provide a checklist at the end of this tutorial for the things you need to pay attention to.</p>
 <section id="the-structure-of-a-problem">
 <h2>The structure of a problem<a class="headerlink" href="#the-structure-of-a-problem" title="Permalink to this heading">#</a></h2>
 <p>If you take a look at the source code of <code class="docutils literal notranslate"><span class="pre">poli</span></code>, you will find a folder called <code class="docutils literal notranslate"><span class="pre">objective_repository</span></code>. This is where all the objective functions in the repository live. The structure of a generic problem goes as follows</p>
@@ -753,7 +753,7 @@ document.write(`
 │<span class="w">   </span>├──<span class="w"> </span>information.py<span class="w"> </span><span class="c1"># A BlackBoxInformation containing a desc. of the black box</span>
 │<span class="w">   </span>├──<span class="w"> </span>isolated_function.py<span class="w">  </span><span class="c1"># The logic of your black box, as complex as you want.</span>
 │<span class="w">   </span>├──<span class="w"> </span>environment.yml<span class="w">  </span><span class="c1"># The conda env where isolated_function.py runs</span>
-│<span class="w">   </span>└──<span class="w"> </span>register.py<span class="w">  </span><span class="c1"># Boilerplate for registration and importing.</span>
+│<span class="w">   </span>└──<span class="w"> </span>register.py<span class="w">  </span><span class="c1"># Boilerplate. the problem factory and black box interface.</span>
 </pre></div>
 </div>
 <p>You can also have as many other files as you want. Think of the folder <code class="docutils literal notranslate"><span class="pre">.../problem_name</span></code> as a small project as of itself: you can use any internal code you write here, since it’ll be carried with <code class="docutils literal notranslate"><span class="pre">poli</span></code> at installation time.</p>
@@ -802,7 +802,7 @@ document.write(`
 <section id="a-generic-isolated-function-py">
 <h2>A generic <code class="docutils literal notranslate"><span class="pre">isolated_function.py</span></code><a class="headerlink" href="#a-generic-isolated-function-py" title="Permalink to this heading">#</a></h2>
 <p>Think of <code class="docutils literal notranslate"><span class="pre">isolated_function.py</span></code> as the entry-route to all the complex, dependency-heavy logic of your black box.</p>
-<p>We expect you to implement a subclass of an <code class="docutils literal notranslate"><span class="pre">AbstractIsolatedFunction</span></code>. These are dynamically instanced in isolated environments, such as the one you provide in `environment.yml.</p>
+<p>We expect you to implement a subclass of an <code class="docutils literal notranslate"><span class="pre">AbstractIsolatedFunction</span></code>. These are dynamically instanced in isolated environments, such as the one you provide in <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.</p>
 <p>The average structure of this file would be as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_problem_name/isolated_function.py,</span>
 <span class="c1"># able to run inside the conda env you specify in environment.yml</span>
@@ -846,7 +846,7 @@ document.write(`
 <h2>A generic <code class="docutils literal notranslate"><span class="pre">register.py</span></code><a class="headerlink" href="#a-generic-register-py" title="Permalink to this heading">#</a></h2>
 <p>The average <code class="docutils literal notranslate"><span class="pre">register.py</span></code> has the following structure</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_problem_name/register.py</span>
-<span class="c1"># This one needs to run on a conda env. with minimal dependencies (numpy)</span>
+<span class="c1"># This one NEEDS TO run on a conda env. with minimal dependencies (numpy)</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">List</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -870,33 +870,38 @@ document.write(`
         <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">parallelize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">num_workers</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">evaluation_budget</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
+        <span class="n">evaluation_budget</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">),</span>
+        <span class="n">force_isolation</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
             <span class="n">parallelize</span><span class="o">=</span><span class="n">parallelize</span><span class="p">,</span>
             <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
             <span class="n">evaluation_budget</span><span class="o">=</span><span class="n">evaluation_budget</span><span class="p">,</span>
+            <span class="n">force_isolation</span><span class="o">=</span><span class="n">force_isolation</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="c1">#... your manipulation of args and kwargs.</span>
 
         <span class="c1"># Importing the isolated logic if we can:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">poli.objective_repository.my_problem.isolated_function</span> <span class="kn">import</span>
-            <span class="n">MyIsolatedLogic</span>
-
-            <span class="bp">self</span><span class="o">.</span><span class="n">inner_function</span> <span class="o">=</span> <span class="n">MyIsolatedLogic</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-            <span class="c1"># If we weren&#39;t able to import it, we can still</span>
-            <span class="c1"># create it in an isolated process:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">inner_function</span> <span class="o">=</span> <span class="n">instance_function_as_isolated_process</span><span class="p">(</span>
-                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;problem_name__isolated&quot;</span>  <span class="c1"># The same name in `isolated_function.py`.</span>
-            <span class="p">)</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">get_inner_function</span><span class="p">(</span>
+            <span class="n">isolated_function_name</span><span class="o">=</span><span class="s2">&quot;your_problem__isolated&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- modify this</span>
+            <span class="n">class_name</span><span class="o">=</span><span class="s2">&quot;MyIsolatedLogic&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- modify this</span>
+            <span class="n">module_to_import</span><span class="o">=</span><span class="s2">&quot;poli.objective_repository.your_problem.isolated_function&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- modify this</span>
+            <span class="n">force_isolation</span><span class="o">=</span><span class="n">force_isolation</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">other_kwargs_that_go_into_MyIsolatedLogic</span>  <span class="c1"># &lt;-- modify this</span>
+        <span class="p">)</span>
 
     <span class="c1"># Boilerplate for the black box call:</span>
     <span class="k">def</span> <span class="nf">_black_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+        <span class="n">inner_function</span> <span class="o">=</span> <span class="n">get_inner_function</span><span class="p">(</span>
+            <span class="n">isolated_function_name</span><span class="o">=</span><span class="s2">&quot;your_problem__isolated&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- modify this</span>
+            <span class="n">class_name</span><span class="o">=</span><span class="s2">&quot;MyIsolatedLogic&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- modify this</span>
+            <span class="n">module_to_import</span><span class="o">=</span><span class="s2">&quot;poli.objective_repository.your_problem.isolated_function&quot;</span><span class="p">,</span>  <span class="c1"># &lt;-- modify this</span>
+            <span class="n">force_isolation</span><span class="o">=</span><span class="n">force_isolation</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">other_kwargs_that_go_into_MyIsolatedLogic</span>  <span class="c1"># &lt;-- modify this</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 
     <span class="c1"># A static method that gives you access to the information.</span>
     <span class="nd">@staticmethod</span>
@@ -937,24 +942,9 @@ document.write(`
         <span class="n">x0</span> <span class="o">=</span> <span class="o">...</span>
 
         <span class="k">return</span> <span class="n">Problem</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">poli.core.registry</span> <span class="kn">import</span> <span class="n">register_problem</span>
-
-    <span class="c1"># Once we have created a simple conda enviroment</span>
-    <span class="c1"># (see the environment.yml file in this folder),</span>
-    <span class="c1"># we can register our problem s.t. it uses</span>
-    <span class="c1"># said conda environment.</span>
-    <span class="n">my_problem_factory</span> <span class="o">=</span> <span class="n">MyProblemFactory</span><span class="p">()</span>
-    <span class="n">register_problem</span><span class="p">(</span>
-        <span class="n">my_problem_factory</span><span class="p">,</span>                   
-        <span class="n">conda_environment_name</span><span class="o">=</span><span class="s2">&quot;your_env&quot;</span><span class="p">,</span>    <span class="c1"># This is the env specified</span>
-                                              <span class="c1"># by your environment.yml</span>
-    <span class="p">)</span>
 </pre></div>
 </div>
-<p>That is, <strong>the script creates and registers</strong> your problem factory.</p>
+<p>That is, <strong>the script provides an access to your isolated logic</strong>. Now users can create a new problem factory or black box without having to worry about having the right dependencies.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is important that name of your problem should be the name of the folder it’s contained in, <strong>exactly</strong>. (We advice using <code class="docutils literal notranslate"><span class="pre">camel_case</span></code>).</p>
@@ -1038,7 +1028,7 @@ dependencies:
 <li><p>have put your new problem is inside <code class="docutils literal notranslate"><span class="pre">poli/objective_repository</span></code>,</p></li>
 <li><p>have an <code class="docutils literal notranslate"><span class="pre">information.py</span></code> that describes your black box,</p></li>
 <li><p>have an <code class="docutils literal notranslate"><span class="pre">isolated_function.py</span></code> that implements the complex logic of your black box and registers it,</p></li>
-<li><p>have a <code class="docutils literal notranslate"><span class="pre">register.py</span></code> that creates and register your problem factory,</p></li>
+<li><p>have a <code class="docutils literal notranslate"><span class="pre">register.py</span></code> that creates your problem factory and black box,</p></li>
 <li><p>have an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> that describes the environment you use,</p></li>
 <li><p>have imported your black box and factory in <code class="docutils literal notranslate"><span class="pre">objective_repository/__init__.py</span></code>,</p></li>
 </ol>
@@ -1051,10 +1041,6 @@ dependencies:
     <span class="o">...</span><span class="p">,</span>
     <span class="n">your_arg_1</span><span class="o">=...</span><span class="p">,</span>      <span class="c1"># &lt;-- Keywords you (maybe) needed</span>
     <span class="n">your_arg_2</span><span class="o">=...</span><span class="p">,</span>       <span class="c1"># &lt;-- at your_factory.create(...)</span>
-    <span class="n">your_kwarg</span><span class="o">=...</span><span class="p">,</span>       <span class="c1"># &lt;--</span>
-                            <span class="c1"># For now, only certain types are</span>
-                            <span class="c1"># supported: str, int, bool, float,</span>
-                            <span class="c1"># None, and lists thereof.</span>
 <span class="p">)</span>
 </pre></div>
 </div>
