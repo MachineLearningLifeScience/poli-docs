@@ -753,7 +753,7 @@ document.write(`
 <h2>An abstract observer<a class="headerlink" href="#an-abstract-observer" title="Permalink to this heading">#</a></h2>
 <p>All observers inherit from an <code class="docutils literal notranslate"><span class="pre">AbstractObserver</span></code> (which you can find on <code class="docutils literal notranslate"><span class="pre">poli/core/util/abstract_observer.py</span></code>). The abstract methods you need to overwrite are:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">initialize_observer(problem_info:</span> <span class="pre">ProblemSetupInformation,</span> <span class="pre">caller_info:</span> <span class="pre">object,</span> <span class="pre">x0:</span> <span class="pre">np.ndarray,</span> <span class="pre">y0:</span> <span class="pre">np.ndarray,</span> <span class="pre">seed:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">object</span></code>, which gets called as part of the set-up of the objective function (when <code class="docutils literal notranslate"><span class="pre">objective_factory.create</span></code> is called).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">initialize_observer(problem_setup_info:</span> <span class="pre">BlackBoxInformation,</span> <span class="pre">caller_info:</span> <span class="pre">object,</span> <span class="pre">seed:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">object</span></code>, which gets called as part of the set-up of the objective function (when <code class="docutils literal notranslate"><span class="pre">objective_factory.create</span></code> is called).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">observe(x:</span> <span class="pre">np.ndarray,</span> <span class="pre">y:</span> <span class="pre">np.ndarray,</span> <span class="pre">context:</span> <span class="pre">object)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code>, which gets called every time your optimization algorithms query the objective function.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">finish()</span></code>, which gets called either by the user, or by the object deletion at the end of the script.</p></li>
 </ul>
@@ -776,8 +776,6 @@ document.write(`
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem_setup_info</span><span class="p">:</span> <span class="n">ProblemSetupInformation</span><span class="p">,</span>
         <span class="n">caller_info</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
-        <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-        <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
         <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
         <span class="o">...</span>
@@ -802,7 +800,7 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">poli.core.problem_setup_information</span> <span class="kn">import</span> <span class="n">ProblemSetupInformation</span>
+<span class="kn">from</span> <span class="nn">poli.core.black_box_information</span> <span class="kn">import</span> <span class="n">BlackBoxInformation</span>
 <span class="kn">from</span> <span class="nn">poli.core.util.abstract_observer</span> <span class="kn">import</span> <span class="n">AbstractObserver</span>
 
 <span class="n">THIS_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
@@ -822,10 +820,8 @@ document.write(`
     
     <span class="k">def</span> <span class="nf">initialize_observer</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">problem_setup_info</span><span class="p">:</span> <span class="n">ProblemSetupInformation</span><span class="p">,</span>
+        <span class="n">problem_setup_info</span><span class="p">:</span> <span class="n">BlackBoxInformation</span><span class="p">,</span>
         <span class="n">caller_info</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
-        <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-        <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
         <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
 
@@ -838,8 +834,6 @@ document.write(`
         <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;caller_info&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">caller_info</span>
 
         <span class="c1"># Saving the initial evaluations and seed</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;x0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
         <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;seed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">seed</span>
 
         <span class="c1"># Saving the metadata</span>
@@ -925,8 +919,6 @@ document.write(`
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">problem_setup_info</span><span class="p">:</span> <span class="n">ProblemSetupInformation</span><span class="p">,</span>
         <span class="n">caller_info</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
-        <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-        <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
         <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
 
@@ -939,8 +931,6 @@ document.write(`
         <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;caller_info&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">caller_info</span>
 
         <span class="c1"># Saving the initial evaluations and seed</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;x0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">x0</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;y0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
         <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;seed&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">seed</span>
 
         <span class="c1"># Saving the metadata</span>
@@ -962,7 +952,7 @@ document.write(`
 <h2>Logging a couple queries of <code class="docutils literal notranslate"><span class="pre">aloha</span></code><a class="headerlink" href="#logging-a-couple-queries-of-aloha" title="Permalink to this heading">#</a></h2>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">aloha</span></code> toy problem, let’s check that our observer logic works as expected:</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
 
 <span class="c1"># We create an instance of the observer</span>
@@ -974,21 +964,19 @@ document.write(`
     <span class="n">observer</span><span class="o">=</span><span class="n">observer</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">x0</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="n">black_box</span><span class="p">,</span> <span class="n">problem</span><span class="o">.</span><span class="n">x0</span>
+
+<span class="c1"># We initialize the observer</span>
+<span class="n">observer</span><span class="o">.</span><span class="n">initialize_observer</span><span class="p">(</span>
+    <span class="n">problem_setup_info</span><span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">info</span><span class="p">,</span>
+    <span class="n">caller_info</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># We set the observer to track f.</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_observer</span><span class="p">(</span><span class="n">observer</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Creating the objective aloha from the repository.
-poli 🧪: initializing the observer.
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 <p>At this point, the observer <code class="docutils literal notranslate"><span class="pre">__init__</span></code> call created a folder called <code class="docutils literal notranslate"><span class="pre">results</span></code> right next to this file, and we can load up the metadata just to be sure:</p>
 <div class="cell docutils container">
@@ -999,7 +987,7 @@ poli 🧪: initializing the observer.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;aloha&#39;, &#39;max_sequence_length&#39;: 5, &#39;aligned&#39;: True, &#39;fixed_length&#39;: True, &#39;deterministic&#39;: True, &#39;discrete&#39;: True, &#39;fidelity&#39;: None, &#39;alphabet&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;, &#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;], &#39;log_transform_recommended&#39;: False, &#39;padding_token&#39;: &#39;&#39;, &#39;caller_info&#39;: None, &#39;x0&#39;: [[&#39;A&#39;, &#39;L&#39;, &#39;O&#39;, &#39;O&#39;, &#39;F&#39;]], &#39;y0&#39;: [[3]], &#39;seed&#39;: None}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;aloha&#39;, &#39;max_sequence_length&#39;: 5, &#39;aligned&#39;: True, &#39;fixed_length&#39;: True, &#39;deterministic&#39;: True, &#39;discrete&#39;: True, &#39;fidelity&#39;: None, &#39;alphabet&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;, &#39;G&#39;, &#39;H&#39;, &#39;I&#39;, &#39;J&#39;, &#39;K&#39;, &#39;L&#39;, &#39;M&#39;, &#39;N&#39;, &#39;O&#39;, &#39;P&#39;, &#39;Q&#39;, &#39;R&#39;, &#39;S&#39;, &#39;T&#39;, &#39;U&#39;, &#39;V&#39;, &#39;W&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;], &#39;log_transform_recommended&#39;: False, &#39;padding_token&#39;: &#39;&#39;, &#39;caller_info&#39;: {}, &#39;seed&#39;: None}
 </pre></div>
 </div>
 </div>

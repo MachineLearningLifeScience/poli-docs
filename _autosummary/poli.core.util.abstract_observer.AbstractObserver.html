@@ -743,12 +743,9 @@ called every time the objective function is called.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">initialize_observer(problem_setup_info:</span> <span class="pre">ProblemSetupInformation,</span> <span class="pre">caller_info:</span> <span class="pre">object,</span></span></dt>
-<dd><blockquote>
-<div><p>x0: np.ndarray, y0: np.ndarray, seed: int) -&gt; object:</p>
-</div></blockquote>
-<p>Initializes the observer with the necessary information to monitor
+<dt class="sig sig-object py" id="poli.core.util.abstract_observer.AbstractObserver.initialize_observer">
+<span class="sig-name descname"><span class="pre">initialize_observer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem_setup_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="poli.core.problem_setup_information.ProblemSetupInformation.html#poli.core.problem_setup_information.ProblemSetupInformation" title="poli.core.problem_setup_information.ProblemSetupInformation"><span class="pre">ProblemSetupInformation</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">caller_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object:</span></span></span><a class="headerlink" href="#poli.core.util.abstract_observer.AbstractObserver.initialize_observer" title="Permalink to this definition">#</a></dt>
+<dd><p>Initializes the observer with the necessary information to monitor
 the optimization process.</p>
 </dd></dl>
 
@@ -777,7 +774,7 @@ optimization process is complete.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#poli.core.util.abstract_observer.AbstractObserver.finish" title="poli.core.util.abstract_observer.AbstractObserver.finish"><code class="xref py py-obj docutils literal notranslate"><span class="pre">finish</span></code></a>()</p></td>
 <td><p>Finish the observer.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_observer</span></code>(problem_setup_info, ...)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poli.core.util.abstract_observer.AbstractObserver.initialize_observer" title="poli.core.util.abstract_observer.AbstractObserver.initialize_observer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialize_observer</span></code></a>(problem_setup_info, ...)</p></td>
 <td><p>Initialize the observer.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#poli.core.util.abstract_observer.AbstractObserver.observe" title="poli.core.util.abstract_observer.AbstractObserver.observe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code></a>(x, y[, context])</p></td>
