@@ -1,4 +1,4 @@
-poli.objective\_repository.foldx\_sasa
+﻿poli.objective\_repository.foldx\_sasa
 ======================================
 
 .. automodule:: poli.objective_repository.foldx_sasa
@@ -27,7 +27,6 @@ poli.objective\_repository.foldx\_sasa
    :toctree:
    :recursive:
 
-   poli.objective_repository.foldx_sasa.information
    poli.objective_repository.foldx_sasa.isolated_function
    poli.objective_repository.foldx_sasa.register
 

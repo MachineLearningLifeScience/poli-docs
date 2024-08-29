@@ -1,4 +1,4 @@
-poli.objective\_repository.penalized\_logp\_lambo
+﻿poli.objective\_repository.penalized\_logp\_lambo
 =================================================
 
 .. automodule:: poli.objective_repository.penalized_logp_lambo
@@ -27,7 +27,6 @@ poli.objective\_repository.penalized\_logp\_lambo
    :toctree:
    :recursive:
 
-   poli.objective_repository.penalized_logp_lambo.information
    poli.objective_repository.penalized_logp_lambo.isolated_function
    poli.objective_repository.penalized_logp_lambo.register
 

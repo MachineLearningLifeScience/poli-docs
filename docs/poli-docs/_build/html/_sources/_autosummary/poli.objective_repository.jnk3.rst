@@ -1,4 +1,4 @@
-poli.objective\_repository.jnk3
+﻿poli.objective\_repository.jnk3
 ===============================
 
 .. automodule:: poli.objective_repository.jnk3
@@ -27,6 +27,5 @@ poli.objective\_repository.jnk3
    :toctree:
    :recursive:
 
-   poli.objective_repository.jnk3.information
    poli.objective_repository.jnk3.register
 

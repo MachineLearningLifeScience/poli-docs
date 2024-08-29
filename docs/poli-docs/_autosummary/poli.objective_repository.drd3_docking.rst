@@ -1,4 +1,4 @@
-poli.objective\_repository.drd3\_docking
+﻿poli.objective\_repository.drd3\_docking
 ========================================
 
 .. automodule:: poli.objective_repository.drd3_docking
@@ -27,6 +27,5 @@ poli.objective\_repository.drd3\_docking
    :toctree:
    :recursive:
 
-   poli.objective_repository.drd3_docking.information
    poli.objective_repository.drd3_docking.register
 

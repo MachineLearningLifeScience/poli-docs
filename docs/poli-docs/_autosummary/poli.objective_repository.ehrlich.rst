@@ -1,4 +1,4 @@
-poli.objective\_repository.ehrlich
+﻿poli.objective\_repository.ehrlich
 ==================================
 
 .. automodule:: poli.objective_repository.ehrlich
@@ -27,6 +27,5 @@ poli.objective\_repository.ehrlich
    :toctree:
    :recursive:
 
-   poli.objective_repository.ehrlich.information
    poli.objective_repository.ehrlich.register
 

@@ -1,4 +1,4 @@
-poli.objective\_repository.median\_2
+﻿poli.objective\_repository.median\_2
 ====================================
 
 .. automodule:: poli.objective_repository.median_2
@@ -27,6 +27,5 @@ poli.objective\_repository.median\_2
    :toctree:
    :recursive:
 
-   poli.objective_repository.median_2.information
    poli.objective_repository.median_2.register
 

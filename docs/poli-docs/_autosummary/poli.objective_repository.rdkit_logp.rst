@@ -1,4 +1,4 @@
-poli.objective\_repository.rdkit\_logp
+﻿poli.objective\_repository.rdkit\_logp
 ======================================
 
 .. automodule:: poli.objective_repository.rdkit_logp
@@ -27,6 +27,5 @@ poli.objective\_repository.rdkit\_logp
    :toctree:
    :recursive:
 
-   poli.objective_repository.rdkit_logp.information
    poli.objective_repository.rdkit_logp.register
 

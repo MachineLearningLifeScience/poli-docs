@@ -1,4 +1,4 @@
-poli.objective\_repository.rdkit\_qed
+﻿poli.objective\_repository.rdkit\_qed
 =====================================
 
 .. automodule:: poli.objective_repository.rdkit_qed
@@ -27,6 +27,5 @@ poli.objective\_repository.rdkit\_qed
    :toctree:
    :recursive:
 
-   poli.objective_repository.rdkit_qed.information
    poli.objective_repository.rdkit_qed.register
 

@@ -1,4 +1,4 @@
-poli.objective\_repository.toy\_continuous\_problem
+﻿poli.objective\_repository.toy\_continuous\_problem
 ===================================================
 
 .. automodule:: poli.objective_repository.toy_continuous_problem
@@ -28,7 +28,6 @@ poli.objective\_repository.toy\_continuous\_problem
    :recursive:
 
    poli.objective_repository.toy_continuous_problem.definitions
-   poli.objective_repository.toy_continuous_problem.information
    poli.objective_repository.toy_continuous_problem.register
    poli.objective_repository.toy_continuous_problem.toy_continuous_problem
 

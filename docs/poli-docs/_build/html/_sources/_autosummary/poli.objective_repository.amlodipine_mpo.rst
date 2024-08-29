@@ -1,4 +1,4 @@
-poli.objective\_repository.amlodipine\_mpo
+﻿poli.objective\_repository.amlodipine\_mpo
 ==========================================
 
 .. automodule:: poli.objective_repository.amlodipine_mpo
@@ -27,6 +27,5 @@ poli.objective\_repository.amlodipine\_mpo
    :toctree:
    :recursive:
 
-   poli.objective_repository.amlodipine_mpo.information
    poli.objective_repository.amlodipine_mpo.register
 

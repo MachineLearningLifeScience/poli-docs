@@ -1,4 +1,4 @@
-poli.objective\_repository.rasp
+﻿poli.objective\_repository.rasp
 ===============================
 
 .. automodule:: poli.objective_repository.rasp
@@ -27,7 +27,6 @@ poli.objective\_repository.rasp
    :toctree:
    :recursive:
 
-   poli.objective_repository.rasp.information
    poli.objective_repository.rasp.isolated_function
    poli.objective_repository.rasp.register
 

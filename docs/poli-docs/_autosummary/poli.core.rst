@@ -37,7 +37,6 @@
    poli.core.exceptions
    poli.core.multi_objective_black_box
    poli.core.problem
-   poli.core.problem_setup_information
    poli.core.proteins
    poli.core.registry
    poli.core.util

@@ -1,4 +1,4 @@
-poli.objective\_repository.foldx\_stability
+﻿poli.objective\_repository.foldx\_stability
 ===========================================
 
 .. automodule:: poli.objective_repository.foldx_stability
@@ -27,7 +27,6 @@ poli.objective\_repository.foldx\_stability
    :toctree:
    :recursive:
 
-   poli.objective_repository.foldx_stability.information
    poli.objective_repository.foldx_stability.isolated_function
    poli.objective_repository.foldx_stability.register
 

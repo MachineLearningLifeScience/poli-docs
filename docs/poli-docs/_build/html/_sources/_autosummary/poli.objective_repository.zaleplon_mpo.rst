@@ -1,4 +1,4 @@
-poli.objective\_repository.zaleplon\_mpo
+﻿poli.objective\_repository.zaleplon\_mpo
 ========================================
 
 .. automodule:: poli.objective_repository.zaleplon_mpo
@@ -27,6 +27,5 @@ poli.objective\_repository.zaleplon\_mpo
    :toctree:
    :recursive:
 
-   poli.objective_repository.zaleplon_mpo.information
    poli.objective_repository.zaleplon_mpo.register
 

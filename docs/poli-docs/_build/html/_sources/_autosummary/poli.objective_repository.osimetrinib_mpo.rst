@@ -1,4 +1,4 @@
-poli.objective\_repository.osimetrinib\_mpo
+﻿poli.objective\_repository.osimetrinib\_mpo
 ===========================================
 
 .. automodule:: poli.objective_repository.osimetrinib_mpo
@@ -27,6 +27,5 @@ poli.objective\_repository.osimetrinib\_mpo
    :toctree:
    :recursive:
 
-   poli.objective_repository.osimetrinib_mpo.information
    poli.objective_repository.osimetrinib_mpo.register
 

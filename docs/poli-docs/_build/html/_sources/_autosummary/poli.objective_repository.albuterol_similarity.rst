@@ -1,4 +1,4 @@
-poli.objective\_repository.albuterol\_similarity
+﻿poli.objective\_repository.albuterol\_similarity
 ================================================
 
 .. automodule:: poli.objective_repository.albuterol_similarity
@@ -27,6 +27,5 @@ poli.objective\_repository.albuterol\_similarity
    :toctree:
    :recursive:
 
-   poli.objective_repository.albuterol_similarity.information
    poli.objective_repository.albuterol_similarity.register
 

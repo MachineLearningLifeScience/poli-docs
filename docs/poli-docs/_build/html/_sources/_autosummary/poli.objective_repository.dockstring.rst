@@ -1,4 +1,4 @@
-poli.objective\_repository.dockstring
+﻿poli.objective\_repository.dockstring
 =====================================
 
 .. automodule:: poli.objective_repository.dockstring
@@ -27,7 +27,6 @@ poli.objective\_repository.dockstring
    :toctree:
    :recursive:
 
-   poli.objective_repository.dockstring.information
    poli.objective_repository.dockstring.isolated_function
    poli.objective_repository.dockstring.register
 

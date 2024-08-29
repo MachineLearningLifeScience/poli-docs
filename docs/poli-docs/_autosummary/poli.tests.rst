@@ -29,6 +29,7 @@
 
    poli.tests.benchmarks
    poli.tests.conftest
+   poli.tests.information
    poli.tests.registry
    poli.tests.test_core_promises
    poli.tests.test_seeding

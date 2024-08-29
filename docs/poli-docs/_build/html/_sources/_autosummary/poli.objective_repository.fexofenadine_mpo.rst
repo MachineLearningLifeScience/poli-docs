@@ -1,4 +1,4 @@
-poli.objective\_repository.fexofenadine\_mpo
+﻿poli.objective\_repository.fexofenadine\_mpo
 ============================================
 
 .. automodule:: poli.objective_repository.fexofenadine_mpo
@@ -27,6 +27,5 @@ poli.objective\_repository.fexofenadine\_mpo
    :toctree:
    :recursive:
 
-   poli.objective_repository.fexofenadine_mpo.information
    poli.objective_repository.fexofenadine_mpo.register
 

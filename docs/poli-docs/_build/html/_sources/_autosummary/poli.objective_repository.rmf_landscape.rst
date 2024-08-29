@@ -1,4 +1,4 @@
-poli.objective\_repository.rmf\_landscape
+﻿poli.objective\_repository.rmf\_landscape
 =========================================
 
 .. automodule:: poli.objective_repository.rmf_landscape
@@ -27,7 +27,6 @@ poli.objective\_repository.rmf\_landscape
    :toctree:
    :recursive:
 
-   poli.objective_repository.rmf_landscape.information
    poli.objective_repository.rmf_landscape.isolated_function
    poli.objective_repository.rmf_landscape.register
 
