@@ -1,4 +1,4 @@
-﻿poli.core.util
+poli.core.util
 ==============
 
 .. automodule:: poli.core.util

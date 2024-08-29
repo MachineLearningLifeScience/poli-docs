@@ -1,4 +1,4 @@
-poli.objective\_repository.celecoxib\_rediscovery
+﻿poli.objective\_repository.celecoxib\_rediscovery
 =================================================
 
 .. automodule:: poli.objective_repository.celecoxib_rediscovery
@@ -27,6 +27,5 @@ poli.objective\_repository.celecoxib\_rediscovery
    :toctree:
    :recursive:
 
-   poli.objective_repository.celecoxib_rediscovery.information
    poli.objective_repository.celecoxib_rediscovery.register
 

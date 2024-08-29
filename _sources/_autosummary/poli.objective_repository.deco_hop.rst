@@ -1,4 +1,4 @@
-poli.objective\_repository.deco\_hop
+﻿poli.objective\_repository.deco\_hop
 ====================================
 
 .. automodule:: poli.objective_repository.deco_hop
@@ -27,6 +27,5 @@ poli.objective\_repository.deco\_hop
    :toctree:
    :recursive:
 
-   poli.objective_repository.deco_hop.information
    poli.objective_repository.deco_hop.register
 

@@ -1,4 +1,4 @@
-poli.objective\_repository.valsartan\_smarts
+﻿poli.objective\_repository.valsartan\_smarts
 ============================================
 
 .. automodule:: poli.objective_repository.valsartan_smarts
@@ -27,6 +27,5 @@ poli.objective\_repository.valsartan\_smarts
    :toctree:
    :recursive:
 
-   poli.objective_repository.valsartan_smarts.information
    poli.objective_repository.valsartan_smarts.register
 

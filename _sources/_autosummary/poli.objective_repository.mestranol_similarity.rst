@@ -1,4 +1,4 @@
-poli.objective\_repository.mestranol\_similarity
+﻿poli.objective\_repository.mestranol\_similarity
 ================================================
 
 .. automodule:: poli.objective_repository.mestranol_similarity
@@ -27,6 +27,5 @@ poli.objective\_repository.mestranol\_similarity
    :toctree:
    :recursive:
 
-   poli.objective_repository.mestranol_similarity.information
    poli.objective_repository.mestranol_similarity.register
 

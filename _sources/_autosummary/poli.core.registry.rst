@@ -1,4 +1,4 @@
-﻿poli.core.registry
+poli.core.registry
 ==================
 
 .. automodule:: poli.core.registry

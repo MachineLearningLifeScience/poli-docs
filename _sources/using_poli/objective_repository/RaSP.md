@@ -7,11 +7,13 @@
 
 This objective function is quite similar to [`foldx_stability`](./foldx_stability.md), and can be considered a drop-in replacement for single mutations. Be aware that the scales are different. 
 
+Since our black boxes are meant to be maximized, we return **the negative** of what RaSP predicts.
+
 ## Prerequisites
 
 - A collection of `pdb` files you're interested in mutating.
 
-However, your life would be easier if you run this black box objective function inside the `poli__rasp` environment. See below.
+However, your life would be easier if you run this black box objective function inside the `poli__rasp` environment. [See here for an `environment.yml` file](https://github.com/MachineLearningLifeScience/poli/blob/71a307da47b1ebc64f00d1064bdea70e0fe8a57d/src/poli/objective_repository/rasp/environment.yml).
 
 ## How to run
 
@@ -23,11 +25,21 @@ from poli.objective_repository import RaspBlackBox, RaspProblemFactory
 
 wildtype_pdb_path = Path(__file__).parent  / "3ned.pdb"
 
-# Creating the black box
-f = RaspBlackBox(wildtype_pdb_path=[wildtype_pdb_path])
+# You can either
+# (i) Create a black box
+f = RaspBlackBox(
+    wildtype_pdb_path=[wildtype_pdb_path],
+    chains_to_keep=["A"],  #  <-- The chain in the pdb.
+    additive=False,  #  <-- Whether to treat multiple mutations additively.
+)
 
-# Creating a problem
-problem = RaspProblemFactory().create(wildtype_pdb_path=[wildtype_pdb_path])
+# or
+# (ii) creating a problem
+problem = RaspProblemFactory().create(
+    wildtype_pdb_path=[wildtype_pdb_path]
+    chains_to_keep=["A"],  #  <-- The chain in the pdb.
+    additive=False,  #  <-- Whether to treat multiple mutations additively.
+)
 f, x0 = problem.black_box, problem.x0
 
 # Querying:

@@ -1,4 +1,4 @@
-poli.objective\_repository.thiothixene\_rediscovery
+﻿poli.objective\_repository.thiothixene\_rediscovery
 ===================================================
 
 .. automodule:: poli.objective_repository.thiothixene_rediscovery
@@ -27,6 +27,5 @@ poli.objective\_repository.thiothixene\_rediscovery
    :toctree:
    :recursive:
 
-   poli.objective_repository.thiothixene_rediscovery.information
    poli.objective_repository.thiothixene_rediscovery.register
 

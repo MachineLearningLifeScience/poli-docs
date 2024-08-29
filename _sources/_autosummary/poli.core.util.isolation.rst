@@ -1,4 +1,4 @@
-﻿poli.core.util.isolation
+poli.core.util.isolation
 ========================
 
 .. automodule:: poli.core.util.isolation
