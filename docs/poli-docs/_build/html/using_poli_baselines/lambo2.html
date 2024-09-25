@@ -802,9 +802,7 @@ References as <code class="docutils literal notranslate"><span class="pre">BibTe
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>black_box</strong> (<a class="reference internal" href="../_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox" title="poli.core.abstract_black_box.AbstractBlackBox"><em>AbstractBlackBox</em></a>) – The black box to optimize. Must be protein-related. To ensure that the
-black box is protein-related, we verify that the <cite>alphabet</cite> inside the
-<cite>info</cite> attribute of the black box is a protein alphabet.</p></li>
+<li><p><strong>black_box</strong> (<a class="reference internal" href="../_autosummary/poli.core.abstract_black_box.AbstractBlackBox.html#poli.core.abstract_black_box.AbstractBlackBox" title="poli.core.abstract_black_box.AbstractBlackBox"><em>AbstractBlackBox</em></a>) – The black box to optimize. Must be protein-related.</p></li>
 <li><p><strong>x0</strong> (<em>np.ndarray</em>) – The initial solutions to the black box. If not enough solutions are
 provided, the solver will generate random mutants to reach the population
 size specified in the configuration file (as cfg.num_samples).</p></li>
