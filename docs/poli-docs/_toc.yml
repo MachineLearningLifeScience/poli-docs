@@ -57,6 +57,7 @@ parts:
       - file: using_poli_baselines/random_mutations.md
       - file: using_poli_baselines/cma_es.md
       - file: using_poli_baselines/line_bayesian_optimization.md
+      - file: using_poli_baselines/lambo2.md
       - file: using_poli_baselines/hvarfners_vanilla_bo.md
       - file: using_poli_baselines/saasbo.md
       - file: using_poli_baselines/alebo.md

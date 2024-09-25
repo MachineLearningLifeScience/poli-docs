@@ -49,6 +49,10 @@ sphinx:
       - simtk
       - dockstring
       - poli.core.util.proteins.rasp
+      - cortex
+      - lightning
+      - hydra
+      - omegaconf
   extra_extensions:
     - sphinx.ext.autodoc
     - sphinx.ext.autosummary

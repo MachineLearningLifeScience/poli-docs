@@ -226,6 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/random_mutations.html">Random mutations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/cma_es.html">CMA-ES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/lambo2.html">LaMBO2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/hvarfners_vanilla_bo.html">Hvarfner’s Vanilla Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/saasbo.html">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/alebo.html">Adaptive Linear Embedding Bayesian Optimization (ALEBO)</a></li>
@@ -652,6 +653,7 @@ document.write(`
  | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
@@ -1031,6 +1033,8 @@ document.write(`
 </li>
       <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_balaji_predictions.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_balaji_predictions">get_balaji_predictions() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
 </li>
+      <li><a href="using_poli_baselines/lambo2.html#poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2.get_candidate_points_from_history">get_candidate_points_from_history() (poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2 method)</a>
+</li>
       <li><a href="_autosummary/poli.core.util.inter_process_communication.process_wrapper.get_connection.html#poli.core.util.inter_process_communication.process_wrapper.get_connection">get_connection() (in module poli.core.util.inter_process_communication.process_wrapper)</a>
 </li>
       <li><a href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_experimental_X_y.html#poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.get_experimental_X_y">get_experimental_X_y() (in module poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing)</a>
@@ -1054,6 +1058,14 @@ document.write(`
   </ul></td>
 </tr></table>
 
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="using_poli_baselines/lambo2.html#poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2.history">history (poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2 property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -1073,6 +1085,8 @@ document.write(`
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="using_poli_baselines/lambo2.html#poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2">LaMBO2 (class in poli_baselines.solvers.bayesian_optimization.lambo2)</a>
+</li>
       <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.level_to_array.html#poli.objective_repository.super_mario_bros.level_utils.level_to_array">level_to_array() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
 </li>
       <li><a href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.level_to_list.html#poli.objective_repository.super_mario_bros.level_utils.level_to_list">level_to_list() (in module poli.objective_repository.super_mario_bros.level_utils)</a>
@@ -2872,15 +2886,19 @@ document.write(`
 </li>
       <li><a href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere.html#poli.objective_repository.toy_continuous_problem.definitions.shifted_sphere">shifted_sphere() (in module poli.objective_repository.toy_continuous_problem.definitions)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.SimpleVAE.html#poli.objective_repository.gfp_cbas.make_vae.SimpleVAE">SimpleVAE (class in poli.objective_repository.gfp_cbas.make_vae)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.smiles_to_molecules.html#poli.core.util.chemistry.string_to_molecule.smiles_to_molecules">smiles_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
+</li>
+      <li><a href="using_poli_baselines/lambo2.html#poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2.solve">solve() (poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2 method)</a>
 </li>
       <li><a href="_autosummary/poli.objective_factory.start.html#poli.objective_factory.start">start() (in module poli.objective_factory)</a>
 </li>
       <li><a href="_autosummary/poli.core.util.observer_wrapper.start_observer_process.html#poli.core.util.observer_wrapper.start_observer_process">start_observer_process() (in module poli.core.util.observer_wrapper)</a>
+</li>
+      <li><a href="using_poli_baselines/lambo2.html#poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2.step">step() (poli_baselines.solvers.bayesian_optimization.lambo2.LaMBO2 method)</a>
 </li>
       <li><a href="_autosummary/poli.core.util.chemistry.string_to_molecule.strings_to_molecules.html#poli.core.util.chemistry.string_to_molecule.strings_to_molecules">strings_to_molecules() (in module poli.core.util.chemistry.string_to_molecule)</a>
 </li>

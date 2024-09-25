@@ -1,17 +1,11 @@
-# poli 🧪: a library of discrete objective functions
+# `poli` 🧪: a library of discrete objective functions
 
-[poli](https://github.com/MachineLearningLifeScience/poli) is a library of discrete objective functions for benchmarking optimization algorithms. Examples include:
-- 🔬 **stability** of mutations from a wildtype protein (using [foldx](https://foldxsuite.crg.eu/) or [rasp](https://github.com/KULL-Centre/_2022_ML-ddG-Blaabjerg)).
-- 🧪 **docking scores** of ligands to proteins (using [dockstring](https://github.com/dockstring/dockstring), [pyscreener](https://github.com/coleygroup/pyscreener) and [pytdc](https://tdcommons.ai/functions/oracles/)).
-- 💊 **druglikeness** or **synthetic acccesibility** of small molecules (using [rdkit](https://github.com/rdkit/rdkit) and [pytdc](https://tdcommons.ai/functions/oracles/)).
-
-Some of `poli`'s features:
-- 🔲 **isolation** of black box function calls inside conda environments. Don't worry about clashes w. black box requirements, poli will create the relevant conda environments for you.
-- 🗒️ **logging** each black box call using observers.
+[`poli`](https://github.com/MachineLearningLifeScience/poli) is a library of discrete objective functions for benchmarking optimization algorithms. If offers
+- **isolation** of black box function calls inside conda environments. Don't worry about clashes w. black box requirements, poli will create the relevant conda environments for you.
+- **logging** each black box call using observers.
 -  A numpy interface. Inputs are `np.array`s of strings, outputs are `np.array`s of floats.
-- `SMILES` and `SELFIES` support for small molecule manipulation.
 
-This documentation also discusses [`poli-baselines`](https://github.com/MachineLearningLifeScience/poli-baselines), a collection of optimizers of these discrete black box functions.
+We also provide [`poli-baselines`](https://github.com/MachineLearningLifeScience/poli-baselines), a collection of optimizers of these discrete black box functions.
 
 :::{admonition} We are running a benchmark!
 
@@ -284,6 +278,12 @@ On top of `poli`, we provide `poli-baselines`, a collection of **black-box optim
 :link: ./using_poli_baselines/random_mutations.html
 :columns: 6
 Optimizing a discrete sequence by performing random mutations
+:::
+
+:::{grid-item-card} LaMBO2
+:link: ./using_poli_baselines/lambo2.html
+:columns: 6
+Optimizing protein sequences using guided discrete diffusion
 :::
 
 :::{grid-item-card} Increasingly high-dimensional combinatorial and continuous embeddings (Bounce) 

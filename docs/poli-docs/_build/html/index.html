@@ -228,6 +228,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/random_mutations.html">Random mutations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/cma_es.html">CMA-ES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/line_bayesian_optimization.html">Line Bayesian Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/lambo2.html">LaMBO2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/hvarfners_vanilla_bo.html">Hvarfner’s Vanilla Bayesian Optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/saasbo.html">Sparse Axis-Aligned Subspaces Bayesian Optimization (SAASBO)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/alebo.html">Adaptive Linear Embedding Bayesian Optimization (ALEBO)</a></li>
@@ -714,21 +715,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="poli-a-library-of-discrete-objective-functions">
-<h1>poli 🧪: a library of discrete objective functions<a class="headerlink" href="#poli-a-library-of-discrete-objective-functions" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://github.com/MachineLearningLifeScience/poli">poli</a> is a library of discrete objective functions for benchmarking optimization algorithms. Examples include:</p>
+<h1><code class="docutils literal notranslate"><span class="pre">poli</span></code> 🧪: a library of discrete objective functions<a class="headerlink" href="#poli-a-library-of-discrete-objective-functions" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://github.com/MachineLearningLifeScience/poli"><code class="docutils literal notranslate"><span class="pre">poli</span></code></a> is a library of discrete objective functions for benchmarking optimization algorithms. If offers</p>
 <ul class="simple">
-<li><p>🔬 <strong>stability</strong> of mutations from a wildtype protein (using <a class="reference external" href="https://foldxsuite.crg.eu/">foldx</a> or <a class="reference external" href="https://github.com/KULL-Centre/_2022_ML-ddG-Blaabjerg">rasp</a>).</p></li>
-<li><p>🧪 <strong>docking scores</strong> of ligands to proteins (using <a class="reference external" href="https://github.com/dockstring/dockstring">dockstring</a>, <a class="reference external" href="https://github.com/coleygroup/pyscreener">pyscreener</a> and <a class="reference external" href="https://tdcommons.ai/functions/oracles/">pytdc</a>).</p></li>
-<li><p>💊 <strong>druglikeness</strong> or <strong>synthetic acccesibility</strong> of small molecules (using <a class="reference external" href="https://github.com/rdkit/rdkit">rdkit</a> and <a class="reference external" href="https://tdcommons.ai/functions/oracles/">pytdc</a>).</p></li>
-</ul>
-<p>Some of <code class="docutils literal notranslate"><span class="pre">poli</span></code>’s features:</p>
-<ul class="simple">
-<li><p>🔲 <strong>isolation</strong> of black box function calls inside conda environments. Don’t worry about clashes w. black box requirements, poli will create the relevant conda environments for you.</p></li>
-<li><p>🗒️ <strong>logging</strong> each black box call using observers.</p></li>
+<li><p><strong>isolation</strong> of black box function calls inside conda environments. Don’t worry about clashes w. black box requirements, poli will create the relevant conda environments for you.</p></li>
+<li><p><strong>logging</strong> each black box call using observers.</p></li>
 <li><p>A numpy interface. Inputs are <code class="docutils literal notranslate"><span class="pre">np.array</span></code>s of strings, outputs are <code class="docutils literal notranslate"><span class="pre">np.array</span></code>s of floats.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SMILES</span></code> and <code class="docutils literal notranslate"><span class="pre">SELFIES</span></code> support for small molecule manipulation.</p></li>
 </ul>
-<p>This documentation also discusses <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines"><code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a>, a collection of optimizers of these discrete black box functions.</p>
+<p>We also provide <a class="reference external" href="https://github.com/MachineLearningLifeScience/poli-baselines"><code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a>, a collection of optimizers of these discrete black box functions.</p>
 <div class="admonition-we-are-running-a-benchmark admonition">
 <p class="admonition-title">We are running a benchmark!</p>
 <p>Using <code class="docutils literal notranslate"><span class="pre">poli</span></code> and <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>, <a class="reference external" href="https://machinelearninglifescience.github.io/hdbo_benchmark/">we are running a benchmark comparing high-dimensional Bayesian optimization algorithms for discrete sequence</a>.</p>
@@ -1100,6 +1094,15 @@ Random Mutations</div>
 <p class="sd-card-text">Optimizing a discrete sequence by performing random mutations</p>
 </div>
 <a class="sd-stretched-link reference external" href="./using_poli_baselines/random_mutations.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+LaMBO2</div>
+<p class="sd-card-text">Optimizing protein sequences using guided discrete diffusion</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli_baselines/lambo2.html"></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
