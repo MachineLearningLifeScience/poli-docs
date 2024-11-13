@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.ehrlich
+poli.objective\_repository.ehrlich
 ==================================
 
 .. automodule:: poli.objective_repository.ehrlich

@@ -256,6 +256,12 @@ Solvent accessibility of mutations of a wildtype using `foldx`
 Rapid Stability Predictions of single mutations from a wildtype.
 :::
 
+:::{grid-item-card} Protein Stability (using `PyRosetta`)
+:link: ./using_poli/objective_repository/Rosetta_energy.html
+:columns: 6
+Stability Predictions of variants from a wildtype.
+:::
+
 :::{grid-item-card} RFP Fluorescence Protein Stability (using `lambo`)
 :link: ./using_poli/objective_repository/foldx_rfp_lambo.html
 :columns: 6

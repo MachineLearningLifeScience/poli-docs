@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.foldx\_stability
+poli.objective\_repository.foldx\_stability
 ===========================================
 
 .. automodule:: poli.objective_repository.foldx_stability

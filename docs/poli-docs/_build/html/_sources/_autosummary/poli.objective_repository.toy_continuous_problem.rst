@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.toy\_continuous\_problem
+poli.objective\_repository.toy\_continuous\_problem
 ===================================================
 
 .. automodule:: poli.objective_repository.toy_continuous_problem

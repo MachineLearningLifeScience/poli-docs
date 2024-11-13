@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.rdkit\_qed
+poli.objective\_repository.rdkit\_qed
 =====================================
 
 .. automodule:: poli.objective_repository.rdkit_qed

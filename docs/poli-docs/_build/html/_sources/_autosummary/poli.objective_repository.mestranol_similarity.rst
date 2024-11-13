@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.mestranol\_similarity
+poli.objective\_repository.mestranol\_similarity
 ================================================
 
 .. automodule:: poli.objective_repository.mestranol_similarity

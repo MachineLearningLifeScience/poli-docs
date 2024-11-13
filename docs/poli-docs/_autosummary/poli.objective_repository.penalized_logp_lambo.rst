@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.penalized\_logp\_lambo
+poli.objective\_repository.penalized\_logp\_lambo
 =================================================
 
 .. automodule:: poli.objective_repository.penalized_logp_lambo

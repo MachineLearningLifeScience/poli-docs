@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.amlodipine\_mpo
+poli.objective\_repository.amlodipine\_mpo
 ==========================================
 
 .. automodule:: poli.objective_repository.amlodipine_mpo

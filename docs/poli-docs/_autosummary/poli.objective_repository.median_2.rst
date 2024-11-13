@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.median\_2
+poli.objective\_repository.median\_2
 ====================================
 
 .. automodule:: poli.objective_repository.median_2

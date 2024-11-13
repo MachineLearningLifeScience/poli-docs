@@ -27,6 +27,7 @@ poli.core.proteins
    :toctree:
    :recursive:
 
+   poli.core.proteins.data_packages
    poli.core.proteins.foldx_black_box
    poli.core.proteins.foldx_isolated_function
 

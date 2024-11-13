@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.foldx\_sasa
+poli.objective\_repository.foldx\_sasa
 ======================================
 
 .. automodule:: poli.objective_repository.foldx_sasa

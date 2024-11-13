@@ -1,4 +1,4 @@
-poli.tests.registry.toy\_discrete\_problems
+﻿poli.tests.registry.toy\_discrete\_problems
 ===========================================
 
 .. automodule:: poli.tests.registry.toy_discrete_problems
@@ -28,4 +28,5 @@ poli.tests.registry.toy\_discrete\_problems
    :recursive:
 
    poli.tests.registry.toy_discrete_problems.test_ehrlich
+   poli.tests.registry.toy_discrete_problems.test_ehrlich_holo
 

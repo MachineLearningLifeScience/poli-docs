@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.perindopril\_mpo
+poli.objective\_repository.perindopril\_mpo
 ===========================================
 
 .. automodule:: poli.objective_repository.perindopril_mpo
