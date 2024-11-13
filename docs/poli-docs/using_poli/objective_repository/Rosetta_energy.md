@@ -67,15 +67,15 @@ If you take the difference to the wild-type (/reference) sequence you obtain a $
 If you apply a scaling factor you obtain **DDG** values.
 We follow the (at the time of writing) current default of $2.9$, as described in {cite:p}`Park:Scale:2016`.
 
-You can modify the factor via the `conversion_factor` flag, as
+You can modify the factor via the `conversion_factor` flag.
 
 #### Scoring functions
 
-Available choices: `ref2015` (default), `ref2015_cart`, `centroid`, `fa`, `franklin2019` (WIP).
+Available choices: `ref2015`, `ref2015_cart` (default), `centroid`, `fa` (PyRosetta spec), `franklin2019` (WIP).
 
 
 These scoring functions are subject to change in the future, especially what the recommended default is. 
-Why and how these functions have been deemed valid and set as defaults, we defer to [rosettacommons](https://docs.rosettacommons.org/docs/latest/rosetta_basics/scoring/score-types) and related publications (see link).
+Why and how these functions have been deemed valid and set as defaults we defer to the [RosettaCommons](https://docs.rosettacommons.org/docs/latest/rosetta_basics/scoring/score-types) and related publications (see link).
 
 
 Generally, if a `_cart` suffix is present, a *cartesian* protocol is invoked.
@@ -193,4 +193,4 @@ year = {2024}
 ## Further reading
 
 1. [The Manual](https://graylab.jhu.edu/pyrosetta/downloads/documentation/PyRosetta_Manual.pdf).
-2. [Official Documentation](https://graylab.jhu.edu/PyRosetta.documentation/pyrosetta.html).
+2. [Official PyRosetta Docs](https://graylab.jhu.edu/PyRosetta.documentation/pyrosetta.html).
