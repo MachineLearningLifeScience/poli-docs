@@ -34,7 +34,9 @@
    poli.core.benchmark_information
    poli.core.black_box_information
    poli.core.chemistry
+   poli.core.data_package
    poli.core.exceptions
+   poli.core.lambda_black_box
    poli.core.multi_objective_black_box
    poli.core.problem
    poli.core.proteins

@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.celecoxib\_rediscovery
+poli.objective\_repository.celecoxib\_rediscovery
 =================================================
 
 .. automodule:: poli.objective_repository.celecoxib_rediscovery

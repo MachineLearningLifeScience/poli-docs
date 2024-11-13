@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.osimetrinib\_mpo
+poli.objective\_repository.osimetrinib\_mpo
 ===========================================
 
 .. automodule:: poli.objective_repository.osimetrinib_mpo
