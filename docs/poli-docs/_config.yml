@@ -53,6 +53,8 @@ sphinx:
       - lightning
       - hydra
       - omegaconf
+      - holo
+      - pyrosetta
   extra_extensions:
     - sphinx.ext.autodoc
     - sphinx.ext.autosummary

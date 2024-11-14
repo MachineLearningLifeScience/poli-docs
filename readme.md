@@ -12,6 +12,14 @@ conda activate poli-docs
 pip install -r requirements.txt
 ```
 
+## Adding relevant files to the `_toc.yml`
+
+If you're building a new page, it's quite likely you'll have to add a new entry to the relevant section of `_toc.yml`.
+
+## (Maybe) Adding mock dependencies to the `_config.yml`
+
+If you're implementing a new black box, it is likely that some pages won't build in the API if the right dependencies are not installed for `poli`. Add mock dependencies in the `_config.yml` to prevent this.
+
 ## Building
 
 After this, you can build the documentation using

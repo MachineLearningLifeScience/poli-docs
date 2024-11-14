@@ -43,6 +43,7 @@ parts:
       - file: using_poli/objective_repository/rdkit_qed.md
       - file: using_poli/objective_repository/ranolazine_mpo.md
       - file: using_poli/objective_repository/RaSP.md
+      - file: using_poli/objective_repository/Rosetta_energy.md
       - file: using_poli/objective_repository/sa_tdc.md
       - file: using_poli/objective_repository/scaffold_hop.md
       - file: using_poli/objective_repository/sitagliptin_mpo.md
