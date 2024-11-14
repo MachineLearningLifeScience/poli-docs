@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.deco\_hop
+poli.objective\_repository.deco\_hop
 ====================================
 
 .. automodule:: poli.objective_repository.deco_hop

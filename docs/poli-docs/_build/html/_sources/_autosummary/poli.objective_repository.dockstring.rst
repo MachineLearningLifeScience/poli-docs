@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.dockstring
+poli.objective\_repository.dockstring
 =====================================
 
 .. automodule:: poli.objective_repository.dockstring

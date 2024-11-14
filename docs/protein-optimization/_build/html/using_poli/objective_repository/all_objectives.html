@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>All objective functions &#8212; Protein optimization</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'using_poli/objective_repository/all_objectives';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_protein_opt.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_protein_opt.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Protein optimization using poli
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/getting_started.html">Getting started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../the_basics/intro_to_poli.html">What is poli?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the_basics/registering_an_objective_function.html">Registering an objective function in poli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the_basics/defining_a_problem_solver.html">Defining a problem solver in <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the_basics/optimizing_an_objective_function.html">Optimizing an objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../the_basics/diving_deeper.html">Diving deeper: how does poli work under the hood?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using poli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some objective functions available</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="white_noise.html">White Noise objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aloha.html">Aloha objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rdkit_qed.html">Quantitative Estimate of Druglikeness (QED)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rdkit_logp.html">Log-solubility (logP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foldx_stability.html">Protein stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foldx_sasa.html">Protein solvent accessibility (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="super_mario_bros.html">Optimizing jumps in Super Mario Bros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/a_new_problem.html">Adding a new problem to the repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/a_new_solver.html">Adding a new black box optimization algorithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix: Understanding foldx</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../understanding_foldx/00-installing-foldx.html">Installing <code class="docutils literal notranslate"><span class="pre">foldx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../understanding_foldx/01-single-mutation-using-foldx/index.html">Computing the energy of a protein and a single mutation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/using_poli/objective_repository/all_objectives.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>All objective functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-problems">Toy problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-molecules">Small molecules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proteins">Proteins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="all-objective-functions">
+<h1>All objective functions<a class="headerlink" href="#all-objective-functions" title="Permalink to this heading">#</a></h1>
+<p>These are all the objective functions available on <code class="docutils literal notranslate"><span class="pre">poli</span></code>. Click on one of them to get a minimal working example of how to use it.</p>
+<section id="toy-problems">
+<h2>Toy problems<a class="headerlink" href="#toy-problems" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+White noise</div>
+<p class="sd-card-text">White noise drawn from a unit Gaussian</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/white_noise.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Aloha</div>
+<p class="sd-card-text">A toy example about optimizing 5-letter words to spell “ALOHA”</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/aloha.html"></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="small-molecules">
+<h2>Small molecules<a class="headerlink" href="#small-molecules" title="Permalink to this heading">#</a></h2>
+<p>Most of our problems are based on the <span class="xref myst">PMO</span> benchmark, by Gao et al [TODO: add cite].</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Quantitative Estimate of Druglikeness (QED)</div>
+<p class="sd-card-text">Computing the QED using <code class="docutils literal notranslate"><span class="pre">RDKit</span></code>.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/rdkit_qed.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Log-solubility (LogP)</div>
+<p class="sd-card-text">Computing the log-quotient of solubilities using <code class="docutils literal notranslate"><span class="pre">RDKit</span></code>.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/rdkit_logp.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+TDC oracles [WIP]</div>
+<p class="sd-card-text">Some of the oracles provided by the Therapeutics Data Commons. [WIP]</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/tdc_oracles.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+GuacaMol [WIP]</div>
+<p class="sd-card-text">Some of the oracles provided by GuacaMol. [WIP]</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/tdc_oracles.html"></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="proteins">
+<h2>Proteins<a class="headerlink" href="#proteins" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Protein Stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</div>
+<p class="sd-card-text">Stability of mutations of a wildtype using <code class="docutils literal notranslate"><span class="pre">foldx</span></code></p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/foldx_stability.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Protein SASA score (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</div>
+<p class="sd-card-text">Solvent accessibility of mutations of a wildtype using <code class="docutils literal notranslate"><span class="pre">foldx</span></code></p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/foldx_sasa.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Protein Stability (using <code class="docutils literal notranslate"><span class="pre">RaSP</span></code>) [WIP]</div>
+<p class="sd-card-text">Rapid Stability Predictions of single mutations from a wildtype. [WIP]</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/RaSP.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+RFP Fluorescence Protein Stability (using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</div>
+<p class="sd-card-text">LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/foldx_rfp_lambo.html"></a></div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+GFP Fluorescence Protein Surrogate (using <code class="docutils literal notranslate"><span class="pre">CBas</span></code>)</div>
+<p class="sd-card-text">CBas Fluorescence (GFP) median brightness by latent encoding surrogate under the assumption that the encoder mean correlates sufficiently with target brightness.</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/gfp_cbas.html"></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Mario jumps</div>
+<p class="sd-card-text">Optimizing the number of jumps on a Super Mario Bros level</p>
+</div>
+<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/super_mario_bros.html"></a></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./using_poli/objective_repository"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#toy-problems">Toy problems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#small-molecules">Small molecules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proteins">Proteins</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miguel González-Duque
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

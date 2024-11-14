@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Adding a new problem to the repository &#8212; Protein optimization</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/a_new_problem';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Adding a new black box optimization algorithm" href="a_new_solver.html" />
+    <link rel="prev" title="Optimizing jumps in Super Mario Bros" href="../using_poli/objective_repository/super_mario_bros.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo_protein_opt.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo_protein_opt.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Protein optimization using poli
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/getting_started.html">Getting started</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/the_basics/intro_to_poli.html">What is poli?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/the_basics/registering_an_objective_function.html">Registering an objective function in poli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/the_basics/defining_a_problem_solver.html">Defining a problem solver in <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/the_basics/optimizing_an_objective_function.html">Optimizing an objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/the_basics/diving_deeper.html">Diving deeper: how does poli work under the hood?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using poli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Some objective functions available</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/white_noise.html">White Noise objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/aloha.html">Aloha objective function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/rdkit_qed.html">Quantitative Estimate of Druglikeness (QED)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/rdkit_logp.html">Log-solubility (logP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/foldx_stability.html">Protein stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/foldx_sasa.html">Protein solvent accessibility (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/super_mario_bros.html">Optimizing jumps in Super Mario Bros</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Adding a new problem to the repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="a_new_solver.html">Adding a new black box optimization algorithm</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix: Understanding foldx</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../understanding_foldx/00-installing-foldx.html">Installing <code class="docutils literal notranslate"><span class="pre">foldx</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../understanding_foldx/01-single-mutation-using-foldx/index.html">Computing the energy of a protein and a single mutation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/contributing/a_new_problem.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Adding a new problem to the repository</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-a-problem">The structure of a problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-generic-register-py">A generic <code class="docutils literal notranslate"><span class="pre">register.py</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-generic-environment-yml">A generic <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-your-installation">Testing your installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pull-request">Submitting a pull request</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="adding-a-new-problem-to-the-repository">
+<h1>Adding a new problem to the repository<a class="headerlink" href="#adding-a-new-problem-to-the-repository" title="Permalink to this heading">#</a></h1>
+<p>This tutorial covers how problems are structured in the repository, and what it takes to add a new one.</p>
+<section id="the-structure-of-a-problem">
+<h2>The structure of a problem<a class="headerlink" href="#the-structure-of-a-problem" title="Permalink to this heading">#</a></h2>
+<p>If you take a look at the source code of <code class="docutils literal notranslate"><span class="pre">poli</span></code>, you will find a folder called <code class="docutils literal notranslate"><span class="pre">objective_repository</span></code>. This is where all the objective functions in the repository live. The structure of a generic problem goes as follows</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poli/objective_repository
+├──<span class="w"> </span>problem_name<span class="w">              </span><span class="c1"># Has the name of the registered problem (exactly)</span>
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py<span class="w">           </span><span class="c1"># Necessary, else it doesn&#39;t get included in the pip install.</span>
+│<span class="w">   </span>├──<span class="w"> </span>environment.yml<span class="w">       </span><span class="c1"># The env. where ./register.py and the problem will run</span>
+│<span class="w">   </span>└──<span class="w"> </span>register.py<span class="w">           </span><span class="c1"># Definition and registration of the problem</span>
+</pre></div>
+</div>
+<p>You can also have as many other files as you want. Think of the folder <code class="docutils literal notranslate"><span class="pre">.../problem_name</span></code> as a small project as of itself: you can have Python dependencies that will get appended to the path at runtime.</p>
+<p><strong>For example:</strong> let’s take a look at the problem folder of <code class="docutils literal notranslate"><span class="pre">super_mario_bros</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>├──<span class="w"> </span>super_mario_bros
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py<span class="w">         </span>
+│<span class="w">   </span>├──<span class="w"> </span>environment.yml
+│<span class="w">   </span>├──<span class="w"> </span>register.py
+│<span class="w">   </span>├──<span class="w"> </span>example.pt<span class="w">           </span><span class="c1"># &lt; --</span>
+│<span class="w">   </span>├──<span class="w"> </span>level_utils.py<span class="w">       </span><span class="c1"># &lt; --</span>
+│<span class="w">   </span>├──<span class="w"> </span>model.py<span class="w">             </span><span class="c1"># &lt; --  extra files needed</span>
+│<span class="w">   </span>├──<span class="w"> </span>readme.md<span class="w">            </span><span class="c1"># &lt; --  for the simulation</span>
+│<span class="w">   </span>├──<span class="w"> </span>simulator.jar<span class="w">        </span><span class="c1"># &lt; --  to run.</span>
+│<span class="w">   </span>└──<span class="w"> </span>simulator.py<span class="w">         </span><span class="c1"># &lt; --</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As a general rule: <strong>don’t assume that your files will be there after <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">git+...</span></code></strong>. File endings different from <code class="docutils literal notranslate"><span class="pre">.py</span></code> and <code class="docutils literal notranslate"><span class="pre">.yml</span></code> will be ignored by <code class="docutils literal notranslate"><span class="pre">pip</span></code> during installation. An alternative, then, is to download them in your <code class="docutils literal notranslate"><span class="pre">register.py</span></code>.</p>
+</div>
+</section>
+<section id="a-generic-register-py">
+<h2>A generic <code class="docutils literal notranslate"><span class="pre">register.py</span></code><a class="headerlink" href="#a-generic-register-py" title="Permalink to this heading">#</a></h2>
+<p>The average <code class="docutils literal notranslate"><span class="pre">register.py</span></code> has the following structure</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># An average register.py</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">poli.core.abstract_black_box</span> <span class="kn">import</span> <span class="n">AbstractBlackBox</span>
+<span class="kn">from</span> <span class="nn">poli.core.abstract_problem_factory</span> <span class="kn">import</span> <span class="n">AbstractProblemFactory</span>
+<span class="kn">from</span> <span class="nn">poli.core.problem_setup_information</span> <span class="kn">import</span> <span class="n">ProblemSetupInformation</span>
+
+<span class="c1"># Files that are in the same folder as</span>
+<span class="c1"># register will get added to the</span>
+<span class="c1"># PYTHONPATH at runtime.</span>
+<span class="kn">from</span> <span class="nn">your_local_dependency</span> <span class="kn">import</span> <span class="o">...</span>
+
+
+<span class="k">class</span> <span class="nc">YourBlackBox</span><span class="p">(</span><span class="n">AbstractBlackBox</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">L</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">)</span>
+
+    <span class="c1"># The only method you have to define</span>
+    <span class="k">def</span> <span class="nf">_black_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">...</span>
+
+
+<span class="k">class</span> <span class="nc">YourProblemFactory</span><span class="p">(</span><span class="n">AbstractProblemFactory</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_setup_information</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProblemSetupInformation</span><span class="p">:</span>
+        <span class="c1"># The tokens of your alphabet</span>
+        <span class="n">alphabet_symbols</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        
+        <span class="c1"># The encoding</span>
+        <span class="n">alphabet</span> <span class="o">=</span> <span class="p">{</span><span class="n">symbol</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">symbol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alphabet_symbols</span><span class="p">)}</span>
+
+        <span class="c1"># A description of the problem</span>
+        <span class="c1"># See more in the chapter about defining</span>
+        <span class="c1"># problem factories.</span>
+        <span class="k">return</span> <span class="n">ProblemSetupInformation</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;your_problem&quot;</span><span class="p">,</span>         <span class="c1"># HAS to be the same name as the parent folder.</span>
+            <span class="n">max_sequence_length</span><span class="o">=...</span><span class="p">,</span> 
+            <span class="n">aligned</span><span class="o">=...</span><span class="p">,</span>
+            <span class="n">alphabet</span><span class="o">=</span><span class="n">alphabet</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">your_keyword_1</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+        <span class="n">your_keyword_2</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">AbstractBlackBox</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
+        <span class="c1"># Manipulate keywords you might need at creation time...</span>
+        <span class="o">...</span>
+        
+        <span class="c1"># The maximum length you defined above</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_setup_information</span><span class="p">()</span><span class="o">.</span><span class="n">get_max_sequence_length</span><span class="p">()</span>
+        
+        <span class="c1"># Creating your black box function</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">YourBlackBox</span><span class="p">(</span><span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="p">)</span>
+        
+        <span class="c1"># Your first input (an np.array)</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="o">...</span>
+
+        <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">poli.core.registry</span> <span class="kn">import</span> <span class="n">register_problem</span>
+
+    <span class="c1"># Once we have created a simple conda enviroment</span>
+    <span class="c1"># (see the environment.yml file in this folder),</span>
+    <span class="c1"># we can register our problem s.t. it uses</span>
+    <span class="c1"># said conda environment.</span>
+    <span class="n">your_problem_factory</span> <span class="o">=</span> <span class="n">YourProblemFactory</span><span class="p">()</span>
+    <span class="n">register_problem</span><span class="p">(</span>
+        <span class="n">your_problem_factory</span><span class="p">,</span>                   
+        <span class="n">conda_environment_name</span><span class="o">=</span><span class="s2">&quot;your_env&quot;</span><span class="p">,</span>    <span class="c1"># This is the env specified</span>
+                                              <span class="c1"># by your environment.yml</span>
+    <span class="p">)</span>
+
+</pre></div>
+</div>
+<p>That is, <strong>the script creates and registers</strong> your problem factory.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important that name of your problem should be the name of the folder it’s contained, <strong>exactly</strong>. (We advice using <code class="docutils literal notranslate"><span class="pre">camel_case</span></code>).</p>
+</div>
+</section>
+<section id="a-generic-environment-yml">
+<h2>A generic <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code><a class="headerlink" href="#a-generic-environment-yml" title="Permalink to this heading">#</a></h2>
+<p>You will usually develop your black-box objective function inside an environment, say <code class="docutils literal notranslate"><span class="pre">your_env</span></code>. You need to specify all these requirements in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, generically:</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: your_env
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - numpy
+    - &quot;git+https://github.com/MachineLearningLifeScience/poli.git@master&quot;
+    - YOUR OTHER DEPENDENCIES
+</pre></div>
+</div>
+<p>This environment will be created (if it doesn’t exist yet), and will be used to run <code class="docutils literal notranslate"><span class="pre">register.py</span></code>.</p>
+<div class="admonition-why-conda admonition">
+<p class="admonition-title">Why <code class="docutils literal notranslate"><span class="pre">conda</span></code>?</p>
+<p>Conda environments can be quite good! For example, the <code class="docutils literal notranslate"><span class="pre">super_mario_bros</span></code> environment contains a Java runtime. This is the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> for said problem:</p>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>name: poli__mario
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9
+  - conda-forge::openjdk
+  - cpuonly
+  - pytorch
+  - pip
+  - pip:
+    - numpy
+    - click
+    - &quot;git+https://github.com/MachineLearningLifeScience/poli.git@master&quot;
+
+</pre></div>
+</div>
+<p>It installs an <code class="docutils literal notranslate"><span class="pre">openjdk</span></code> that will be added to the path when the environment is active. Moreover, you can also hack your way around installing conda and creating conda environments inside Colab.</p>
+</div>
+</section>
+<section id="testing-your-installation">
+<h2>Testing your installation<a class="headerlink" href="#testing-your-installation" title="Permalink to this heading">#</a></h2>
+<p>If you</p>
+<ol class="arabic simple">
+<li><p>have put your new problem is inside <code class="docutils literal notranslate"><span class="pre">poli/objective_repository</span></code>,</p></li>
+<li><p>have a <code class="docutils literal notranslate"><span class="pre">register.py</span></code> that creates and register your problem factory,</p></li>
+<li><p>have an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> that describes the environment you use,</p></li>
+</ol>
+<p>then you should be set!</p>
+<p>You can test that your problem is registerable by creating a fresh environment that includes poli, and running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from poli.core.registry import get_problems; print(get_problems())&quot;</span>
+<span class="o">[</span>...<span class="o">]</span><span class="w">  </span><span class="c1"># A list, without your problem in it.</span>
+</pre></div>
+</div>
+<p>Your problem is not registered yet, so don’t fret. You can check <em>if</em> you can register it by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from poli.objective_repository import AVAILABLE_OBJECTIVES; print(AVAILABLE_OBJECTIVES)&quot;</span>
+<span class="o">[</span>...,<span class="w"> </span><span class="s2">&quot;your_problem&quot;</span>,<span class="w"> </span>...<span class="o">]</span><span class="w">   </span><span class="c1"># If all goes well, you should see &quot;your_problem&quot; here.</span>
+</pre></div>
+</div>
+<p>If you can find your problem in this list, then you’re set! You should be able to run</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">objective_factory</span>
+
+<span class="n">problem_info</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">objective_factory</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;your_problem&quot;</span><span class="p">,</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="n">your_keyword_1</span><span class="o">=...</span><span class="p">,</span>      <span class="c1"># &lt;-- Keywords you (maybe) needed</span>
+    <span class="n">your_keyword_2</span><span class="o">=...</span>       <span class="c1"># &lt;-- at your_factory.create(...)</span>
+                        <span class="c1"># For now, only string kwargs are</span>
+                        <span class="c1"># supported. </span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">poli</span></code> will ask you to confirm that you want to register your problem (you can force the registration by passing <code class="docutils literal notranslate"><span class="pre">force_register=True</span></code> to <code class="docutils literal notranslate"><span class="pre">objective_factory.create</span></code>).</p>
+</section>
+<section id="submitting-a-pull-request">
+<h2>Submitting a pull request<a class="headerlink" href="#submitting-a-pull-request" title="Permalink to this heading">#</a></h2>
+<p>If you want to share your problem with us, feel free to create a pull request in our repository: <a class="github reference external" href="https://github.com/MachineLearningLifeScience/poli">MachineLearningLifeScience/poli</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contributing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../using_poli/objective_repository/super_mario_bros.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Optimizing jumps in Super Mario Bros</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="a_new_solver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Adding a new black box optimization algorithm</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-structure-of-a-problem">The structure of a problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-generic-register-py">A generic <code class="docutils literal notranslate"><span class="pre">register.py</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-generic-environment-yml">A generic <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-your-installation">Testing your installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submitting-a-pull-request">Submitting a pull request</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miguel González-Duque
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

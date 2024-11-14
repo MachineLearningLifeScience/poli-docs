@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.rmf\_landscape
+poli.objective\_repository.rmf\_landscape
 =========================================
 
 .. automodule:: poli.objective_repository.rmf_landscape

@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.zaleplon\_mpo
+poli.objective\_repository.zaleplon\_mpo
 ========================================
 
 .. automodule:: poli.objective_repository.zaleplon_mpo

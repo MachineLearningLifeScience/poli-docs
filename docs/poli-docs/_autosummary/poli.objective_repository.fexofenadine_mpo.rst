@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.fexofenadine\_mpo
+poli.objective\_repository.fexofenadine\_mpo
 ============================================
 
 .. automodule:: poli.objective_repository.fexofenadine_mpo

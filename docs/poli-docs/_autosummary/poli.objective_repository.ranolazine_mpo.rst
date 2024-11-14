@@ -1,4 +1,4 @@
-﻿poli.objective\_repository.ranolazine\_mpo
+poli.objective\_repository.ranolazine\_mpo
 ==========================================
 
 .. automodule:: poli.objective_repository.ranolazine_mpo
