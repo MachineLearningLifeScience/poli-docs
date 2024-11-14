@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Optimizing jumps in Super Mario Bros &#8212; Documentation for poli and poli-baselines</title>
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -76,7 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,11 +120,16 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -142,8 +158,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/MLLS_concept_color.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/MLLS_concept_color.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/MLLS_concept_color.png" class="logo__image only-light" alt="Documentation for poli and poli-baselines - Home"/>
+    <script>document.write(`<img src="../../_static/MLLS_concept_color.png" class="logo__image only-dark" alt="Documentation for poli and poli-baselines - Home"/>`);</script>
   
   
 </a></div>
@@ -198,6 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="rdkit_qed.html">Quantitative Estimate of Druglikeness (QED)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ranolazine_mpo.html">Ranolazine MPO (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="RaSP.html">Rapid Stability Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Rosetta_energy.html">Rosetta Energy Stability Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sa_tdc.html">Synthetic Accessibility (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scaffold_hop.html">Scaffold Hop (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sitagliptin_mpo.html">Sitagliptin MPO (using TDC)</a></li>
@@ -315,6 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.ehrlich_holo.html">poli.objective_repository.ehrlich_holo</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.ehrlich_holo.isolated_function.html">poli.objective_repository.ehrlich_holo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.ehrlich_holo.register.html">poli.objective_repository.ehrlich_holo.register</a></li>
 </ul>
 </li>
@@ -439,6 +457,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rosetta_energy.html">poli.objective_repository.rosetta_energy</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-42"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rosetta_energy.information.html">poli.objective_repository.rosetta_energy.information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rosetta_energy.isolated_function.html">poli.objective_repository.rosetta_energy.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.objective_repository.rosetta_energy.register.html">poli.objective_repository.rosetta_energy.register</a></li>
 </ul>
 </li>
@@ -656,20 +675,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -709,7 +730,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimizing-jumps-in-super-mario-bros">
 <h1>Optimizing jumps in Super Mario Bros<a class="headerlink" href="#optimizing-jumps-in-super-mario-bros" title="Permalink to this heading">#</a></h1>
@@ -718,7 +739,7 @@ document.write(`
 <section id="about">
 <h2>About<a class="headerlink" href="#about" title="Permalink to this heading">#</a></h2>
 <p>Levels from the classic game Super Mario Bros can be considered as <span class="math notranslate nohighlight">\(14\times 14\)</span> words, where the tokens correspond to the ground floor, pipe parts, enemies, etc <span id="id1">[<a class="reference internal" href="../../bibliography.html#id28" title="Adam James Summerville, Sam Snodgrass, Michael Mateas, and Santiago Onta n'on Villar. The vglc: the video game level corpus. Proceedings of the 7th Workshop on Procedural Content Generation, 2016.">Summerville <em>et al.</em>, 2016</a>]</span>.</p>
-<p>This black box provides access to a simulator which takes levels as arrays of strings <code class="docutils literal notranslate"><span class="pre">[b,</span> <span class="pre">14*14]</span></code> and returns the number of jump actions performed by an artificial agent<a class="footnote-reference brackets" href="#robin" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, or <code class="docutils literal notranslate"><span class="pre">NaN</span></code> if the agent was not able to finish the level <span id="id3">[<a class="reference internal" href="../../bibliography.html#id30" title="Ahmed Khalifa. The mario ai framework. https://github.com/amidos2006/Mario-AI-Framework, 2009. Accessed: 20/03/2024.">Khalifa, 2009</a>, <a class="reference internal" href="../../bibliography.html#id29" title="Vanessa Volz, Simon M. Lucas, Jacob Schrum, Adam Smith, Jialin Liu, and Sebastian Risi. Evolving mario levels in the latent space of a deep convolutional generative adversarial network. GECCO 2018 - Proceedings of the 2018 Genetic and Evolutionary Computation Conference, pages 221–228, 2018. doi:10.1145/3205455.3205517.">Volz <em>et al.</em>, 2018</a>]</span>.</p>
+<p>This black box provides access to a simulator which takes levels as arrays of strings <code class="docutils literal notranslate"><span class="pre">[b,</span> <span class="pre">14*14]</span></code> and returns the number of jump actions performed by an artificial agent<a class="footnote-reference brackets" href="#robin" id="id2">1</a>, or <code class="docutils literal notranslate"><span class="pre">NaN</span></code> if the agent was not able to finish the level <span id="id3">[<a class="reference internal" href="../../bibliography.html#id30" title="Ahmed Khalifa. The mario ai framework. https://github.com/amidos2006/Mario-AI-Framework, 2009. Accessed: 20/03/2024.">Khalifa, 2009</a>, <a class="reference internal" href="../../bibliography.html#id29" title="Vanessa Volz, Simon M. Lucas, Jacob Schrum, Adam Smith, Jialin Liu, and Sebastian Risi. Evolving mario levels in the latent space of a deep convolutional generative adversarial network. GECCO 2018 - Proceedings of the 2018 Genetic and Evolutionary Computation Conference, pages 221–228, 2018. doi:10.1145/3205455.3205517.">Volz <em>et al.</em>, 2018</a>]</span>.</p>
 <p>This is a good toy example for <strong>constrained</strong> discrete optimization, where the constraints are given by whether the agent is able to solve the level or not.</p>
 </section>
 <section id="prerequisites">
@@ -813,10 +834,11 @@ year = {2024}
 </div>
 </div>
 <hr class="footnotes docutils" />
-<aside class="footnote brackets" id="robin" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
-<p>The agent in question is Robin Baumgarten’s A* agent, which won the 2009 MarioAI competition <span id="id4">[<a class="reference internal" href="../../bibliography.html#id27" title="Julian Togelius, Sergey Karakovskiy, and Robin Baumgarten. The 2009 mario ai competition. In IEEE Congress on Evolutionary Computation, volume, 1-8. 2010. doi:10.1109/CEC.2010.5586133.">Togelius <em>et al.</em>, 2010</a>]</span>.</p>
-</aside>
+<dl class="footnote brackets">
+<dt class="label" id="robin"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>The agent in question is Robin Baumgarten’s A* agent, which won the 2009 MarioAI competition <span id="id4">[<a class="reference internal" href="../../bibliography.html#id27" title="Julian Togelius, Sergey Karakovskiy, and Robin Baumgarten. The 2009 mario ai competition. In IEEE Congress on Evolutionary Computation, volume, 1-8. 2010. doi:10.1109/CEC.2010.5586133.">Togelius <em>et al.</em>, 2010</a>]</span>.</p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -845,16 +867,12 @@ year = {2024}
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -862,6 +880,7 @@ year = {2024}
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -894,6 +913,7 @@ By Center for Basic Machine Learning Research in Life Science
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -920,8 +940,8 @@ By Center for Basic Machine Learning Research in Life Science
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
