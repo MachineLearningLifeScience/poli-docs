@@ -783,7 +783,7 @@ We do not limit the edit distance and free form optimization can be conducted.</
 
 <span class="c1"># or</span>
 <span class="c1"># (ii) creating a problem</span>
-<span class="n">problem</span> <span class="o">=</span> <span class="n">RaspProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">RosettaEnergyProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">wildtype_pdb_path</span><span class="o">=</span><span class="p">[</span><span class="n">wildtype_pdb_path</span><span class="p">]</span>
     <span class="n">chains_to_keep</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">],</span>  <span class="c1">#  &lt;-- The chain in the pdb.</span>
     <span class="n">additive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1">#  &lt;-- Whether to treat multiple mutations additively.</span>

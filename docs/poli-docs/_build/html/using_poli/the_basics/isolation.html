@@ -731,7 +731,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="isolating-black-box-objective-functions">
 <h1>Isolating black box objective functions<a class="headerlink" href="#isolating-black-box-objective-functions" title="Permalink to this heading">#</a></h1>
-<p>Each black-box objective function in <code class="docutils literal notranslate"><span class="pre">poli</span></code> lives inside a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment. For example:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To run this example, you need to have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed.</p>
+</div>
+<p>The black-boxes inside <code class="docutils literal notranslate"><span class="pre">poli</span></code> may have tricky dependencies that are incompatible the one with the other (e.g. clashes in <code class="docutils literal notranslate"><span class="pre">biopython</span></code> versions). As a way to mitigate this, we provide <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments in which each black box can reliably run.</p>
+<p>For example:</p>
 <ul class="simple">
 <li><p>the <code class="docutils literal notranslate"><span class="pre">foldx</span></code> stability objective lives inside <code class="docutils literal notranslate"><span class="pre">poli__protein</span></code>, which has <code class="docutils literal notranslate"><span class="pre">biopython</span></code>, <code class="docutils literal notranslate"><span class="pre">pdb-tools</span></code> and other libraries that are required to interface well with proteins and their representations.</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">dockstring</span></code> objective lives inside <code class="docutils literal notranslate"><span class="pre">poli__dockstring</span></code>, which includes babel as part of its installation.</p></li>
@@ -757,6 +762,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating environment poli__dockstring from /Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/dockstring/environment.yml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: poli__dockstring already exists.
+poli 🧪: running registration of dockstring__isolated from environment poli__dockstring
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Starting the function dockstring as an isolated process.
 </pre></div>
 </div>

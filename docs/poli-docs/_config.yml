@@ -55,6 +55,7 @@ sphinx:
       - omegaconf
       - holo
       - pyrosetta
+      - pytest
   extra_extensions:
     - sphinx.ext.autodoc
     - sphinx.ext.autosummary

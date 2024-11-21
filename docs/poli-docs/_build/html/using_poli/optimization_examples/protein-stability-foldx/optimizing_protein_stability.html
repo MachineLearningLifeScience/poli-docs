@@ -715,7 +715,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-optimization-is-a-registered-problem">Stability optimization is a registered problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-mrouge">Optimizing <code class="docutils literal notranslate"><span class="pre">mRouge</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-objective-function">Defining the objective function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-using-a-randommutation-solver">Optimizing using a <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> solver</a></li>
@@ -733,49 +732,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimizing-protein-stability-using-random-mutations">
 <h1>Optimizing protein stability using random mutations<a class="headerlink" href="#optimizing-protein-stability-using-random-mutations" title="Permalink to this heading">#</a></h1>
-<section id="stability-optimization-is-a-registered-problem">
-<h2>Stability optimization is a registered problem<a class="headerlink" href="#stability-optimization-is-a-registered-problem" title="Permalink to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">poli</span></code> has a <code class="docutils literal notranslate"><span class="pre">get_problems()</span></code> method which let’s you know the problems you could create.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">get_problems</span>
-<span class="n">get_problems</span><span class="p">()</span>
+<p>In this example, we optimize the thermal stability of mutations from a wildtype protein. To do so, we use the <code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> problem.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the particular case of <code class="docutils literal notranslate"><span class="pre">foldx</span></code>-related black boxes, you will need to have it properly installed. <a class="reference internal" href="../../../understanding_foldx/00-installing-foldx.html"><span class="doc std std-doc">Check our documentation on installing foldx</span></a>.</p>
+<p>You can also install all of the dependencies to run it using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">poli</span><span class="o">-</span><span class="n">core</span><span class="p">[</span><span class="n">foldx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you have done everything correclty, you should be able to run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>~/foldx/foldx<span class="w"> </span>--version
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;aloha&#39;,
- &#39;dockstring&#39;,
- &#39;drd3_docking&#39;,
- &#39;foldx_rfp_lambo&#39;,
- &#39;foldx_sasa&#39;,
- &#39;foldx_stability&#39;,
- &#39;foldx_stability_and_sasa&#39;,
- &#39;gfp_cbas&#39;,
- &#39;gfp_select&#39;,
- &#39;penalized_logp_lambo&#39;,
- &#39;rasp&#39;,
- &#39;rdkit_logp&#39;,
- &#39;rdkit_qed&#39;,
- &#39;rfp_foldx_stability_and_sasa&#39;,
- &#39;sa_tdc&#39;,
- &#39;super_mario_bros&#39;,
- &#39;white_noise&#39;,
- &#39;toy_continuous_problem&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<p>As you can see, <code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> is already available in the repository.</p>
-<p>Let’s stick with it as a problem name:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">problem_name</span> <span class="o">=</span> <span class="s2">&quot;foldx_stability&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="optimizing-mrouge">
 <h2>Optimizing <code class="docutils literal notranslate"><span class="pre">mRouge</span></code><a class="headerlink" href="#optimizing-mrouge" title="Permalink to this heading">#</a></h2>
 <p>In this example, we will focus on optimizing <a class="reference external" href="https://www.rcsb.org/structure/3NED"><code class="docutils literal notranslate"><span class="pre">mRouge</span></code>, also known as <code class="docutils literal notranslate"><span class="pre">3NED</span></code></a>, one of the red fluorescent proteins explored in <code class="docutils literal notranslate"><span class="pre">LaMBO</span></code> <span id="id1">[<a class="reference internal" href="../../../bibliography.html#id2" title="Samuel Stanton, Wesley Maddox, Nate Gruver, Phillip Maffettone, Emily Delaney, Peyton Greenside, and Andrew Gordon Wilson. Accelerating bayesian optimization for biological sequence design with denoising autoencoders. arXiv preprint arXiv:2203.12742, 2022.">Stanton <em>et al.</em>, 2022</a>]</span>. Before optimization, we need to download the file and “repair” it (see <span class="xref myst">single mutations using foldx</span>).</p>
@@ -811,10 +780,6 @@ document.write(`
 <section id="defining-the-objective-function">
 <h2>Defining the objective function<a class="headerlink" href="#defining-the-objective-function" title="Permalink to this heading">#</a></h2>
 <p>In this tutorial, we optimize the stability of <code class="docutils literal notranslate"><span class="pre">mRogue</span></code> using the <code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> black box. The first step is creating it:</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In the particular case of <code class="docutils literal notranslate"><span class="pre">foldx</span></code>-related black boxes, you will need to have it properly installed. <a class="reference internal" href="../../../understanding_foldx/00-installing-foldx.html"><span class="doc std std-doc">Check our documentation on installing foldx</span></a>.</p>
-</div>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">FoldXStabilityProblemFactory</span>
@@ -875,8 +840,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-  from .autonotebook import tqdm as notebook_tqdm
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">poli_baselines.solvers.simple.random_mutation</span> <span class="kn">import</span> <span class="n">RandomMutation</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">solver</span> <span class="o">=</span> <span class="n">RandomMutation</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">black_box</span><span class="o">=</span><span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">Projects</span><span class="o">/</span><span class="n">poli</span><span class="o">-</span><span class="n">baselines</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">poli_baselines</span><span class="o">/</span><span class="n">solvers</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span><span class="n">random_mutation</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">poli.core.abstract_black_box</span> <span class="kn">import</span> <span class="n">AbstractBlackBox</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">poli_baselines.core.step_by_step_solver</span> <span class="kn">import</span> <span class="n">StepByStepSolver</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="k">class</span> <span class="nc">RandomMutation</span><span class="p">(</span><span class="n">StepByStepSolver</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">tokenizer</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">if</span> <span class="n">x0</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File ~/Projects/poli-baselines/src/poli_baselines/solvers/simple/random_mutation.py:32,</span> in <span class="ni">RandomMutation</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">class</span> <span class="nc">RandomMutation</span><span class="p">(</span><span class="n">StepByStepSolver</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>         <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>         <span class="n">n_mutations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>         <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="n">greedy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">32</span>         <span class="n">alphabet</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">tokenizer</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">if</span> <span class="n">x0</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>             <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for |: &#39;types.GenericAlias&#39; and &#39;NoneType&#39;
 </pre></div>
 </div>
 </div>
@@ -902,9 +906,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.46959]]), array([[10.4687]]), array([[9.14886]]), array([[6.56841]])]
-best stability: [10.4687]
-Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLRGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGIMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All y values: [array([[9.41639]]), array([[7.3365]]), array([[9.87284]]), array([[4.63237]])]
+best stability: [9.87284]
+Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWDILSPQFSKAYVKHPADIPDYLKLSFPEGFKWERVMNFEDGGVVTVTQDSSLQDGEFIYKVKLIGTNFPSDGPVMQKKTMGWEACSERMYPEDGALKGEMKMRLKLKDGGHYDAEVKTTYKAKKPVQLPGAYNTNTKLDITSHNEDYTIVEQYERNEGRHSTGGMDELYK
 </pre></div>
 </div>
 </div>
@@ -976,7 +980,6 @@ Associated sequence: EEDNMAIIKEFMRFKTHMEGSVNGHEFEIEGEGEGRPYEGTQTAKLKVTKGGPLPFAWD
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-optimization-is-a-registered-problem">Stability optimization is a registered problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-mrouge">Optimizing <code class="docutils literal notranslate"><span class="pre">mRouge</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-the-objective-function">Defining the objective function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-using-a-randommutation-solver">Optimizing using a <code class="docutils literal notranslate"><span class="pre">RandomMutation</span></code> solver</a></li>

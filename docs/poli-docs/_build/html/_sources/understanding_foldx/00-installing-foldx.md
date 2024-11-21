@@ -1,6 +1,6 @@
 # Installing `foldx`
 
-One of the main subset of black-boxes of `poli` relates to [`foldx`](https://foldxsuite.crg.eu/), a suite for protein design that allows you to compute, among other things, the change in free energy $dG$. This software and metric have been used as a black-box for optimization in recent work {cite:p}`stanton2022accelerating,jain:multiobjective-gflownet:2023`.
+One of the main subset of black-boxes of `poli` relates to [`foldx`](https://foldxsuite.crg.eu/), a suite for protein design that allows you to compute, among other things, the change in free energy $ddG$. This software and metric have been used as a black-box for optimization in recent work {cite:p}`stanton2022accelerating,jain:multiobjective-gflownet:2023`.
 
 `poli` can't install `foldx` for you automatically, since the software is provided under an academic license. To install `foldx`,
 1. Go to https://foldxsuite.crg.eu/

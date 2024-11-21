@@ -1,0 +1,74 @@
+Traceback (most recent call last):
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from poli_baselines.solvers.simple.random_mutation import RandomMutation
+
+y0 = f(x0)
+
+solver = RandomMutation(
+    black_box=f,
+    x0=x0,
+    y0=y0,
+)
+
+print(f"x0: {x0}")
+print(f"y0: {y0}")
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpoli_baselines[39;00m[38;5;21;01m.[39;00m[38;5;21;01msolvers[39;00m[38;5;21;01m.[39;00m[38;5;21;01msimple[39;00m[38;5;21;01m.[39;00m[38;5;21;01mrandom_mutation[39;00m [38;5;28;01mimport[39;00m RandomMutation
+[1;32m      3[0m y0 [38;5;241m=[39m f(x0)
+[1;32m      5[0m solver [38;5;241m=[39m RandomMutation(
+[1;32m      6[0m     black_box[38;5;241m=[39mf,
+[1;32m      7[0m     x0[38;5;241m=[39mx0,
+[1;32m      8[0m     y0[38;5;241m=[39my0,
+[1;32m      9[0m )
+
+File [0;32m~/Projects/poli-baselines/src/poli_baselines/solvers/simple/random_mutation.py:22[0m
+[1;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpoli[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mabstract_black_box[39;00m [38;5;28;01mimport[39;00m AbstractBlackBox
+[1;32m     19[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpoli_baselines[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcore[39;00m[38;5;21;01m.[39;00m[38;5;21;01mstep_by_step_solver[39;00m [38;5;28;01mimport[39;00m StepByStepSolver
+[0;32m---> 22[0m [38;5;28;01mclass[39;00m [38;5;21;01mRandomMutation[39;00m(StepByStepSolver):
+[1;32m     23[0m     [38;5;28;01mdef[39;00m [38;5;21m__init__[39m(
+[1;32m     24[0m         [38;5;28mself[39m,
+[1;32m     25[0m         black_box: AbstractBlackBox,
+[0;32m   (...)[0m
+[1;32m     33[0m         tokenizer: Callable[[[38;5;28mstr[39m], [38;5;28mlist[39m[[38;5;28mstr[39m]] [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m     34[0m     ):
+[1;32m     35[0m         [38;5;28;01mif[39;00m x0[38;5;241m.[39mndim [38;5;241m==[39m [38;5;241m1[39m:
+
+File [0;32m~/Projects/poli-baselines/src/poli_baselines/solvers/simple/random_mutation.py:32[0m, in [0;36mRandomMutation[0;34m()[0m
+[1;32m     22[0m [38;5;28;01mclass[39;00m [38;5;21;01mRandomMutation[39;00m(StepByStepSolver):
+[1;32m     23[0m     [38;5;28;01mdef[39;00m [38;5;21m__init__[39m(
+[1;32m     24[0m         [38;5;28mself[39m,
+[1;32m     25[0m         black_box: AbstractBlackBox,
+[1;32m     26[0m         x0: np[38;5;241m.[39mndarray,
+[1;32m     27[0m         y0: np[38;5;241m.[39mndarray,
+[1;32m     28[0m         n_mutations: [38;5;28mint[39m [38;5;241m=[39m [38;5;241m1[39m,
+[1;32m     29[0m         top_k: [38;5;28mint[39m [38;5;241m=[39m [38;5;241m1[39m,
+[1;32m     30[0m         batch_size: [38;5;28mint[39m [38;5;241m=[39m [38;5;241m1[39m,
+[1;32m     31[0m         greedy: [38;5;28mbool[39m [38;5;241m=[39m [38;5;28;01mTrue[39;00m,
+[0;32m---> 32[0m         alphabet: [38;5;28;43mlist[39;49m[43m[[49m[38;5;28;43mstr[39;49m[43m][49m[43m [49m[38;5;241;43m|[39;49m[43m [49m[38;5;28;43;01mNone[39;49;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m     33[0m         tokenizer: Callable[[[38;5;28mstr[39m], [38;5;28mlist[39m[[38;5;28mstr[39m]] [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m,
+[1;32m     34[0m     ):
+[1;32m     35[0m         [38;5;28;01mif[39;00m x0[38;5;241m.[39mndim [38;5;241m==[39m [38;5;241m1[39m:
+[1;32m     36[0m             [38;5;28;01mif[39;00m tokenizer [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+
+[0;31mTypeError[0m: unsupported operand type(s) for |: 'types.GenericAlias' and 'NoneType'
+

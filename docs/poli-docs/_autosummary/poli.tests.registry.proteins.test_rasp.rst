@@ -9,13 +9,6 @@
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      test_rasp_on_3ned_against_notebooks_results_isolated
-      test_rasp_on_3ned_against_notebooks_results_on_rasp_env
-   
    
 
    

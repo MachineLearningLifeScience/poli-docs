@@ -8,4 +8,3 @@ API documentation for poli
    poli.core
    poli.objective_factory
    poli.objective_repository
-   poli.objective

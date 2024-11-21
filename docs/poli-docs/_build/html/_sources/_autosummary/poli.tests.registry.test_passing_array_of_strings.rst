@@ -1,4 +1,4 @@
-poli.tests.registry.test\_passing\_array\_of\_strings
+﻿poli.tests.registry.test\_passing\_array\_of\_strings
 =====================================================
 
 .. automodule:: poli.tests.registry.test_passing_array_of_strings
@@ -8,12 +8,6 @@ poli.tests.registry.test\_passing\_array\_of\_strings
    
 
    
-   
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      test_passing_array_of_strings
    
    
 

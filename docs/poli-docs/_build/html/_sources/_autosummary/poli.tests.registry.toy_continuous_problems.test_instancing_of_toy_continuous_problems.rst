@@ -14,7 +14,6 @@
    .. autosummary::
    
       test_create_ackley_function_01_on_more_dimensions
-      test_create_toy_objective_function
    
    
 
