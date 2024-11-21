@@ -7,7 +7,7 @@ This repository contains a `jupyter-book` with documentation for `poli` and `pol
 The folder `./docs/poli-docs` is a [Jupyter Book](https://jupyterbook.org/en/stable/intro.html). To build it, create a new environment (`python>=3.9`) and install the requirements:
 
 ```bash
-conda create -n poli-docs python=3.9
+conda create -n poli-docs python=3.10
 conda activate poli-docs
 pip install -r requirements.txt
 ```
