@@ -15,6 +15,7 @@ parts:
   - caption: Examples
     chapters:
       - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
+      - file: using_poli/optimization_examples/benchmarking/benchmarking.ipynb
   - caption: Objective functions
     chapters:
       - file: using_poli/objective_repository/all_objectives.md
