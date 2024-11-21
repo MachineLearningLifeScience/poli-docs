@@ -217,6 +217,12 @@ Solvent accessibility of mutations of a wildtype using `foldx`
 Stability of mutations of a wildtype using `foldx`
 :::
 
+:::{grid-item-card} Protein Stability (using `PyRosetta`)
+:link: ./using_poli/objective_repository/Rosetta_energy.html
+:columns: 6
+Stability Predictions of variants from a wildtype.
+:::
+
 :::{grid-item-card} Protein Stability (using `RaSP`)
 :link: ./RaSP.html
 :columns: 6

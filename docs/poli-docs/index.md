@@ -20,9 +20,9 @@ A good place to start is the next chapter! [Go to Getting Started](./getting_sta
 To install `poli` and `poli-baselines`, we recommend creating a fresh conda environment
 
 ```bash
-conda create -n poli-base python=3.9
+conda create -n poli-base python=3.10
 conda activate poli-base
-pip install git+https://github.com/MachineLearningLifeScience/poli.git@dev
+pip install poli-core
 pip install git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
 ```
 

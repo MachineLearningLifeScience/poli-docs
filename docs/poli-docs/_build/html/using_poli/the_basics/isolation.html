@@ -731,7 +731,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="isolating-black-box-objective-functions">
 <h1>Isolating black box objective functions<a class="headerlink" href="#isolating-black-box-objective-functions" title="Permalink to this heading">#</a></h1>
-<p>Each black-box objective function in <code class="docutils literal notranslate"><span class="pre">poli</span></code> lives inside a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment. For example:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To run this example, you need to have <code class="docutils literal notranslate"><span class="pre">conda</span></code> installed.</p>
+</div>
+<p>The black-boxes inside <code class="docutils literal notranslate"><span class="pre">poli</span></code> may have tricky dependencies that are incompatible the one with the other (e.g. clashes in <code class="docutils literal notranslate"><span class="pre">biopython</span></code> versions). As a way to mitigate this, we provide <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments in which each black box can reliably run.</p>
+<p>For example:</p>
 <ul class="simple">
 <li><p>the <code class="docutils literal notranslate"><span class="pre">foldx</span></code> stability objective lives inside <code class="docutils literal notranslate"><span class="pre">poli__protein</span></code>, which has <code class="docutils literal notranslate"><span class="pre">biopython</span></code>, <code class="docutils literal notranslate"><span class="pre">pdb-tools</span></code> and other libraries that are required to interface well with proteins and their representations.</p></li>
 <li><p>the <code class="docutils literal notranslate"><span class="pre">dockstring</span></code> objective lives inside <code class="docutils literal notranslate"><span class="pre">poli__dockstring</span></code>, which includes babel as part of its installation.</p></li>

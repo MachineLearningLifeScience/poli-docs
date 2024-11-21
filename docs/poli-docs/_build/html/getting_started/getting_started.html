@@ -716,13 +716,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-conda">Installing conda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-installing-conda">(Optional) Installing conda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-poli">Installing <code class="docutils literal notranslate"><span class="pre">poli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-poli-baselines">Installing <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-your-installation">Testing your installation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-script-using-poli">Your first script using <code class="docutils literal notranslate"><span class="pre">poli</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples">Other examples</a></li>
 </ul>
             </nav>
         </div>
@@ -736,13 +737,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
 <h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
-<p>In this chapter, we share with you how to install <code class="docutils literal notranslate"><span class="pre">poli</span></code>, and get started with calling and registering objective functions.</p>
+<p>In this chapter, we share with you how to install <code class="docutils literal notranslate"><span class="pre">poli</span></code> and <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>, and get started with benchmarking black box functions.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
 <p>Unfortunately, we only support <strong>Linux</strong> and <strong>MacOS</strong> for now.</p>
-<section id="installing-conda">
-<h3>Installing conda<a class="headerlink" href="#installing-conda" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">poli</span></code> is built on top of manipulating <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments. It is therefore important for you to <strong>install conda</strong>. <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Follow the documentation of Anaconda itself</a>.</p>
+<section id="optional-installing-conda">
+<h3>(Optional) Installing conda<a class="headerlink" href="#optional-installing-conda" title="Permalink to this heading">#</a></h3>
+<p>One of <code class="docutils literal notranslate"><span class="pre">poli</span></code>’s strengths comes from isolating black box functions. If you want to use this functionality, we encourage you to <strong>install conda</strong>. <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">Follow the documentation of Anaconda itself</a>.</p>
 <p>Test that your installation went through by writing</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>--version
 conda<span class="w"> </span><span class="m">23</span>.11.0<span class="w">  </span><span class="c1"># Yours might be different, and that&#39;s fine.</span>
@@ -752,34 +753,36 @@ conda<span class="w"> </span><span class="m">23</span>.11.0<span class="w">  </s
 </section>
 <section id="installing-poli">
 <h3>Installing <code class="docutils literal notranslate"><span class="pre">poli</span></code><a class="headerlink" href="#installing-poli" title="Permalink to this heading">#</a></h3>
-<p>We recommend creating an environment called <code class="docutils literal notranslate"><span class="pre">poli-base</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>poli-base<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
-$<span class="w"> </span>conda<span class="w"> </span>activate<span class="w"> </span>poli-base
-</pre></div>
-</div>
-<p>Right now, we only support two ways of installing <code class="docutils literal notranslate"><span class="pre">poli</span></code>: by cloning the repo and installing, or using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">git+</span></code>.</p>
+<p>Right now, we only support two ways of installing <code class="docutils literal notranslate"><span class="pre">poli</span></code>: by cloning the repo and installing, or using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-0">
-Installing using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">git+</span></code></label><div class="sd-tab-content docutils">
-<p>If you are not interested in debugging, you can simply run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in the poli-base env</span>
-pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MachineLearningLifeScience/poli.git@dev
+Installing using <code class="docutils literal notranslate"><span class="pre">pip</span></code></label><div class="sd-tab-content docutils">
+<p>You can install <code class="docutils literal notranslate"><span class="pre">poli</span></code> in an environment by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>poli-core
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">dev</span></code> contains the bleeding-edge version, while <code class="docutils literal notranslate"><span class="pre">master</span></code> contains a stable release.</p>
+<p>This is the base installation of <code class="docutils literal notranslate"><span class="pre">poli</span></code>. If you want to use certain black boxes, you can install their dependencies by running e.g.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">poli-core[tdc]</span></code> to run the PMO benchmark.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">poli-core[ehrlich]</span></code> to run the EhrlichHolo black box.</p></li>
+</ul>
+<p>and more. Check the documentation of each black box for more details.</p>
+<p>You can install the bleeding edge version of <code class="docutils literal notranslate"><span class="pre">poli</span></code> using <code class="docutils literal notranslate"><span class="pre">git+</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in the poli-base env</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;poli-core @ git+https://github.com/MachineLearningLifeScience/poli.git@dev&quot;</span>
+</pre></div>
+</div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-1">
 Installing for debugging</label><div class="sd-tab-content docutils">
 <p>If you are interested in debugging locally, clone and install as follows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in the `poli-base` env.</span>
-$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:MachineLearningLifeScience/poli.git@dev
-$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./poli
-$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:MachineLearningLifeScience/poli.git@dev
+<span class="nb">cd</span><span class="w"> </span>./poli
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
-<p>A stable version can be found on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, the bleeding-edge is on <code class="docutils literal notranslate"><span class="pre">dev</span></code>.</p>
 </div>
 </div>
 <div class="admonition warning">
@@ -798,10 +801,10 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 </input><label class="sd-tab-label" for="sd-tab-item-2">
 Installing using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">git+</span></code></label><div class="sd-tab-content docutils">
 <p>If you are not interested in debugging, you can simply run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in the poli-base env</span>
-pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;poli-baselines @ git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main&quot;</span>
 </pre></div>
 </div>
+<p>You can install the dependencies for specific solvers by replacing <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code> with e.g. <code class="docutils literal notranslate"><span class="pre">poli-baselines[ax]</span></code> for ax-related solvers, <code class="docutils literal notranslate"><span class="pre">poli-baselines[bounce]</span></code> for the Bounce solver, and so on. Check the documentation of each solver for more information.</p>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-3">
@@ -819,13 +822,14 @@ $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </sp
 <section id="testing-your-installation">
 <h3>Testing your installation<a class="headerlink" href="#testing-your-installation" title="Permalink to this heading">#</a></h3>
 <p>To make sure everything went well, you can test your <code class="docutils literal notranslate"><span class="pre">poli</span></code> installation by running</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from poli.objective_repository import AVAILABLE_BLACK_BOXES ; print(AVAILABLE_BLACK_BOXES.keys())&quot;</span>
-dict_keys<span class="o">([</span><span class="s1">&#39;aloha&#39;</span>,<span class="w"> </span>...,<span class="w"> </span><span class="s1">&#39;white_noise&#39;</span>,<span class="w"> </span><span class="s1">&#39;toy_continuous_problem&#39;</span><span class="o">])</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import poli ; print(poli.__version__)&quot;</span>
+<span class="m">1</span>.1.0<span class="w">  </span><span class="c1"># Might be different, that&#39;s fine.</span>
 </pre></div>
 </div>
 <p>All problems available will appear, but some of them will have more pre-requisites (e.g. installing <code class="docutils literal notranslate"><span class="pre">foldx</span></code> or having OpenBabel).</p>
 <p>You should also be able to run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import poli_baselines ; print(&#39;All good!&#39;)&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import poli_baselines ; print(poli_baselines.__version__)&quot;</span>
+<span class="m">1</span>.0.2.dev1<span class="w">  </span><span class="c1"># Might be different, that&#39;s fine.</span>
 </pre></div>
 </div>
 </section>
@@ -846,6 +850,9 @@ dict_keys<span class="o">([</span><span class="s1">&#39;aloha&#39;</span>,<span 
 </pre></div>
 </div>
 <p>If we run this script, it will print 5 evaluations of the objective function on the same input.</p>
+</section>
+<section id="other-examples">
+<h2>Other examples<a class="headerlink" href="#other-examples" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">white_noise</span></code> is a trivial example. We include plenty of examples on how to register objective functions that are more complex, including e.g. <a class="reference internal" href="../using_poli/objective_repository/rdkit_qed.html"><span class="doc std std-doc">computing the Quantitative Estimate of Druglikeness of a small molecule</span></a> or, if you have the <code class="docutils literal notranslate"><span class="pre">foldx</span></code> simulator installed, <a class="reference internal" href="../using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.html"><span class="doc std std-doc">how to compute the stability of a protein given a <code class="docutils literal notranslate"><span class="pre">.pdb</span></code> file</span></a>.</p>
 </section>
 </section>
@@ -915,13 +922,14 @@ dict_keys<span class="o">([</span><span class="s1">&#39;aloha&#39;</span>,<span 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-conda">Installing conda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-installing-conda">(Optional) Installing conda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-poli">Installing <code class="docutils literal notranslate"><span class="pre">poli</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-poli-baselines">Installing <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-your-installation">Testing your installation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-script-using-poli">Your first script using <code class="docutils literal notranslate"><span class="pre">poli</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-examples">Other examples</a></li>
 </ul>
   </nav></div>
 

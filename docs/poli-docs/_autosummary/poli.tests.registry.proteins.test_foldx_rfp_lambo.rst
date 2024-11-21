@@ -9,12 +9,6 @@
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      test_foldx_rfp_lambo_runs
-   
    
 
    

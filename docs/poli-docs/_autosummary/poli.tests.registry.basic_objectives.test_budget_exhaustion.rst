@@ -13,7 +13,6 @@
 
    .. autosummary::
    
-      test_budget_exhaustion_exception
       test_budget_exhausts
       test_num_evaluation_tracks_correctly
    
