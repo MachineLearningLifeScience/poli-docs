@@ -24,12 +24,15 @@ solver = RandomMutation(
     x0=x0,
     y0=y0,
 )
+
+print(f"x0: {x0}")
+print(f"y0: {y0}")
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[4], line 1[0m
+Cell [0;32mIn[3], line 1[0m
 [0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpoli_baselines[39;00m[38;5;21;01m.[39;00m[38;5;21;01msolvers[39;00m[38;5;21;01m.[39;00m[38;5;21;01msimple[39;00m[38;5;21;01m.[39;00m[38;5;21;01mrandom_mutation[39;00m [38;5;28;01mimport[39;00m RandomMutation
 [1;32m      3[0m y0 [38;5;241m=[39m f(x0)
 [1;32m      5[0m solver [38;5;241m=[39m RandomMutation(

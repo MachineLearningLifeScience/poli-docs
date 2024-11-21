@@ -772,7 +772,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;albuterol_similarity&#39;, &#39;aloha&#39;, &#39;amlodipine_mpo&#39;, &#39;celecoxib_rediscovery&#39;, &#39;deco_hop&#39;, &#39;dockstring&#39;, &#39;drd2_docking&#39;, &#39;drd3_docking&#39;, &#39;ehrlich&#39;, &#39;fexofenadine_mpo&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_cbas&#39;, &#39;gfp_select&#39;, &#39;gsk3_beta&#39;, &#39;isomer_c7h8n2o2&#39;, &#39;isomer_c9h10n2o2pf2cl&#39;, &#39;jnk3&#39;, &#39;median_1&#39;, &#39;median_2&#39;, &#39;mestranol_similarity&#39;, &#39;osimetrinib_mpo&#39;, &#39;penalized_logp_lambo&#39;, &#39;perindopril_mpo&#39;, &#39;ranolazine_mpo&#39;, &#39;rasp&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;rfp_foldx_stability_and_sasa&#39;, &#39;rmf_landscape&#39;, &#39;sa_tdc&#39;, &#39;scaffold_hop&#39;, &#39;sitagliptin_mpo&#39;, &#39;super_mario_bros&#39;, &#39;thiothixene_rediscovery&#39;, &#39;toy_continuous_problem&#39;, &#39;troglitazone_rediscovery&#39;, &#39;valsartan_smarts&#39;, &#39;white_noise&#39;, &#39;zaleplon_mpo&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;albuterol_similarity&#39;, &#39;aloha&#39;, &#39;amlodipine_mpo&#39;, &#39;celecoxib_rediscovery&#39;, &#39;deco_hop&#39;, &#39;dockstring&#39;, &#39;drd2_docking&#39;, &#39;drd3_docking&#39;, &#39;ehrlich&#39;, &#39;ehrlich_holo&#39;, &#39;fexofenadine_mpo&#39;, &#39;foldx_rfp_lambo&#39;, &#39;foldx_sasa&#39;, &#39;foldx_stability&#39;, &#39;foldx_stability_and_sasa&#39;, &#39;gfp_cbas&#39;, &#39;gfp_select&#39;, &#39;gsk3_beta&#39;, &#39;isomer_c7h8n2o2&#39;, &#39;isomer_c9h10n2o2pf2cl&#39;, &#39;jnk3&#39;, &#39;median_1&#39;, &#39;median_2&#39;, &#39;mestranol_similarity&#39;, &#39;osimetrinib_mpo&#39;, &#39;penalized_logp_lambo&#39;, &#39;perindopril_mpo&#39;, &#39;ranolazine_mpo&#39;, &#39;rasp&#39;, &#39;rdkit_logp&#39;, &#39;rdkit_qed&#39;, &#39;rfp_foldx_stability&#39;, &#39;rfp_foldx_stability_and_sasa&#39;, &#39;rfp_rasp&#39;, &#39;rmf_landscape&#39;, &#39;rosetta_energy&#39;, &#39;sa_tdc&#39;, &#39;scaffold_hop&#39;, &#39;sitagliptin_mpo&#39;, &#39;super_mario_bros&#39;, &#39;thiothixene_rediscovery&#39;, &#39;toy_continuous_problem&#39;, &#39;troglitazone_rediscovery&#39;, &#39;valsartan_smarts&#39;, &#39;white_noise&#39;, &#39;zaleplon_mpo&#39;]
 </pre></div>
 </div>
 </div>
@@ -823,12 +823,47 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
-  from .autonotebook import tqdm as notebook_tqdm
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0: [[&#39;1&#39; &#39;2&#39; &#39;3&#39;]]
-y0: [[-0.47139683]]
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">poli_baselines.solvers.simple.random_mutation</span> <span class="kn">import</span> <span class="n">RandomMutation</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">solver</span> <span class="o">=</span> <span class="n">RandomMutation</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">black_box</span><span class="o">=</span><span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">y0</span><span class="o">=</span><span class="n">y0</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">Projects</span><span class="o">/</span><span class="n">poli</span><span class="o">-</span><span class="n">baselines</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">poli_baselines</span><span class="o">/</span><span class="n">solvers</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span><span class="n">random_mutation</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">22</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">from</span> <span class="nn">poli.core.abstract_black_box</span> <span class="kn">import</span> <span class="n">AbstractBlackBox</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="kn">from</span> <span class="nn">poli_baselines.core.step_by_step_solver</span> <span class="kn">import</span> <span class="n">StepByStepSolver</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="k">class</span> <span class="nc">RandomMutation</span><span class="p">(</span><span class="n">StepByStepSolver</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">tokenizer</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">if</span> <span class="n">x0</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File ~/Projects/poli-baselines/src/poli_baselines/solvers/simple/random_mutation.py:32,</span> in <span class="ni">RandomMutation</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">class</span> <span class="nc">RandomMutation</span><span class="p">(</span><span class="n">StepByStepSolver</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>         <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>         <span class="n">y0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>         <span class="n">n_mutations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span>         <span class="n">top_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>         <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>         <span class="n">greedy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">32</span>         <span class="n">alphabet</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="n">tokenizer</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>         <span class="k">if</span> <span class="n">x0</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>             <span class="k">if</span> <span class="n">tokenizer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for |: &#39;types.GenericAlias&#39; and &#39;NoneType&#39;
 </pre></div>
 </div>
 </div>
@@ -868,7 +903,7 @@ y0: [[-0.47139683]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;7&#39; &#39;3&#39; &#39;3&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;1&#39; &#39;4&#39; &#39;5&#39;]]
 </pre></div>
 </div>
 </div>

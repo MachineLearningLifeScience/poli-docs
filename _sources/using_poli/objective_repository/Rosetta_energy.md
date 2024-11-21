@@ -45,7 +45,7 @@ f = RosettaEnergyBlackBox(
 
 # or
 # (ii) creating a problem
-problem = RaspProblemFactory().create(
+problem = RosettaEnergyProblemFactory().create(
     wildtype_pdb_path=[wildtype_pdb_path]
     chains_to_keep=["A"],  #  <-- The chain in the pdb.
     additive=False,  #  <-- Whether to treat multiple mutations additively.
