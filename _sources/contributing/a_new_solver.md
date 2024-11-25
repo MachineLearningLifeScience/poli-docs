@@ -176,6 +176,12 @@ dependencies:
       - "git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main"
 ```
 
+:::{admonition} Is `conda` too much?
+
+If `conda` is too much (or if you have licensing issues), then don't worry. Submitting a good `requirements.txt` should be enough. Remember to add `poli-core` and the git link for `poli-baselines`.
+
+:::
+
 Ideally, you would also add a couple of tests in the relevant subfolder of `tests`. Feel free to pattern-match from other solvers.
 
 Finally, you can test your solver using something a toy function:
