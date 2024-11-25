@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API documentation for poli" href="../api.html" />
+    <link rel="next" title="All objective functions" href="../using_poli/objective_repository/all_objectives.html" />
     <link rel="prev" title="Adding a new black box to the repository" href="a_new_problem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +185,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="a_new_problem.html">Adding a new black box to the repository</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Adding a new optimizer to <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Objective functions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../using_poli/objective_repository/all_objectives.html">All objective functions</a></li>
@@ -236,11 +241,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../using_poli_baselines/baxus.html">Adaptively expanding subspaces (BAxUS)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../using_poli_baselines/bounce.html">Bounce</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../using_poli_baselines/probrep.html">Probabilistic Reparametrization</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="a_new_problem.html">Adding a new black box to the repository</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Adding a new optimizer to <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
 <ul class="nav bd-sidenav">
@@ -885,6 +885,10 @@ dependencies:
       - &quot;git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main&quot;
 </pre></div>
 </div>
+<div class="admonition-is-conda-too-much admonition">
+<p class="admonition-title">Is <code class="docutils literal notranslate"><span class="pre">conda</span></code> too much?</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">conda</span></code> is too much (or if you have licensing issues), then don’t worry. Submitting a good <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> should be enough. Remember to add <code class="docutils literal notranslate"><span class="pre">poli-core</span></code> and the git link for <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>.</p>
+</div>
 <p>Ideally, you would also add a couple of tests in the relevant subfolder of <code class="docutils literal notranslate"><span class="pre">tests</span></code>. Feel free to pattern-match from other solvers.</p>
 <p>Finally, you can test your solver using something a toy function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.repository</span> <span class="kn">import</span> <span class="n">AlohaProblemFactory</span>
@@ -949,11 +953,11 @@ dependencies:
       </div>
     </a>
     <a class="right-next"
-       href="../api.html"
+       href="../using_poli/objective_repository/all_objectives.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API documentation for poli</p>
+        <p class="prev-next-title">All objective functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

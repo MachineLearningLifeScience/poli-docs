@@ -15,6 +15,10 @@ parts:
   - caption: Examples
     chapters:
       - file: using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.ipynb
+  - caption: "Contributing"
+    chapters:
+      - file: contributing/a_new_problem.md
+      - file: contributing/a_new_solver.md
   - caption: Objective functions
     chapters:
       - file: using_poli/objective_repository/all_objectives.md
@@ -69,10 +73,6 @@ parts:
   - caption: "Observers"
     chapters:
       - file: observers/registering_an_observer.md
-  - caption: "Contributing"
-    chapters:
-      - file: contributing/a_new_problem.md
-      - file: contributing/a_new_solver.md
   - caption: "API reference"
     chapters:
       - file: api.rst
