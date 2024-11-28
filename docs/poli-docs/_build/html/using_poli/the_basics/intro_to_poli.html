@@ -195,7 +195,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../optimization_examples/benchmarking/benchmarking.html">Running benchmarks with <em>poli</em> and <em>poli-baselines</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optimization_examples/benchmarking/benchmarking.html">Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging</a></li>
 
 
 
@@ -300,6 +300,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.observers.html">poli.core.util.observers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.seeding.html">poli.core.util.seeding</a></li>
 </ul>
@@ -840,7 +841,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0: [[&#39;1&#39; &#39;2&#39; &#39;3&#39;]]
-y0: [[-1.74420618]]
+y0: [[-0.28919561]]
 </pre></div>
 </div>
 </div>
@@ -873,7 +874,7 @@ y0: [[-1.74420618]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[&#39;1&#39;, &#39;7&#39;, &#39;4&#39;]], dtype=&#39;&lt;U1&#39;), array([3.40581673]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[&#39;8&#39;, &#39;8&#39;, &#39;1&#39;]], dtype=&#39;&lt;U1&#39;), array([3.17009131]))
 </pre></div>
 </div>
 </div>
@@ -885,7 +886,7 @@ y0: [[-1.74420618]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;1&#39; &#39;7&#39; &#39;4&#39;]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;8&#39; &#39;8&#39; &#39;1&#39;]]
 </pre></div>
 </div>
 </div>

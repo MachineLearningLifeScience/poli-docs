@@ -194,7 +194,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../using_poli/optimization_examples/benchmarking/benchmarking.html">Running benchmarks with <em>poli</em> and <em>poli-baselines</em></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../using_poli/optimization_examples/benchmarking/benchmarking.html">Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging</a></li>
 
 
 
@@ -299,6 +299,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.observers.html">poli.core.util.observers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../_autosummary/poli.core.util.seeding.html">poli.core.util.seeding</a></li>
 </ul>
@@ -1097,8 +1098,8 @@ Mutating residue = META0 into GLY
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Thu Nov 21 17:39:03 2024
-Total time spend: 24.49 seconds.
+End time of FoldX: Thu Nov 28 16:54:12 2024
+Total time spend: 18.86 seconds.
 validated file &quot;101m_Repair_1.pdb&quot; =&gt; successfully finished
 Cleaning BuildModel...DONE
 </pre></div>
@@ -1172,18 +1173,6 @@ Cleaning BuildModel...DONE
     <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]],</span>
     <span class="n">columns</span><span class="o">=</span><span class="n">column_names</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/l3/qk9dx6g958765kmn_2wn34t00000gn/T/ipykernel_60159/1758354106.py:1: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
 </pre></div>
 </div>
 </div>

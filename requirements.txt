@@ -9,3 +9,4 @@ biopython
 pandas
 docutils==0.17.1
 jupyter-book
+mlflow

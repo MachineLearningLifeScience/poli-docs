@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Running benchmarks with poli and poli-baselines &#8212; Documentation for poli and poli-baselines</title>
+    <title>Using poli, poli-baselines, and mlflow for logging &#8212; Documentation for poli and poli-baselines</title>
   
   
   
@@ -195,7 +195,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running benchmarks with <em>poli</em> and <em>poli-baselines</em></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging</a></li>
 
 
 
@@ -300,6 +300,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.observers.html">poli.core.util.observers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../_autosummary/poli.core.util.seeding.html">poli.core.util.seeding</a></li>
 </ul>
@@ -721,7 +722,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Running benchmarks with poli and poli-baselines</h1>
+    <h1>Using poli, poli-baselines, and mlflow for logging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -731,7 +732,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Running benchmarks with <em>poli</em> and <em>poli-baselines</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-solvers">Selecting solvers</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-observer-registration">(Advanced) Observer registration</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run-benchmark">Run benchmark</a></li>
@@ -748,8 +749,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="running-benchmarks-with-poli-and-poli-baselines">
-<h1>Running benchmarks with <em>poli</em> and <em>poli-baselines</em><a class="headerlink" href="#running-benchmarks-with-poli-and-poli-baselines" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-poli-poli-baselines-and-mlflow-for-logging">
+<h1>Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging<a class="headerlink" href="#using-poli-poli-baselines-and-mlflow-for-logging" title="Permalink to this heading">#</a></h1>
 <p>We’ll use <code class="docutils literal notranslate"><span class="pre">poli</span></code>’s <code class="docutils literal notranslate"><span class="pre">get_problems()</span></code> method to pick the problems that interest us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,23 +855,6 @@ That’s why for this example, we will register the observer and leave the insta
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">poli.core.registry</span> <span class="kn">import</span> <span class="n">register_observer</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">poli.core.util.observers.mlflow_observer</span> <span class="kn">import</span> <span class="n">MLFlowObserver</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">register_observer</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">observer</span><span class="o">=</span><span class="n">MLFlowObserver</span><span class="p">(),</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="c1"># conda_environment_location=&quot;poli&quot;,  # when not providing the environment, we use the current one</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">observer_name</span><span class="o">=</span><span class="s2">&quot;mlflow_observer&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">set_as_default_observer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># this is True by default!</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;poli.core.util.observers&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>We recommend that you write your own observer.</p>
 </section>
@@ -911,19 +895,15 @@ That’s why for this example, we will register the observer and leave the insta
 poli 🧪: attempting isolated observer instantiation.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/11/21 19:04:16 INFO mlflow.tracking.fluent: Experiment with name &#39;white_noise&#39; does not exist. Creating a new experiment.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
+poli 🧪: attempting isolated observer instantiation.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
 poli 🧪: attempting isolated observer instantiation.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024/11/21 19:04:18 INFO mlflow.tracking.fluent: Experiment with name &#39;aloha&#39; does not exist. Creating a new experiment.
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
-poli 🧪: attempting isolated observer instantiation.
-poli 🧪: initializing the observer.
 poli 🧪: attempting isolated observer instantiation.
 </pre></div>
 </div>
@@ -939,13 +919,39 @@ poli 🧪: attempting isolated observer instantiation.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-21 19:06:23 +0100] [19932] [INFO] Starting gunicorn 22.0.0
-[2024-11-21 19:06:23 +0100] [19932] [INFO] Listening at: http://127.0.0.1:5000 (19932)
-[2024-11-21 19:06:23 +0100] [19932] [INFO] Using worker: sync
-[2024-11-21 19:06:23 +0100] [19933] [INFO] Booting worker with pid: 19933
-[2024-11-21 19:06:23 +0100] [19934] [INFO] Booting worker with pid: 19934
-[2024-11-21 19:06:23 +0100] [19955] [INFO] Booting worker with pid: 19955
-[2024-11-21 19:06:23 +0100] [19956] [INFO] Booting worker with pid: 19956
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-28 17:01:31 +0100] [89217] [INFO] Starting gunicorn 23.0.0
+[2024-11-28 17:01:31 +0100] [89217] [INFO] Listening at: http://127.0.0.1:5000 (89217)
+[2024-11-28 17:01:31 +0100] [89217] [INFO] Using worker: sync
+[2024-11-28 17:01:31 +0100] [89218] [INFO] Booting worker with pid: 89218
+[2024-11-28 17:01:31 +0100] [89219] [INFO] Booting worker with pid: 89219
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-28 17:01:31 +0100] [89220] [INFO] Booting worker with pid: 89220
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-11-28 17:01:31 +0100] [89221] [INFO] Booting worker with pid: 89221
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+  File &quot;/Users/sjt972/anaconda3/envs/poli-docs-310/lib/python3.10/site-packages/poli/core/util/observer_wrapper.py&quot;, line 98, in &lt;module&gt;
+    start_observer_process(args.objective_name, args.port, args.password)
+  File &quot;/Users/sjt972/anaconda3/envs/poli-docs-310/lib/python3.10/site-packages/poli/core/util/observer_wrapper.py&quot;, line 57, in start_observer_process
+    msg_type, *msg = conn.recv()
+  File &quot;/Users/sjt972/anaconda3/envs/poli-docs-310/lib/python3.10/multiprocessing/connection.py&quot;, line 250, in recv
+    buf = self._recv_bytes()
+  File &quot;/Users/sjt972/anaconda3/envs/poli-docs-310/lib/python3.10/multiprocessing/connection.py&quot;, line 414, in _recv_bytes
+    buf = self._recv(4)
+  File &quot;/Users/sjt972/anaconda3/envs/poli-docs-310/lib/python3.10/multiprocessing/connection.py&quot;, line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+[2024-11-28 17:01:59 +0100] [89217] [INFO] Handling signal: int
+[2024-11-28 17:01:59 +0100] [89218] [INFO] Worker exiting (pid: 89218)
+[2024-11-28 17:01:59 +0100] [89219] [INFO] Worker exiting (pid: 89219)
+[2024-11-28 17:01:59 +0100] [89221] [INFO] Worker exiting (pid: 89221)
+[2024-11-28 17:01:59 +0100] [89220] [INFO] Worker exiting (pid: 89220)
 </pre></div>
 </div>
 </div>
@@ -1017,7 +1023,7 @@ poli 🧪: attempting isolated observer instantiation.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Running benchmarks with <em>poli</em> and <em>poli-baselines</em></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-solvers">Selecting solvers</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-observer-registration">(Advanced) Observer registration</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run-benchmark">Run benchmark</a></li>
