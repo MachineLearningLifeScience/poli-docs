@@ -15,52 +15,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
@@ -76,27 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -118,8 +111,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -145,6 +143,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="#">
   
@@ -162,7 +162,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -185,6 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="using_poli/optimization_examples/protein-stability-foldx/optimizing_protein_stability.html">Optimizing protein stability using random mutations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/optimization_examples/benchmarking/benchmarking.html">Using <em>poli</em>, <em>poli-baselines</em>, and mlflow for logging</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul class="nav bd-sidenav">
@@ -245,34 +261,34 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API documentation for poli</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.core.html">poli.core</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API documentation for poli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.core.html">poli.core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_benchmark.html">poli.core.abstract_benchmark</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_black_box.html">poli.core.abstract_black_box</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_isolated_function.html">poli.core.abstract_isolated_function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_problem_factory.html">poli.core.abstract_problem_factory</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.benchmark_information.html">poli.core.benchmark_information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.black_box_information.html">poli.core.black_box_information</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.data_packages.html">poli.core.chemistry.data_packages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_black_box.html">poli.core.chemistry.tdc_black_box</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_isolated_function.html">poli.core.chemistry.tdc_isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_problem.html">poli.core.chemistry.tdc_problem</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.data_package.html">poli.core.data_package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.exceptions.html">poli.core.exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.lambda_black_box.html">poli.core.lambda_black_box</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.multi_objective_black_box.html">poli.core.multi_objective_black_box</a></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.problem.html">poli.core.problem</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.proteins.html">poli.core.proteins</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.proteins.html">poli.core.proteins</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.data_packages.html">poli.core.proteins.data_packages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.foldx_black_box.html">poli.core.proteins.foldx_black_box</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.foldx_isolated_function.html">poli.core.proteins.foldx_isolated_function</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.registry.html">poli.core.registry</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.util.html">poli.core.util</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.util.html">poli.core.util</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.alignment.html">poli.core.util.alignment</a></li>
@@ -285,82 +301,83 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observers.html">poli.core.util.observers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.seeding.html">poli.core.util.seeding</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l2"><a class="reference internal" href="_autosummary/poli.objective_factory.html">poli.objective_factory</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.html">poli.objective_repository</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.albuterol_similarity.html">poli.objective_repository.albuterol_similarity</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.html">poli.objective_repository</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.albuterol_similarity.html">poli.objective_repository.albuterol_similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.albuterol_similarity.register.html">poli.objective_repository.albuterol_similarity.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.html">poli.objective_repository.aloha</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.html">poli.objective_repository.aloha</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.register.html">poli.objective_repository.aloha.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.amlodipine_mpo.html">poli.objective_repository.amlodipine_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.amlodipine_mpo.html">poli.objective_repository.amlodipine_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.amlodipine_mpo.register.html">poli.objective_repository.amlodipine_mpo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.celecoxib_rediscovery.html">poli.objective_repository.celecoxib_rediscovery</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.celecoxib_rediscovery.html">poli.objective_repository.celecoxib_rediscovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.celecoxib_rediscovery.register.html">poli.objective_repository.celecoxib_rediscovery.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.deco_hop.html">poli.objective_repository.deco_hop</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.deco_hop.html">poli.objective_repository.deco_hop</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.deco_hop.register.html">poli.objective_repository.deco_hop.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.isolated_function.html">poli.objective_repository.dockstring.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.register.html">poli.objective_repository.dockstring.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd2_docking.html">poli.objective_repository.drd2_docking</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd2_docking.html">poli.objective_repository.drd2_docking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.drd2_docking.register.html">poli.objective_repository.drd2_docking.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.register.html">poli.objective_repository.drd3_docking.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich.html">poli.objective_repository.ehrlich</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich.html">poli.objective_repository.ehrlich</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich.register.html">poli.objective_repository.ehrlich.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.html">poli.objective_repository.ehrlich_holo</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.html">poli.objective_repository.ehrlich_holo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.isolated_function.html">poli.objective_repository.ehrlich_holo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.register.html">poli.objective_repository.ehrlich_holo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.fexofenadine_mpo.html">poli.objective_repository.fexofenadine_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.fexofenadine_mpo.html">poli.objective_repository.fexofenadine_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.fexofenadine_mpo.register.html">poli.objective_repository.fexofenadine_mpo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.information.html">poli.objective_repository.foldx_rfp_lambo.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.isolated_function.html">poli.objective_repository.foldx_rfp_lambo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html">poli.objective_repository.foldx_rfp_lambo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.isolated_function.html">poli.objective_repository.foldx_sasa.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.register.html">poli.objective_repository.foldx_sasa.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.isolated_function.html">poli.objective_repository.foldx_stability.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.register.html">poli.objective_repository.foldx_stability.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.isolated_function.html">poli.objective_repository.foldx_stability_and_sasa.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html">poli.objective_repository.foldx_stability_and_sasa.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.html">poli.objective_repository.gfp_cbas</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.html">poli.objective_repository.gfp_cbas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.html">poli.objective_repository.gfp_cbas.abstract_vae_wrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html">poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html">poli.objective_repository.gfp_cbas.cbas_wrapper</a></li>
@@ -370,148 +387,148 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.html">poli.objective_repository.gfp_cbas.make_vae</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.register.html">poli.objective_repository.gfp_cbas.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.information.html">poli.objective_repository.gfp_select.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.isolated_function.html">poli.objective_repository.gfp_select.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.register.html">poli.objective_repository.gfp_select.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gsk3_beta.html">poli.objective_repository.gsk3_beta</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gsk3_beta.html">poli.objective_repository.gsk3_beta</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gsk3_beta.register.html">poli.objective_repository.gsk3_beta.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c7h8n2o2.html">poli.objective_repository.isomer_c7h8n2o2</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-25"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c7h8n2o2.html">poli.objective_repository.isomer_c7h8n2o2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c7h8n2o2.register.html">poli.objective_repository.isomer_c7h8n2o2.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.html">poli.objective_repository.isomer_c9h10n2o2pf2cl</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-26"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.html">poli.objective_repository.isomer_c9h10n2o2pf2cl</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.register.html">poli.objective_repository.isomer_c9h10n2o2pf2cl.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.jnk3.html">poli.objective_repository.jnk3</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-27"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.jnk3.html">poli.objective_repository.jnk3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.jnk3.register.html">poli.objective_repository.jnk3.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.median_1.html">poli.objective_repository.median_1</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-28"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.median_1.html">poli.objective_repository.median_1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.median_1.register.html">poli.objective_repository.median_1.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.median_2.html">poli.objective_repository.median_2</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-29"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.median_2.html">poli.objective_repository.median_2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.median_2.register.html">poli.objective_repository.median_2.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.mestranol_similarity.html">poli.objective_repository.mestranol_similarity</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-30"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.mestranol_similarity.html">poli.objective_repository.mestranol_similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.mestranol_similarity.register.html">poli.objective_repository.mestranol_similarity.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.osimetrinib_mpo.html">poli.objective_repository.osimetrinib_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-31"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.osimetrinib_mpo.html">poli.objective_repository.osimetrinib_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.osimetrinib_mpo.register.html">poli.objective_repository.osimetrinib_mpo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-32"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.isolated_function.html">poli.objective_repository.penalized_logp_lambo.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.html">poli.objective_repository.penalized_logp_lambo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.perindopril_mpo.html">poli.objective_repository.perindopril_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-33"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.perindopril_mpo.html">poli.objective_repository.perindopril_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.perindopril_mpo.register.html">poli.objective_repository.perindopril_mpo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ranolazine_mpo.html">poli.objective_repository.ranolazine_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-34"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ranolazine_mpo.html">poli.objective_repository.ranolazine_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ranolazine_mpo.register.html">poli.objective_repository.ranolazine_mpo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-35"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.isolated_function.html">poli.objective_repository.rasp.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.register.html">poli.objective_repository.rasp.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-36"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.register.html">poli.objective_repository.rdkit_logp.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-37"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.register.html">poli.objective_repository.rdkit_qed.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.html">poli.objective_repository.rfp_foldx_stability</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-38"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.html">poli.objective_repository.rfp_foldx_stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.assets.html">poli.objective_repository.rfp_foldx_stability.assets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.register.html">poli.objective_repository.rfp_foldx_stability.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-39"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html">poli.objective_repository.rfp_foldx_stability_and_sasa.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.html">poli.objective_repository.rfp_rasp</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-40"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.html">poli.objective_repository.rfp_rasp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.assets.html">poli.objective_repository.rfp_rasp.assets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.register.html">poli.objective_repository.rfp_rasp.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.html">poli.objective_repository.rmf_landscape</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-41"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.html">poli.objective_repository.rmf_landscape</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.isolated_function.html">poli.objective_repository.rmf_landscape.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.register.html">poli.objective_repository.rmf_landscape.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.html">poli.objective_repository.rosetta_energy</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-42"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.html">poli.objective_repository.rosetta_energy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.information.html">poli.objective_repository.rosetta_energy.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.isolated_function.html">poli.objective_repository.rosetta_energy.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.register.html">poli.objective_repository.rosetta_energy.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-43"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.information.html">poli.objective_repository.sa_tdc.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.isolated_function.html">poli.objective_repository.sa_tdc.isolated_function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.register.html">poli.objective_repository.sa_tdc.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.html">poli.objective_repository.scaffold_hop</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-44"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.html">poli.objective_repository.scaffold_hop</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.information.html">poli.objective_repository.scaffold_hop.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.register.html">poli.objective_repository.scaffold_hop.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.html">poli.objective_repository.sitagliptin_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.html">poli.objective_repository.sitagliptin_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.information.html">poli.objective_repository.sitagliptin_mpo.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.register.html">poli.objective_repository.sitagliptin_mpo.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-46"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.information.html">poli.objective_repository.super_mario_bros.information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.html">poli.objective_repository.super_mario_bros.level_utils</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.register.html">poli.objective_repository.super_mario_bros.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.thiothixene_rediscovery.html">poli.objective_repository.thiothixene_rediscovery</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-47"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.thiothixene_rediscovery.html">poli.objective_repository.thiothixene_rediscovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.thiothixene_rediscovery.register.html">poli.objective_repository.thiothixene_rediscovery.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-48"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html">poli.objective_repository.toy_continuous_problem.definitions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.register.html">poli.objective_repository.toy_continuous_problem.register</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem.toy_continuous_problem</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.troglitazone_rediscovery.html">poli.objective_repository.troglitazone_rediscovery</a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-49"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.troglitazone_rediscovery.html">poli.objective_repository.troglitazone_rediscovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.troglitazone_rediscovery.register.html">poli.objective_repository.troglitazone_rediscovery.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.valsartan_smarts.html">poli.objective_repository.valsartan_smarts</a><input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-50"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.valsartan_smarts.html">poli.objective_repository.valsartan_smarts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.valsartan_smarts.register.html">poli.objective_repository.valsartan_smarts.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.html">poli.objective_repository.white_noise</a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-51"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.html">poli.objective_repository.white_noise</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.register.html">poli.objective_repository.white_noise.register</a></li>
 </ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.zaleplon_mpo.html">poli.objective_repository.zaleplon_mpo</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-52"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.zaleplon_mpo.html">poli.objective_repository.zaleplon_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.zaleplon_mpo.register.html">poli.objective_repository.zaleplon_mpo.register</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
 <ul class="nav bd-sidenav">
@@ -536,7 +553,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -545,14 +562,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -677,10 +694,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -688,14 +705,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -756,7 +773,7 @@ document.write(`
 </div>
 <section id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
-<p>A good place to start is the next chapter! <a class="reference internal" href="getting_started/getting_started.html"><span class="doc std std-doc">Go to Getting Started</span></a>.</p>
+<p>A good place to start is the next chapter! <a class="reference internal" href="getting_started/getting_started.html"><span class="std std-doc">Go to Getting Started</span></a>.</p>
 <p>To install <code class="docutils literal notranslate"><span class="pre">poli</span></code> and <code class="docutils literal notranslate"><span class="pre">poli-baselines</span></code>, we recommend creating a fresh conda environment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>poli-base<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
 conda<span class="w"> </span>activate<span class="w"> </span>poli-base
@@ -768,7 +785,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 </section>
 <section id="black-box-objective-functions">
 <h2>Black-box objective functions<a class="headerlink" href="#black-box-objective-functions" title="Permalink to this heading">#</a></h2>
-<p><a class="reference internal" href="using_poli/objective_repository/all_objectives.html"><span class="doc std std-doc">For a full list, click here</span></a>.</p>
+<p><a class="reference internal" href="using_poli/objective_repository/all_objectives.html"><span class="std std-doc">For a full list, click here</span></a>.</p>
 <section id="toy-problems">
 <h3>Toy problems<a class="headerlink" href="#toy-problems" title="Permalink to this heading">#</a></h3>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -780,7 +797,7 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
 White noise</div>
 <p class="sd-card-text">White noise drawn from a unit Gaussian</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/white_noise.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/white_noise.html"><span>./using_poli/objective_repository/white_noise.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -789,7 +806,7 @@ White noise</div>
 Aloha</div>
 <p class="sd-card-text">A toy example about optimizing 5-letter words to spell “ALOHA”</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/aloha.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/aloha.html"><span>./using_poli/objective_repository/aloha.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -798,7 +815,7 @@ Aloha</div>
 Toy continuous problems</div>
 <p class="sd-card-text">The usual benchmark functions for continuous optimization (e.g. <code class="docutils literal notranslate"><span class="pre">easom</span></code>, or <code class="docutils literal notranslate"><span class="pre">ackley_function_01</span></code>)</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/toy_continuous_problems.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/toy_continuous_problems.html"><span>./using_poli/objective_repository/toy_continuous_problems.html</span></a></div>
 </div>
 </div>
 </div>
@@ -814,7 +831,7 @@ Toy continuous problems</div>
 Albuterol Similarity (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Albuterol similarity oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/albuterol_similarity.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/albuterol_similarity.html"><span>./using_poli/objective_repository/albuterol_similarity.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -823,7 +840,7 @@ Albuterol Similarity (using <code class="docutils literal notranslate"><span cla
 Amlodipine MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Amlodipine MPO oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/amlodipine_mpo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/amlodipine_mpo.html"><span>./using_poli/objective_repository/amlodipine_mpo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -832,7 +849,7 @@ Amlodipine MPO (using <code class="docutils literal notranslate"><span class="pr
 Celecoxib rediscovery (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Celecoxib rediscovery oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/celecoxib_rediscovery.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/celecoxib_rediscovery.html"><span>./using_poli/objective_repository/celecoxib_rediscovery.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -841,7 +858,7 @@ Celecoxib rediscovery (using <code class="docutils literal notranslate"><span cl
 Decorator Hop (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the “deco Hop” oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/deco_hop.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/deco_hop.html"><span>./using_poli/objective_repository/deco_hop.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -850,7 +867,7 @@ Decorator Hop (using <code class="docutils literal notranslate"><span class="pre
 <code class="docutils literal notranslate"><span class="pre">dockstring</span></code> for ligand design</div>
 <p class="sd-card-text">Using <code class="docutils literal notranslate"><span class="pre">dockstring</span></code> to assess the docking score of a small molecule.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/dockstring.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/dockstring.html"><span>./using_poli/objective_repository/dockstring.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -859,7 +876,7 @@ Decorator Hop (using <code class="docutils literal notranslate"><span class="pre
 DRD2 docking (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the DRD2 docking oracle.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/albuterol_similarity.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/albuterol_similarity.html"><span>./using_poli/objective_repository/albuterol_similarity.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -868,7 +885,7 @@ DRD2 docking (using <code class="docutils literal notranslate"><span class="pre"
 DRD3 (or 3pbl) docking (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">A wrapper around the Therapeutics Data Commons implementation of 3pbl docking.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/drd3_docking.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/drd3_docking.html"><span>./using_poli/objective_repository/drd3_docking.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -877,7 +894,7 @@ DRD3 (or 3pbl) docking (using <code class="docutils literal notranslate"><span c
 Ehrlich Functions</div>
 <p class="sd-card-text">A Closed-form objective for discrete sequences</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/ehrlich_functions.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/ehrlich_functions.html"><span>./using_poli/objective_repository/ehrlich_functions.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -886,7 +903,7 @@ Ehrlich Functions</div>
 Fexofenadine MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Fexofenadine MPO oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/fexofenadine_mpo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/fexofenadine_mpo.html"><span>./using_poli/objective_repository/fexofenadine_mpo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -895,7 +912,7 @@ Fexofenadine MPO (using <code class="docutils literal notranslate"><span class="
 GSK3β (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the GSK3β oracle.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/gsk3_beta.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/gsk3_beta.html"><span>./using_poli/objective_repository/gsk3_beta.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -904,7 +921,7 @@ GSK3β (using <code class="docutils literal notranslate"><span class="pre">tdc</
 Isomer C7H8N2O2 (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the first isomer oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/isomer_c7h8n2o2.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/isomer_c7h8n2o2.html"><span>./using_poli/objective_repository/isomer_c7h8n2o2.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -913,7 +930,7 @@ Isomer C7H8N2O2 (using <code class="docutils literal notranslate"><span class="p
 Isomer C9H10N2O2PF2Cl (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the second isomer oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/isomer_c9h10n2o2pf2cl.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/isomer_c9h10n2o2pf2cl.html"><span>./using_poli/objective_repository/isomer_c9h10n2o2pf2cl.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -922,7 +939,7 @@ Isomer C9H10N2O2PF2Cl (using <code class="docutils literal notranslate"><span cl
 JNK3 (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the JNK3 oracle.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/jnk3.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/jnk3.html"><span>./using_poli/objective_repository/jnk3.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -931,7 +948,7 @@ JNK3 (using <code class="docutils literal notranslate"><span class="pre">tdc</sp
 Log-solubility (LogP)</div>
 <p class="sd-card-text">Computing the log-quotient of solubilities using <code class="docutils literal notranslate"><span class="pre">RDKit</span></code>.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/rdkit_logp.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/rdkit_logp.html"><span>./using_poli/objective_repository/rdkit_logp.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -940,7 +957,7 @@ Log-solubility (LogP)</div>
 Median 1 (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the “median 1” oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/median_1.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/median_1.html"><span>./using_poli/objective_repository/median_1.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -949,7 +966,7 @@ Median 1 (using <code class="docutils literal notranslate"><span class="pre">tdc
 Median 2 (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the “median 2” oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/median_2.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/median_2.html"><span>./using_poli/objective_repository/median_2.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -958,7 +975,7 @@ Median 2 (using <code class="docutils literal notranslate"><span class="pre">tdc
 Mestranol Similarity (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Mestranol similarity oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/albuterol_similarity.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/albuterol_similarity.html"><span>./using_poli/objective_repository/albuterol_similarity.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -967,7 +984,7 @@ Mestranol Similarity (using <code class="docutils literal notranslate"><span cla
 Osimetrinib MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Osimetrinib MPO oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/osimetrinib_mpo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/osimetrinib_mpo.html"><span>./using_poli/objective_repository/osimetrinib_mpo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -976,7 +993,7 @@ Osimetrinib MPO (using <code class="docutils literal notranslate"><span class="p
 Penalized Log-solubility (LogP, using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</div>
 <p class="sd-card-text">Computing the penalized log-quotient of solubilities using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>’s implementation.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/penalized_logp_lambo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/penalized_logp_lambo.html"><span>./using_poli/objective_repository/penalized_logp_lambo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -985,7 +1002,7 @@ Penalized Log-solubility (LogP, using <code class="docutils literal notranslate"
 Quantitative Estimate of Druglikeness (QED)</div>
 <p class="sd-card-text">Computing the QED using <code class="docutils literal notranslate"><span class="pre">RDKit</span></code>.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/rdkit_qed.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/rdkit_qed.html"><span>./using_poli/objective_repository/rdkit_qed.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -994,7 +1011,7 @@ Quantitative Estimate of Druglikeness (QED)</div>
 Ranolazine MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Ranolazine MPO oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/ranolazine_mpo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/ranolazine_mpo.html"><span>./using_poli/objective_repository/ranolazine_mpo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1003,7 +1020,7 @@ Ranolazine MPO (using <code class="docutils literal notranslate"><span class="pr
 Scaffold Hop (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the scaffold Hop oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/deco_hop.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/deco_hop.html"><span>./using_poli/objective_repository/deco_hop.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1012,7 +1029,7 @@ Scaffold Hop (using <code class="docutils literal notranslate"><span class="pre"
 Sitagliptin MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Sitagliptin MPO oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/sitagliptin_mpo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/sitagliptin_mpo.html"><span>./using_poli/objective_repository/sitagliptin_mpo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1021,7 +1038,7 @@ Sitagliptin MPO (using <code class="docutils literal notranslate"><span class="p
 Synthetic Accessibility (SA, using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">A wrapper around the Therapeutics Data Commons implementation of the synthetic accessibility oracle.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/sa_tdc.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/sa_tdc.html"><span>./using_poli/objective_repository/sa_tdc.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1030,7 +1047,7 @@ Synthetic Accessibility (SA, using <code class="docutils literal notranslate"><s
 Thiothixene rediscovery (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Thiothixene rediscovery oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/thiothixene_rediscovery.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/thiothixene_rediscovery.html"><span>./using_poli/objective_repository/thiothixene_rediscovery.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1039,7 +1056,7 @@ Thiothixene rediscovery (using <code class="docutils literal notranslate"><span 
 Troglitazone rediscovery (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Troglitazone rediscovery oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/troglitazone_rediscovery.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/troglitazone_rediscovery.html"><span>./using_poli/objective_repository/troglitazone_rediscovery.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1048,7 +1065,7 @@ Troglitazone rediscovery (using <code class="docutils literal notranslate"><span
 Valsartan SMARTS (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Valsartan SMARTS oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/valsartan_smarts.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/valsartan_smarts.html"><span>./using_poli/objective_repository/valsartan_smarts.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1057,7 +1074,7 @@ Valsartan SMARTS (using <code class="docutils literal notranslate"><span class="
 Zaleplon MPO (using <code class="docutils literal notranslate"><span class="pre">tdc</span></code>)</div>
 <p class="sd-card-text">The Therapeutics Data Commons’ implementation of the Zaleplon MPO oracle of GuacaMol.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/zaleplon_mpo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/zaleplon_mpo.html"><span>./using_poli/objective_repository/zaleplon_mpo.html</span></a></div>
 </div>
 </div>
 </div>
@@ -1073,7 +1090,7 @@ Zaleplon MPO (using <code class="docutils literal notranslate"><span class="pre"
 Protein Stability (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</div>
 <p class="sd-card-text">Stability of mutations of a wildtype using <code class="docutils literal notranslate"><span class="pre">foldx</span></code></p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/foldx_stability.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/foldx_stability.html"><span>./using_poli/objective_repository/foldx_stability.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1082,7 +1099,7 @@ Protein Stability (using <code class="docutils literal notranslate"><span class=
 Protein SASA score (using <code class="docutils literal notranslate"><span class="pre">foldx</span></code>)</div>
 <p class="sd-card-text">Solvent accessibility of mutations of a wildtype using <code class="docutils literal notranslate"><span class="pre">foldx</span></code></p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/foldx_sasa.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/foldx_sasa.html"><span>./using_poli/objective_repository/foldx_sasa.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1091,7 +1108,7 @@ Protein SASA score (using <code class="docutils literal notranslate"><span class
 Protein Stability (using <code class="docutils literal notranslate"><span class="pre">RaSP</span></code>)</div>
 <p class="sd-card-text">Rapid Stability Predictions of single mutations from a wildtype.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/RaSP.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/RaSP.html"><span>./using_poli/objective_repository/RaSP.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1100,7 +1117,7 @@ Protein Stability (using <code class="docutils literal notranslate"><span class=
 Protein Stability (using <code class="docutils literal notranslate"><span class="pre">PyRosetta</span></code>)</div>
 <p class="sd-card-text">Stability Predictions of variants from a wildtype.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/Rosetta_energy.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/Rosetta_energy.html"><span>./using_poli/objective_repository/Rosetta_energy.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1109,7 +1126,7 @@ Protein Stability (using <code class="docutils literal notranslate"><span class=
 RFP Fluorescence Protein Stability (using <code class="docutils literal notranslate"><span class="pre">lambo</span></code>)</div>
 <p class="sd-card-text">LaMBO Fluorescence (RFP) by stability and solvent-accessible surface area.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli/objective_repository/foldx_rfp_lambo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli/objective_repository/foldx_rfp_lambo.html"><span>./using_poli/objective_repository/foldx_rfp_lambo.html</span></a></div>
 </div>
 </div>
 </div>
@@ -1129,7 +1146,7 @@ RFP Fluorescence Protein Stability (using <code class="docutils literal notransl
 Random Mutations</div>
 <p class="sd-card-text">Optimizing a discrete sequence by performing random mutations</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/random_mutations.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/random_mutations.html"><span>./using_poli_baselines/random_mutations.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1138,25 +1155,25 @@ Random Mutations</div>
 LaMBO2</div>
 <p class="sd-card-text">Optimizing protein sequences using guided discrete diffusion</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/lambo2.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/lambo2.html"><span>./using_poli_baselines/lambo2.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Increasingly high-dimensional combinatorial and continuous embeddings (Bounce) </div>
+Increasingly high-dimensional combinatorial and continuous embeddings (Bounce)</div>
 <p class="sd-card-text">Papenmeier et al’s Bounce, using their official implementation.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/bounce.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/bounce.html"><span>./using_poli_baselines/bounce.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Bayesian optimization with probabilistic reparametrization (ProbRep) </div>
+Bayesian optimization with probabilistic reparametrization (ProbRep)</div>
 <p class="sd-card-text">Daulton et al’s PR, using their official implementation.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/probrep.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/probrep.html"><span>./using_poli_baselines/probrep.html</span></a></div>
 </div>
 </div>
 </div>
@@ -1172,7 +1189,7 @@ Bayesian optimization with probabilistic reparametrization (ProbRep) </div>
 CMA-ES</div>
 <p class="sd-card-text">An evolutionary strategy for continuous problems</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/cma_es.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/cma_es.html"><span>./using_poli_baselines/cma_es.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1181,7 +1198,7 @@ CMA-ES</div>
 Line Bayesian Optimization</div>
 <p class="sd-card-text">A version of Bayesian Optimization where the acquisition is optimized over a line.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/latent_space_bo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/latent_space_bo.html"><span>./using_poli_baselines/latent_space_bo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1190,25 +1207,25 @@ Line Bayesian Optimization</div>
 Hvarfner’s Vanilla Bayesian Optimization</div>
 <p class="sd-card-text">Bayesian Optimization with log-expected improvement and a dimensionality-dependent prior over the lengthscales.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/hvarfners_vanilla_bo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/hvarfners_vanilla_bo.html"><span>./using_poli_baselines/hvarfners_vanilla_bo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Sparse Axis-Aligned Subspace Bayesian Optimization (SAASBO) </div>
+Sparse Axis-Aligned Subspace Bayesian Optimization (SAASBO)</div>
 <p class="sd-card-text">Eriksson and Jankowiak’s SAASBO, using <code class="docutils literal notranslate"><span class="pre">Ax</span></code>.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/saasbo.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/saasbo.html"><span>./using_poli_baselines/saasbo.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Adaptive expanding subspaces (BAxUS) </div>
+Adaptive expanding subspaces (BAxUS)</div>
 <p class="sd-card-text">Papenmeier et al’s BAxUS, using their official implementation.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./using_poli_baselines/baxus.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./using_poli_baselines/baxus.html"><span>./using_poli_baselines/baxus.html</span></a></div>
 </div>
 </div>
 </div>
@@ -1216,7 +1233,7 @@ Adaptive expanding subspaces (BAxUS) </div>
 </section>
 <section id="cite-us-and-other-relevant-work">
 <h2>Cite us and other relevant work<a class="headerlink" href="#cite-us-and-other-relevant-work" title="Permalink to this heading">#</a></h2>
-<p>If you use certain black boxes, we expect you to cite the relevant work. <a class="reference internal" href="using_poli/objective_repository/all_objectives.html"><span class="doc std std-doc">Check inside the documentation of each black box for the relevant references</span></a>.</p>
+<p>If you use certain black boxes, we expect you to cite the relevant work. <a class="reference internal" href="using_poli/objective_repository/all_objectives.html"><span class="std std-doc">Check inside the documentation of each black box for the relevant references</span></a>.</p>
 </section>
 <section id="contribute-problems-or-solvers">
 <h2>Contribute problems or solvers<a class="headerlink" href="#contribute-problems-or-solvers" title="Permalink to this heading">#</a></h2>
@@ -1230,7 +1247,7 @@ Adaptive expanding subspaces (BAxUS) </div>
 Contribute a new problem</div>
 <p class="sd-card-text">A guide to contributing a new problem to the repository.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./contributing/a_new_problem.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./contributing/a_new_problem.html"><span>./contributing/a_new_problem.html</span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
@@ -1239,7 +1256,7 @@ Contribute a new problem</div>
 Contribute a new solver</div>
 <p class="sd-card-text">How to contribute a new black-box optimization algorithm.</p>
 </div>
-<a class="sd-stretched-link reference external" href="./contributing/a_new_solver.html"></a></div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="./contributing/a_new_solver.html"><span>./contributing/a_new_solver.html</span></a></div>
 </div>
 </div>
 </div>
@@ -1293,7 +1310,7 @@ Contribute a new solver</div>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="right-next"
@@ -1359,7 +1376,7 @@ By Center for Basic Machine Learning Research in Life Science
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1383,8 +1400,8 @@ By Center for Basic Machine Learning Research in Life Science
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

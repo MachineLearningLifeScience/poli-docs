@@ -1,4 +1,4 @@
-poli.core.util
+﻿poli.core.util
 ==============
 
 .. automodule:: poli.core.util
@@ -39,6 +39,7 @@ poli.core.util
    poli.core.util.isolation
    poli.core.util.objective_management
    poli.core.util.observer_wrapper
+   poli.core.util.observers
    poli.core.util.proteins
    poli.core.util.seeding
 
