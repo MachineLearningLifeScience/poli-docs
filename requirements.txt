@@ -1,5 +1,5 @@
 numpy
-poli @ git+https://github.com/MachineLearningLifeScience/poli.git@dev
+poli-core
 poli-baselines @ git+https://github.com/MachineLearningLifeScience/poli-baselines.git@main
 pymoo
 torch
