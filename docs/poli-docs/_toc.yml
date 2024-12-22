@@ -38,7 +38,7 @@ parts:
       - file: using_poli/objective_repository/gsk3_beta.md
       - file: using_poli/objective_repository/isomer_c7h8n2o2.md
       - file: using_poli/objective_repository/isomer_c9h10n2o2pf2cl.md
-      - file: using_poli/objective_repository/jnk.md
+      - file: using_poli/objective_repository/jnk3.md
       - file: using_poli/objective_repository/rdkit_logp.md
       - file: using_poli/objective_repository/median_1.md
       - file: using_poli/objective_repository/median_2.md
@@ -73,10 +73,7 @@ parts:
       - file: using_poli_baselines/probrep.md
   - caption: "Observers"
     chapters:
-      - file: observers/registering_an_observer.md
-  - caption: "API reference"
-    chapters:
-      - file: api.rst
+      - file: using_poli/observers/registering_an_observer.md
   - caption: "Bibliography"
     chapters:
       - file: bibliography.md

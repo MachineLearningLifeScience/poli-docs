@@ -234,7 +234,7 @@ tell you automatically, though!
 
 You will usually develop your black-box objective function inside an environment, say `your_env`. You need to specify all these requirements in the `environment.yml`, generically:
 
-```yml
+```yaml
 name: your_env
 channels:
   - defaults
@@ -254,7 +254,7 @@ This environment will be created (if it doesn't exist yet), and will be used to 
 
 Conda environments can be quite good! For example, the `super_mario_bros` environment contains a Java runtime. This is the `environment.yml` for said problem:
 
-```yml
+```yaml
 name: poli__mario
 channels:
   - defaults
