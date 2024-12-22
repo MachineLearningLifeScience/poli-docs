@@ -49,6 +49,8 @@ After this, you can build the documentation using
 jupyter-book build --all docs/poli-docs
 ```
 
+**The whole `_build` folder is pushed to main.**
+
 ## Deployment
 
 Since we are relying on building the website locally (because of `foldx` dependencies), you will need to

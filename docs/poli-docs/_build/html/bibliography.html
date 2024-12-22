@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installing foldx" href="understanding_foldx/00-installing-foldx.html" />
-    <link rel="prev" title="poli.objective_repository.zaleplon_mpo.register" href="_autosummary/poli.objective_repository.zaleplon_mpo.register.html" />
+    <link rel="prev" title="Registering and running observers in isolated processes" href="using_poli/observers/registering_an_observer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -224,6 +224,7 @@
 <li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/gsk3_beta.html">GSK3β (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/isomer_c7h8n2o2.html">Isomer C7H8N2O2 (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/isomer_c9h10n2o2pf2cl.html">Isomer C9H10N2O2PF2Cl (using TDC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/jnk3.html">c-Jun N-terminal Kinases-3 (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/rdkit_logp.html">Log-solubility (logP)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/median_1.html">Median 1 (using TDC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli/objective_repository/median_2.html">Median 2 (using TDC)</a></li>
@@ -258,276 +259,9 @@
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/bounce.html">Bounce</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using_poli_baselines/probrep.html">Probabilistic Reparametrization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Observers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API documentation for poli</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.core.html">poli.core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_benchmark.html">poli.core.abstract_benchmark</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_black_box.html">poli.core.abstract_black_box</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_isolated_function.html">poli.core.abstract_isolated_function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.abstract_problem_factory.html">poli.core.abstract_problem_factory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.benchmark_information.html">poli.core.benchmark_information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.black_box_information.html">poli.core.black_box_information</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.chemistry.html">poli.core.chemistry</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.data_packages.html">poli.core.chemistry.data_packages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_black_box.html">poli.core.chemistry.tdc_black_box</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_isolated_function.html">poli.core.chemistry.tdc_isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.chemistry.tdc_problem.html">poli.core.chemistry.tdc_problem</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.data_package.html">poli.core.data_package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.exceptions.html">poli.core.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.lambda_black_box.html">poli.core.lambda_black_box</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.multi_objective_black_box.html">poli.core.multi_objective_black_box</a></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.problem.html">poli.core.problem</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.proteins.html">poli.core.proteins</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.data_packages.html">poli.core.proteins.data_packages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.foldx_black_box.html">poli.core.proteins.foldx_black_box</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.proteins.foldx_isolated_function.html">poli.core.proteins.foldx_isolated_function</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/poli.core.registry.html">poli.core.registry</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.core.util.html">poli.core.util</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.abstract_observer.html">poli.core.util.abstract_observer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.algorithm_observer_wrapper.html">poli.core.util.algorithm_observer_wrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.alignment.html">poli.core.util.alignment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.batch.html">poli.core.util.batch</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.chemistry.html">poli.core.util.chemistry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.default_observer.html">poli.core.util.default_observer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.external_observer.html">poli.core.util.external_observer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.files.html">poli.core.util.files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.inter_process_communication.html">poli.core.util.inter_process_communication</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.isolation.html">poli.core.util.isolation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.objective_management.html">poli.core.util.objective_management</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observer_wrapper.html">poli.core.util.observer_wrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.observers.html">poli.core.util.observers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.proteins.html">poli.core.util.proteins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.core.util.seeding.html">poli.core.util.seeding</a></li>
-</ul>
-</details></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="_autosummary/poli.objective_factory.html">poli.objective_factory</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.html">poli.objective_repository</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.albuterol_similarity.html">poli.objective_repository.albuterol_similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.albuterol_similarity.register.html">poli.objective_repository.albuterol_similarity.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.html">poli.objective_repository.aloha</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.aloha.register.html">poli.objective_repository.aloha.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.amlodipine_mpo.html">poli.objective_repository.amlodipine_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.amlodipine_mpo.register.html">poli.objective_repository.amlodipine_mpo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.celecoxib_rediscovery.html">poli.objective_repository.celecoxib_rediscovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.celecoxib_rediscovery.register.html">poli.objective_repository.celecoxib_rediscovery.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.deco_hop.html">poli.objective_repository.deco_hop</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.deco_hop.register.html">poli.objective_repository.deco_hop.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.html">poli.objective_repository.dockstring</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.isolated_function.html">poli.objective_repository.dockstring.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.dockstring.register.html">poli.objective_repository.dockstring.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd2_docking.html">poli.objective_repository.drd2_docking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.drd2_docking.register.html">poli.objective_repository.drd2_docking.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.html">poli.objective_repository.drd3_docking</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.drd3_docking.register.html">poli.objective_repository.drd3_docking.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich.html">poli.objective_repository.ehrlich</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich.register.html">poli.objective_repository.ehrlich.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.html">poli.objective_repository.ehrlich_holo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.isolated_function.html">poli.objective_repository.ehrlich_holo.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ehrlich_holo.register.html">poli.objective_repository.ehrlich_holo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.fexofenadine_mpo.html">poli.objective_repository.fexofenadine_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.fexofenadine_mpo.register.html">poli.objective_repository.fexofenadine_mpo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.html">poli.objective_repository.foldx_rfp_lambo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.information.html">poli.objective_repository.foldx_rfp_lambo.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.isolated_function.html">poli.objective_repository.foldx_rfp_lambo.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_rfp_lambo.register.html">poli.objective_repository.foldx_rfp_lambo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.html">poli.objective_repository.foldx_sasa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.isolated_function.html">poli.objective_repository.foldx_sasa.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_sasa.register.html">poli.objective_repository.foldx_sasa.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.html">poli.objective_repository.foldx_stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.isolated_function.html">poli.objective_repository.foldx_stability.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability.register.html">poli.objective_repository.foldx_stability.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.html">poli.objective_repository.foldx_stability_and_sasa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.isolated_function.html">poli.objective_repository.foldx_stability_and_sasa.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.foldx_stability_and_sasa.register.html">poli.objective_repository.foldx_stability_and_sasa.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.html">poli.objective_repository.gfp_cbas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.abstract_vae_wrapper.html">poli.objective_repository.gfp_cbas.abstract_vae_wrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing.html">poli.objective_repository.gfp_cbas.cbas_alphabet_preprocessing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.cbas_wrapper.html">poli.objective_repository.gfp_cbas.cbas_wrapper</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.gfp_gp.html">poli.objective_repository.gfp_cbas.gfp_gp</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.information.html">poli.objective_repository.gfp_cbas.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.isolated_function.html">poli.objective_repository.gfp_cbas.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.make_vae.html">poli.objective_repository.gfp_cbas.make_vae</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_cbas.register.html">poli.objective_repository.gfp_cbas.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.html">poli.objective_repository.gfp_select</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.information.html">poli.objective_repository.gfp_select.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.isolated_function.html">poli.objective_repository.gfp_select.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gfp_select.register.html">poli.objective_repository.gfp_select.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.gsk3_beta.html">poli.objective_repository.gsk3_beta</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.gsk3_beta.register.html">poli.objective_repository.gsk3_beta.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c7h8n2o2.html">poli.objective_repository.isomer_c7h8n2o2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c7h8n2o2.register.html">poli.objective_repository.isomer_c7h8n2o2.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.html">poli.objective_repository.isomer_c9h10n2o2pf2cl</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.isomer_c9h10n2o2pf2cl.register.html">poli.objective_repository.isomer_c9h10n2o2pf2cl.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.jnk3.html">poli.objective_repository.jnk3</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.jnk3.register.html">poli.objective_repository.jnk3.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.median_1.html">poli.objective_repository.median_1</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.median_1.register.html">poli.objective_repository.median_1.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.median_2.html">poli.objective_repository.median_2</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.median_2.register.html">poli.objective_repository.median_2.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.mestranol_similarity.html">poli.objective_repository.mestranol_similarity</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.mestranol_similarity.register.html">poli.objective_repository.mestranol_similarity.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.osimetrinib_mpo.html">poli.objective_repository.osimetrinib_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.osimetrinib_mpo.register.html">poli.objective_repository.osimetrinib_mpo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.html">poli.objective_repository.penalized_logp_lambo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.isolated_function.html">poli.objective_repository.penalized_logp_lambo.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.penalized_logp_lambo.register.html">poli.objective_repository.penalized_logp_lambo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.perindopril_mpo.html">poli.objective_repository.perindopril_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.perindopril_mpo.register.html">poli.objective_repository.perindopril_mpo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.ranolazine_mpo.html">poli.objective_repository.ranolazine_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.ranolazine_mpo.register.html">poli.objective_repository.ranolazine_mpo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.html">poli.objective_repository.rasp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.isolated_function.html">poli.objective_repository.rasp.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rasp.register.html">poli.objective_repository.rasp.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.html">poli.objective_repository.rdkit_logp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_logp.register.html">poli.objective_repository.rdkit_logp.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.html">poli.objective_repository.rdkit_qed</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rdkit_qed.register.html">poli.objective_repository.rdkit_qed.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.html">poli.objective_repository.rfp_foldx_stability</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.assets.html">poli.objective_repository.rfp_foldx_stability.assets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability.register.html">poli.objective_repository.rfp_foldx_stability.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.html">poli.objective_repository.rfp_foldx_stability_and_sasa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_foldx_stability_and_sasa.register.html">poli.objective_repository.rfp_foldx_stability_and_sasa.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.html">poli.objective_repository.rfp_rasp</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.assets.html">poli.objective_repository.rfp_rasp.assets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rfp_rasp.register.html">poli.objective_repository.rfp_rasp.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.html">poli.objective_repository.rmf_landscape</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.isolated_function.html">poli.objective_repository.rmf_landscape.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rmf_landscape.register.html">poli.objective_repository.rmf_landscape.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.html">poli.objective_repository.rosetta_energy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.information.html">poli.objective_repository.rosetta_energy.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.isolated_function.html">poli.objective_repository.rosetta_energy.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.rosetta_energy.register.html">poli.objective_repository.rosetta_energy.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.html">poli.objective_repository.sa_tdc</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.information.html">poli.objective_repository.sa_tdc.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.isolated_function.html">poli.objective_repository.sa_tdc.isolated_function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sa_tdc.register.html">poli.objective_repository.sa_tdc.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.html">poli.objective_repository.scaffold_hop</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.information.html">poli.objective_repository.scaffold_hop.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.scaffold_hop.register.html">poli.objective_repository.scaffold_hop.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.html">poli.objective_repository.sitagliptin_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.information.html">poli.objective_repository.sitagliptin_mpo.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.sitagliptin_mpo.register.html">poli.objective_repository.sitagliptin_mpo.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.html">poli.objective_repository.super_mario_bros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.information.html">poli.objective_repository.super_mario_bros.information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.level_utils.html">poli.objective_repository.super_mario_bros.level_utils</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.super_mario_bros.register.html">poli.objective_repository.super_mario_bros.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.thiothixene_rediscovery.html">poli.objective_repository.thiothixene_rediscovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.thiothixene_rediscovery.register.html">poli.objective_repository.thiothixene_rediscovery.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.definitions.html">poli.objective_repository.toy_continuous_problem.definitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.register.html">poli.objective_repository.toy_continuous_problem.register</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.toy_continuous_problem.toy_continuous_problem.html">poli.objective_repository.toy_continuous_problem.toy_continuous_problem</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.troglitazone_rediscovery.html">poli.objective_repository.troglitazone_rediscovery</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.troglitazone_rediscovery.register.html">poli.objective_repository.troglitazone_rediscovery.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.valsartan_smarts.html">poli.objective_repository.valsartan_smarts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.valsartan_smarts.register.html">poli.objective_repository.valsartan_smarts.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.html">poli.objective_repository.white_noise</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.white_noise.register.html">poli.objective_repository.white_noise.register</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="_autosummary/poli.objective_repository.zaleplon_mpo.html">poli.objective_repository.zaleplon_mpo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/poli.objective_repository.zaleplon_mpo.register.html">poli.objective_repository.zaleplon_mpo.register</a></li>
-</ul>
-</details></li>
-</ul>
-</details></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="using_poli/observers/registering_an_observer.html">Registering and running observers in isolated processes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliography</span></p>
 <ul class="current nav bd-sidenav">
@@ -762,9 +496,6 @@ document.write(`
 <dt class="label" id="id43"><span class="brackets">DWaDE+22</span></dt>
 <dd><p>Samuel Daulton, Xingchen Wan, and David Eriksson, Maximilian Balandat, Michael A. Osborne, and Eytan Bakshy. Bayesian optimization over discrete and mixed spaces via probabilistic reparameterization. In <em>Advances in Neural Information Processing Systems 35</em>. 2022.</p>
 </dd>
-<dt class="label" id="id18"><span class="brackets">DPAM02</span></dt>
-<dd><p>K. Deb, A. Pratap, S. Agarwal, and T. Meyarivan. A fast and elitist multiobjective genetic algorithm: nsga-ii. <em>IEEE Transactions on Evolutionary Computation</em>, 6(2):182–197, April 2002. <a class="reference external" href="https://doi.org/10.1109/4235.996017">doi:10.1109/4235.996017</a>.</p>
-</dd>
 <dt class="label" id="id38"><span class="brackets">EJ21</span></dt>
 <dd><p>David Eriksson and Martin Jankowiak. High-dimensional Bayesian optimization with sparse axis-aligned subspaces. In Cassio de Campos and Marloes H. Maathuis, editors, <em>Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence</em>, volume 161 of Proceedings of Machine Learning Research, 493–503. PMLR, 27–30 Jul 2021. URL: <a class="reference external" href="https://proceedings.mlr.press/v161/eriksson21a.html">https://proceedings.mlr.press/v161/eriksson21a.html</a>.</p>
 </dd>
@@ -779,9 +510,6 @@ document.write(`
 </dd>
 <dt class="label" id="id14"><span class="brackets">GOST+22</span></dt>
 <dd><p>Miguel García-Ortegón, Gregor N. C. Simm, Austin J. Tripp, José Miguel Hernández-Lobato, Andreas Bender, and Sergio Bacallado. Dockstring: easy molecular docking yields better benchmarks for ligand design. <em>Journal of Chemical Information and Modeling</em>, 62(15):3486–3502, August 2022. <a class="reference external" href="https://doi.org/10.1021/acs.jcim.1c01334">doi:10.1021/acs.jcim.1c01334</a>.</p>
-</dd>
-<dt class="label" id="id23"><span class="brackets">GPB+18</span></dt>
-<dd><p>Jacob R Gardner, Geoff Pleiss, David Bindel, Kilian Q Weinberger, and Andrew Gordon Wilson. Gpytorch: blackbox matrix-matrix gaussian process inference with gpu acceleration. In <em>Advances in Neural Information Processing Systems</em>. 2018.</p>
 </dd>
 <dt class="label" id="id45"><span class="brackets">GSF+24</span></dt>
 <dd><p>Nate Gruver, Samuel Stanton, Nathan Frey, Tim GJ Rudner, Isidro Hotzel, Julien Lafrance-Vanasse, Arvind Rajpal, Kyunghyun Cho, and Andrew G Wilson. Protein design with guided discrete diffusion. <em>Advances in Neural Information Processing Systems</em>, 2024.</p>
@@ -804,9 +532,6 @@ document.write(`
 <dt class="label" id="id32"><span class="brackets">JBJ20</span></dt>
 <dd><p>Wengong Jin, Regina Barzilay, and Tommi Jaakkola. Multi-objective molecule generation using interpretable substructures. <em>Proceedings of the 37 th International Conference on Machine Learning PMLR</em>, 2020.</p>
 </dd>
-<dt class="label" id="id30"><span class="brackets">Kha09</span></dt>
-<dd><p>Ahmed Khalifa. The mario ai framework. <a class="github reference external" href="https://github.com/amidos2006/Mario-AI-Framework">amidos2006/Mario-AI-Framework</a>, 2009. Accessed: 20/03/2024.</p>
-</dd>
 <dt class="label" id="id21"><span class="brackets">KMH+19</span></dt>
 <dd><p>Johannes Kirschner, Mojmir Mutny, Nicole Hiller, Rasmus Ischebeck, and Andreas Krause. Adaptive and safe bayesian optimization in high dimensions via one-dimensional subspaces. In <em>Proceedings of the 36th International Conference on Machine Learning</em>, 3429–3438. PMLR, May 2019. URL: <a class="reference external" href="https://proceedings.mlr.press/v97/kirschner19a.html">https://proceedings.mlr.press/v97/kirschner19a.html</a>.</p>
 </dd>
@@ -823,7 +548,7 @@ document.write(`
 <dd><p>Marcus Olivecrona, Thomas Blaschke, Ola Engkvist, and Hongming Chen. Molecular de-novo design through deep reinforcement learning. <em>Journal of Cheminformatics</em>, 9(1):48, September 2017. <a class="reference external" href="https://doi.org/10.1186/s13321-017-0235-x">doi:10.1186/s13321-017-0235-x</a>.</p>
 </dd>
 <dt class="label" id="id41"><span class="brackets">PNP22</span></dt>
-<dd><p><strong>missing booktitle in Papenmeier:BAxUS:2022</strong></p>
+<dd><p>Leonard Papenmeier, Luigi Nardi, and Matthias Poloczek. Increasing the scope as you learn: adaptive bayesian optimization in nested subspaces. In Alice H. Oh, Alekh Agarwal, Danielle Belgrave, and Kyunghyun Cho, editors, <em>Advances in Neural Information Processing Systems</em>. 2022. URL: <a class="reference external" href="https://openreview.net/forum?id=e4Wf6112DI">https://openreview.net/forum?id=e4Wf6112DI</a>.</p>
 </dd>
 <dt class="label" id="id42"><span class="brackets">PNP24</span></dt>
 <dd><p>Leonard Papenmeier, Luigi Nardi, and Matthias Poloczek. Bounce: reliable high-dimensional bayesian optimization for combinatorial and mixed spaces. 2024. <a class="reference external" href="https://arxiv.org/abs/2307.00618">arXiv:2307.00618</a>.</p>
@@ -832,7 +557,7 @@ document.write(`
 <dd><p>Hahnbeom Park, Philip Bradley, Per Greisen Jr, Yuan Liu, Vikram Khipple Mulligan, David E Kim, David Baker, and Frank DiMaio. Simultaneous optimization of biomolecular energy functions on features from small molecules and macromolecules. <em>Journal of chemical theory and computation</em>, 12(12):6201–6212, 2016.</p>
 </dd>
 <dt class="label" id="id34"><span class="brackets">PZSL+20</span></dt>
-<dd><p><strong>missing journal in Polykovskiy:MOSES:2020</strong></p>
+<dd><p>Daniil Polykovskiy, Alexander Zhebrak, Benjamin Sanchez-Lengeling, Sergey Golovanov, Oktai Tatanov, Stanislav Belyaev, Rauf Kurbanov, Aleksey Artamonov, Vladimir Aladinskiy, Mark Veselov, Artur Kadurin, Simon Johansson, Hongming Chen, Sergey Nikolenko, Alán Aspuru-Guzik, and Alex Zhavoronkov. Molecular sets (moses): a benchmarking platform for molecular generation models. <em>Frontiers in Pharmacology</em>, 2020. URL: <a class="reference external" href="https://www.frontiersin.org/articles/10.3389/fphar.2020.565644">https://www.frontiersin.org/articles/10.3389/fphar.2020.565644</a>.</p>
 </dd>
 <dt class="label" id="id36"><span class="brackets">RDK06</span></dt>
 <dd><p>RDKit. Rdkit: open-source cheminformatics. <a class="github reference external" href="https://github.com/rdkit/rdkit">rdkit/rdkit</a>, 2006.</p>
@@ -852,20 +577,8 @@ document.write(`
 <dt class="label" id="id2"><span class="brackets">SMG+22</span></dt>
 <dd><p>Samuel Stanton, Wesley Maddox, Nate Gruver, Phillip Maffettone, Emily Delaney, Peyton Greenside, and Andrew Gordon Wilson. Accelerating bayesian optimization for biological sequence design with denoising autoencoders. <em>arXiv preprint arXiv:2203.12742</em>, 2022.</p>
 </dd>
-<dt class="label" id="id28"><span class="brackets">SSMnonV16</span></dt>
-<dd><p>Adam James Summerville, Sam Snodgrass, Michael Mateas, and Santiago Onta n'on Villar. The vglc: the video game level corpus. <em>Proceedings of the 7th Workshop on Procedural Content Generation</em>, 2016.</p>
-</dd>
 <dt class="label" id="id16"><span class="brackets">SB13</span></dt>
 <dd><p>S. Surjanovic and D. Bingham. Optimization test functions and datasets. <a class="reference external" href="https://www.sfu.ca/ ssurjano/optimization.html">https://www.sfu.ca/ ssurjano/optimization.html</a>, 2013. Accessed: 2024-04-12.</p>
-</dd>
-<dt class="label" id="id27"><span class="brackets">TKB10</span></dt>
-<dd><p>Julian Togelius, Sergey Karakovskiy, and Robin Baumgarten. The 2009 mario ai competition. In <em>IEEE Congress on Evolutionary Computation</em>, volume, 1–8. 2010. <a class="reference external" href="https://doi.org/10.1109/CEC.2010.5586133">doi:10.1109/CEC.2010.5586133</a>.</p>
-</dd>
-<dt class="label" id="id29"><span class="brackets">VLS+18</span></dt>
-<dd><p>Vanessa Volz, Simon M. Lucas, Jacob Schrum, Adam Smith, Jialin Liu, and Sebastian Risi. Evolving mario levels in the latent space of a deep convolutional generative adversarial network. <em>GECCO 2018 - Proceedings of the 2018 Genetic and Evolutionary Computation Conference</em>, pages 221–228, 2018. <a class="reference external" href="https://doi.org/10.1145/3205455.3205517">doi:10.1145/3205455.3205517</a>.</p>
-</dd>
-<dt class="label" id="id19"><span class="brackets">BlankDeb20</span></dt>
-<dd><p>J. Blank and K. Deb. Pymoo: multi-objective optimization in python. <em>IEEE Access</em>, 8():89497–89509, 2020.</p>
 </dd>
 </dl>
 </div>
@@ -902,12 +615,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="_autosummary/poli.objective_repository.zaleplon_mpo.register.html"
+       href="using_poli/observers/registering_an_observer.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">poli.objective_repository.zaleplon_mpo.register</p>
+        <p class="prev-next-title">Registering and running observers in isolated processes</p>
       </div>
     </a>
     <a class="right-next"

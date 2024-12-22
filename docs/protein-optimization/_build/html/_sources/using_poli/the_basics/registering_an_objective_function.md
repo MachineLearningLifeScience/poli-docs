@@ -120,7 +120,7 @@ First step is always **creating a conda environment for your problem**. In this 
 
 TODO: move the dependency to our github after merging.
 
-```yml
+```yaml
 # environment.yml
 name: poli_aloha
 channels:
