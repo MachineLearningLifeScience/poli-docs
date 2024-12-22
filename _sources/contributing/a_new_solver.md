@@ -161,7 +161,7 @@ solvers
 
 If your solver needs a special set of requirements, we expect you to add a conda environment `environment.your_solver_name.yml` in which `your_solver_name.py` could be imported. See a template here:
 
-```yml
+```yaml
 name: poli__your_solver_name
 channels:
   - defaults
