@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -506,13 +506,24 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">DockstringBlackBox</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli.objective_repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">DockstringBlackBox</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="n">DockstringBlackBox</span><span class="p">(</span><span class="n">target_name</span><span class="o">=</span><span class="s2">&quot;DRD2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: creating environment poli__dockstring from dockstring/environment.yml
+poli 🧪: poli__dockstring already exists.
+poli 🧪: running registration of dockstring__isolated from environment poli__dockstring
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/Projects/poli/src/poli/core/util/isolation/instancing.py:129: UserWarning: Environment poli__dockstring already exists. Will not create it.
+  warnings.warn(f&quot;Environment {env_name} already exists. Will not create it.&quot;)
+/Users/sjt972/Projects/poli/src/poli/core/util/isolation/instancing.py:140: UserWarning: Running the following command: conda run -n poli__dockstring python /Users/sjt972/Projects/poli/src/poli/objective_repository/dockstring/isolated_function.py. 
+  warnings.warn(&quot;Running the following command: %s. &quot; % command)
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Starting the function dockstring as an isolated process.
 </pre></div>
 </div>
@@ -522,7 +533,7 @@ document.write(`
 <p>We can still evaluate <code class="docutils literal notranslate"><span class="pre">f</span></code> like normal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="c1"># The example from dockstring&#39;s documentation: risperidone.</span>
 <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;CC1=C(C(=O)N2CCCCC2=N1)CCN3CCC(CC3)C4=NOC5=C4C=CC(=C5)F&quot;</span><span class="p">])</span>

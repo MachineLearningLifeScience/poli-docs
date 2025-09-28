@@ -12,14 +12,21 @@ Ehrlich functions, proposed by {cite:p}`Stanton:Ehrlich:2024`, are a closed-form
 
 None, this black box runs out of the box.
 
+
+If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running
+
+```bash
+pip install "poli-core[ehrlich]"
+```
+
 ## How to run
 
 ```python
-from poli.objective_repository import EhrlichBlackBox, EhrlichProblemFactory
+from poli.objective_repository import EhrlichHoloBlackBox, EhrlichHoloProblemFactory
 
 # You can either
 # (i) Create a black box
-f = EhrlichBlackBox(
+f = EhrlichHoloBlackBox(
     sequence_length=256,
     motif_length=8,
     n_motifs=4,
@@ -28,7 +35,7 @@ f = EhrlichBlackBox(
 
 # or
 # (ii) create a problem
-problem = EhrlichProblemFactory().create(
+problem = EhrlichHoloProblemFactory().create(
     sequence_length=256,
     motif_length=8,
     n_motifs=4,
@@ -86,13 +93,3 @@ year = {2024}
 :::
 
 ::::
-
-## API reference
-
-```{eval-rst}
-.. autoclass:: poli.objective_repository.ehrlich.register.EhrlichProblemFactory
-    :members:
-
-.. autoclass:: poli.objective_repository.ehrlich.register.EhrlichBlackBox
-    :members:
-```

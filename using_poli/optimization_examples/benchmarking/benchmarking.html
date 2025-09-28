@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -488,7 +488,7 @@ document.write(`
 <p>We’ll use <code class="docutils literal notranslate"><span class="pre">poli</span></code>’s <code class="docutils literal notranslate"><span class="pre">get_problems()</span></code> method to pick the problems that interest us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">get_problems</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_problems</span>
 <span class="n">get_problems</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -556,8 +556,8 @@ document.write(`
 <h1>Selecting solvers<a class="headerlink" href="#selecting-solvers" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli_baselines.solvers.simple.random_mutation</span> <span class="kn">import</span> <span class="n">RandomMutation</span>
-<span class="kn">from</span> <span class="nn">poli_baselines.solvers.simple.genetic_algorithm</span> <span class="kn">import</span> <span class="n">FixedLengthGeneticAlgorithm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli_baselines.solvers.simple.random_mutation</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomMutation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">poli_baselines.solvers.simple.genetic_algorithm</span><span class="w"> </span><span class="kn">import</span> <span class="n">FixedLengthGeneticAlgorithm</span>
 </pre></div>
 </div>
 </div>
@@ -577,8 +577,8 @@ document.write(`
 That’s why for this example, we will register the observer and leave the instantiation to <code class="docutils literal notranslate"><span class="pre">poli</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.core.registry</span> <span class="kn">import</span> <span class="n">register_observer</span>
-<span class="kn">from</span> <span class="nn">poli.core.util.observers.mlflow_observer</span> <span class="kn">import</span> <span class="n">MLFlowObserver</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli.core.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_observer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">poli.core.util.observers.mlflow_observer</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLFlowObserver</span>
 
 <span class="n">register_observer</span><span class="p">(</span>
     <span class="n">observer</span><span class="o">=</span><span class="n">MLFlowObserver</span><span class="p">(),</span>
@@ -597,8 +597,8 @@ That’s why for this example, we will register the observer and leave the insta
 <p>Define a tracking-URI for <code class="docutils literal notranslate"><span class="pre">mlflow</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 <span class="n">tracking_uri</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span><span class="o">.</span><span class="n">resolve</span><span class="p">(),</span> <span class="s2">&quot;mlruns&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -607,7 +607,7 @@ That’s why for this example, we will register the observer and leave the insta
 <p>Run the (mock-)benchmark.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli</span> <span class="kn">import</span> <span class="n">create</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli</span><span class="w"> </span><span class="kn">import</span> <span class="n">create</span>
 
 <span class="k">for</span> <span class="n">solver_class</span><span class="p">,</span> <span class="n">needs_alignment</span> <span class="ow">in</span> <span class="n">solvers</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">problems</span><span class="p">:</span>
@@ -627,17 +627,11 @@ That’s why for this example, we will register the observer and leave the insta
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
 poli 🧪: attempting isolated observer instantiation.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
+poli 🧪: initializing the observer.
 poli 🧪: attempting isolated observer instantiation.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
+poli 🧪: initializing the observer.
 poli 🧪: attempting isolated observer instantiation.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: initializing the observer.
+poli 🧪: initializing the observer.
 poli 🧪: attempting isolated observer instantiation.
 </pre></div>
 </div>
@@ -654,39 +648,19 @@ poli 🧪: attempting isolated observer instantiation.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-12-22 16:30:14 -0500] [81459] [INFO] Starting gunicorn 23.0.0
-[2024-12-22 16:30:14 -0500] [81459] [INFO] Listening at: http://127.0.0.1:5000 (81459)
-[2024-12-22 16:30:14 -0500] [81459] [INFO] Using worker: sync
-[2024-12-22 16:30:14 -0500] [81464] [INFO] Booting worker with pid: 81464
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-12-22 16:30:14 -0500] [81465] [INFO] Booting worker with pid: 81465
-[2024-12-22 16:30:14 -0500] [81466] [INFO] Booting worker with pid: 81466
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-12-22 16:30:14 -0500] [81467] [INFO] Booting worker with pid: 81467
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/Users/sjt972/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli/core/util/observer_wrapper.py&quot;, line 98, in &lt;module&gt;
-    start_observer_process(args.objective_name, args.port, args.password)
-  File &quot;/Users/sjt972/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli/core/util/observer_wrapper.py&quot;, line 57, in start_observer_process
-    msg_type, *msg = conn.recv()
-  File &quot;/Users/sjt972/anaconda3/envs/poli-docs3/lib/python3.10/multiprocessing/connection.py&quot;, line 250, in recv
-    buf = self._recv_bytes()
-  File &quot;/Users/sjt972/anaconda3/envs/poli-docs3/lib/python3.10/multiprocessing/connection.py&quot;, line 414, in _recv_bytes
-    buf = self._recv(4)
-  File &quot;/Users/sjt972/anaconda3/envs/poli-docs3/lib/python3.10/multiprocessing/connection.py&quot;, line 379, in _recv
-    chunk = read(handle, remaining)
-KeyboardInterrupt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-[2024-12-22 16:30:43 -0500] [81459] [INFO] Handling signal: int
-[2024-12-22 16:30:43 -0500] [81466] [INFO] Worker exiting (pid: 81466)
-[2024-12-22 16:30:43 -0500] [81467] [INFO] Worker exiting (pid: 81467)
-[2024-12-22 16:30:43 -0500] [81464] [INFO] Worker exiting (pid: 81464)
-[2024-12-22 16:30:43 -0500] [81465] [INFO] Worker exiting (pid: 81465)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-12-22 16:02:23 -0500] [62158] [INFO] Starting gunicorn 23.0.0
+[2024-12-22 16:02:23 -0500] [62158] [INFO] Listening at: http://127.0.0.1:5000 (62158)
+[2024-12-22 16:02:23 -0500] [62158] [INFO] Using worker: sync
+[2024-12-22 16:02:23 -0500] [62159] [INFO] Booting worker with pid: 62159
+[2024-12-22 16:02:23 -0500] [62160] [INFO] Booting worker with pid: 62160
+[2024-12-22 16:02:23 -0500] [62162] [INFO] Booting worker with pid: 62162
+[2024-12-22 16:02:23 -0500] [62163] [INFO] Booting worker with pid: 62163
+^C
+[2024-12-22 16:02:44 -0500] [62158] [INFO] Handling signal: int
+[2024-12-22 16:02:44 -0500] [62159] [INFO] Worker exiting (pid: 62159)
+[2024-12-22 16:02:44 -0500] [62162] [INFO] Worker exiting (pid: 62162)
+[2024-12-22 16:02:44 -0500] [62160] [INFO] Worker exiting (pid: 62160)
+[2024-12-22 16:02:44 -0500] [62163] [INFO] Worker exiting (pid: 62163)
 </pre></div>
 </div>
 </div>

@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -493,8 +493,8 @@ document.write(`
 <h2>An abstract problem solver<a class="headerlink" href="#an-abstract-problem-solver" title="Permalink to this heading">#</a></h2>
 <p>All problem solvers in <code class="docutils literal notranslate"><span class="pre">poli_baselines</span></code> inherit from an <code class="docutils literal notranslate"><span class="pre">AbstractSolver</span></code>, which is implemented as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># poli_baselines/core/abstract_solver.py</span>
-<span class="k">class</span> <span class="nc">AbstractSolver</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AbstractSolver</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
         <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -508,10 +508,10 @@ document.write(`
 <p>i.e. the minimal ingredients required to instantiate a solver are a black-box function defined through <code class="docutils literal notranslate"><span class="pre">poli</span></code>, the initial design <code class="docutils literal notranslate"><span class="pre">x0</span></code>, and its evaluation <code class="docutils literal notranslate"><span class="pre">y0</span></code>.</p>
 <p><strong>The only abstract method required</strong> is a <code class="docutils literal notranslate"><span class="pre">solve</span></code>, in which you can implement all the complex logic required to optimize the objective function for <code class="docutils literal notranslate"><span class="pre">max_iter:</span> <span class="pre">int</span></code> iterations.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># poli_baselines/core/abstract_solver.py</span>
-<span class="k">class</span> <span class="nc">AbstractSolver</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AbstractSolver</span><span class="p">:</span>
     <span class="o">...</span>
 
-    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
         <span class="n">n_initial_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
@@ -545,8 +545,8 @@ document.write(`
 <p>Leveraging the fact that we are usually working with discrete sequences, we can implement the simplest version of an optimizer: one that takes the best performing sequence, and randomly mutates one of its positions.</p>
 <p>The following is an implementation of exactly this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># poli_baselines/solvers/simple/random_mutation.py (almost)</span>
-<span class="k">class</span> <span class="nc">RandomMutation</span><span class="p">(</span><span class="n">AbstractSolver</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RandomMutation</span><span class="p">(</span><span class="n">AbstractSolver</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">black_box</span><span class="p">:</span> <span class="n">AbstractBlackBox</span><span class="p">,</span>
         <span class="n">x0</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
@@ -563,7 +563,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span> <span class="o">=</span> <span class="n">black_box</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">alphabet</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alphabet_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alphabet</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">next_candidate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">next_candidate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Returns the next candidate solution</span>
 <span class="sd">        after checking the history.</span>
@@ -584,7 +584,7 @@ document.write(`
 
         <span class="k">return</span> <span class="n">next_x</span>
     
-    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n_initial_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_iter</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">n_initial_points</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># then seed everything...</span>
             <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
@@ -642,8 +642,8 @@ solvers
 </div>
 <p>Ideally, you would also add a couple of tests in the relevant subfolder of <code class="docutils literal notranslate"><span class="pre">tests</span></code>. Feel free to pattern-match from other solvers.</p>
 <p>Finally, you can test your solver using something a toy function:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.repository</span> <span class="kn">import</span> <span class="n">AlohaProblemFactory</span>
-<span class="kn">from</span> <span class="nn">poli_baselines.solvers.your_solver_name</span> <span class="kn">import</span> <span class="n">YourSolver</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli.repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">AlohaProblemFactory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">poli_baselines.solvers.your_solver_name</span><span class="w"> </span><span class="kn">import</span> <span class="n">YourSolver</span>
 
 <span class="c1"># Define the toy-est of toy functions</span>
 <span class="n">problem</span> <span class="o">=</span> <span class="n">AlohaProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
