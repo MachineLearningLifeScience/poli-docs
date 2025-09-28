@@ -34,6 +34,13 @@ In our repairing process, we also remove heteroatoms using [`pdbtools`](https://
 
 :::
 
+
+If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running
+
+```bash
+pip install "poli-core[ehrlich]"
+```
+
 ## How to run
 
 ```python

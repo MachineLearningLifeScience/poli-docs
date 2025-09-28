@@ -62,6 +62,12 @@ which prepare_receptor
 # /path/to/your/bin/prepare_receptor
 ```
 
+If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running
+
+```bash
+pip install "poli-core[tdc]"
+```
+
 ## How to run
 
 ```python

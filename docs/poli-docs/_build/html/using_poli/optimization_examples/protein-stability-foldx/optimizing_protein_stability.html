@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -514,7 +514,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 <span class="n">wildtype_pdb_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;./3ned_Repair.pdb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
 <span class="n">wildtype_pdb_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>  <span class="c1"># Should say True</span>
@@ -533,7 +533,7 @@ document.write(`
 <p>In this tutorial, we optimize the stability of <code class="docutils literal notranslate"><span class="pre">mRogue</span></code> using the <code class="docutils literal notranslate"><span class="pre">foldx_stability</span></code> black box. The first step is creating it:</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">FoldXStabilityProblemFactory</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli.objective_repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">FoldXStabilityProblemFactory</span>
 
 <span class="n">problem_factory</span> <span class="o">=</span> <span class="n">FoldXStabilityProblemFactory</span><span class="p">()</span>
 
@@ -544,10 +544,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
+<details class="admonition hide below-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poli 🧪: Starting the function foldx_stability as an isolated process.
@@ -578,7 +578,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli_baselines.solvers.simple.random_mutation</span> <span class="kn">import</span> <span class="n">RandomMutation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli_baselines.solvers.simple.random_mutation</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomMutation</span>
 
 <span class="n">y0</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
 
@@ -590,137 +590,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>And that’s it!</strong> You can optimize the objective function passed as <code class="docutils literal notranslate"><span class="pre">black_box</span></code> by just calling the <code class="docutils literal notranslate"><span class="pre">.solve(n_iters)</span></code> method: (be careful, this might take a while)</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/Users/sjt972/Projects/poli/src/poli/external_isolated_function_script.py&quot;, line 146, in &lt;module&gt;
-    run(args.objective_name, args.port, args.password)
-  File &quot;/Users/sjt972/Projects/poli/src/poli/external_isolated_function_script.py&quot;, line 114, in run
-    y = f(x, context=context)
-  File &quot;/Users/sjt972/anaconda3/envs/poli-docs2/lib/python3.9/site-packages/poli/objective_repository/foldx_stability/isolated_function.py&quot;, line 100, in __call__
-    stability = foldx_interface.compute_stability(
-  File &quot;/Users/sjt972/Projects/poli/src/poli/core/util/proteins/foldx.py&quot;, line 460, in compute_stability
-    self._simulate_mutations(pdb_file, mutations)
-  File &quot;/Users/sjt972/Projects/poli/src/poli/core/util/proteins/foldx.py&quot;, line 349, in _simulate_mutations
-    subprocess.run(
-  File &quot;/Users/sjt972/anaconda3/envs/poli__protein/lib/python3.9/subprocess.py&quot;, line 507, in run
-    stdout, stderr = process.communicate(input, timeout=timeout)
-  File &quot;/Users/sjt972/anaconda3/envs/poli__protein/lib/python3.9/subprocess.py&quot;, line 1126, in communicate
-    self.wait()
-  File &quot;/Users/sjt972/anaconda3/envs/poli__protein/lib/python3.9/subprocess.py&quot;, line 1189, in wait
-    return self._wait(timeout=timeout)
-  File &quot;/Users/sjt972/anaconda3/envs/poli__protein/lib/python3.9/subprocess.py&quot;, line 1933, in _wait
-    (pid, sts) = self._try_wait(0)
-  File &quot;/Users/sjt972/anaconda3/envs/poli__protein/lib/python3.9/subprocess.py&quot;, line 1891, in _try_wait
-    (pid, sts) = os.waitpid(self.pid, wait_flags)
-KeyboardInterrupt
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">solver</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli_baselines/core/step_by_step_solver.py:133,</span> in <span class="ni">StepByStepSolver.solve</span><span class="nt">(self, max_iter, n_initial_points, seed, break_at_performance, verbose, pre_step_callbacks, post_step_callbacks)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="n">callback</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="c1"># Take a step, which in turn updates the local history.</span>
-<span class="ne">--&gt; </span><span class="mi">133</span> <span class="n">_</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="c1"># Call the post-step callbacks</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">if</span> <span class="n">post_step_callbacks</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli_baselines/core/step_by_step_solver.py:64,</span> in <span class="ni">StepByStepSolver.step</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="sd"> Runs the solver for one iteration.</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">next_candidate</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">64</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">black_box</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_update</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli/core/abstract_black_box.py:277,</span> in <span class="ni">AbstractBlackBox.__call__</span><span class="nt">(self, x, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span>         <span class="n">f_batch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f_batch_</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_batch_</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span> <span class="k">else</span><span class="p">:</span>  <span class="c1"># iterative treatment</span>
-<span class="ne">--&gt; </span><span class="mi">277</span>     <span class="n">f_batch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_black_box</span><span class="p">(</span><span class="n">x_batch</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">assert</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="nb">len</span><span class="p">(</span><span class="n">f_batch</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span> <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;len(f(x).shape)=</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">f_batch</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2">, expected 2&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="n">f_batch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span>
-<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;type(f)=</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">f_batch</span><span class="p">)</span><span class="si">}</span><span class="s2">, not np.ndarray&quot;</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli/objective_repository/foldx_stability/register.py:151,</span> in <span class="ni">FoldXStabilityBlackBox._black_box</span><span class="nt">(self, x, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="sd"> Runs the given input x and pdb files provided</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="sd"> in the context through FoldX and returns the</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="n">inner_function</span> <span class="o">=</span> <span class="n">get_inner_function</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="n">isolated_function_name</span><span class="o">=</span><span class="s2">&quot;foldx_stability__isolated&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="n">class_name</span><span class="o">=</span><span class="s2">&quot;FoldXStabilityIsolatedLogic&quot;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="n">verbose</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">151</span> <span class="k">return</span> <span class="n">inner_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli/core/util/isolation/external_function.py:49,</span> in <span class="ni">ExternalFunction.__call__</span><span class="nt">(self, x, context)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span><span class="sd"> Evaluates the black-box function.</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span><span class="sd">     The output data points.</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_wrapper</span><span class="o">.</span><span class="n">send</span><span class="p">([</span><span class="s2">&quot;QUERY&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">context</span><span class="p">])</span>
-<span class="ne">---&gt; </span><span class="mi">49</span> <span class="n">msg_type</span><span class="p">,</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">process_wrapper</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">if</span> <span class="n">msg_type</span> <span class="o">==</span> <span class="s2">&quot;EXCEPTION&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">e</span><span class="p">,</span> <span class="n">traceback_</span> <span class="o">=</span> <span class="n">val</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/site-packages/poli/core/util/inter_process_communication/process_wrapper.py:152,</span> in <span class="ni">ProcessWrapper.recv</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">def</span> <span class="nf">recv</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span><span class="sd">     Receive data from the connection.</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd">         The received data.</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">152</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/multiprocessing/connection.py:250,</span> in <span class="ni">_ConnectionBase.recv</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_closed</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_readable</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">250</span> <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recv_bytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span> <span class="k">return</span> <span class="n">_ForkingPickler</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">buf</span><span class="o">.</span><span class="n">getbuffer</span><span class="p">())</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/multiprocessing/connection.py:414,</span> in <span class="ni">Connection._recv_bytes</span><span class="nt">(self, maxsize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">def</span> <span class="nf">_recv_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">414</span>     <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_recv</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span>     <span class="n">size</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;!i&quot;</span><span class="p">,</span> <span class="n">buf</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">416</span>     <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/envs/poli-docs3/lib/python3.10/multiprocessing/connection.py:379,</span> in <span class="ni">Connection._recv</span><span class="nt">(self, size, read)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="n">remaining</span> <span class="o">=</span> <span class="n">size</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="k">while</span> <span class="n">remaining</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">379</span>     <span class="n">chunk</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">remaining</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span>     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
-</details>
 </div>
 </section>
 <section id="checking-the-results">

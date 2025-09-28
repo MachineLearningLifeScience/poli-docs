@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -513,12 +513,16 @@ document.write(`
 </div>
 <p>In our repairing process, we also remove heteroatoms using <a class="reference external" href="https://www.bonvinlab.org/pdb-tools/"><code class="docutils literal notranslate"><span class="pre">pdbtools</span></code></a>.</p>
 </div>
+<p>If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;poli-core[protein]&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
     
-<span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">FoldXSASAProblemFactory</span><span class="p">,</span> <span class="n">FoldXSASABlackBox</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">poli.objective_repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">FoldXSASAProblemFactory</span><span class="p">,</span> <span class="n">FoldXSASABlackBox</span>
 
 <span class="n">wildtype_pdb_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;path/to/your/wildtype_Repair.pdb&quot;</span><span class="p">)</span>
 

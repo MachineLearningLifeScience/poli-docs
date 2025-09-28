@@ -14,6 +14,12 @@ Since the score given by Vina is supposed to be minimized, our implementation re
 
 None! The implementation of [dockstring](https://github.com/dockstring/dockstring) comes with batteries included. You don't even have to set up Autodock Vina. Unfortunately, it will only work on MacOS and Linux.
 
+If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running
+
+```bash
+pip install "poli-core[dockstring]"
+```
+
 ## How to run
 
 ```python

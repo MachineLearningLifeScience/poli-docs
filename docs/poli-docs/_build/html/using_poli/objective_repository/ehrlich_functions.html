@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -470,19 +470,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-cite">How to cite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-reference">API reference</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichProblemFactory"><code class="docutils literal notranslate"><span class="pre">EhrlichProblemFactory</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichProblemFactory.create"><code class="docutils literal notranslate"><span class="pre">EhrlichProblemFactory.create()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_optimal_solution"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox.construct_optimal_solution()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_motifs"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox.construct_random_motifs()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_offsets"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox.construct_random_offsets()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -505,14 +492,18 @@ document.write(`
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <p>None, this black box runs out of the box.</p>
+<p>If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;poli-core[ehrlich]&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="how-to-run">
 <h2>How to run<a class="headerlink" href="#how-to-run" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">poli.objective_repository</span> <span class="kn">import</span> <span class="n">EhrlichBlackBox</span><span class="p">,</span> <span class="n">EhrlichProblemFactory</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">poli.objective_repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">EhrlichHoloBlackBox</span><span class="p">,</span> <span class="n">EhrlichHoloProblemFactory</span>
 
 <span class="c1"># You can either</span>
 <span class="c1"># (i) Create a black box</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">EhrlichBlackBox</span><span class="p">(</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">EhrlichHoloBlackBox</span><span class="p">(</span>
     <span class="n">sequence_length</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
     <span class="n">motif_length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
     <span class="n">n_motifs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
@@ -521,7 +512,7 @@ document.write(`
 
 <span class="c1"># or</span>
 <span class="c1"># (ii) create a problem</span>
-<span class="n">problem</span> <span class="o">=</span> <span class="n">EhrlichProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<span class="n">problem</span> <span class="o">=</span> <span class="n">EhrlichHoloProblemFactory</span><span class="p">()</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
     <span class="n">sequence_length</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
     <span class="n">motif_length</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
     <span class="n">n_motifs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
@@ -575,130 +566,6 @@ References as <code class="docutils literal notranslate"><span class="pre">BibTe
 </div>
 </div>
 </div>
-</section>
-<section id="api-reference">
-<h2>API reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="poli.objective_repository.ehrlich.register.EhrlichProblemFactory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poli.objective_repository.ehrlich.register.</span></span><span class="sig-name descname"><span class="pre">EhrlichProblemFactory</span></span><a class="headerlink" href="#poli.objective_repository.ehrlich.register.EhrlichProblemFactory" title="Permalink to this definition">#</a></dt>
-<dd><p>A factory for creating Ehrlich functions and initial conditions.</p>
-<p class="rubric">References</p>
-<dl class="simple">
-<dt>[1] Stanton, S., Alberstein, R., Frey, N., Watkins, A., &amp; Cho, K. (2024).</dt><dd><p>Closed-Form Test Functions for Biophysical Sequence Optimization Algorithms.
-arXiv preprint arXiv:2407.00236. https://arxiv.org/abs/2407.00236</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="poli.objective_repository.ehrlich.register.EhrlichProblemFactory.create">
-<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motif_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_motifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantization</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_value_on_unfeasible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['A',</span> <span class="pre">'R',</span> <span class="pre">'N',</span> <span class="pre">'D',</span> <span class="pre">'C',</span> <span class="pre">'E',</span> <span class="pre">'Q',</span> <span class="pre">'G',</span> <span class="pre">'H',</span> <span class="pre">'I',</span> <span class="pre">'L',</span> <span class="pre">'K',</span> <span class="pre">'M',</span> <span class="pre">'F',</span> <span class="pre">'P',</span> <span class="pre">'S',</span> <span class="pre">'T',</span> <span class="pre">'W',</span> <span class="pre">'Y',</span> <span class="pre">'V']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_budget</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_isolation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Problem</span></span></span><a class="headerlink" href="#poli.objective_repository.ehrlich.register.EhrlichProblemFactory.create" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates an Ehrlich function problem (containing an Ehrlich black box and
-an initial condition).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sequence_length</strong> (<em>int</em>) – The length of the sequence to be optimized. This length is fixed, and
-_only_ sequences of this length are considered.</p></li>
-<li><p><strong>motif_length</strong> (<em>int</em>) – The length of the motifs.</p></li>
-<li><p><strong>n_motifs</strong> (<em>int</em>) – The number of motifs.</p></li>
-<li><p><strong>quantization</strong> (<em>int</em><em>, </em><em>optional</em>) – The quantization parameter. This parameter must be between 1 and the
-motif length, and the motif length must be divisible by the quantization.
-By default, it is None (which corresponds to the motif length).</p></li>
-<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – The seed for the random number generator. By default, it is None
-(i.e. no seed is set).</p></li>
-<li><p><strong>return_value_on_unfeasible</strong> (<em>float</em><em>, </em><em>optional</em>) – The value to be returned when an unfeasible sequence is evaluated.
-By default, it is -np.inf.</p></li>
-<li><p><strong>alphabet</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – The alphabet to be used for the sequences. By default, it is the
-of 20 amino acids.</p></li>
-<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The batch size for the black box. By default, it is None (i.e. all
-sequences are evaluated in a vectorized way).</p></li>
-<li><p><strong>parallelize</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to parallelize the evaluation of the black box. By default,
-it is False.</p></li>
-<li><p><strong>num_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of processors used in parallelization.</p></li>
-<li><p><strong>evaluation_budget</strong> (<em>int</em><em>, </em><em>optional</em>) – The evaluation budget for the black box. By default, it is infinite.</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<dl class="simple">
-<dt>[1] Stanton, S., Alberstein, R., Frey, N., Watkins, A., &amp; Cho, K. (2024).</dt><dd><p>Closed-Form Test Functions for Biophysical Sequence Optimization Algorithms.
-arXiv preprint arXiv:2407.00236. https://arxiv.org/abs/2407.00236</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="poli.objective_repository.ehrlich.register.EhrlichBlackBox">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poli.objective_repository.ehrlich.register.</span></span><span class="sig-name descname"><span class="pre">EhrlichBlackBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motif_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_motifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantization</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_value_on_unfeasible</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feasibility_matrix_temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feasibility_matrix_band_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['A',</span> <span class="pre">'R',</span> <span class="pre">'N',</span> <span class="pre">'D',</span> <span class="pre">'C',</span> <span class="pre">'E',</span> <span class="pre">'Q',</span> <span class="pre">'G',</span> <span class="pre">'H',</span> <span class="pre">'I',</span> <span class="pre">'L',</span> <span class="pre">'K',</span> <span class="pre">'M',</span> <span class="pre">'F',</span> <span class="pre">'P',</span> <span class="pre">'S',</span> <span class="pre">'T',</span> <span class="pre">'W',</span> <span class="pre">'Y',</span> <span class="pre">'V']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallelize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluation_budget</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox" title="Permalink to this definition">#</a></dt>
-<dd><p>Ehrlich functions were proposed by Stanton et al. [1] as a quick-and-easy
-alternative for testing discrete sequence optimizers (with protein
-optimization in mind). They are deviced to</p>
-<ol class="lowerroman simple">
-<li><p>be easy to query,</p></li>
-<li><p>have feasible and unfeasible sequences,</p></li>
-<li><p>have uninformative random samples (i.e. randomly sampling and evaluating should not be competitive, as many of these should be unfeasible).</p></li>
-<li><p>be maximized when certain motifs are present in the sequence. These motifs can be long-range within the sequence, and are meant to be non-additive.</p></li>
-</ol>
-<p>Check the references for details on the implementation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sequence_length</strong> (<em>int</em>) – The length of the sequence to be optimized. This length is fixed, and
-_only_ sequences of this length are considered.</p></li>
-<li><p><strong>motif_length</strong> (<em>int</em>) – The length of the motifs.</p></li>
-<li><p><strong>n_motifs</strong> (<em>int</em>) – The number of motifs.</p></li>
-<li><p><strong>quantization</strong> (<em>int</em><em>, </em><em>optional</em>) – The quantization parameter. This parameter must be between 1 and the
-motif length, and the motif length must be divisible by the quantization.
-By default, it is None (which corresponds to the motif length).</p></li>
-<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – The seed for the random number generator. By default, it is None
-(i.e. no seed is set).</p></li>
-<li><p><strong>return_value_on_unfeasible</strong> (<em>float</em><em>, </em><em>optional</em>) – The value to be returned when an unfeasible sequence is evaluated.
-By default, it is -np.inf.</p></li>
-<li><p><strong>feasibility_matrix_temperature</strong> (<em>float</em><em>, </em><em>optional</em>) – The temperature parameter for the feasibility matrix’s softmax. By
-default, it is 0.5.</p></li>
-<li><p><strong>feasibility_matrix_band_length</strong> (<em>int</em><em>, </em><em>optional</em>) – The band length for the non-zero values in the feasibility matrix.
-By default, it is None (i.e. if the alphabet size is v, the band
-length is v - 2 * (v // 5)).</p></li>
-<li><p><strong>alphabet</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – The alphabet to be used for the sequences. By default, it is the
-of 20 amino acids.</p></li>
-<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The batch size for the black box. By default, it is None (i.e. all
-sequences are evaluated in a vectorized way).</p></li>
-<li><p><strong>parallelize</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to parallelize the evaluation of the black box. By default,
-it is False.</p></li>
-<li><p><strong>num_workers</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of processors used in parallelization.</p></li>
-<li><p><strong>evaluation_budget</strong> (<em>int</em><em>, </em><em>optional</em>) – The evaluation budget for the black box. By default, it is infinite.</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">References</p>
-<dl class="simple">
-<dt>[1] Stanton, S., Alberstein, R., Frey, N., Watkins, A., &amp; Cho, K. (2024).</dt><dd><p>Closed-Form Test Functions for Biophysical Sequence Optimization Algorithms.
-arXiv preprint arXiv:2407.00236. https://arxiv.org/abs/2407.00236</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_optimal_solution">
-<span class="sig-name descname"><span class="pre">construct_optimal_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">motifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_optimal_solution" title="Permalink to this definition">#</a></dt>
-<dd><p>Constructs an optimal solution for a given set of motifs and offsets.</p>
-<p>If None are provided, then the motifs and offsets of the black box
-are used.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_motifs">
-<span class="sig-name descname"><span class="pre">construct_random_motifs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">motif_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_motifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_motifs" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates a given number of random motifs of a certain length.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_offsets">
-<span class="sig-name descname"><span class="pre">construct_random_offsets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">motif_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_motifs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_offsets" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates a given number of random offsets for the motifs.</p>
-</dd></dl>
-
-</dd></dl>
-
 </section>
 </section>
 
@@ -770,19 +637,6 @@ are used.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run">How to run</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-cite">How to cite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-reference">API reference</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichProblemFactory"><code class="docutils literal notranslate"><span class="pre">EhrlichProblemFactory</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichProblemFactory.create"><code class="docutils literal notranslate"><span class="pre">EhrlichProblemFactory.create()</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_optimal_solution"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox.construct_optimal_solution()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_motifs"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox.construct_random_motifs()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#poli.objective_repository.ehrlich.register.EhrlichBlackBox.construct_random_offsets"><code class="docutils literal notranslate"><span class="pre">EhrlichBlackBox.construct_random_offsets()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

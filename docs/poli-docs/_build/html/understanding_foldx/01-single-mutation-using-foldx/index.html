@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
@@ -515,8 +515,8 @@ document.write(`
 <p>These two can be found in your <code class="docutils literal notranslate"><span class="pre">foldx</span></code> installation. You might need to rename the binary.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span> <span class="nn">shutil</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
 
 <span class="c1"># The path to the folder where the FoldX files are located</span>
 <span class="n">PATH_TO_FOLDX_FILES</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;foldx&quot;</span>
@@ -540,7 +540,7 @@ document.write(`
 <p>In this example, we use a protein responsible for transporting oxigen in sperm whales (called <code class="docutils literal notranslate"><span class="pre">101m</span></code>). You could download it <a class="reference external" href="https://www.rcsb.org/structure/101M">by hand from pdb</a>, but in this notebook we will use Python, and we will download it directly on the working directory at <code class="docutils literal notranslate"><span class="pre">./tmp</span></code>:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
 
 <span class="c1"># Downloading the PDB file</span>
 <span class="n">web_address</span> <span class="o">=</span> <span class="s2">&quot;https://files.rcsb.org/view/101M.pdb&quot;</span>
@@ -568,7 +568,7 @@ document.write(`
 <p>We will check whether the file exists (for future re-runs), since the process is a little bit time-consumig (&gt;400sec).</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 
 <span class="c1"># Building the command for repairing the wildtype PDB</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">WORKING_DIR</span> <span class="o">/</span> <span class="s2">&quot;101m_Repair.pdb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
@@ -607,7 +607,7 @@ document.write(`
 <p>We can easily load up the structure using <code class="docutils literal notranslate"><span class="pre">biopython</span></code>:</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">PDB</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">Bio</span><span class="w"> </span><span class="kn">import</span> <span class="n">PDB</span>
 
 <span class="n">parser</span> <span class="o">=</span> <span class="n">PDB</span><span class="o">.</span><span class="n">PDBParser</span><span class="p">()</span>
 <span class="n">structure</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;pdb&quot;</span><span class="p">,</span> <span class="n">WORKING_DIR</span> <span class="o">/</span> <span class="s2">&quot;101m_Repair.pdb&quot;</span><span class="p">)</span>
@@ -637,7 +637,7 @@ Chain id: A
 <p>As you can see, the residue is specified as the 3-letter code. We can extract the 1-letter code using <code class="docutils literal notranslate"><span class="pre">Bio.SeqUtils</span></code>’ <code class="docutils literal notranslate"><span class="pre">seq1</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio.SeqUtils</span> <span class="kn">import</span> <span class="n">seq1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">Bio.SeqUtils</span><span class="w"> </span><span class="kn">import</span> <span class="n">seq1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Residue as one letter: </span><span class="si">{</span><span class="n">seq1</span><span class="p">(</span><span class="n">first_residue</span><span class="o">.</span><span class="n">resname</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -748,15 +748,15 @@ Chain id: A
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
+<details class="admonition hide below-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ********************************************
    ***                                      ***
-   ***             FoldX 5 (c)            ***
+   ***             FoldX 4 (c)              ***
    ***                                      ***
    ***     code by the FoldX Consortium     ***
    ***                                      ***
@@ -771,34 +771,8 @@ Chain id: A
    ********************************************
 
 1 models read: 101m_Repair.pdb
-1 models read: 101m_Repair.pdb
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -142.58
-SideHbond       =               -48.61
-Energy_VdW      =               -179.63
-Electro         =               -8.33
-Energy_SolvP    =               245.28
-Energy_SolvH    =               -238.89
-Energy_vdwclash =               3.42
-energy_torsion  =               6.70
-backbone_vdwclash=              158.16
-Entropy_sidec   =               105.87
-Entropy_mainc   =               231.69
-water bonds     =               0.00
-helix dipole    =               -8.75
-loop_entropy    =               0.00
-cis_bond        =               0.00
-disulfide       =               0.00
-kn electrostatic=               0.00
-partial covalent interactions = 0.00
-Energy_Ionisation =             1.56
-Entropy Complex =               0.00
------------------------------------------------------------
-Total          = 				  -32.28
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BackHbond       =               -142.58
+
+BackHbond       =               -142.58
 SideHbond       =               -48.61
 Energy_VdW      =               -179.63
 Electro         =               -8.33
@@ -825,16 +799,14 @@ Starting BuildModel
 Reading MA0G;
 Residue to Mutate META0 has residue index 0
 Mutating residue = META0 into GLY
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Your file run OK
-End time of FoldX: Sun Dec 22 16:23:24 2024
-Total time spend: 25.24 seconds.
+Your file run OK
+End time of FoldX: Mon Aug  7 10:34:55 2023
+Total time spend: 54.97 seconds.
 validated file &quot;101m_Repair_1.pdb&quot; =&gt; successfully finished
 Cleaning BuildModel...DONE
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CompletedProcess(args=[&#39;/Users/sjt972/foldx/foldx&#39;, &#39;--pdb&#39;, &#39;101m_Repair.pdb&#39;, &#39;--command&#39;, &#39;BuildModel&#39;, &#39;--mutant-file&#39;, &#39;/Users/sjt972/Projects/poli-docs/docs/poli-docs/understanding_foldx/01-single-mutation-using-foldx/tmp/individual_list.txt&#39;, &#39;--water&#39;, &#39;-CRYSTAL&#39;, &#39;--pH&#39;, &#39;7.0&#39;], returncode=0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CompletedProcess(args=[&#39;/Users/migd/foldx/foldx&#39;, &#39;--pdb&#39;, &#39;101m_Repair.pdb&#39;, &#39;--command&#39;, &#39;BuildModel&#39;, &#39;--mutant-file&#39;, &#39;/Users/migd/Projects/protein-opt/docs/protein-optimization/understanding_foldx/01-single-mutation-using-foldx/tmp/individual_list.txt&#39;, &#39;--water&#39;, &#39;-CRYSTAL&#39;, &#39;--pH&#39;, &#39;7.0&#39;], returncode=0)
 </pre></div>
 </div>
 </div>
@@ -893,7 +865,7 @@ Cleaning BuildModel...DONE
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">WORKING_DIR</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;Raw_</span><span class="si">{</span><span class="n">pdb_name</span><span class="si">}</span><span class="s2">_Repair.fxout&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
@@ -960,7 +932,7 @@ Cleaning BuildModel...DONE
 <p>Computing it is pretty easy now that we have both the PDB for the wild type and for the mutated molecule. <code class="docutils literal notranslate"><span class="pre">Biopython</span></code> has all the functionality available:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Bio.PDB</span> <span class="kn">import</span> <span class="n">SASA</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">Bio.PDB</span><span class="w"> </span><span class="kn">import</span> <span class="n">SASA</span>
 
 <span class="c1"># Let&#39;s load up the structure again, for both the wildtype and the mutant</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">PDB</span><span class="o">.</span><span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>

@@ -18,6 +18,12 @@ There is currently a discrepancy between what TDC reports in their documentation
 
 None. This black box should run out-of-the-box.
 
+If you want to run this black box directly (and you are not worried about conflicting dependencies), we recommend running
+
+```bash
+pip install "poli-core[tdc]"
+```
+
 ## How to run
 
 ```python
